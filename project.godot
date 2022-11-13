@@ -17,6 +17,7 @@ config/icon="res://icon.png"
 [autoload]
 
 PlayerGlobals="*res://Scripts/AutoLoads/PlayerGlobals.gd"
+EnvVar="*res://Scripts/AutoLoads/EnvVar.gd"
 
 [display]
 
