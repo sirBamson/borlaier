@@ -1,10 +1,11 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://Assets/White_square.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Elevator/ElevatorDoor.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/casino_tilemap_more_tiles.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Elevator_panel.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/Elevator/ElevatorPanel.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Elevator/ElevatorPanelUI.tscn" type="PackedScene" id=6]
 
 [sub_resource type="TileSet" id=24]
 0/name = "casino_tilemap_more_tiles.png 0"
@@ -574,10 +575,8 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 48, 64, 48, 64, 64, 0, 64 )
 
 [node name="Elevator" type="Node2D" groups=["Elevator"]]
 
-[node name="SpawnPoints" type="Node" parent="."]
-
-[node name="PlayerSpawn" type="Position2D" parent="SpawnPoints"]
-position = Vector2( 512, 224 )
+[node name="ElevatorPanelUI" parent="." instance=ExtResource( 6 )]
+visible = false
 
 [node name="VoidLayer" type="CanvasLayer" parent="."]
 layer = -1
@@ -599,9 +598,10 @@ tile_set = SubResource( 25 )
 format = 1
 tile_data = PoolIntArray( 131077, 0, 0, 131078, 0, 0, 131079, 0, 0, 131080, 0, 0, 131081, 0, 0, 131082, 0, 0, 196613, 1, 0, 196614, 1, 0, 196615, 1, 0, 196616, 1, 0, 196617, 1, 0, 196618, 1, 0 )
 
-[node name="ElevatorPanel" type="Sprite" parent="."]
+[node name="ElevatorPanel" parent="." instance=ExtResource( 4 )]
 position = Vector2( 392, 216 )
-texture = ExtResource( 4 )
+collision_layer = 128
+collision_mask = 2
 
 [node name="ElevatorDoor" parent="." instance=ExtResource( 2 )]
 position = Vector2( 512, 208 )
@@ -613,3 +613,7 @@ position = Vector2( 512, 240 )
 tile_set = SubResource( 26 )
 format = 1
 tile_data = PoolIntArray( 131076, 0, 0, 131083, 2, 0, 196612, 1, 0, 196619, 3, 0, 262148, 1, 0, 262155, 3, 0, 327684, 1, 0, 327691, 3, 0, 393220, 1, 0, 393227, 3, 0, 458756, 1, 0, 458763, 3, 0, 524292, 4, 0, 524293, 5, 0, 524294, 5, 0, 524295, 5, 0, 524296, 5, 0, 524297, 5, 0, 524298, 5, 0, 524299, 6, 0, 589829, 11, 0, 589830, 11, 0, 589831, 11, 0, 589832, 11, 0, 589833, 11, 0, 589834, 11, 0 )
+
+[connection signal="new_floor" from="ElevatorPanelUI" to="ElevatorDoor" method="_on_ElevatorPanelUI_new_floor"]
+[connection signal="body_entered" from="ElevatorPanel" to="ElevatorPanel" method="_on_ElevatorPanel_body_entered"]
+[connection signal="body_exited" from="ElevatorPanel" to="ElevatorPanel" method="_on_ElevatorPanel_body_exited"]

@@ -1,0 +1,300 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Elevator_ui2.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Elevator/ElevatorPanelUI.gd" type="Script" id=2]
+
+[node name="ElevatorPanelUI" type="CanvasLayer"]
+pause_mode = 2
+script = ExtResource( 2 )
+
+[node name="UI" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
+expand = true
+
+[node name="Text" type="Label" parent="UI"]
+margin_left = 136.0
+margin_top = 88.0
+margin_right = 176.0
+margin_bottom = 102.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Elevator Panel
+"
+
+[node name="Floor" type="Label" parent="UI"]
+margin_left = 248.0
+margin_top = 88.0
+margin_right = 288.0
+margin_bottom = 102.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Floor: 0"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 128.0
+margin_top = 120.32
+margin_right = -128.0
+margin_bottom = -128.0
+custom_constants/separation = 300
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/HBoxContainer"]
+margin_right = 60.0
+margin_bottom = 400.0
+custom_constants/separation = 75
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/HBoxContainer/VBoxContainer"]
+margin_right = 60.0
+margin_bottom = 20.0
+
+[node name="0" type="Button" parent="UI/HBoxContainer/VBoxContainer/HBoxContainer"]
+margin_right = 12.0
+margin_bottom = 20.0
+
+[node name="Label" type="Label" parent="UI/HBoxContainer/VBoxContainer/HBoxContainer"]
+margin_left = 16.0
+margin_top = 3.0
+margin_right = 54.0
+margin_bottom = 17.0
+text = "Lobby"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="UI/HBoxContainer/VBoxContainer"]
+margin_top = 95.0
+margin_right = 60.0
+margin_bottom = 115.0
+
+[node name="1" type="Button" parent="UI/HBoxContainer/VBoxContainer/HBoxContainer2"]
+margin_right = 12.0
+margin_bottom = 20.0
+
+[node name="Label" type="Label" parent="UI/HBoxContainer/VBoxContainer/HBoxContainer2"]
+margin_left = 16.0
+margin_top = 3.0
+margin_right = 60.0
+margin_bottom = 17.0
+text = "Floor 1"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="UI/HBoxContainer/VBoxContainer"]
+margin_top = 190.0
+margin_right = 60.0
+margin_bottom = 210.0
+
+[node name="2" type="Button" parent="UI/HBoxContainer/VBoxContainer/HBoxContainer3"]
+margin_right = 12.0
+margin_bottom = 20.0
+
+[node name="Label" type="Label" parent="UI/HBoxContainer/VBoxContainer/HBoxContainer3"]
+margin_left = 16.0
+margin_top = 3.0
+margin_right = 60.0
+margin_bottom = 17.0
+text = "Floor 2"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="UI/HBoxContainer/VBoxContainer"]
+margin_top = 285.0
+margin_right = 60.0
+margin_bottom = 305.0
+
+[node name="3" type="Button" parent="UI/HBoxContainer/VBoxContainer/HBoxContainer4"]
+margin_right = 12.0
+margin_bottom = 20.0
+
+[node name="Label" type="Label" parent="UI/HBoxContainer/VBoxContainer/HBoxContainer4"]
+margin_left = 16.0
+margin_top = 3.0
+margin_right = 60.0
+margin_bottom = 17.0
+text = "Floor 3"
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="UI/HBoxContainer/VBoxContainer"]
+margin_top = 380.0
+margin_right = 60.0
+margin_bottom = 400.0
+
+[node name="4" type="Button" parent="UI/HBoxContainer/VBoxContainer/HBoxContainer5"]
+margin_right = 12.0
+margin_bottom = 20.0
+
+[node name="Label" type="Label" parent="UI/HBoxContainer/VBoxContainer/HBoxContainer5"]
+margin_left = 16.0
+margin_top = 3.0
+margin_right = 60.0
+margin_bottom = 17.0
+text = "Floor 4"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="UI/HBoxContainer"]
+margin_left = 360.0
+margin_right = 420.0
+margin_bottom = 400.0
+custom_constants/separation = 75
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/HBoxContainer/VBoxContainer2"]
+margin_right = 60.0
+margin_bottom = 20.0
+
+[node name="Button" type="Button" parent="UI/HBoxContainer/VBoxContainer2/HBoxContainer"]
+margin_right = 12.0
+margin_bottom = 20.0
+
+[node name="Label" type="Label" parent="UI/HBoxContainer/VBoxContainer2/HBoxContainer"]
+margin_left = 16.0
+margin_top = 3.0
+margin_right = 60.0
+margin_bottom = 17.0
+text = "Floor 5"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="UI/HBoxContainer/VBoxContainer2"]
+margin_top = 95.0
+margin_right = 60.0
+margin_bottom = 115.0
+
+[node name="Button" type="Button" parent="UI/HBoxContainer/VBoxContainer2/HBoxContainer2"]
+margin_right = 12.0
+margin_bottom = 20.0
+
+[node name="Label" type="Label" parent="UI/HBoxContainer/VBoxContainer2/HBoxContainer2"]
+margin_left = 16.0
+margin_top = 3.0
+margin_right = 60.0
+margin_bottom = 17.0
+text = "Floor 6"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="UI/HBoxContainer/VBoxContainer2"]
+margin_top = 190.0
+margin_right = 60.0
+margin_bottom = 210.0
+
+[node name="Button" type="Button" parent="UI/HBoxContainer/VBoxContainer2/HBoxContainer3"]
+margin_right = 12.0
+margin_bottom = 20.0
+
+[node name="Label" type="Label" parent="UI/HBoxContainer/VBoxContainer2/HBoxContainer3"]
+margin_left = 16.0
+margin_top = 3.0
+margin_right = 60.0
+margin_bottom = 17.0
+text = "Floor 7"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="UI/HBoxContainer/VBoxContainer2"]
+margin_top = 285.0
+margin_right = 60.0
+margin_bottom = 305.0
+
+[node name="Button" type="Button" parent="UI/HBoxContainer/VBoxContainer2/HBoxContainer4"]
+margin_right = 12.0
+margin_bottom = 20.0
+
+[node name="Label" type="Label" parent="UI/HBoxContainer/VBoxContainer2/HBoxContainer4"]
+margin_left = 16.0
+margin_top = 3.0
+margin_right = 60.0
+margin_bottom = 17.0
+text = "Floor 8"
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="UI/HBoxContainer/VBoxContainer2"]
+margin_top = 380.0
+margin_right = 60.0
+margin_bottom = 400.0
+
+[node name="Button" type="Button" parent="UI/HBoxContainer/VBoxContainer2/HBoxContainer5"]
+margin_right = 12.0
+margin_bottom = 20.0
+
+[node name="Label" type="Label" parent="UI/HBoxContainer/VBoxContainer2/HBoxContainer5"]
+margin_left = 16.0
+margin_top = 3.0
+margin_right = 60.0
+margin_bottom = 17.0
+text = "Floor 9"
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="UI/HBoxContainer"]
+margin_left = 720.0
+margin_right = 788.0
+margin_bottom = 400.0
+custom_constants/separation = 75
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/HBoxContainer/VBoxContainer3"]
+margin_right = 68.0
+margin_bottom = 20.0
+
+[node name="Button" type="Button" parent="UI/HBoxContainer/VBoxContainer3/HBoxContainer"]
+margin_right = 12.0
+margin_bottom = 20.0
+
+[node name="Label" type="Label" parent="UI/HBoxContainer/VBoxContainer3/HBoxContainer"]
+margin_left = 16.0
+margin_top = 3.0
+margin_right = 68.0
+margin_bottom = 17.0
+text = "Floor 10"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="UI/HBoxContainer/VBoxContainer3"]
+margin_top = 95.0
+margin_right = 68.0
+margin_bottom = 115.0
+
+[node name="Button" type="Button" parent="UI/HBoxContainer/VBoxContainer3/HBoxContainer2"]
+margin_right = 12.0
+margin_bottom = 20.0
+
+[node name="Label" type="Label" parent="UI/HBoxContainer/VBoxContainer3/HBoxContainer2"]
+margin_left = 16.0
+margin_top = 3.0
+margin_right = 68.0
+margin_bottom = 17.0
+text = "Floor 11"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="UI/HBoxContainer/VBoxContainer3"]
+margin_top = 190.0
+margin_right = 68.0
+margin_bottom = 210.0
+
+[node name="Button" type="Button" parent="UI/HBoxContainer/VBoxContainer3/HBoxContainer3"]
+margin_right = 12.0
+margin_bottom = 20.0
+
+[node name="Label" type="Label" parent="UI/HBoxContainer/VBoxContainer3/HBoxContainer3"]
+margin_left = 16.0
+margin_top = 3.0
+margin_right = 68.0
+margin_bottom = 17.0
+text = "Floor 12"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="UI/HBoxContainer/VBoxContainer3"]
+margin_top = 285.0
+margin_right = 68.0
+margin_bottom = 305.0
+
+[node name="Button" type="Button" parent="UI/HBoxContainer/VBoxContainer3/HBoxContainer4"]
+margin_right = 12.0
+margin_bottom = 20.0
+
+[node name="Label" type="Label" parent="UI/HBoxContainer/VBoxContainer3/HBoxContainer4"]
+margin_left = 16.0
+margin_top = 3.0
+margin_right = 68.0
+margin_bottom = 17.0
+text = "Floor 13"
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="UI/HBoxContainer/VBoxContainer3"]
+margin_top = 380.0
+margin_right = 68.0
+margin_bottom = 400.0
+
+[node name="Button" type="Button" parent="UI/HBoxContainer/VBoxContainer3/HBoxContainer5"]
+margin_right = 12.0
+margin_bottom = 20.0
+
+[node name="Label" type="Label" parent="UI/HBoxContainer/VBoxContainer3/HBoxContainer5"]
+margin_left = 16.0
+margin_top = 3.0
+margin_right = 60.0
+margin_bottom = 17.0
+text = "Floor 4"
+
+[connection signal="pressed" from="UI/HBoxContainer/VBoxContainer/HBoxContainer/0" to="." method="_on_0_pressed"]
+[connection signal="button_up" from="UI/HBoxContainer/VBoxContainer/HBoxContainer2/1" to="." method="_on_1_button_up"]
+[connection signal="button_up" from="UI/HBoxContainer/VBoxContainer/HBoxContainer3/2" to="." method="_on_2_button_up"]
+[connection signal="button_up" from="UI/HBoxContainer/VBoxContainer/HBoxContainer4/3" to="." method="_on_3_button_up"]
+[connection signal="button_up" from="UI/HBoxContainer/VBoxContainer/HBoxContainer5/4" to="." method="_on_4_button_up"]
