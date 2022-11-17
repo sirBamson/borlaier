@@ -571,7 +571,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 48, 64, 48, 64, 64, 0, 64 )
 } ]
 11/z_index = 0
 
-[node name="Level" type="Node2D" groups=["Level"]]
+[node name="Level1" type="Node2D" groups=["Level"]]
 
 [node name="VoidLayer" type="CanvasLayer" parent="."]
 layer = -1
