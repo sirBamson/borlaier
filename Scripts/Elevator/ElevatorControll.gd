@@ -5,14 +5,18 @@ signal change_scene(save_current_scene, current_scene, current_scene_path, new_s
 
 var changing_scene: bool = false
 var can_use_door: bool = false
+var door_animation: String = "LevelDoor"
 var new_level: bool = false
 var new_level_path: String
 
 
 func _ready() -> void:
+	if get_parent().is_in_group("Elevator"):
+		door_animation = "ElevatorDoor"
+	
 	var _err = connect("change_scene", get_node("/root/SceneController"), "change_scene")
 	# Add player to scene
-	$OutsideDoor.play("default", true)
+	$Door.play(door_animation, true)
 
 
 func _on_ElevatorDoor_body_entered(body: Node) -> void:
@@ -41,7 +45,7 @@ func _physics_process(_delta: float) -> void:
 		if Input.is_action_pressed("ui_accept"):
 			changing_scene = true
 			# Play door animation
-			$OutsideDoor.play("default")
+			$Door.play(door_animation)
 
 
 func emit_signal_change_scene() -> void:

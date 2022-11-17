@@ -14,9 +14,12 @@ func change_scene(save_current_scene: bool, current_scene: Node, current_scene_p
 	var new_scene: Node
 	
 	if save_current_scene:
-			var saved_scene = PackedScene.new()
-			saved_scene.pack(current_scene)
-			EnvVar.saved_scenes[current_scene_path] = saved_scene
+		print("Saving...")
+		print("Packed scene is: " + str(current_scene))
+		var saved_scene = PackedScene.new()
+		saved_scene.pack(current_scene)
+		EnvVar.saved_scenes.erase(current_scene_path)
+		EnvVar.saved_scenes[current_scene_path] = saved_scene
 	
 	if new_scene_path == "return":
 		new_scene_path = old_scene_path
@@ -31,4 +34,3 @@ func change_scene(save_current_scene: bool, current_scene: Node, current_scene_p
 	if new_scene_path != "res://Scenes/Elevator/Elevator.tscn":
 		old_scene_path = new_scene_path
 	current_scene.queue_free()
-	print(EnvVar.saved_scenes)

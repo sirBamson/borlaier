@@ -6,6 +6,7 @@ var can_use_panel: bool = false
 
 
 func _on_ElevatorPanel_body_entered(body: Node) -> void:
+	print(body)
 	if body.is_in_group("Player"):
 		can_use_panel = true
 
