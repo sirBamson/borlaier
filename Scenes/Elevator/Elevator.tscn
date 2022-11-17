@@ -330,5 +330,3 @@ position = Vector2( 96, 104 )
 tile_set = SubResource( 18 )
 format = 1
 tile_data = PoolIntArray( 65535, 7, 0, 1, 4, 0, 3, 8, 0, 131071, 6, 0, 65539, 9, 0, 196607, 6, 0, 131075, 9, 0, 262143, 5, 0, 196608, 3, 0, 196609, 3, 0, 196610, 3, 0, 196611, 10, 0, 262144, 4, 0, 262145, 4, 0, 262146, 4, 0 )
-
-[connection signal="new_floor" from="ElevatorPanelUI" to="ElevatorDoor" method="_on_ElevatorPanelUI_new_floor"]
