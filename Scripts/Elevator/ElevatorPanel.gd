@@ -5,8 +5,8 @@ extends Area2D
 var can_use_panel: bool = false
 
 
+# Checks if the player is in the designated area
 func _on_ElevatorPanel_body_entered(body: Node) -> void:
-	print(body)
 	if body.is_in_group("Player"):
 		can_use_panel = true
 
