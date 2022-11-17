@@ -1,7 +1,12 @@
 extends KinematicBody2D
 
+
+signal player_dead
+
+
 var _direction: Vector2 = Vector2.ZERO
 var _velocity: Vector2 = Vector2.ZERO
+var _healt: int = PlayerGlobals.player_healt
 #var bullet_speed = 2000
 #var bullet = preload("res://scenes/bullet.tscn")
 
@@ -39,6 +44,13 @@ func _movment() -> void:
 	_velocity = _velocity.normalized() * speed
 	_velocity = move_and_slide(_velocity)
 
+
+func take_damage(damage) -> void:
+	_healt -= damage
+	print(_healt)
+	
+	if _healt <= 0:
+		emit_signal("player_dead")
 
 
 #func fire():
