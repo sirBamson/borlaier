@@ -3,12 +3,13 @@ extends KinematicBody2D
 
 signal player_dead
 
+var gun = preload("res://Scenes/Gun.tscn")
+
 
 var _direction: Vector2 = Vector2.ZERO
 var _velocity: Vector2 = Vector2.ZERO
 var _healt: int = PlayerGlobals.player_healt
-#var bullet_speed = 2000
-#var bullet = preload("res://scenes/bullet.tscn")
+var gun_position = global_position
 
 export var speed = 250
 
@@ -27,6 +28,7 @@ func _movment() -> void:
 		_velocity += Vector2.RIGHT
 	if Input.is_action_pressed("ui_left"):
 		_velocity += Vector2.LEFT
+
 	
 	_direction = _velocity
 	
@@ -43,6 +45,16 @@ func _movment() -> void:
 	
 	_velocity = _velocity.normalized() * speed
 	_velocity = move_and_slide(_velocity)
+	
+
+func _process(delta: float) -> void:
+	var mouse_position = get_global_mouse_position()
+	if mouse_position.x < (gun_position.x):
+		#bullet_instance.position = get_global_position() + (Vector2(23, 0).rotated(rotation))
+		$Gun.flip_v = true
+
+	else:
+		$Gun.flip_v = false
 
 
 func take_damage(damage) -> void:
