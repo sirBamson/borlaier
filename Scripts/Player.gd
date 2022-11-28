@@ -3,15 +3,18 @@ extends KinematicBody2D
 
 signal player_dead
 
-var gun = preload("res://Scenes/Gun.tscn")
-
-
-var _direction: Vector2 = Vector2.ZERO
-var _velocity: Vector2 = Vector2.ZERO
-var _healt: int = PlayerGlobals.player_healt
-var gun_position = global_position
+var direction: Vector2 = Vector2.ZERO
+var velocity: Vector2 = Vector2.ZERO
+var healt: int = PlayerGlobals.player_healt
+var has_gun: bool = false
 
 export var speed = 250
+
+
+func _ready() -> void:
+	for child in get_children():
+		if child.name == "Gun":
+			has_gun = true
 
 
 func _physics_process(_delta: float) -> void:
@@ -19,54 +22,48 @@ func _physics_process(_delta: float) -> void:
 
 
 func _movment() -> void:
-	_velocity = Vector2.ZERO
+	velocity = Vector2.ZERO
 	if Input.is_action_pressed("ui_up"):
-		_velocity += Vector2.UP
+		velocity += Vector2.UP
 	if Input.is_action_pressed("ui_down"):
-		_velocity += Vector2.DOWN
+		velocity += Vector2.DOWN
 	if Input.is_action_pressed("ui_right"):
-		_velocity += Vector2.RIGHT
+		velocity += Vector2.RIGHT
 	if Input.is_action_pressed("ui_left"):
-		_velocity += Vector2.LEFT
-
+		velocity += Vector2.LEFT
 	
-	_direction = _velocity
 	
-	if _direction.x > 0:
-		$PlayerSprite.play("Right")
-	elif _direction.x < 0:
-		$PlayerSprite.play("Left")
-	elif _direction.y > 0:
-		$PlayerSprite.play("Right")
-	elif _direction.y < 0:
-		$PlayerSprite.play("Right")
-	else:
-		$PlayerSprite.play("Idle")
+	direction = velocity
 	
-	_velocity = _velocity.normalized() * speed
-	_velocity = move_and_slide(_velocity)
+	if has_gun and direction != Vector2.ZERO:
+		if get_global_mouse_position().x < global_position.x:
+			direction.x = -1
+		else:
+			direction.x = 1
+	elif has_gun:
+		if get_global_mouse_position().x < global_position.x:
+			$PlayerSprite.play("NoHandsIdleLeft")
+		else:
+			$PlayerSprite.play("NoHandsIdleRight")
 	
-
-func _process(delta: float) -> void:
-	var mouse_position = get_global_mouse_position()
-	if mouse_position.x < (gun_position.x):
-		#bullet_instance.position = get_global_position() + (Vector2(23, 0).rotated(rotation))
-		$Gun.flip_v = true
-
-	else:
-		$Gun.flip_v = false
+	
+	if direction.x > 0:
+		$PlayerSprite.play("NoHandsRight")
+	elif direction.x < 0:
+		$PlayerSprite.play("NoHandsLeft")
+	elif direction.y > 0:
+		$PlayerSprite.play("NoHandsRight")
+	elif direction.y < 0:
+		$PlayerSprite.play("NoHandsRight")
+	elif !has_gun:
+		$PlayerSprite.play("NoHandsIdleRight")
+	
+	velocity = velocity.normalized() * speed
+	velocity = move_and_slide(velocity)
 
 
 func take_damage(damage) -> void:
-	_healt -= damage
-	print(_healt)
+	healt -= damage
 	
-	if _healt <= 0:
+	if healt <= 0:
 		emit_signal("player_dead")
-
-
-#func fire():
-#	var bullet_instance = bullet.instance()
-#	bullet_instance.position = get_global_mouse_position()
-#	bullet_instance.rotation_degrees = rotation_degrees
-#	bullet_instance.apply_impulse(Vector2())

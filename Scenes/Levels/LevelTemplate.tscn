@@ -1,6 +1,5 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=28 format=2]
 
-[ext_resource path="res://Assets/White_square.png" type="Texture" id=1]
 [ext_resource path="res://Assets/casino_tilemap_more_tiles.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/White_square.png" type="Texture" id=4]
@@ -580,7 +579,7 @@ layer = -1
 modulate = Color( 0.121569, 0.105882, 0.196078, 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 1 )
+texture = ExtResource( 4 )
 expand = true
 
 [node name="Floor" type="TileMap" parent="."]
@@ -597,10 +596,3 @@ format = 1
 [node name="Walls" type="TileMap" parent="."]
 tile_set = SubResource( 24 )
 format = 1
-
-[node name="Light2D" type="Light2D" parent="."]
-position = Vector2( 256, 0 )
-texture = ExtResource( 4 )
-color = Color( 1, 0.772549, 0, 1 )
-energy = 0.5
-shadow_enabled = true
