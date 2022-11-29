@@ -242,4 +242,15 @@ frames = SubResource( 18 )
 animation = "NoHandsIdleLeft"
 
 [node name="Gun" parent="." instance=ExtResource( 3 )]
-scale = Vector2( 1, 1 )
+
+[node name="BulletsInMag" type="Label" parent="."]
+margin_left = -384.0
+margin_top = -236.8
+margin_right = -344.0
+margin_bottom = -222.8
+
+[node name="BulletsLeft" type="Label" parent="."]
+margin_left = -384.0
+margin_top = -222.4
+margin_right = -344.0
+margin_bottom = -208.4

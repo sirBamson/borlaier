@@ -18,6 +18,8 @@ func _ready() -> void:
 
 
 func _physics_process(_delta: float) -> void:
+	$BulletsInMag.text = str(PlayerGlobals.bullets_in_mag)
+	$BulletsLeft.text = str(PlayerGlobals.bullets_left)
 	_movment()
 
 
