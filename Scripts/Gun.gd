@@ -19,13 +19,20 @@ func _physics_process(delta: float) -> void:
 		scale = Vector2(1, 1)
 	
 	
-	if Input.is_action_pressed("fire") and can_fire:
+	if Input.is_action_pressed("reload") and PlayerGlobals.bullets_in_mag < 25 and PlayerGlobals.bullets_left > 0:
+		PlayerGlobals.bullets_left += PlayerGlobals.bullets_in_mag
+		PlayerGlobals.bullets_in_mag = 25
+		PlayerGlobals.bullets_left -= 25
+	
+	
+	if Input.is_action_pressed("fire") and can_fire and PlayerGlobals.bullets_in_mag > 0:
+		PlayerGlobals.bullets_in_mag -= 1
 		$BulletSound.play()
 		var bullet_instance = bullet.instance()
 		bullet_instance.global_position = $BulletSpawn.global_position
 		bullet_instance.rotation = rotation
 		bullet_instance.apply_impulse(Vector2(), Vector2(bullet_speed, 0).rotated(rotation))
-		get_node("/root/SceneController").get_child(0).add_child(bullet_instance)
+		get_node("/root/SceneController").get_child(1).add_child(bullet_instance)
 		
 		# Regulates rate of fire
 		can_fire = false
