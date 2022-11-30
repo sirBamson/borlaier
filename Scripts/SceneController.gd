@@ -9,7 +9,7 @@ func _ready() -> void:
 
 func change_scene(save_current_scene: bool, current_scene: Node, current_scene_path: String, new_scene_path: String):
 	# TODO: Add a tansition
-	
+	$Transition/Animation.play("FadeIn")
 	
 	# Now packages the scene and overwrites the old one, if it exists
 	# Adds to dictionary with PackedScene as value and file path as key
@@ -26,7 +26,6 @@ func change_scene(save_current_scene: bool, current_scene: Node, current_scene_p
 		new_scene = EnvVar.saved_scenes[new_scene_path].instance()
 	else:
 		new_scene = load(new_scene_path).instance()
-
 	
 	# Adds the new scene and removes the old one
 	add_child(new_scene)

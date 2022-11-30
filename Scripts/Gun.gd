@@ -19,16 +19,38 @@ func _physics_process(delta: float) -> void:
 		scale = Vector2(1, 1)
 	
 	
-	if Input.is_action_pressed("fire") and can_fire:
+	if Input.is_action_pressed("reload") and PlayerGlobals.bullets_in_mag < 25 and PlayerGlobals.bullets_left > 0 and can_fire:
+		#PlayerGlobals.bullets_left += PlayerGlobals.bullets_in_mag
+		
+		$GunReloadSound.play()
+		for i in range(25): 
+			if PlayerGlobals.bullets_left != 0 and !PlayerGlobals.bullets_in_mag >= 25:
+				PlayerGlobals.bullets_left -= 1
+				PlayerGlobals.bullets_in_mag += 1
+		
+		can_fire = false
+		yield(get_tree().create_timer(1.5),"timeout")
+		can_fire = true
+	
+	
+	if Input.is_action_pressed("fire") and can_fire and PlayerGlobals.bullets_in_mag > 0:
+		PlayerGlobals.bullets_in_mag -= 1
 		$BulletSound.play()
 		var bullet_instance = bullet.instance()
 		bullet_instance.global_position = $BulletSpawn.global_position
 		bullet_instance.rotation = rotation
 		bullet_instance.apply_impulse(Vector2(), Vector2(bullet_speed, 0).rotated(rotation))
-		get_node("/root/SceneController").get_child(0).add_child(bullet_instance)
+		get_node("/root/SceneController").get_child(1).add_child(bullet_instance)
 		
 		# Regulates rate of fire
 		can_fire = false
 		yield(get_tree().create_timer(fire_rate),"timeout")
 		can_fire = true
 	
+	elif Input.is_action_pressed("fire") and can_fire and PlayerGlobals.bullets_in_mag == 0:
+		$GunClickSound.play()
+		
+		# Regulates rate of fire
+		can_fire = false
+		yield(get_tree().create_timer(fire_rate),"timeout")
+		can_fire = true

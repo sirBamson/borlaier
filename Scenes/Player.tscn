@@ -244,4 +244,4 @@ frames = SubResource( 18 )
 animation = "NoHandsIdleLeft"
 
 [node name="Gun" parent="." instance=ExtResource( 3 )]
-position = Vector2( 0, -29.6 )
+scale = Vector2( 1, 1 )
