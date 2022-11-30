@@ -141,10 +141,20 @@ flags = 4
 atlas = ExtResource( 6 )
 region = Rect2( 448, 0, 64, 64 )
 
+[sub_resource type="AtlasTexture" id=17]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 448, 0, 64, 64 )
+
 [sub_resource type="AtlasTexture" id=10]
 flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 0, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=16]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 384, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=11]
 flags = 4
@@ -170,16 +180,6 @@ region = Rect2( 256, 0, 64, 64 )
 flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 320, 0, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=16]
-flags = 4
-atlas = ExtResource( 1 )
-region = Rect2( 384, 0, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=17]
-flags = 4
-atlas = ExtResource( 1 )
-region = Rect2( 448, 0, 64, 64 )
 
 [sub_resource type="SpriteFrames" id=18]
 animations = [ {
@@ -218,7 +218,7 @@ animations = [ {
 "name": "NoHandsRight",
 "speed": 16.0
 }, {
-"frames": [ SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ) ],
+"frames": [ SubResource( 17 ), SubResource( 10 ), SubResource( 16 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ) ],
 "loop": true,
 "name": "Right",
 "speed": 16.0
@@ -231,15 +231,17 @@ collision_mask = 129
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -29.6 )
 shape = SubResource( 1 )
 
 [node name="PlayerCamera" type="Camera2D" parent="."]
+position = Vector2( 0, -29.6 )
 current = true
 
 [node name="PlayerSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 0, 1.90735e-06 )
+position = Vector2( 0, -29.6 )
 frames = SubResource( 18 )
 animation = "NoHandsIdleLeft"
 
 [node name="Gun" parent="." instance=ExtResource( 3 )]
-scale = Vector2( 1, 1 )
+position = Vector2( 0, -29.6 )
