@@ -244,6 +244,7 @@ frames = SubResource( 18 )
 animation = "NoHandsIdleLeft"
 
 [node name="Gun" parent="." instance=ExtResource( 3 )]
+position = Vector2( 0, -29.6 )
 
 [node name="BulletsInMag" type="Label" parent="."]
 margin_left = -384.0
