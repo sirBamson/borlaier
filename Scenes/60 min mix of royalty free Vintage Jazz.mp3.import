@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/60 min mix of royalty free Vintage Jazz.mp3-2f2efa8fab6efa1f10cec15bd879234f.mp3str"
+
+[deps]
+
+source_file="res://Scenes/60 min mix of royalty free Vintage Jazz.mp3"
+dest_files=[ "res://.import/60 min mix of royalty free Vintage Jazz.mp3-2f2efa8fab6efa1f10cec15bd879234f.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

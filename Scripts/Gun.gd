@@ -40,7 +40,7 @@ func _physics_process(delta: float) -> void:
 		bullet_instance.global_position = $BulletSpawn.global_position
 		bullet_instance.rotation = rotation
 		bullet_instance.apply_impulse(Vector2(), Vector2(bullet_speed, 0).rotated(rotation))
-		get_node("/root/SceneController").get_child(1).add_child(bullet_instance)
+		get_node("/root/SceneController").get_child(2).add_child(bullet_instance)
 		
 		# Regulates rate of fire
 		can_fire = false

@@ -237,6 +237,7 @@ shape = SubResource( 1 )
 [node name="PlayerCamera" type="Camera2D" parent="."]
 position = Vector2( 0, -29.6 )
 current = true
+zoom = Vector2( 0.75, 0.75 )
 
 [node name="PlayerSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0, -29.6 )

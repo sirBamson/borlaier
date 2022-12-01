@@ -576,7 +576,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 48, 64, 48, 64, 64, 0, 64 )
 
 [node name="Ambiant" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
-volume_db = -25.0
+volume_db = -28.0
 autoplay = true
 
 [node name="VoidLayer" type="CanvasLayer" parent="."]
