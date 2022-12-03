@@ -23,7 +23,7 @@ func _physics_process(delta: float) -> void:
 		#PlayerGlobals.bullets_left += PlayerGlobals.bullets_in_mag
 		
 		$GunReloadSound.play()
-		for i in range(25): 
+		for i in range(15): 
 			if PlayerGlobals.bullets_left != 0 and !PlayerGlobals.bullets_in_mag >= 25:
 				PlayerGlobals.bullets_left -= 1
 				PlayerGlobals.bullets_in_mag += 1
