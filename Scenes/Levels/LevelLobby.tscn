@@ -1,10 +1,11 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://Assets/White_square.png" type="Texture" id=1]
 [ext_resource path="res://Assets/casino_tilemap_more_tiles.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/Elevator/ElevatorDoor.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Sounds/casino_ambiant1.wav" type="AudioStream" id=4]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Sounds/60 min mix of royalty free Vintage Jazz.mp3" type="AudioStream" id=6]
 
 [sub_resource type="TileSet" id=36]
 0/name = "casino_tilemap_more_tiles.png 0"
@@ -574,9 +575,14 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 48, 64, 48, 64, 64, 0, 64 )
 
 [node name="Level0" type="Node2D" groups=["Level"]]
 
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = -16.095
+autoplay = true
+
 [node name="Ambiant" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
-volume_db = -28.0
+volume_db = -16.238
 autoplay = true
 
 [node name="VoidLayer" type="CanvasLayer" parent="."]
