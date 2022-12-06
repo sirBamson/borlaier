@@ -230,32 +230,33 @@ collision_layer = 2
 collision_mask = 129
 script = ExtResource( 2 )
 
+[node name="PlayerCamera" type="Camera2D" parent="."]
+position = Vector2( 0, -29.6 )
+scale = Vector2( 1, 1 )
+current = true
+zoom = Vector2( 0.75, 0.75 )
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -29.6 )
 shape = SubResource( 1 )
-
-[node name="PlayerCamera" type="Camera2D" parent="."]
-position = Vector2( 0, -29.6 )
-current = true
-zoom = Vector2( 0.75, 0.75 )
 
 [node name="PlayerSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0, -29.6 )
 frames = SubResource( 18 )
 animation = "NoHandsIdleLeft"
 
-[node name="Assult rifle" parent="." instance=ExtResource( 3 )]
-position = Vector2( 0, -28 )
+[node name="Pistol" parent="." instance=ExtResource( 3 )]
+position = Vector2( 0, -29.6 )
 scale = Vector2( 1, 1 )
 
 [node name="BulletsInMag" type="Label" parent="."]
-margin_left = -384.0
-margin_top = -236.8
-margin_right = -344.0
-margin_bottom = -222.8
+margin_left = -294.4
+margin_top = -211.2
+margin_right = -254.4
+margin_bottom = -197.2
 
 [node name="BulletsLeft" type="Label" parent="."]
-margin_left = -384.0
-margin_top = -222.4
-margin_right = -344.0
-margin_bottom = -208.4
+margin_left = -294.4
+margin_top = -196.8
+margin_right = -254.4
+margin_bottom = -182.8

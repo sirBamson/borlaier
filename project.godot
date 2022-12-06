@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Sprite",
+"class": "Gun",
+"language": "GDScript",
+"path": "res://Scripts/Gun.gd"
+} ]
+_global_script_class_icons={
+"Gun": ""
+}
+
 [application]
 
 config/name="borlaier"
