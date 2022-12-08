@@ -18,10 +18,10 @@ position = Vector2( 25, -4 )
 stream = ExtResource( 3 )
 volume_db = -10.0
 
-[node name="GunClickSound" type="AudioStreamPlayer" parent="."]
+[node name="GunClickSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 4 )
 volume_db = -20.0
 
-[node name="GunReloadSound" type="AudioStreamPlayer" parent="."]
+[node name="GunReloadSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 5 )
 volume_db = -5.0
