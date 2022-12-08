@@ -19,7 +19,7 @@ func _physics_process(delta: float) -> void:
 		scale = Vector2(1, 1)
 	
 	
-	if Input.is_action_pressed("reload") and PlayerGlobals.bullets_in_mag < 25 and PlayerGlobals.bullets_left > 0 and can_fire:
+	if Input.is_action_just_pressed("reload") and PlayerGlobals.bullets_in_mag < 25 and PlayerGlobals.bullets_left > 0 and can_fire:
 		#PlayerGlobals.bullets_left += PlayerGlobals.bullets_in_mag
 		
 		$GunReloadSound.play()
