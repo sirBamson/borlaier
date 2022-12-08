@@ -10,6 +10,7 @@
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
 bullet_speed = 1500
+auto = true
 
 [node name="BulletSpawn" type="Position2D" parent="."]
 position = Vector2( 37, -5.5 )
