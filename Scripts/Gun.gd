@@ -1,5 +1,4 @@
 extends Sprite
-class_name Gun
 
 export (int) var bullet_speed = 1000
 export (int) var magasine_size = 20
