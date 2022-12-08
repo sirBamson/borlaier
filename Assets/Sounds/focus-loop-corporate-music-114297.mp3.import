@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/focus-loop-corporate-music-114297.mp3-82b0e394e43d4128a0dd0dd3d32ac9db.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/focus-loop-corporate-music-114297.mp3"
+dest_files=[ "res://.import/focus-loop-corporate-music-114297.mp3-82b0e394e43d4128a0dd0dd3d32ac9db.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

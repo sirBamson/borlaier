@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/assult_rifle_wHands.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Gun.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Sounds/bullet.wav" type="AudioStream" id=3]
+[ext_resource path="res://Assets/Sounds/gun_click.wav" type="AudioStream" id=4]
+[ext_resource path="res://Assets/Sounds/reload_gun.wav" type="AudioStream" id=5]
+
+[node name="AssultRifle" type="Sprite"]
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+bullet_speed = 1500
+
+[node name="BulletSpawn" type="Position2D" parent="."]
+position = Vector2( 37, -5.5 )
+
+[node name="BulletSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
+volume_db = -10.0
+
+[node name="GunClickSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
+volume_db = -20.0
+
+[node name="GunReloadSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 5 )
+volume_db = -5.0
