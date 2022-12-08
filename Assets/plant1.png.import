@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/no_hands_left-sheet.png-519d59af9f3a1807ef90fb29d8838f64.stex"
+path="res://.import/plant1.png-ced3862f677ec44cbc76bdde9f59fcff.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/no_hands_left-sheet.png"
-dest_files=[ "res://.import/no_hands_left-sheet.png-519d59af9f3a1807ef90fb29d8838f64.stex" ]
+source_file="res://Assets/plant1.png"
+dest_files=[ "res://.import/plant1.png-ced3862f677ec44cbc76bdde9f59fcff.stex" ]
 
 [params]
 
