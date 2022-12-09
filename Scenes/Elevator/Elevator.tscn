@@ -4,9 +4,10 @@
 [ext_resource path="res://Scenes/Elevator/ElevatorDoor.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/elevator_inside.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/Elevator/ElevatorPanel.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Entities/Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Elevator/ElevatorPanelUI.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Sounds/focus-loop-corporate-music-114297.mp3" type="AudioStream" id=7]
+
 
 [sub_resource type="ConvexPolygonShape2D" id=8]
 points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
