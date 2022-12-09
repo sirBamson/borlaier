@@ -49,12 +49,12 @@ func _physics_process(_delta: float) -> void:
 
 
 # Checks if the player is in the designated area
-func _on_ElevatorDoor_body_entered(body: Node) -> void:
-	if body.is_in_group("Player"):
+func _on_ElevatorDoor_area_entered(area: Area2D) -> void:
+	if area.name == "PlayerHitbox":
 		can_use_door = true
 
-func _on_ElevatorDoor_body_exited(body: Node) -> void:
-	if body.is_in_group("Player"):
+func _on_ElevatorDoor_area_exited(area: Area2D) -> void:
+	if area.name == "PlayerHitbox":
 		can_use_door = false
 
 

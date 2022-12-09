@@ -123,6 +123,6 @@ animation = "ElevatorDoor"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 8 )
 
-[connection signal="body_entered" from="." to="." method="_on_ElevatorDoor_body_entered"]
-[connection signal="body_exited" from="." to="." method="_on_ElevatorDoor_body_exited"]
+[connection signal="area_entered" from="." to="." method="_on_ElevatorDoor_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_ElevatorDoor_area_exited"]
 [connection signal="animation_finished" from="Door" to="." method="_on_AnimatedSprite_animation_finished"]
