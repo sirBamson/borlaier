@@ -18,17 +18,16 @@ var can_fire_auto: bool = true
 
 
 func _ready() -> void:
-	reload_gun()
+	bullets_in_mag = PlayerGlobals.bullets_in_mag
 
 
 func _input(event: InputEvent) -> void:
 
 	if event.is_action_released("fire"):
 		can_fire_auto = true
-		print("can fire")
 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	look_at(get_global_mouse_position())
 	
 	if get_global_mouse_position().x < global_position.x:
@@ -83,7 +82,7 @@ func _physics_process(delta: float) -> void:
 
 
 func reload_gun() -> void:
-	for i in range(magasine_size): 
+	for _i in range(magasine_size): 
 		if PlayerGlobals.bullets_left != 0 and !bullets_in_mag >= magasine_size:
 			PlayerGlobals.bullets_left -= 1
 			bullets_in_mag += 1
