@@ -9,13 +9,17 @@ var last_velocity: Vector2 = Vector2.RIGHT
 
 var healt: int = PlayerGlobals.player_healt
 
-export var speed: int = 250
+export (int) var speed: int = 600
 
 
 func _physics_process(_delta: float) -> void:
 	# --------------- DEV ---------------
 	$BulletsInMag.text = str(PlayerGlobals.bullets_in_mag)
 	$BulletsLeft.text = str(PlayerGlobals.bullets_left)
+	
+	if Input.is_action_just_pressed("dev"):
+		PlayerGlobals.player_has_gun = !PlayerGlobals.player_has_gun
+		$AssultRifle.visible = !$AssultRifle.visible
 	# -----------------------------------
 	
 	_movment()
@@ -32,8 +36,10 @@ func _movment() -> void:
 	if Input.is_action_pressed("ui_left"):
 		velocity += Vector2.LEFT
 	
-	# one with gun and one without
 	
+	# Uses two different movement scripts if player has a weapon or not
+	
+	# This script if the player has weapons
 	if PlayerGlobals.player_has_gun:
 		if get_global_mouse_position().x < global_position.x:
 			looking_direction = Vector2.LEFT
@@ -50,13 +56,14 @@ func _movment() -> void:
 				$PlayerSprite.play("NoHandsIdleLeft")
 			elif looking_direction == Vector2.RIGHT:
 				$PlayerSprite.play("NoHandsIdleRight")
-		
+	
+	# This script if the player has no weapons
 	else:
 		if velocity != Vector2.ZERO:
 			
-			last_velocity.x = velocity.x
-			
-			
+			if velocity.x != 0:
+				last_velocity.x = velocity.x
+		
 			if last_velocity.x == -1:
 				$PlayerSprite.play("Left")
 			elif last_velocity.x == 1:
