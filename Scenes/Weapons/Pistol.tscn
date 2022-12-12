@@ -9,7 +9,6 @@
 [node name="Pistol" type="Sprite"]
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
-bullet_speed = 1500
 magasine_size = 10
 fire_rate = 0.5
 damage = 25
@@ -21,10 +20,10 @@ position = Vector2( 24, -1 )
 stream = ExtResource( 3 )
 volume_db = -10.0
 
-[node name="GunClickSound" type="AudioStreamPlayer" parent="."]
+[node name="GunClickSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 4 )
 volume_db = -20.0
 
-[node name="GunReloadSound" type="AudioStreamPlayer" parent="."]
+[node name="GunReloadSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 5 )
 volume_db = -5.0

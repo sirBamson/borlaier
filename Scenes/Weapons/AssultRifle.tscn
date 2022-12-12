@@ -9,7 +9,6 @@
 [node name="AssultRifle" type="Sprite"]
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
-bullet_speed = 1500
 auto = true
 
 [node name="BulletSpawn" type="Position2D" parent="."]
