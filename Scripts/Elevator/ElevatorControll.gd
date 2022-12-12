@@ -1,4 +1,4 @@
-extends Area2D
+extends StaticBody2D
 
 signal change_scene(save_current_scene, current_scene, current_scene_path, new_scene_path)
 
@@ -49,11 +49,11 @@ func _physics_process(_delta: float) -> void:
 
 
 # Checks if the player is in the designated area
-func _on_ElevatorDoor_area_entered(area: Area2D) -> void:
+func _on_PlayerDetection_area_entered(area: Area2D) -> void:
 	if area.name == "PlayerHitbox":
 		can_use_door = true
 
-func _on_ElevatorDoor_area_exited(area: Area2D) -> void:
+func _on_PlayerDetection_area_exited(area: Area2D) -> void:
 	if area.name == "PlayerHitbox":
 		can_use_door = false
 
