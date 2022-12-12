@@ -14,9 +14,6 @@ export (int) var speed: int = 600
 
 func _physics_process(_delta: float) -> void:
 	# --------------- DEV ---------------
-	$BulletsInMag.text = str(PlayerGlobals.bullets_in_mag)
-	$BulletsLeft.text = str(PlayerGlobals.bullets_left)
-	
 	if Input.is_action_just_pressed("dev"):
 		PlayerGlobals.player_has_gun = !PlayerGlobals.player_has_gun
 		$AssultRifle.visible = !$AssultRifle.visible
