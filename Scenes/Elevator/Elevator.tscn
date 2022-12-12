@@ -317,7 +317,7 @@ texture = ExtResource( 1 )
 expand = true
 
 [node name="ElevatorDoor" parent="." instance=ExtResource( 2 )]
-position = Vector2( 384, -48 )
+position = Vector2( 384, -240 )
 
 [node name="ElevatorFloor" type="TileMap" parent="."]
 tile_set = SubResource( 1 )
