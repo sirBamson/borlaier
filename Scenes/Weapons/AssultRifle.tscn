@@ -9,10 +9,11 @@
 [node name="AssultRifle" type="Sprite"]
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
+bullet_speed = 3000
 auto = true
 
 [node name="BulletSpawn" type="Position2D" parent="."]
-position = Vector2( 37, -5.5 )
+position = Vector2( 152, -22 )
 
 [node name="BulletSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 3 )
