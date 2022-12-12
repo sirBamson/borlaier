@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Assets/White_square.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Elevator/ElevatorDoor.tscn" type="PackedScene" id=2]
@@ -8,139 +8,221 @@
 [ext_resource path="res://Scenes/Elevator/ElevatorPanelUI.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Sounds/focus-loop-corporate-music-114297.mp3" type="AudioStream" id=7]
 
+[sub_resource type="TileSet" id=1]
+0/name = "elevator_inside.png 0"
+0/texture = ExtResource( 3 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 512, 512, 256, 256 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "elevator_inside.png 1"
+1/texture = ExtResource( 3 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 256, 512, 256, 256 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+
+[sub_resource type="ConvexPolygonShape2D" id=2]
+points = PoolVector2Array( 0, 0, 256, 0, 256, 256, 0, 256 )
+
+[sub_resource type="ConvexPolygonShape2D" id=3]
+points = PoolVector2Array( 0, 0, 256, 0, 256, 256, 0, 256 )
+
+[sub_resource type="ConvexPolygonShape2D" id=4]
+points = PoolVector2Array( 0, 0, 256, 0, 256, 256, 0, 256 )
+
+[sub_resource type="ConvexPolygonShape2D" id=5]
+points = PoolVector2Array( 0, 0, 256, 0, 256, 256, 0, 256 )
+
+[sub_resource type="TileSet" id=6]
+0/name = "elevator_inside.png 0"
+0/texture = ExtResource( 3 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 256, 0, 256, 256 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 2 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 2 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+1/name = "elevator_inside.png 1"
+1/texture = ExtResource( 3 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 256, 256, 256, 256 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape = SubResource( 3 )
+1/shape_one_way = false
+1/shape_one_way_margin = 1.0
+1/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 3 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+1/z_index = 0
+2/name = "elevator_inside.png 2"
+2/texture = ExtResource( 3 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 768, 0, 256, 256 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape = SubResource( 4 )
+2/shape_one_way = false
+2/shape_one_way_margin = 1.0
+2/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 4 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+2/z_index = 0
+3/name = "elevator_inside.png 3"
+3/texture = ExtResource( 3 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 768, 256, 256, 256 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape = SubResource( 5 )
+3/shape_one_way = false
+3/shape_one_way_margin = 1.0
+3/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 5 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+3/z_index = 0
+
+[sub_resource type="ConvexPolygonShape2D" id=7]
+points = PoolVector2Array( 0, 0, 256, 0, 256, 256, 0, 256 )
+
 [sub_resource type="ConvexPolygonShape2D" id=8]
-points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
+points = PoolVector2Array( 0, 0, 256, 0, 256, 256, 0, 256 )
 
 [sub_resource type="ConvexPolygonShape2D" id=9]
-points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
+points = PoolVector2Array( 0, 0, 256, 0, 256, 256, 0, 256 )
 
-[sub_resource type="TileSet" id=10]
-7/name = "elevator_inside.png 7"
-7/texture = ExtResource( 3 )
-7/tex_offset = Vector2( 0, 0 )
-7/modulate = Color( 1, 1, 1, 1 )
-7/region = Rect2( 192, 0, 64, 64 )
-7/tile_mode = 0
-7/occluder_offset = Vector2( 0, 0 )
-7/navigation_offset = Vector2( 0, 0 )
-7/shape_offset = Vector2( 0, 0 )
-7/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-7/shape = SubResource( 8 )
-7/shape_one_way = false
-7/shape_one_way_margin = 1.0
-7/shapes = [ {
+[sub_resource type="ConvexPolygonShape2D" id=10]
+points = PoolVector2Array( 0, 0, 256, 0, 256, 256, 0, 256 )
+
+[sub_resource type="ConvexPolygonShape2D" id=11]
+points = PoolVector2Array( 0, 0, 256, 0, 256, 256, 0, 256 )
+
+[sub_resource type="ConvexPolygonShape2D" id=12]
+points = PoolVector2Array( 0, 0, 256, 0, 256, 256, 0, 256 )
+
+[sub_resource type="TileSet" id=13]
+0/name = "elevator_inside.png 0"
+0/texture = ExtResource( 3 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 256, 256 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 7 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 7 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+1/name = "elevator_inside.png 1"
+1/texture = ExtResource( 3 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 256, 256, 256 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape = SubResource( 8 )
+1/shape_one_way = false
+1/shape_one_way_margin = 1.0
+1/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
 "shape": SubResource( 8 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
-7/z_index = 0
-8/name = "elevator_inside.png 8"
-8/texture = ExtResource( 3 )
-8/tex_offset = Vector2( 0, 0 )
-8/modulate = Color( 1, 1, 1, 1 )
-8/region = Rect2( 64, 0, 64, 64 )
-8/tile_mode = 0
-8/occluder_offset = Vector2( 0, 0 )
-8/navigation_offset = Vector2( 0, 0 )
-8/shape_offset = Vector2( 0, 0 )
-8/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-8/shape = SubResource( 9 )
-8/shape_one_way = false
-8/shape_one_way_margin = 1.0
-8/shapes = [ {
+1/z_index = 0
+2/name = "elevator_inside.png 2"
+2/texture = ExtResource( 3 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 0, 768, 256, 256 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape = SubResource( 9 )
+2/shape_one_way = false
+2/shape_one_way_margin = 1.0
+2/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
 "shape": SubResource( 9 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
-8/z_index = 0
-9/name = "elevator_inside.png 9"
-9/texture = ExtResource( 3 )
-9/tex_offset = Vector2( 0, 0 )
-9/modulate = Color( 1, 1, 1, 1 )
-9/region = Rect2( 192, 64, 64, 64 )
-9/tile_mode = 0
-9/occluder_offset = Vector2( 0, 0 )
-9/navigation_offset = Vector2( 0, 0 )
-9/shape_offset = Vector2( 0, 0 )
-9/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-9/shape_one_way = false
-9/shape_one_way_margin = 0.0
-9/shapes = [  ]
-9/z_index = 0
-11/name = "elevator_inside.png 11"
-11/texture = ExtResource( 3 )
-11/tex_offset = Vector2( 0, 0 )
-11/modulate = Color( 1, 1, 1, 1 )
-11/region = Rect2( 192, 128, 64, 64 )
-11/tile_mode = 0
-11/occluder_offset = Vector2( 0, 0 )
-11/navigation_offset = Vector2( 0, 0 )
-11/shape_offset = Vector2( 0, 0 )
-11/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-11/shape_one_way = false
-11/shape_one_way_margin = 0.0
-11/shapes = [  ]
-11/z_index = 0
-12/name = "elevator_inside.png 12"
-12/texture = ExtResource( 3 )
-12/tex_offset = Vector2( 0, 0 )
-12/modulate = Color( 1, 1, 1, 1 )
-12/region = Rect2( 128, 128, 64, 64 )
-12/tile_mode = 0
-12/occluder_offset = Vector2( 0, 0 )
-12/navigation_offset = Vector2( 0, 0 )
-12/shape_offset = Vector2( 0, 0 )
-12/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-12/shape_one_way = false
-12/shape_one_way_margin = 0.0
-12/shapes = [  ]
-12/z_index = 0
-13/name = "elevator_inside.png 13"
-13/texture = ExtResource( 3 )
-13/tex_offset = Vector2( 0, 0 )
-13/modulate = Color( 1, 1, 1, 1 )
-13/region = Rect2( 64, 64, 64, 64 )
-13/tile_mode = 0
-13/occluder_offset = Vector2( 0, 0 )
-13/navigation_offset = Vector2( 0, 0 )
-13/shape_offset = Vector2( 0, 0 )
-13/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-13/shape_one_way = false
-13/shape_one_way_margin = 0.0
-13/shapes = [  ]
-13/z_index = 0
-
-[sub_resource type="ConvexPolygonShape2D" id=11]
-points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
-
-[sub_resource type="ConvexPolygonShape2D" id=12]
-points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
-
-[sub_resource type="ConvexPolygonShape2D" id=13]
-points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
-
-[sub_resource type="ConvexPolygonShape2D" id=14]
-points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
-
-[sub_resource type="ConvexPolygonShape2D" id=15]
-points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
-
-[sub_resource type="ConvexPolygonShape2D" id=16]
-points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
-
-[sub_resource type="ConvexPolygonShape2D" id=17]
-points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
-
-[sub_resource type="TileSet" id=18]
+2/z_index = 0
 3/name = "elevator_inside.png 3"
 3/texture = ExtResource( 3 )
 3/tex_offset = Vector2( 0, 0 )
 3/modulate = Color( 1, 1, 1, 1 )
-3/region = Rect2( 128, 192, 64, 64 )
+3/region = Rect2( 512, 768, 256, 256 )
 3/tile_mode = 0
 3/occluder_offset = Vector2( 0, 0 )
 3/navigation_offset = Vector2( 0, 0 )
@@ -154,20 +236,20 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 4/texture = ExtResource( 3 )
 4/tex_offset = Vector2( 0, 0 )
 4/modulate = Color( 1, 1, 1, 1 )
-4/region = Rect2( 256, 128, 64, 64 )
+4/region = Rect2( 1024, 768, 256, 256 )
 4/tile_mode = 0
 4/occluder_offset = Vector2( 0, 0 )
 4/navigation_offset = Vector2( 0, 0 )
 4/shape_offset = Vector2( 0, 0 )
 4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-4/shape = SubResource( 12 )
+4/shape = SubResource( 10 )
 4/shape_one_way = false
 4/shape_one_way_margin = 1.0
 4/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 12 ),
+"shape": SubResource( 10 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 4/z_index = 0
@@ -175,20 +257,20 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 5/texture = ExtResource( 3 )
 5/tex_offset = Vector2( 0, 0 )
 5/modulate = Color( 1, 1, 1, 1 )
-5/region = Rect2( 0, 192, 64, 64 )
+5/region = Rect2( 1024, 256, 256, 256 )
 5/tile_mode = 0
 5/occluder_offset = Vector2( 0, 0 )
 5/navigation_offset = Vector2( 0, 0 )
 5/shape_offset = Vector2( 0, 0 )
 5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-5/shape = SubResource( 13 )
+5/shape = SubResource( 11 )
 5/shape_one_way = false
 5/shape_one_way_margin = 1.0
 5/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 13 ),
+"shape": SubResource( 11 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 5/z_index = 0
@@ -196,107 +278,23 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 6/texture = ExtResource( 3 )
 6/tex_offset = Vector2( 0, 0 )
 6/modulate = Color( 1, 1, 1, 1 )
-6/region = Rect2( 0, 64, 64, 64 )
+6/region = Rect2( 1024, 0, 256, 256 )
 6/tile_mode = 0
 6/occluder_offset = Vector2( 0, 0 )
 6/navigation_offset = Vector2( 0, 0 )
 6/shape_offset = Vector2( 0, 0 )
 6/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-6/shape = SubResource( 14 )
+6/shape = SubResource( 12 )
 6/shape_one_way = false
 6/shape_one_way_margin = 1.0
 6/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 14 ),
+"shape": SubResource( 12 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 6/z_index = 0
-7/name = "elevator_inside.png 7"
-7/texture = ExtResource( 3 )
-7/tex_offset = Vector2( 0, 0 )
-7/modulate = Color( 1, 1, 1, 1 )
-7/region = Rect2( 0, 0, 64, 64 )
-7/tile_mode = 0
-7/occluder_offset = Vector2( 0, 0 )
-7/navigation_offset = Vector2( 0, 0 )
-7/shape_offset = Vector2( 0, 0 )
-7/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-7/shape = SubResource( 15 )
-7/shape_one_way = false
-7/shape_one_way_margin = 1.0
-7/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 15 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-7/z_index = 0
-8/name = "elevator_inside.png 8"
-8/texture = ExtResource( 3 )
-8/tex_offset = Vector2( 0, 0 )
-8/modulate = Color( 1, 1, 1, 1 )
-8/region = Rect2( 256, 0, 64, 64 )
-8/tile_mode = 0
-8/occluder_offset = Vector2( 0, 0 )
-8/navigation_offset = Vector2( 0, 0 )
-8/shape_offset = Vector2( 0, 0 )
-8/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-8/shape = SubResource( 16 )
-8/shape_one_way = false
-8/shape_one_way_margin = 1.0
-8/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 16 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-8/z_index = 0
-9/name = "elevator_inside.png 9"
-9/texture = ExtResource( 3 )
-9/tex_offset = Vector2( 0, 0 )
-9/modulate = Color( 1, 1, 1, 1 )
-9/region = Rect2( 256, 64, 64, 64 )
-9/tile_mode = 0
-9/occluder_offset = Vector2( 0, 0 )
-9/navigation_offset = Vector2( 0, 0 )
-9/shape_offset = Vector2( 0, 0 )
-9/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-9/shape = SubResource( 17 )
-9/shape_one_way = false
-9/shape_one_way_margin = 1.0
-9/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 17 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-9/z_index = 0
-10/name = "elevator_inside.png 10"
-10/texture = ExtResource( 3 )
-10/tex_offset = Vector2( 0, 0 )
-10/modulate = Color( 1, 1, 1, 1 )
-10/region = Rect2( 256, 192, 64, 64 )
-10/tile_mode = 0
-10/occluder_offset = Vector2( 0, 0 )
-10/navigation_offset = Vector2( 0, 0 )
-10/shape_offset = Vector2( 0, 0 )
-10/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-10/shape = SubResource( 11 )
-10/shape_one_way = false
-10/shape_one_way_margin = 1.0
-10/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 11 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-10/z_index = 0
 
 [node name="Elevator" type="Node2D" groups=["Elevator"]]
 
@@ -319,20 +317,28 @@ texture = ExtResource( 1 )
 expand = true
 
 [node name="ElevatorDoor" parent="." instance=ExtResource( 2 )]
-position = Vector2( 96, 80 )
+position = Vector2( 384, -48 )
 
-[node name="ElevatorTiles" type="TileMap" parent="."]
-tile_set = SubResource( 10 )
+[node name="ElevatorFloor" type="TileMap" parent="."]
+tile_set = SubResource( 1 )
+cell_size = Vector2( 256, 256 )
 format = 1
-tile_data = PoolIntArray( 65535, 0, 0, 0, 8, 0, 2, 8, 0, 3, 6, 0, 131071, 1, 0, 65536, 13, 0, 65538, 1610612749, 0, 65539, 5, 0, 196607, 1, 0, 131072, 11, 0, 131073, 12, 0, 131074, 11, 0, 131075, 5, 0, 262143, 2, 0, 196611, 4, 0 )
+tile_data = PoolIntArray( 0, 1, 0, 1, 0, 0, 2, 1, 0, 65536, 1, 0, 65537, 0, 0, 65538, 1, 0 )
+
+[node name="ElevatorBackWalls" type="TileMap" parent="."]
+tile_set = SubResource( 6 )
+cell_size = Vector2( 256, 256 )
+format = 1
+tile_data = PoolIntArray( -131072, 0, 0, -131070, 2, 0, -65536, 1, 0, -65534, 3, 0 )
 
 [node name="ElevatorPanel" parent="." instance=ExtResource( 4 )]
-position = Vector2( 32, 80 )
+position = Vector2( 128, -192 )
 
 [node name="Player" parent="." instance=ExtResource( 5 )]
-position = Vector2( 96, 104 )
+position = Vector2( 416, 192 )
 
-[node name="ElevatorFront" type="TileMap" parent="."]
-tile_set = SubResource( 18 )
+[node name="ElevatorWalls" type="TileMap" parent="."]
+tile_set = SubResource( 13 )
+cell_size = Vector2( 256, 256 )
 format = 1
-tile_data = PoolIntArray( 65535, 7, 0, 1, 4, 0, 3, 8, 0, 131071, 6, 0, 65539, 9, 0, 196607, 6, 0, 131075, 9, 0, 262143, 5, 0, 196608, 3, 0, 196609, 3, 0, 196610, 3, 0, 196611, 10, 0, 262144, 4, 0, 262145, 4, 0, 262146, 4, 0 )
+tile_data = PoolIntArray( -65537, 0, 0, -131069, 6, 0, -1, 1, 0, -65533, 5, 0, 65535, 1, 0, 3, 5, 0, 131071, 1, 0, 65539, 5, 0, 196607, 2, 0, 131072, 3, 0, 131073, 3, 0, 131074, 3, 0, 131075, 4, 0 )
