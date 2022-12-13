@@ -22,8 +22,8 @@ func movment() -> void:
 
 		
 		velocity = global_position.direction_to(next_point)
-		print("Direction to: " + str(global_position.direction_to(next_point)))
+		#print("Direction to: " + str(global_position.direction_to(next_point)))
 		
 		velocity = velocity.normalized() * speed
-		print("Velocity: " + str(velocity))
+		#print("Velocity: " + str(velocity))
 		velocity = move_and_slide(velocity)
