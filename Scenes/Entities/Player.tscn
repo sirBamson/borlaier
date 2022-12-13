@@ -255,7 +255,8 @@ scale = Vector2( 1.224, 1 )
 shape = SubResource( 56 )
 
 [node name="PlayerHitbox" type="Area2D" parent="."]
-collision_mask = 140
+collision_layer = 2
+collision_mask = 204
 
 [node name="HitboxShape" type="CollisionShape2D" parent="PlayerHitbox"]
 position = Vector2( 0, -109.6 )
@@ -267,4 +268,7 @@ current = true
 zoom = Vector2( 1.5, 1.5 )
 
 [node name="AssultRifle" parent="." instance=ExtResource( 3 )]
-position = Vector2( 0, -121.6 )
+position = Vector2( 0, -121 )
+
+[connection signal="area_entered" from="PlayerHitbox" to="." method="_on_PlayerHitbox_area_entered"]
+[connection signal="area_exited" from="PlayerHitbox" to="." method="_on_PlayerHitbox_area_exited"]

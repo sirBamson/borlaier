@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/no_hands_left-sheet.png-519d59af9f3a1807ef90fb29d8838f64.stex"
+path="res://.import/assult_rifle.png-c2027db677e3ecccbe9dd11086a31219.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/no_hands_left-sheet.png"
-dest_files=[ "res://.import/no_hands_left-sheet.png-519d59af9f3a1807ef90fb29d8838f64.stex" ]
+source_file="res://Assets/assult_rifle.png"
+dest_files=[ "res://.import/assult_rifle.png-c2027db677e3ecccbe9dd11086a31219.stex" ]
 
 [params]
 
