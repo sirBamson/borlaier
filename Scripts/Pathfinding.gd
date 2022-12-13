@@ -1,7 +1,9 @@
-extends Node2D
+extends Node
+
+# Check for Floor tilemap
 
 
-onready var ground = get_parent().get_parent().get_node("Floor")
+onready var ground = get_parent().get_node("Floor")
 
 var astar: AStar2D = AStar2D.new()
 var tilemap: TileMap
