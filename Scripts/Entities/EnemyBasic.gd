@@ -16,14 +16,5 @@ func _physics_process(delta: float) -> void:
 func movment() -> void:
 	path = pathfinding.get_new_path(global_position, player.global_position)
 	if path.size() > 1:
-		
-		var velocity: Vector2 = Vector2.ZERO
-		var next_point: Vector2 = path[0]
-
-		
-		velocity = global_position.direction_to(next_point)
-		print("Direction to: " + str(global_position.direction_to(next_point)))
-		
-		velocity = velocity.normalized() * speed
-		print("Velocity: " + str(velocity))
-		velocity = move_and_slide(velocity)
+		print("Next pos: " + str(path[0]))
+		print("Global pos: " + str(global_position))
