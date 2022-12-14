@@ -74,4 +74,11 @@ func get_new_path(start: Vector2, end: Vector2) -> Array:
 		path_world.append(point_world)
 	
 	return path_world
+
+
+func _physics_process(delta: float) -> void:
+	var path: Array = get_new_path(get_parent().get_node("YSort/Blobert").global_position, get_parent().get_node("YSort/Player").global_position)
+	var line: Line2D = get_parent().get_node("Line2D")
 	
+	for point in path:
+		line.add_point(point)
