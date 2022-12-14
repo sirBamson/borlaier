@@ -20,7 +20,7 @@ func _physics_process(_delta: float) -> void:
 		var dropped_weapon = load("res://Scenes/Weapons/DroppedWeapon.tscn")
 		PlayerGlobals.player_has_gun = false
 		dropped_weapon = dropped_weapon.instance()
-		dropped_weapon.global_position = global_position
+		dropped_weapon.position = position
 		
 		get_parent().add_child(dropped_weapon)
 		$AssultRifle.queue_free()
@@ -30,7 +30,7 @@ func _physics_process(_delta: float) -> void:
 		var weapon = preload("res://Scenes/Weapons/AssultRifle.tscn")
 		PlayerGlobals.player_has_gun = true
 		weapon = weapon.instance()
-		weapon.global_position = global_position + Vector2(0, -121)
+		weapon.position = $PlayerCamera.position
 		
 		add_child(weapon)
 		get_parent().get_node("DroppedWeapon").queue_free()
