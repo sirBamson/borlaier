@@ -12,25 +12,28 @@ var healt: int = PlayerGlobals.player_healt
 
 export (int) var speed: int = 600
 
+
 #drop gun
 func _physics_process(_delta: float) -> void:
+	
 	if Input.is_action_pressed("drop") and PlayerGlobals.player_has_gun:
 		var dropped_weapon = load("res://Scenes/Weapons/DroppedWeapon.tscn")
 		PlayerGlobals.player_has_gun = false
-		$AssultRifle.queue_free()
 		dropped_weapon = dropped_weapon.instance()
-		dropped_weapon.global_position = global_position
+		dropped_weapon.position = position
+		
 		get_parent().add_child(dropped_weapon)
+		$AssultRifle.queue_free()
 	
 	
 	if Input.is_action_pressed("pick_up") and on_weapon:
 		var weapon = preload("res://Scenes/Weapons/AssultRifle.tscn")
 		PlayerGlobals.player_has_gun = true
-		get_parent().get_node("DroppedWeapon").queue_free()
 		weapon = weapon.instance()
-		add_child(weapon)
-		weapon.global_position = global_position + Vector2(0, -121)
+		weapon.position = $PlayerCamera.position
 		
+		add_child(weapon)
+		get_parent().get_node("DroppedWeapon").queue_free()
 		
 	
 	_movment()
