@@ -55,6 +55,8 @@ func _physics_process(_delta: float) -> void:
 		
 		bullets_in_mag -= 1
 		$BulletSound.play()
+		$MuzzleFlash.frame = 0
+		$MuzzleFlash.play("deafult")
 		var bullet_instance = bullet.instance()
 		bullet_instance.global_position = $BulletSpawn.global_position
 		bullet_instance.rotation = rotation
