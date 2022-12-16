@@ -26,7 +26,7 @@ region = Rect2( 180, 0, 20, 20 )
 animations = [ {
 "frames": [ SubResource( 8 ), SubResource( 1 ), SubResource( 12 ) ],
 "loop": false,
-"name": "default",
+"name": "deafult",
 "speed": 20.0
 } ]
 
@@ -55,3 +55,4 @@ volume_db = -5.0
 position = Vector2( 164, -21 )
 scale = Vector2( 2.625, 2.1875 )
 frames = SubResource( 11 )
+animation = "deafult"
