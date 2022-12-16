@@ -6,7 +6,9 @@ signal player_dead
 var looking_direction: Vector2 = Vector2.ZERO
 var velocity: Vector2 = Vector2.ZERO
 var last_velocity: Vector2 = Vector2.RIGHT
-var on_weapon = false
+
+var on_weapon: bool = false
+var weapon_on_ground: String = ""
 
 var healt: int = PlayerGlobals.player_healt
 
@@ -27,14 +29,15 @@ func _physics_process(_delta: float) -> void:
 	
 	
 	if Input.is_action_pressed("pick_up") and on_weapon:
-		var weapon = preload("res://Scenes/Weapons/AssultRifle.tscn")
+		var weapon = load(weapon_on_ground)
 		PlayerGlobals.player_has_gun = true
+		PlayerGlobals.current_weapon = weapon_on_ground
 		weapon = weapon.instance()
 		weapon.position = $PlayerCamera.position
 		
 		add_child(weapon)
 		get_parent().get_node("DroppedWeapon").queue_free()
-		
+	
 	
 	_movment()
 
@@ -104,9 +107,11 @@ func take_damage(damage) -> void:
 
 func _on_PlayerHitbox_area_entered(area: Area2D) -> void:
 	if area.name == "DroppedWeapon":
+		weapon_on_ground = area.weapon_type
 		on_weapon = true
 
 func _on_PlayerHitbox_area_exited(area: Area2D) -> void:
 	if area.name == "DroppedWeapon":
+		weapon_on_ground = ""
 		on_weapon = false
 		
