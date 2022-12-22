@@ -7,11 +7,15 @@ onready var weapons: Dictionary = {
 	}
 
 # Change for diffret drop entities
-var weapon_type: String = PlayerGlobals.current_weapon
+var player_current_weapon: String = PlayerGlobals.current_weapon
+export var weapon_type: String = player_current_weapon
 
 
 func _ready() -> void:
-	weapon_type = "res://Scenes/Weapons/Pistol.tscn"
 	var weapon: CollisionShape2D = weapons[weapon_type]
 	weapon.disabled = false
 	weapon.visible = true
+	
+	randomize()
+	var random_angle = rand_range(30, -30)
+	rotation_degrees = random_angle
