@@ -5,7 +5,8 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 52, 54.5 )
 
-[node name="SlotRight" type="StaticBody2D"]
+[node name="SlotLeft" type="StaticBody2D"]
+scale = Vector2( -1, 1 )
 collision_layer = 33
 
 [node name="Sprite" type="Sprite" parent="."]
