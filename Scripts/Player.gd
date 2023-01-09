@@ -21,15 +21,21 @@ func _ready() -> void:
 		weapon = weapon.instance()
 		weapon.position = $PlayerCamera.position
 		add_child(weapon)
+		
+		weapon.bullets_in_mag = PlayerGlobals.bullets_in_mag
+
+
 
 
 func _physics_process(_delta: float) -> void:
 	
 	if Input.is_action_pressed("drop") and PlayerGlobals.player_has_gun:
-		var dropped_weapon = load("res://Scenes/Weapons/DroppedWeapon.tscn")
 		PlayerGlobals.player_has_gun = false
+		
+		var dropped_weapon = load("res://Scenes/Weapons/DroppedWeapon.tscn")
 		dropped_weapon = dropped_weapon.instance()
 		dropped_weapon.position = position
+		dropped_weapon.bullets_in_mag = PlayerGlobals.bullets_in_mag
 		
 		get_parent().add_child(dropped_weapon)
 		
@@ -39,11 +45,13 @@ func _physics_process(_delta: float) -> void:
 	
 	
 	if Input.is_action_pressed("pick_up") and on_weapon and !PlayerGlobals.player_has_gun:
-		var weapon = load(weapon_on_ground.weapon_type)
 		PlayerGlobals.player_has_gun = true
+		
+		var weapon = load(weapon_on_ground.weapon_type)
 		PlayerGlobals.current_weapon = weapon_on_ground.weapon_type
 		weapon = weapon.instance()
 		weapon.position = $PlayerCamera.position
+		weapon.bullets_in_mag = weapon_on_ground.bullets_in_mag
 		
 		add_child(weapon)
 		get_parent().get_node(weapon_on_ground.get_path()).queue_free()

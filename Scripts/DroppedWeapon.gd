@@ -10,6 +10,8 @@ onready var weapons: Dictionary = {
 var player_current_weapon: String = PlayerGlobals.current_weapon
 export var weapon_type: String = player_current_weapon
 
+export var bullets_in_mag: int 
+
 
 func _ready() -> void:
 	var weapon: CollisionShape2D = weapons[weapon_type]

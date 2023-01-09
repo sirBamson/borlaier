@@ -33,7 +33,7 @@ animations = [ {
 [node name="Pistol" type="Sprite" groups=["Weapon"]]
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
-magasine_size = 10
+magazine_size = 15
 fire_rate = 0.5
 damage = 25
 
