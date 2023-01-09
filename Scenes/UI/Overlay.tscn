@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scripts/Overlay.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Fonts/Casino3DMarqueeRegular-d9A2V.tres" type="DynamicFont" id=2]
+
+[sub_resource type="Theme" id=1]
+default_font = ExtResource( 2 )
+Label/colors/font_color = Color( 1, 1, 1, 1 )
+Label/colors/font_color_shadow = Color( 0, 0, 0, 1 )
+Label/colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+Label/constants/line_spacing = 0
+Label/constants/shadow_as_outline = 0
+Label/constants/shadow_offset_x = 0
+Label/constants/shadow_offset_y = 0
+Label/fonts/font = ExtResource( 2 )
+Label/styles/normal = null
+
+[node name="Overlay" type="CanvasLayer"]
+layer = 10
+script = ExtResource( 1 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Bullets" type="VBoxContainer" parent="TextureRect"]
+margin_left = 24.0
+margin_top = 24.0
+margin_right = 1516.0
+margin_bottom = 428.0
+rect_scale = Vector2( 0.25, 0.25 )
+theme = SubResource( 1 )
+
+[node name="BulletsInMag" type="Label" parent="TextureRect/Bullets"]
+margin_right = 1492.0
+margin_bottom = 100.0
+text = "Bullets In mag: "
+
+[node name="BulletsLeft" type="Label" parent="TextureRect/Bullets"]
+margin_top = 104.0
+margin_right = 1492.0
+margin_bottom = 204.0
+text = "Bullets left: "
