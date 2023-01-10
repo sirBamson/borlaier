@@ -8,35 +8,53 @@ var velocity: Vector2 = Vector2.ZERO
 var last_velocity: Vector2 = Vector2.RIGHT
 
 var on_weapon: bool = false
-var weapon_on_ground: String = ""
+var weapon_on_ground: Node
 
 var healt: int = PlayerGlobals.player_healt
 
 export (int) var speed: int = 600
 
 
-#drop gun
+func _ready() -> void:
+	if PlayerGlobals.player_has_gun:
+		var weapon = load(PlayerGlobals.current_weapon)
+		weapon = weapon.instance()
+		weapon.position = $PlayerCamera.position
+		add_child(weapon)
+		
+		weapon.bullets_in_mag = PlayerGlobals.bullets_in_mag
+
+
+
+
 func _physics_process(_delta: float) -> void:
 	
 	if Input.is_action_pressed("drop") and PlayerGlobals.player_has_gun:
-		var dropped_weapon = load("res://Scenes/Weapons/DroppedWeapon.tscn")
 		PlayerGlobals.player_has_gun = false
+		
+		var dropped_weapon = load("res://Scenes/Weapons/DroppedWeapon.tscn")
 		dropped_weapon = dropped_weapon.instance()
 		dropped_weapon.position = position
+		dropped_weapon.bullets_in_mag = PlayerGlobals.bullets_in_mag
 		
 		get_parent().add_child(dropped_weapon)
-		$AssultRifle.queue_free()
+		
+		for child in get_children():
+			if child.is_in_group("Weapon"):
+				child.queue_free()
 	
 	
-	if Input.is_action_pressed("pick_up") and on_weapon:
-		var weapon = load(weapon_on_ground)
+	if Input.is_action_pressed("pick_up") and on_weapon and !PlayerGlobals.player_has_gun:
 		PlayerGlobals.player_has_gun = true
-		PlayerGlobals.current_weapon = weapon_on_ground
+		
+		var weapon = load(weapon_on_ground.weapon_type)
+		PlayerGlobals.current_weapon = weapon_on_ground.weapon_type
 		weapon = weapon.instance()
 		weapon.position = $PlayerCamera.position
+		weapon.bullets_in_mag = weapon_on_ground.bullets_in_mag
 		
 		add_child(weapon)
-		get_parent().get_node("DroppedWeapon").queue_free()
+		get_parent().get_node(weapon_on_ground.get_path()).queue_free()
 	
 	
 	_movment()
@@ -106,12 +124,11 @@ func take_damage(damage) -> void:
 
 
 func _on_PlayerHitbox_area_entered(area: Area2D) -> void:
-	if area.name == "DroppedWeapon":
-		weapon_on_ground = area.weapon_type
+	if area.is_in_group("DroppedWeapon"):
+		weapon_on_ground = area
 		on_weapon = true
 
 func _on_PlayerHitbox_area_exited(area: Area2D) -> void:
-	if area.name == "DroppedWeapon":
-		weapon_on_ground = ""
+	if area.is_in_group("DroppedWeapon"):
+		weapon_on_ground = null
 		on_weapon = false
-		

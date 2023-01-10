@@ -2,7 +2,7 @@ extends Sprite
 
 
 export (int) var bullet_speed = 1500
-export (int) var magasine_size = 20
+export (int) var magazine_size = 20
 export (float) var fire_rate = 0.12
 export (int) var damage = 10
 export (bool) var auto = false
@@ -15,10 +15,6 @@ var bullets_in_mag: int
 var bullet = load("res://Scenes/Weapons/Bullet.tscn")
 var can_fire: bool = true
 var can_fire_auto: bool = true
-
-
-func _ready() -> void:
-	bullets_in_mag = PlayerGlobals.bullets_in_mag
 
 
 func _input(event: InputEvent) -> void:
@@ -40,7 +36,7 @@ func _physics_process(_delta: float) -> void:
 		can_fire_auto = true
 	
 	
-	if Input.is_action_just_pressed("reload") and bullets_in_mag < magasine_size and PlayerGlobals.bullets_left > 0 and can_fire:
+	if Input.is_action_just_pressed("reload") and bullets_in_mag < magazine_size and PlayerGlobals.bullets_left > 0 and can_fire:
 		
 		$GunReloadSound.play()
 		reload_gun()
@@ -84,7 +80,7 @@ func _physics_process(_delta: float) -> void:
 
 
 func reload_gun() -> void:
-	for _i in range(magasine_size): 
-		if PlayerGlobals.bullets_left != 0 and !bullets_in_mag >= magasine_size:
+	for _i in range(magazine_size): 
+		if PlayerGlobals.bullets_left != 0 and !bullets_in_mag >= magazine_size:
 			PlayerGlobals.bullets_left -= 1
 			bullets_in_mag += 1

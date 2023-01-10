@@ -5,7 +5,8 @@ var new_scene: Node2D
 func _ready() -> void:
 	
 	# Sets the first scene
-	change_scene(false, Node.new(), "", "res://Scenes/Levels/LevelLobby.tscn")
+	change_scene(false, Node.new(), "", "res://Scenes/Levels/Level0.tscn")
+	EnvVar.can_pause = true
 
 
 func _input(event: InputEvent) -> void:

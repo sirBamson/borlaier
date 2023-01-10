@@ -14,7 +14,7 @@ func _on_0_pressed() -> void:
 		current_floor = 0
 		EnvVar.current_level_number = 0
 		$UI/Floor.text = "Floor 0"
-		EnvVar.next_level = "res://Scenes/Levels/LevelLobby.tscn"
+		EnvVar.next_level = "res://Scenes/Levels/Level0.tscn"
 
 
 func _on_1_button_up() -> void:

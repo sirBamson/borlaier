@@ -30,7 +30,7 @@ animations = [ {
 "speed": 20.0
 } ]
 
-[node name="AssultRifle" type="Sprite"]
+[node name="AssultRifle" type="Sprite" groups=["Weapon"]]
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
 bullet_speed = 3000
