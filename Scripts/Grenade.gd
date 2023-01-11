@@ -7,7 +7,7 @@ func _ready() -> void:
 	visible = true
 	look_at(get_global_mouse_position())
 	apply_impulse(Vector2.ZERO, Vector2(throw_speed, 0).rotated(rotation))
-	$Timer.start(1.5)
+	#$Timer.start(1.5)
 	$Area2D/CollisionShape2D.disabled = true
 	$Area2D/AnimatedSprite.visible = false
 	

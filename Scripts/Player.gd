@@ -125,6 +125,7 @@ func throw_grenade() -> void:
 		var grenade_instance = grenade.instance()
 		grenade_instance.global_position = $PlayerCamera.global_position
 		get_parent().get_parent().add_child(grenade_instance)
+		get_node(grenade_instance.get_path()).get_node("Timer").start(2)
 		get_parent().get_parent().move_child(get_parent().get_parent().get_node("Walls"), get_parent().get_parent().get_child_count() )
 		
 
