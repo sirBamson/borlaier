@@ -1,27 +1,29 @@
 extends RigidBody2D
 
-onready var explosion = preload("res://Scenes/Weapons/GrenadeExplosion.tscn")
+var throw_speed = 1200
 
-var throw_speed = 800
-var grenade_count = 2
 
 func _ready() -> void:
-	self.visible = false
-
-func _physics_process(delta: float) -> void:
+	visible = true
 	look_at(get_global_mouse_position())
+	apply_impulse(Vector2.ZERO, Vector2(throw_speed, 0).rotated(rotation))
+	#$Timer.start(1.5)
+	$Area2D/CollisionShape2D.disabled = true
+	$Area2D/AnimatedSprite.visible = false
 	
-	if Input.is_action_just_pressed("ThrowGrenade") and grenade_count > 0:
-		grenade_count -= 1
-		self.visible = true
-		apply_impulse(Vector2.ZERO, Vector2(throw_speed, 0).rotated(rotation))
-		$Timer.start(1.5)
-		
+
 
 func grenade_explosion():
 	$Timer.stop()
-	queue_free()
-	
+	$Sprite.visible = false
+	sleeping = true
+	$Area2D/CollisionShape2D.disabled = false
+	$Area2D/AnimatedSprite.visible = true
+	$Area2D/AnimatedSprite.play("default")
 
 func _on_Timer_timeout() -> void:
 	grenade_explosion()
+
+
+func _on_AnimatedSprite_animation_finished() -> void:
+	queue_free()
