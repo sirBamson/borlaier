@@ -9,22 +9,23 @@ export (int) var speed: int = 100
 var path: Array
 
 
+func _ready() -> void:
+	path = pathfinding.get_new_path(global_position, player.global_position)
+
 
 func _physics_process(delta: float) -> void:
+	#draw_path()
 	movment()
 
 
 func movment() -> void:
 	path = pathfinding.get_new_path(global_position, player.global_position)
-	
-	
-	var velocity: Vector2 = Vector2.ZERO
-	
 	if path.size() > 1:
-		if global_position == path[path.size() - 1]:
-			path.pop_back()
-		
-		velocity = velocity.direction_to(path[path.size() - 1])
-		
-		velocity = velocity * speed
-		velocity = move_and_slide(velocity)
+		global_position = global_position.move_toward(path[0], get_process_delta_time() * speed)
+
+
+func draw_path() -> void:
+	$Line2D.clear_points()
+	for point in path:
+		$Line2D.add_point(point)
+	
