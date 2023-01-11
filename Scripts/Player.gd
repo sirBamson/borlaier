@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 signal player_dead
 
+var grenade = load("res://Scenes/Weapons/Grenade.tscn")
 
 var looking_direction: Vector2 = Vector2.ZERO
 var velocity: Vector2 = Vector2.ZERO
@@ -9,6 +10,8 @@ var last_velocity: Vector2 = Vector2.RIGHT
 
 var on_weapon: bool = false
 var weapon_on_ground: Node
+
+var grenade_count = 2
 
 var healt: int = PlayerGlobals.player_healt
 
@@ -23,7 +26,6 @@ func _ready() -> void:
 		add_child(weapon)
 		
 		weapon.bullets_in_mag = PlayerGlobals.bullets_in_mag
-
 
 
 
@@ -56,7 +58,7 @@ func _physics_process(_delta: float) -> void:
 		add_child(weapon)
 		get_parent().get_node(weapon_on_ground.get_path()).queue_free()
 	
-	
+	throw_grenade()
 	_movment()
 
 
@@ -113,6 +115,18 @@ func _movment() -> void:
 	
 	velocity = velocity.normalized() * speed
 	velocity = move_and_slide(velocity)
+	
+	
+func throw_grenade() -> void:
+	if Input.is_action_just_pressed("add_nades"):
+		grenade_count += 2
+	if Input.is_action_just_pressed("throw_grenade") and grenade_count > 0:
+		grenade_count -= 1
+		var grenade_instance = grenade.instance()
+		grenade_instance.global_position = $PlayerCamera.global_position
+		get_parent().get_parent().add_child(grenade_instance)
+		get_parent().get_parent().move_child(get_parent().get_parent().get_node("Walls"), get_parent().get_parent().get_child_count() )
+		
 
 
 # Temp func
