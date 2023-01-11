@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 signal player_dead
+signal throwing_grenade
 
 var grenade = load("res://Scenes/Weapons/Grenade.tscn")
 
@@ -30,39 +31,14 @@ func _ready() -> void:
 
 
 func _physics_process(_delta: float) -> void:
-	
-	if Input.is_action_pressed("drop") and PlayerGlobals.player_has_gun:
-		PlayerGlobals.player_has_gun = false
-		
-		var dropped_weapon = load("res://Scenes/Weapons/DroppedWeapon.tscn")
-		dropped_weapon = dropped_weapon.instance()
-		dropped_weapon.position = position
-		dropped_weapon.bullets_in_mag = PlayerGlobals.bullets_in_mag
-		
-		get_parent().add_child(dropped_weapon)
-		
-		for child in get_children():
-			if child.is_in_group("Weapon"):
-				child.queue_free()
-	
-	
-	if Input.is_action_pressed("pick_up") and on_weapon and !PlayerGlobals.player_has_gun:
-		PlayerGlobals.player_has_gun = true
-		
-		var weapon = load(weapon_on_ground.weapon_type)
-		PlayerGlobals.current_weapon = weapon_on_ground.weapon_type
-		weapon = weapon.instance()
-		weapon.position = $PlayerCamera.position
-		weapon.bullets_in_mag = weapon_on_ground.bullets_in_mag
-		
-		add_child(weapon)
-		get_parent().get_node(weapon_on_ground.get_path()).queue_free()
+	weapon_pickup()
 	
 	throw_grenade()
-	_movment()
+	
+	movment()
 
 
-func _movment() -> void:
+func movment() -> void:
 	velocity = Vector2.ZERO
 	if Input.is_action_pressed("ui_up"):
 		velocity += Vector2.UP
@@ -115,19 +91,56 @@ func _movment() -> void:
 	
 	velocity = velocity.normalized() * speed
 	velocity = move_and_slide(velocity)
+
+
+
+func weapon_pickup() -> void:
+	if Input.is_action_pressed("drop") and PlayerGlobals.player_has_gun:
+		PlayerGlobals.player_has_gun = false
+		
+		var dropped_weapon = load("res://Scenes/Weapons/DroppedWeapon.tscn")
+		dropped_weapon = dropped_weapon.instance()
+		dropped_weapon.position = position
+		dropped_weapon.bullets_in_mag = PlayerGlobals.bullets_in_mag
+		
+		get_parent().add_child(dropped_weapon)
+		
+		for child in get_children():
+			if child.is_in_group("Weapon"):
+				child.queue_free()
 	
-	
+	if Input.is_action_pressed("pick_up") and on_weapon and !PlayerGlobals.player_has_gun:
+		PlayerGlobals.player_has_gun = true
+		
+		var weapon = load(weapon_on_ground.weapon_type)
+		PlayerGlobals.current_weapon = weapon_on_ground.weapon_type
+		weapon = weapon.instance()
+		weapon.position = $PlayerCamera.position
+		weapon.bullets_in_mag = weapon_on_ground.bullets_in_mag
+		
+		add_child(weapon)
+		get_parent().get_node(weapon_on_ground.get_path()).queue_free()
+
+
+
 func throw_grenade() -> void:
 	if Input.is_action_just_pressed("add_nades"):
-		grenade_count += 2
-	if Input.is_action_just_pressed("throw_grenade") and grenade_count > 0:
-		grenade_count -= 1
+		PlayerGlobals.grenades_left += 2
+	
+	if Input.is_action_just_pressed("throw_grenade") and PlayerGlobals.grenades_left > 0:
+		PlayerGlobals.grenades_left -= 1
+		
 		var grenade_instance = grenade.instance()
 		grenade_instance.global_position = $PlayerCamera.global_position
-		get_parent().get_parent().add_child(grenade_instance)
-		get_node(grenade_instance.get_path()).get_node("Timer").start(2)
-		get_parent().get_parent().move_child(get_parent().get_parent().get_node("Walls"), get_parent().get_parent().get_child_count() )
+		connect("throwing_grenade", grenade_instance, "grenade_thrown")
 		
+		get_parent().get_parent().add_child(grenade_instance)
+		get_parent().get_parent().move_child(get_parent().get_parent().get_node("Walls"), get_parent().get_parent().get_child_count() )
+	
+	
+	if Input.is_action_just_released("throw_grenade"):
+		emit_signal("throwing_grenade")
+
 
 
 # Temp func
