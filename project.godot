@@ -18,7 +18,6 @@ config/icon="res://icon.png"
 
 PlayerGlobals="*res://Scripts/AutoLoads/PlayerGlobals.gd"
 EnvVar="*res://Scripts/AutoLoads/EnvVar.gd"
-Transition="*res://Scenes/Transition.tscn"
 Pause="*res://Scenes/UI/Pause.tscn"
 
 [display]
