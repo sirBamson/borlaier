@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/roulette_table.png" type="Texture" id=1]
+
+[node name="StaticBody2D" type="StaticBody2D"]
+collision_layer = 33
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, -158 )
+texture = ExtResource( 1 )
+offset = Vector2( 0, 155 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2( 0, 54 )
+polygon = PoolVector2Array( -96, 133, -96, -208, -88, -212, 92, -212, 100, -204, 100, -108, 45, -32, 44, 134, 37, 140, -88, 140 )
