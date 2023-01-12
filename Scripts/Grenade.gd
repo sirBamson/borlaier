@@ -8,6 +8,7 @@ var thrown_once: bool = false
 
 func _ready() -> void:
 	visible = true
+	$PinPull.play()
 	$Timer.start(2)
 	$Area2D/CollisionShape2D.disabled = true
 	$Area2D/AnimatedSprite.visible = false
@@ -17,6 +18,7 @@ func grenade_explosion():
 	$Timer.stop()
 	$Sprite.visible = false
 	sleeping = true
+	$GrenadeExplosion.play()
 	$Area2D/CollisionShape2D.disabled = false
 	$Area2D/AnimatedSprite.visible = true
 	$Area2D/AnimatedSprite.play("default")
@@ -34,5 +36,5 @@ func _on_Timer_timeout() -> void:
 	grenade_explosion()
 
 
-func _on_AnimatedSprite_animation_finished() -> void:
+func _on_GrenadeExplosion_finished() -> void:
 	queue_free()
