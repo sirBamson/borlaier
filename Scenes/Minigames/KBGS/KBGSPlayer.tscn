@@ -126,7 +126,7 @@ animations = [ {
 "frames": [ SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ) ],
 "loop": false,
 "name": "Jump",
-"speed": 10.0
+"speed": 5.0
 }, {
 "frames": [ SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ) ],
 "loop": true,
@@ -135,6 +135,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=24]
+extents = Vector2( 7.49783, 10 )
 
 [node name="Player" type="KinematicBody2D"]
 scale = Vector2( 1.5, 1.5 )
@@ -158,14 +159,17 @@ frames = SubResource( 16 )
 animation = "Walk"
 
 [node name="Jump" type="AnimatedSprite" parent="."]
-position = Vector2( 6, 11.3333 )
+position = Vector2( 17.3333, 32.6667 )
 frames = SubResource( 16 )
 animation = "Jump"
+frame = 4
+playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 60.6667 )
+position = Vector2( 7.45058e-09, 60.6667 )
 scale = Vector2( 3.18981, 0.463188 )
 shape = SubResource( 24 )
+one_way_collision = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
