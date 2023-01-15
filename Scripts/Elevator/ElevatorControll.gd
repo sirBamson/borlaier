@@ -1,7 +1,7 @@
 extends StaticBody2D
 
-signal change_scene(save_current_scene, current_scene, current_scene_path, new_scene_path)
 
+onready var scene_controller: Node = get_node("/root/SceneController")
 
 var changing_scene: bool = false
 var can_use_door: bool = false
@@ -15,12 +15,12 @@ func _ready() -> void:
 	if get_parent().is_in_group("Elevator"):
 		door_animation = "ElevatorDoor"
 	
-	var _err = connect("change_scene", get_node("/root/SceneController"), "change_scene")
+	
 	# Add player to scene
 	$Door.play(door_animation, true)
 
 
-func emit_signal_change_scene() -> void:
+func _change_scene() -> void:
 	var current_scene: Node = get_parent()
 	var current_scene_path: String
 	
@@ -35,9 +35,9 @@ func emit_signal_change_scene() -> void:
 	# Checks which group current_scene belongs to
 	# Then calls the change_scene signal
 	if current_scene.is_in_group("Level"):
-		emit_signal("change_scene", true, current_scene, current_scene_path, "res://Scenes/Elevator/Elevator.tscn")
+		scene_controller.change_scene(true, current_scene, current_scene_path, "res://Scenes/Elevator/Elevator.tscn")
 	elif current_scene.is_in_group("Elevator"):
-		emit_signal("change_scene", false, current_scene, current_scene_path, EnvVar.next_level)
+		scene_controller.change_scene(false, current_scene, current_scene_path, EnvVar.next_level)
 
 
 func _physics_process(_delta: float) -> void:
@@ -62,4 +62,4 @@ func _on_PlayerDetection_area_exited(area: Area2D) -> void:
 # Must have a check otherwise it would run when opened and closed
 func _on_AnimatedSprite_animation_finished() -> void:
 	if changing_scene:
-		emit_signal_change_scene()
+		_change_scene()
