@@ -132,7 +132,7 @@ func throw_grenade() -> void:
 		
 		var grenade_instance = grenade.instance()
 		grenade_instance.global_position = $PlayerCamera.global_position
-		connect("throwing_grenade", grenade_instance, "grenade_thrown")
+		var _error = connect("throwing_grenade", grenade_instance, "grenade_thrown")
 		
 		get_parent().get_parent().add_child(grenade_instance)
 		get_parent().get_parent().move_child(get_parent().get_parent().get_node("Walls"), get_parent().get_parent().get_child_count() )
