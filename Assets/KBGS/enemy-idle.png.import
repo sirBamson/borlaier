@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/no_hands_left-Sheet.png-1826c4403998bfbef1def105a659ec39.stex"
+path="res://.import/enemy-idle.png-0061416300e78e2ea65cd82e41d334ff.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/no_hands_left-Sheet.png"
-dest_files=[ "res://.import/no_hands_left-Sheet.png-1826c4403998bfbef1def105a659ec39.stex" ]
+source_file="res://Assets/KBGS/enemy-idle.png"
+dest_files=[ "res://.import/enemy-idle.png-0061416300e78e2ea65cd82e41d334ff.stex" ]
 
 [params]
 
