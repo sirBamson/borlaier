@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/no_hands_left-Sheet.png-1826c4403998bfbef1def105a659ec39.stex"
+path="res://.import/bogdan-lisovetsky-city.jpeg-ef7ff09622f7449c7974942c7d41a765.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/no_hands_left-Sheet.png"
-dest_files=[ "res://.import/no_hands_left-Sheet.png-1826c4403998bfbef1def105a659ec39.stex" ]
+source_file="res://Assets/KBGS/bogdan-lisovetsky-city.jpeg"
+dest_files=[ "res://.import/bogdan-lisovetsky-city.jpeg-ef7ff09622f7449c7974942c7d41a765.stex" ]
 
 [params]
 

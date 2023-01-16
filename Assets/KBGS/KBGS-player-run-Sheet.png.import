@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/no_hands_left-Sheet.png-1826c4403998bfbef1def105a659ec39.stex"
+path="res://.import/KBGS-player-run-Sheet.png-450b99ab65820479fd21fbc57936ad23.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/no_hands_left-Sheet.png"
-dest_files=[ "res://.import/no_hands_left-Sheet.png-1826c4403998bfbef1def105a659ec39.stex" ]
+source_file="res://Assets/KBGS/KBGS-player-run-Sheet.png"
+dest_files=[ "res://.import/KBGS-player-run-Sheet.png-450b99ab65820479fd21fbc57936ad23.stex" ]
 
 [params]
 
