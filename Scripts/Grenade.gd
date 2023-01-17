@@ -36,11 +36,12 @@ func grenade_thrown() -> void:
 		thrown_once = true
 		look_at(get_global_mouse_position())
 		apply_impulse(Vector2.ZERO, Vector2(throw_speed, 0).rotated(rotation))
-
+		
 
 func _on_Timer_timeout() -> void:
 	grenade_exploded = true
 	grenade_explosion()
+	Shake.start_shake(8, 0.4)
 
 
 func _on_GrenadeExplosion_finished() -> void:

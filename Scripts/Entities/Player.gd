@@ -20,6 +20,7 @@ export (int) var speed: int = 600
 
 
 func _ready() -> void:
+	Shake.shake_nodes[$PlayerCamera] = true
 	if PlayerGlobals.player_has_gun:
 		var weapon = load(PlayerGlobals.current_weapon)
 		weapon = weapon.instance()
@@ -143,7 +144,6 @@ func throw_grenade() -> void:
 	if Input.is_action_just_released("throw_grenade"):
 		emit_signal("throwing_grenade")
 		PlayerGlobals.holding_grenade = false
-
 
 
 # Temp func
