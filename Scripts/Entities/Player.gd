@@ -129,17 +129,20 @@ func throw_grenade() -> void:
 	
 	if Input.is_action_just_pressed("throw_grenade") and PlayerGlobals.grenades_left > 0:
 		PlayerGlobals.grenades_left -= 1
+		PlayerGlobals.holding_grenade = true
 		
 		var grenade_instance = grenade.instance()
 		grenade_instance.global_position = $PlayerCamera.global_position
 		var _error = connect("throwing_grenade", grenade_instance, "grenade_thrown")
 		
+		grenade_instance.player = self
 		get_parent().get_parent().add_child(grenade_instance)
 		get_parent().get_parent().move_child(get_parent().get_parent().get_node("Walls"), get_parent().get_parent().get_child_count() )
 	
 	
 	if Input.is_action_just_released("throw_grenade"):
 		emit_signal("throwing_grenade")
+		PlayerGlobals.holding_grenade = false
 
 
 

@@ -2,6 +2,8 @@ extends RigidBody2D
 
 export (int) var throw_speed: int = 1200
 
+var player: Node
+
 var grenade_exploded: bool = false
 var thrown_once: bool = false
 
@@ -12,6 +14,11 @@ func _ready() -> void:
 	$Timer.start(2)
 	$Area2D/CollisionShape2D.disabled = true
 	$Area2D/AnimatedSprite.visible = false
+
+
+func _physics_process(delta: float) -> void:
+	if PlayerGlobals.holding_grenade and !thrown_once:
+		global_position = player.global_position - Vector2(0, 120)
 
 
 func grenade_explosion():
