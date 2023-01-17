@@ -1,7 +1,7 @@
 extends Sprite
 
 
-export (int) var bullet_speed = 1500
+export (int) var bullet_speed = 3000
 export (int) var magazine_size = 20
 export (float) var fire_rate = 0.12
 export (int) var damage = 10
