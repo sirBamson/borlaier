@@ -8,6 +8,7 @@ var bullets_in_mag: int
 var bullets_left: int = 200
 
 var grenades_left: int = 2
+var holding_grenade: bool = false
 
 var current_weapon: String = "res://Scenes/Weapons/AssultRifle.tscn"
 
