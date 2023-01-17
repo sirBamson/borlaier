@@ -2,7 +2,7 @@ extends Node
 
 
 
-var controller: Dictionary = {
+var dialogs: Dictionary = {
 	"test1": 
 		[1,
 		"Hello player",
