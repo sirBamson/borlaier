@@ -1,0 +1,53 @@
+{
+	"events": [
+		{
+			"character": "character-1674336435.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Wuzz up"
+		},
+		{
+			"character": "character-1674336435.json",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "Do you like chees"
+		},
+		{
+			"choice": "Hell na!",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1674336435.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "..."
+		},
+		{
+			"choice": "Oh yea!",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1674336622.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Oh noooo its hampe dampe the demon"
+		},
+		{
+			"event_id": "dialogic_013"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.5",
+		"file": "timeline-1674336594.json",
+		"name": "Test"
+	}
+}
