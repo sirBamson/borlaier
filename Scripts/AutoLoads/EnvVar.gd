@@ -13,3 +13,7 @@ var next_level: String = "res://Scenes/Levels/Level0.tscn"
 
 
 var can_pause: bool = false
+
+
+func _ready() -> void:
+	Dialogic.set_variable("FloorNumber", current_level_number)
