@@ -1,10 +1,11 @@
 [gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Assets/grenade.png" type="Texture" id=1]
-[ext_resource path="res://Scripts/Grenade.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/Weapons/Grenade.gd" type="Script" id=2]
 [ext_resource path="res://Assets/grenade_explosion.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Sounds/pin_pulled.wav" type="AudioStream" id=4]
 [ext_resource path="res://Assets/Sounds/grenade_explosion.wav" type="AudioStream" id=5]
+
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 17.0294
