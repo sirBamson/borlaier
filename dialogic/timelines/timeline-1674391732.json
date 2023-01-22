@@ -1,0 +1,39 @@
+{
+	"events": [
+		{
+			"condition": "",
+			"definition": "1674392044-648",
+			"event_id": "dialogic_012",
+			"value": "0"
+		},
+		{
+			"character": "character-1674391749.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Ground floor [nw=v]"
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"condition": ">",
+			"definition": "1674392044-648",
+			"event_id": "dialogic_012",
+			"value": "0"
+		},
+		{
+			"character": "character-1674391749.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Floor [FloorNumber] [nw=v]"
+		},
+		{
+			"event_id": "dialogic_013"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.5",
+		"file": "timeline-1674391732.json",
+		"name": "Elevator"
+	}
+}
