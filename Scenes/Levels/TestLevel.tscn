@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Assets/casino_tilemap.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Assets/SlotMachine.tscn" type="PackedScene" id=2]
@@ -12,7 +12,6 @@
 [ext_resource path="res://Scenes/Weapons/DroppedWeapon.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/Assets/RouletteTable.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/Entities/NPC.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Scripts/TestLevel.gd" type="Script" id=13]
 
 [sub_resource type="TileSet" id=48]
 0/name = "casino_tilemap.png 0"
@@ -389,7 +388,6 @@ points = PoolVector2Array( 0, 0, 256, 0, 256, 256, 0, 256 )
 9/z_index = 0
 
 [node name="Level" type="Node2D" groups=["Level"]]
-script = ExtResource( 13 )
 
 [node name="VoidLayer" type="CanvasLayer" parent="."]
 layer = -1
