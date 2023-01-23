@@ -10,3 +10,10 @@ func _ready() -> void:
 			skin.visible = true
 		else:
 			skin.visible = false
+
+
+func _physics_process(_delta: float) -> void:
+	for area in $QuestArea.get_overlapping_areas():
+		if area.name == "PlayerHitbox":
+			if Input.is_action_pressed("talk"):
+				add_child(Dialogic.start("Test"))
