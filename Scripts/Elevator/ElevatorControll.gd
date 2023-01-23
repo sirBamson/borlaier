@@ -4,7 +4,6 @@ extends StaticBody2D
 onready var scene_controller: Node = get_node("/root/SceneController")
 
 var changing_scene: bool = false
-var can_use_door: bool = false
 var door_animation: String = "LevelDoor"
 var new_level_path: String = EnvVar.next_level
 
@@ -41,21 +40,11 @@ func _change_scene() -> void:
 
 
 func _physics_process(_delta: float) -> void:
-	if can_use_door:
-		if Input.is_action_pressed("ui_accept"):
-			changing_scene = true
-			# Play door animation
-			$Door.play(door_animation)
-
-
-# Checks if the player is in the designated area
-func _on_PlayerDetection_area_entered(area: Area2D) -> void:
-	if area.name == "PlayerHitbox":
-		can_use_door = true
-
-func _on_PlayerDetection_area_exited(area: Area2D) -> void:
-	if area.name == "PlayerHitbox":
-		can_use_door = false
+	for area in $InteractionArea.get_overlapping_areas():
+		if area.name == "PlayerHitbox":
+			if Input.is_action_pressed("interaction"):
+				changing_scene = true
+				$Door.play(door_animation)
 
 
 # Runs when the door animation is finished and changing_scene == true

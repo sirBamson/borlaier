@@ -1,12 +1,13 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Assets/White_square.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Elevator/ElevatorDoor.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/elevator_inside.png" type="Texture" id=3]
-[ext_resource path="res://Scenes/Elevator/ElevatorPanel.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scripts/Elevator/ElevatorPanel.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/Entities/Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Elevator/ElevatorPanelUI.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Sounds/Elevator-music.mp3" type="AudioStream" id=7]
+[ext_resource path="res://Assets/Elevator_panel.png" type="Texture" id=8]
 
 [sub_resource type="TileSet" id=1]
 0/name = "elevator_inside.png 0"
@@ -135,6 +136,9 @@ points = PoolVector2Array( 0, 0, 256, 0, 256, 256, 0, 256 )
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 3/z_index = 0
+
+[sub_resource type="RectangleShape2D" id=15]
+extents = Vector2( 16, 24 )
 
 [sub_resource type="ConvexPolygonShape2D" id=7]
 points = PoolVector2Array( 0, 0, 256, 0, 256, 256, 0, 256 )
@@ -356,8 +360,19 @@ tile_data = PoolIntArray( -131072, 0, 0, -131070, 2, 0, -65536, 1, 0, -65534, 3,
 [node name="ElevatorDoor" parent="." instance=ExtResource( 2 )]
 position = Vector2( 384, -240 )
 
-[node name="ElevatorPanel" parent="." instance=ExtResource( 4 )]
+[node name="ElevatorPanel" type="Area2D" parent="."]
+pause_mode = 2
 position = Vector2( 128, -192 )
+collision_layer = 128
+collision_mask = 2
+script = ExtResource( 4 )
+
+[node name="CollisionShape" type="CollisionShape2D" parent="ElevatorPanel"]
+scale = Vector2( 0.880001, 0.92 )
+shape = SubResource( 15 )
+
+[node name="Panel" type="Sprite" parent="ElevatorPanel"]
+texture = ExtResource( 8 )
 
 [node name="YSort" type="YSort" parent="."]
 

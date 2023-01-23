@@ -6,6 +6,7 @@ onready var weapons: Dictionary = {
 	"res://Scenes/Weapons/Pistol.tscn": get_node("PistolShape")
 	}
 
+
 # Change for diffret drop entities
 var player_current_weapon: String = PlayerGlobals.current_weapon
 export var weapon_type: String = player_current_weapon
@@ -18,6 +19,6 @@ func _ready() -> void:
 	weapon.disabled = false
 	weapon.visible = true
 	
-	randomize()
-	var random_angle = rand_range(30, -30)
-	rotation_degrees = random_angle
+	#randomize()
+	#var random_angle = rand_range(30, -30)
+	#rotation_degrees = random_angle
