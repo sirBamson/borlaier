@@ -23,7 +23,7 @@ func _change_scene() -> void:
 	var current_scene: Node = get_parent()
 	var current_scene_path: String
 	
-	# The Filename property cannot see the file path from a PackedScene
+	# The .filename property cannot see the file path from a PackedScene
 	# Therefore, a dictionary is needed with the various saved file paths
 	if current_scene.name in EnvVar.saved_scenes_strings:
 		current_scene_path = EnvVar.saved_scenes_strings[current_scene.name]
