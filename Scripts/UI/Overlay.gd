@@ -4,7 +4,7 @@ func _ready() -> void:
 	$TextureRect/Bullets.visible = false
 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if PlayerGlobals.player_has_gun:
 		$TextureRect/Bullets.visible = true
 		$TextureRect/Bullets/BulletsInMag.text = "Bullets in mag: " + str(PlayerGlobals.bullets_in_mag)

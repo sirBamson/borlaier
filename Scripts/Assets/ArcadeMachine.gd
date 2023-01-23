@@ -3,7 +3,7 @@ extends StaticBody2D
 onready var scene_controller: Node = get_node("/root/SceneController")
 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	for area in $InteractionArea.get_overlapping_areas():
 		
 		if area.name == "PlayerHitbox":

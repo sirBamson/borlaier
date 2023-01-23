@@ -5,7 +5,7 @@ export (int) var throw_speed: int = 1200
 var player: Node
 
 var grenade_exploded: bool = false
-var thrown_once: bool = false
+var thrown: bool = false
 
 
 func _ready() -> void:
@@ -16,8 +16,8 @@ func _ready() -> void:
 	$Area2D/AnimatedSprite.visible = false
 
 
-func _physics_process(delta: float) -> void:
-	if PlayerGlobals.holding_grenade and !thrown_once:
+func _physics_process(_delta: float) -> void:
+	if PlayerGlobals.holding_grenade and !thrown:
 		global_position = player.global_position - Vector2(0, 120)
 
 
@@ -32,8 +32,8 @@ func grenade_explosion():
 
 
 func grenade_thrown() -> void:
-	if not grenade_exploded and not thrown_once:
-		thrown_once = true
+	if not grenade_exploded and not thrown:
+		thrown = true
 		look_at(get_global_mouse_position())
 		apply_impulse(Vector2.ZERO, Vector2(throw_speed, 0).rotated(rotation))
 		
