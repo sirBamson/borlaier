@@ -6,7 +6,7 @@
 [ext_resource path="res://Scenes/Elevator/ElevatorPanel.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Entities/Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Elevator/ElevatorPanelUI.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Assets/Sounds/focus-loop-corporate-music-114297.mp3" type="AudioStream" id=7]
+[ext_resource path="res://Assets/Sounds/Elevator-music.mp3" type="AudioStream" id=7]
 
 [sub_resource type="TileSet" id=1]
 0/name = "elevator_inside.png 0"
@@ -325,6 +325,7 @@ points = PoolVector2Array( 0, 0, 256, 0, 256, 256, 0, 256 )
 [node name="Music" type="AudioStreamPlayer" parent="."]
 pause_mode = 2
 stream = ExtResource( 7 )
+volume_db = -25.0
 autoplay = true
 
 [node name="ElevatorPanelUI" parent="." instance=ExtResource( 6 )]
@@ -368,3 +369,5 @@ tile_set = SubResource( 13 )
 cell_size = Vector2( 256, 256 )
 format = 1
 tile_data = PoolIntArray( -65537, 0, 0, -131069, 6, 0, -1, 1, 0, -65533, 5, 0, 65535, 1, 0, 3, 5, 0, 131071, 1, 0, 65539, 5, 0, 196607, 2, 0, 131072, 3, 0, 131073, 3, 0, 131074, 3, 0, 131075, 4, 0, 196608, 7, 0, 196609, 7, 0, 196610, 7, 0 )
+
+[node name="WaitTimer" type="Timer" parent="."]
