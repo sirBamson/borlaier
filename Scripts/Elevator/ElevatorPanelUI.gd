@@ -1,45 +1,46 @@
 extends CanvasLayer
 
 
+var next_floor: int = EnvVar.current_level_number
+var available_levels: Dictionary = {
+	0: "res://Scenes/Levels/Level0.tscn",
+	1: "res://Scenes/Levels/Level1.tscn",
+	2: "res://Scenes/Levels/Level2.tscn"
+}
+
 
 func _ready() -> void:
-	$UI/Floor.text = "Floor " + str(EnvVar.current_level_number)
+	$UI/Floor.text = "Floor: " + str(EnvVar.current_level_number)
 	visible = false
 
 
+func _physics_process(_delta: float) -> void:
+	if next_floor in available_levels:
+		if next_floor != EnvVar.current_level_number:
+			if next_floor <= PlayerGlobals.elevator_floor_access:
+				EnvVar.current_level_number = next_floor
+				Dialogic.set_variable("ElevatorFloorNumber", next_floor)
+				$UI/Floor.text = "Floor: " + str(next_floor)
+				EnvVar.next_level = available_levels.get(next_floor)
+			elif next_floor > PlayerGlobals.elevator_floor_access:
+				Dialogic.set_variable("ElevatorFloorAccess", false)
+
+
 func _on_0_pressed() -> void:
-	if EnvVar.current_level_number != 0:
-		Dialogic.set_variable("FloorNumber", 0)
-		EnvVar.current_level_number = 0
-		$UI/Floor.text = "Floor 0"
-		EnvVar.next_level = "res://Scenes/Levels/Level0.tscn"
+	next_floor = 0
 
 
 func _on_1_button_up() -> void:
-	if EnvVar.current_level_number != 1:
-		Dialogic.set_variable("FloorNumber", 1)
-		EnvVar.current_level_number = 1
-		$UI/Floor.text = "Floor 1"
-		EnvVar.next_level = "res://Scenes/Levels/Level1.tscn"
+	next_floor = 1
 
 
 func _on_2_button_up() -> void:
-	if EnvVar.current_level_number != 2:
-		Dialogic.set_variable("FloorNumber", 2)
-		EnvVar.current_level_number = 2
-		$UI/Floor.text = "Floor 2"
-		EnvVar.next_level = "res://Scenes/Levels/Level2.tscn"
+	next_floor = 2
 
 
 func _on_3_button_up() -> void:
-	if EnvVar.current_level_number != 3:
-		Dialogic.set_variable("FloorNumber", 3)
-		EnvVar.current_level_number = 3
-		$UI/Floor.text = "Floor 3"
+	next_floor = 3
 
 
 func _on_4_button_up() -> void:
-	if EnvVar.current_level_number != 4:
-		Dialogic.set_variable("FloorNumber", 4)
-		EnvVar.current_level_number = 4
-		$UI/Floor.text = "Floor 4"
+	next_floor = 4

@@ -12,6 +12,8 @@ var holding_grenade: bool = false
 
 var current_weapon: String = "res://Scenes/Weapons/AssultRifle.tscn"
 
+var elevator_floor_access: int = 4
+
 
 func _ready() -> void:
 	magazine_size = load(current_weapon).instance().magazine_size
