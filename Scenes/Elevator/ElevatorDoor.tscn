@@ -4,6 +4,9 @@
 [ext_resource path="res://Scripts/Elevator/ElevatorControll.gd" type="Script" id=2]
 [ext_resource path="res://Assets/elevator_door_inside.png" type="Texture" id=3]
 
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 55.6876, 46.2958 )
+
 [sub_resource type="AtlasTexture" id=18]
 flags = 4
 atlas = ExtResource( 3 )
@@ -107,9 +110,6 @@ animations = [ {
 "speed": 12.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 55.6876, 46.2958 )
-
 [sub_resource type="RectangleShape2D" id=36]
 extents = Vector2( 20.97, 40.417 )
 
@@ -117,28 +117,26 @@ extents = Vector2( 20.97, 40.417 )
 collision_mask = 2
 script = ExtResource( 2 )
 
-[node name="Door" type="AnimatedSprite" parent="."]
-position = Vector2( 0, -16 )
-frames = SubResource( 7 )
-animation = "ElevatorDoor"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
 position = Vector2( 0.532399, -20 )
 rotation = 3.14159
 scale = Vector2( 2.28898, -5.44326 )
 shape = SubResource( 8 )
 
-[node name="PlayerDetection" type="Area2D" parent="."]
+[node name="Door" type="AnimatedSprite" parent="."]
+position = Vector2( 0, -16 )
+frames = SubResource( 7 )
+animation = "ElevatorDoor"
+
+[node name="InteractionArea" type="Area2D" parent="."]
 position = Vector2( 0.532024, -168 )
 rotation = 3.14159
 scale = Vector2( 2.28898, -5.44326 )
 collision_layer = 128
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection"]
+[node name="CollisionShape" type="CollisionShape2D" parent="InteractionArea"]
 position = Vector2( 0.232631, 33.0684 )
 shape = SubResource( 36 )
 
 [connection signal="animation_finished" from="Door" to="." method="_on_AnimatedSprite_animation_finished"]
-[connection signal="area_entered" from="PlayerDetection" to="." method="_on_PlayerDetection_area_entered"]
-[connection signal="area_exited" from="PlayerDetection" to="." method="_on_PlayerDetection_area_exited"]

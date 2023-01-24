@@ -1,0 +1,19 @@
+{
+	"glossary": [
+
+	],
+	"variables": [
+		{
+			"id": "1674392044-648",
+			"name": "FloorNumber",
+			"type": 0,
+			"value": "0"
+		},
+		{
+			"id": "1674346580-787",
+			"name": "LikeCheese",
+			"type": 0,
+			"value": "false"
+		}
+	]
+}

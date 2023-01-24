@@ -1,0 +1,21 @@
+{
+	"color": "#ffff9b00",
+	"description": "This is another test",
+	"display_name": "",
+	"display_name_bool": false,
+	"id": "character-1674336622.json",
+	"mirror_portraits": false,
+	"name": "Bamson Boy",
+	"nickname": "",
+	"nickname_bool": false,
+	"offset_x": 0,
+	"offset_y": 0,
+	"portraits": [
+		{
+			"name": "Default",
+			"path": "res://icon.png"
+		}
+	],
+	"scale": 100,
+	"theme": ""
+}
