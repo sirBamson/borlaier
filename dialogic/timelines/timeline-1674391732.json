@@ -45,7 +45,7 @@
 			"character": "character-1674391749.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Floor [FloorNumber] [nw=v]"
+			"text": "Floor [ElevatorFloorNumber] [nw=v]"
 		},
 		{
 			"event_id": "dialogic_013"
@@ -54,6 +54,6 @@
 	"metadata": {
 		"dialogic-version": "1.4.5",
 		"file": "timeline-1674391732.json",
-		"name": "Elevator"
+		"name": "ElevatorFloorNumber"
 	}
 }

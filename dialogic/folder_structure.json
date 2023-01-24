@@ -46,11 +46,21 @@
 		},
 		"Timelines": {
 			"files": [
-				"timeline-1674336594.json",
-				"timeline-1674391732.json"
+				"timeline-1674336594.json"
 			],
 			"folders": {
+				"Elevator": {
+					"files": [
+						"timeline-1674391732.json"
+					],
+					"folders": {
 
+					},
+					"metadata": {
+						"color": null,
+						"folded": false
+					}
+				}
 			},
 			"metadata": {
 				"color": null,
