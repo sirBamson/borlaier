@@ -7,6 +7,8 @@ var changing_scene: bool = false
 var door_animation: String = "LevelDoor"
 var new_level_path: String = EnvVar.next_level
 
+var in_interaction_area: bool = false
+
 
 func _ready() -> void:
 	# Sets which animation to play
@@ -40,11 +42,10 @@ func _change_scene() -> void:
 
 
 func _physics_process(_delta: float) -> void:
-	for area in $InteractionArea.get_overlapping_areas():
-		if area.name == "PlayerHitbox":
-			if Input.is_action_pressed("interaction"):
-				changing_scene = true
-				$Door.play(door_animation)
+	if in_interaction_area:
+		if Input.is_action_pressed("interaction"):
+			changing_scene = true
+			$Door.play(door_animation)
 
 
 # Runs when the door animation is finished and changing_scene == true
@@ -52,3 +53,12 @@ func _physics_process(_delta: float) -> void:
 func _on_AnimatedSprite_animation_finished() -> void:
 	if changing_scene:
 		_change_scene()
+
+
+func _on_InteractionArea_area_entered(area: Area2D) -> void:
+	if area.name == "PlayerHitbox":
+		in_interaction_area = true
+
+func _on_InteractionArea_area_exited(area: Area2D) -> void:
+	if area.name == "PlayerHitbox":
+		in_interaction_area = false

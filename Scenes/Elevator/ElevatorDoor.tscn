@@ -140,3 +140,5 @@ position = Vector2( 0.232631, 33.0684 )
 shape = SubResource( 36 )
 
 [connection signal="animation_finished" from="Door" to="." method="_on_AnimatedSprite_animation_finished"]
+[connection signal="area_entered" from="InteractionArea" to="." method="_on_InteractionArea_area_entered"]
+[connection signal="area_exited" from="InteractionArea" to="." method="_on_InteractionArea_area_exited"]
