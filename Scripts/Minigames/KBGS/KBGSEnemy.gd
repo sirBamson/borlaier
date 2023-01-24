@@ -1,65 +1,62 @@
-extends AnimatedSprite
+extends StaticBody2D
 
 
-var in_hit_area_right: bool = false
-var in_hit_area_left: bool = false
-var in_enemy_hit_area: bool = false
+var in_detection_area: bool = false
+var in_swing_area: bool = false
 
-var player: Node
+var player: KinematicBody2D
+
+
+func _ready() -> void:
+	for node in get_parent().get_children():
+		if node.is_in_group("Player"):
+			player = node
+
 
 func _physics_process(delta: float) -> void:
-	if !in_hit_area_right and !in_hit_area_left:
-		$HitWaitTimer.stop()
+	if in_detection_area:
+		if global_position.x <= player.global_position.x:
+			scale.x = 1
+		if global_position.x > player.global_position.x:
+			scale.x = -1
 
 
-func _on_DetectionLeft_area_entered(area: Area2D) -> void:
+
+
+func _on_DetectionArea_area_entered(area: Area2D) -> void:
 	if area.name == "PlayerHitbox":
-		player = area.get_parent()
-		scale.x = -1.5
-		$EnemyHit.scale.x = 1
-		$HitWaitTimer.start(0.5)
-		in_hit_area_left = true
+		in_detection_area = true
+		$SwingWaitTimer.start()
 
-
-func _on_DetectionLeft_area_exited(area: Area2D) -> void:
+func _on_DetectionArea_area_exited(area: Area2D) -> void:
 	if area.name == "PlayerHitbox":
-		in_hit_area_left = false
+		in_detection_area = false
+		$SwingWaitTimer.stop()
 
 
-func _on_DetectionRight_area_entered(area: Area2D) -> void:
+func _on_SwingArea_area_entered(area: Area2D) -> void:
 	if area.name == "PlayerHitbox":
-		player = area.get_parent()
-		scale.x = 1.5
-		$EnemyHit.scale.x = -1
-		$HitWaitTimer.start(0.5)
-		in_hit_area_right = true
+		in_swing_area = true
 
-
-func _on_DetectionRight_area_exited(area: Area2D) -> void:
+func _on_SwingArea_area_exited(area: Area2D) -> void:
 	if area.name == "PlayerHitbox":
-		in_hit_area_right = false
+		in_swing_area = false
 
 
-func _on_EnemyHit_area_entered(area: Area2D) -> void:
-	in_enemy_hit_area = true
+func _on_DamageArea_area_entered(area: Area2D) -> void:
+	if area.name == "PlayerPunchArea":
+		queue_free()
 
 
-func _on_EnemyHit_area_exited(area: Area2D) -> void:
-	in_enemy_hit_area = false
+func _on_SwingWaitTimer_timeout() -> void:
+	$Sprite.play("default")
+	$EnemySwingArea/CollisionShape.disabled = false
 
 
-func _on_HitWaitTimer_timeout() -> void:
-	if in_enemy_hit_area:
-		player.hit()
-		play("defult")
-
-
-func _on_Enemy_animation_finished() -> void:
-	stop()
-	frame = 0
-	if in_hit_area_right or in_hit_area_left:
-		$HitWaitTimer.start(0.5)
-
-
-func hit() -> void:
-	queue_free()
+func _on_Sprite_animation_finished() -> void:
+	$Sprite.stop()
+	$EnemySwingArea/CollisionShape.disabled = true
+	$Sprite.frame = 0
+	
+	if in_swing_area:
+		$SwingWaitTimer.start()
