@@ -16,4 +16,4 @@ var can_pause: bool = false
 
 
 func _ready() -> void:
-	Dialogic.set_variable("FloorNumber", current_level_number)
+	Dialogic.set_variable("ElevatorFloorNumber", current_level_number)

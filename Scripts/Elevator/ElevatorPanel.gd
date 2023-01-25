@@ -26,4 +26,4 @@ func _physics_process(_delta: float) -> void:
 				
 				EnvVar.can_pause = true
 				
-				add_child(Dialogic.start("Elevator"))
+				add_child(Dialogic.start("ElevatorFloorNumber"))

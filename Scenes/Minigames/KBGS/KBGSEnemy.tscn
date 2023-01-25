@@ -1,7 +1,19 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
-[ext_resource path="res://Scripts/Minigames/KBGS/KBGSEnemy.gd" type="Script" id=1]
 [ext_resource path="res://Assets/KBGS/enemy-attack-Sheet.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/Minigames/KBGS/KBGSEnemy.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=21]
+
+[sub_resource type="CapsuleShape2D" id=20]
+radius = 45.0
+height = 98.0
+
+[sub_resource type="RectangleShape2D" id=19]
+extents = Vector2( 43.4109, 10.1408 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 59.3334, 47.5556 )
 
 [sub_resource type="AtlasTexture" id=11]
 flags = 4
@@ -47,68 +59,60 @@ region = Rect2( 1512, 0, 216, 124 )
 animations = [ {
 "frames": [ SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ) ],
 "loop": false,
-"name": "defult",
+"name": "default",
 "speed": 12.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=1]
-radius = 32.0
-height = 64.0
+[node name="Enemy" type="StaticBody2D"]
+collision_layer = 4
+script = ExtResource( 3 )
 
-[sub_resource type="RectangleShape2D" id=19]
-extents = Vector2( 43.4109, 10.1408 )
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 93 )
+scale = Vector2( 3.92, 1 )
+shape = SubResource( 21 )
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 34.6667, 64 )
+[node name="EnemyDamageArea" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
 
-[node name="Enemy" type="AnimatedSprite"]
-position = Vector2( 24, 0 )
-scale = Vector2( 1.5, 1.5 )
-frames = SubResource( 10 )
-animation = "defult"
-script = ExtResource( 1 )
+[node name="CollisionShape" type="CollisionShape2D" parent="EnemyDamageArea"]
+position = Vector2( 0, 12 )
+shape = SubResource( 20 )
 
-[node name="Hitbox" type="Area2D" parent="."]
-position = Vector2( -16, 0 )
-scale = Vector2( 1.5, 1.5 )
+[node name="EnemySwingArea" type="Area2D" parent="."]
+scale = Vector2( 2.25, 2.25 )
+collision_layer = 4
+collision_mask = 2
 
-[node name="Hitbox" type="CollisionShape2D" parent="Hitbox"]
-shape = SubResource( 1 )
-
-[node name="EnemyHit" type="Area2D" parent="."]
-position = Vector2( -16, 0 )
-scale = Vector2( 1.5, 1.5 )
-
-[node name="EnemyHitShape" type="CollisionShape2D" parent="EnemyHit"]
+[node name="CollisionShape" type="CollisionShape2D" parent="EnemySwingArea"]
 position = Vector2( 0, 10.6667 )
 scale = Vector2( 1.72, 4.73333 )
 shape = SubResource( 19 )
+disabled = true
 
-[node name="DetectionLeft" type="Area2D" parent="."]
-position = Vector2( -16, 0 )
-scale = Vector2( 1.5, 1.5 )
+[node name="EnemyDetectionArea" type="Area2D" parent="."]
+scale = Vector2( 2.25, 2.25 )
+collision_layer = 4
+collision_mask = 2
 
-[node name="Left" type="CollisionShape2D" parent="DetectionLeft"]
-position = Vector2( 50.6667, 0 )
+[node name="CollisionShape" type="CollisionShape2D" parent="EnemyDetectionArea"]
 shape = SubResource( 2 )
 
-[node name="DetectionRight" type="Area2D" parent="."]
-position = Vector2( -16, 0 )
+[node name="Sprite" type="AnimatedSprite" parent="."]
+position = Vector2( 24, 0 )
 scale = Vector2( 1.5, 1.5 )
+frames = SubResource( 10 )
 
-[node name="Right" type="CollisionShape2D" parent="DetectionRight"]
-position = Vector2( -44, 0 )
-shape = SubResource( 2 )
-
-[node name="HitWaitTimer" type="Timer" parent="."]
+[node name="SwingWaitTimer" type="Timer" parent="."]
 wait_time = 0.5
 one_shot = true
 
-[connection signal="animation_finished" from="." to="." method="_on_Enemy_animation_finished"]
-[connection signal="area_entered" from="EnemyHit" to="." method="_on_EnemyHit_area_entered"]
-[connection signal="area_exited" from="EnemyHit" to="." method="_on_EnemyHit_area_exited"]
-[connection signal="area_entered" from="DetectionLeft" to="." method="_on_DetectionLeft_area_entered"]
-[connection signal="area_exited" from="DetectionLeft" to="." method="_on_DetectionLeft_area_exited"]
-[connection signal="area_entered" from="DetectionRight" to="." method="_on_DetectionRight_area_entered"]
-[connection signal="area_exited" from="DetectionRight" to="." method="_on_DetectionRight_area_exited"]
-[connection signal="timeout" from="HitWaitTimer" to="." method="_on_HitWaitTimer_timeout"]
+[connection signal="area_entered" from="EnemyDamageArea" to="." method="_on_DamageArea_area_entered"]
+[connection signal="area_exited" from="EnemyDamageArea" to="." method="_on_DamageArea_area_exited"]
+[connection signal="area_entered" from="EnemySwingArea" to="." method="_on_SwingArea_area_entered"]
+[connection signal="area_exited" from="EnemySwingArea" to="." method="_on_SwingArea_area_exited"]
+[connection signal="area_entered" from="EnemyDetectionArea" to="." method="_on_DetectionArea_area_entered"]
+[connection signal="area_exited" from="EnemyDetectionArea" to="." method="_on_DetectionArea_area_exited"]
+[connection signal="animation_finished" from="Sprite" to="." method="_on_Sprite_animation_finished"]
+[connection signal="timeout" from="SwingWaitTimer" to="." method="_on_SwingWaitTimer_timeout"]

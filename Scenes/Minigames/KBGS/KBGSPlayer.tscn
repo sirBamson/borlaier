@@ -141,10 +141,9 @@ animations = [ {
 "speed": 12.0
 } ]
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Player" type="KinematicBody2D" groups=["Player"]]
 scale = Vector2( 1.5, 1.5 )
 collision_layer = 2
-collision_mask = 5
 script = ExtResource( 4 )
 
 [node name="PlayerCollision" type="CollisionShape2D" parent="."]
@@ -152,15 +151,19 @@ position = Vector2( 0, 60.6667 )
 shape = SubResource( 25 )
 
 [node name="PlayerHitbox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 4
 
-[node name="PlayerHitbox" type="CollisionShape2D" parent="PlayerHitbox"]
+[node name="CollisionShape" type="CollisionShape2D" parent="PlayerHitbox"]
 position = Vector2( 0, 14 )
 scale = Vector2( 3.18981, 0.463188 )
 shape = SubResource( 24 )
 
-[node name="PlayerHit" type="Area2D" parent="."]
+[node name="PlayerPunchArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 4
 
-[node name="PlayerHitShape" type="CollisionShape2D" parent="PlayerHit"]
+[node name="PlayerHitShape" type="CollisionShape2D" parent="PlayerPunchArea"]
 position = Vector2( -46.3333, 0.333315 )
 shape = SubResource( 26 )
 
@@ -175,6 +178,8 @@ frames = SubResource( 48 )
 animation = "Hit"
 frame = 2
 
-[connection signal="area_entered" from="PlayerHit" to="." method="_on_PlayerHit_area_entered"]
-[connection signal="area_exited" from="PlayerHit" to="." method="_on_PlayerHit_area_exited"]
+[connection signal="area_entered" from="PlayerHitbox" to="." method="_on_PlayerHitbox_area_entered"]
+[connection signal="area_exited" from="PlayerHitbox" to="." method="_on_PlayerHitbox_area_exited"]
+[connection signal="area_entered" from="PlayerPunchArea" to="." method="_on_PlayerHit_area_entered"]
+[connection signal="area_exited" from="PlayerPunchArea" to="." method="_on_PlayerHit_area_exited"]
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]

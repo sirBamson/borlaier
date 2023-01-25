@@ -15,7 +15,7 @@ var last_velocity: Vector2 = Vector2(-1, 0)
 
 
 func _ready() -> void:
-	$PlayerHit/PlayerHitShape.disabled = true
+	$PlayerPunchArea/PlayerHitShape.disabled = true
 
 
 func _physics_process(delta: float) -> void:
@@ -36,7 +36,7 @@ func movement() -> void:
 		velocity.y += -jump_force
 	
 	if Input.is_action_pressed("mini_hit") and not is_punching:
-		$PlayerHit/PlayerHitShape.disabled = false
+		$PlayerPunchArea/PlayerHitShape.disabled = false
 		is_punching = true
 		$AnimatedSprite.play("Hit")
 	
@@ -47,14 +47,14 @@ func movement() -> void:
 			last_velocity.x = velocity.x
 		
 		if last_velocity.x == -1:
-			$PlayerHit.scale.x = 1
+			$PlayerPunchArea.scale.x = 1
 			$AnimatedSprite.scale.x = 1
 			if !is_on_floor():
 				$AnimatedSprite.play("Jump")
 			else:
 				$AnimatedSprite.play("Walk")
 		elif last_velocity.x == 1:
-			$PlayerHit.scale.x = -1
+			$PlayerPunchArea.scale.x = -1
 			$AnimatedSprite.scale.x = -1
 			if !is_on_floor():
 				$AnimatedSprite.play("Jump")
@@ -74,24 +74,13 @@ func movement() -> void:
 	velocity = move_and_slide(velocity, Vector2.UP)
 
 
-func hit() -> void:
-	health -= 20
-
-
 func _on_AnimatedSprite_animation_finished() -> void:
 	if is_punching:
-		$PlayerHit/PlayerHitShape.disabled = true
+		$PlayerPunchArea/PlayerHitShape.disabled = true
 		is_punching = false
 
 
+func _on_PlayerHitbox_area_entered(area: Area2D) -> void:
+	if area.name == "EnemySwingArea":
+		health -= 20
 
-func _on_PlayerHit_area_entered(area: Area2D) -> void:
-	if area.name == "Hitbox":
-		print(enemy)
-		enemy = area.get_parent()
-		enemy.hit()
-
-
-func _on_PlayerHit_area_exited(area: Area2D) -> void:
-	if area.name == "Hitbox":
-		enemy = null
