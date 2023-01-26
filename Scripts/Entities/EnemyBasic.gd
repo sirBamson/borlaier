@@ -7,20 +7,24 @@ onready var player: KinematicBody2D = get_parent().get_node("Player")
 export (int) var speed: int = 250
 
 var path: Array
-var last_path: Array
+var ai_state: String = "idle"
 
 
 func _physics_process(_delta: float) -> void:
 	detect_player()
-	move_towards()
+	hunt_player()
 
 
 func detect_player() -> void:
-	$RayCast.cast_to = player.position
-	print($RayCast)
+	$RayCast.force_raycast_update()
+	$RayCast.add_exception($DamageArea)
+	$RayCast.cast_to = player.get_node("PlayerCamera").global_position - global_position
+	
+	if $RayCast.get_collider() == player:
+		ai_state = "hunt"
 
 
-func move_towards() -> void:
+func hunt_player() -> void:
 	var velocity: Vector2 = Vector2.ZERO
 	path = pathfinding.get_new_path(global_position, player.global_position)
 	if path.size() > 2:
@@ -28,3 +32,7 @@ func move_towards() -> void:
 		
 		velocity = velocity.normalized() * speed
 		velocity = move_and_slide(velocity)
+
+
+func idle() -> void:
+	pass
