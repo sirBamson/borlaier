@@ -7,7 +7,6 @@
 [ext_resource path="res://Assets/Sounds/reload_gun.wav" type="AudioStream" id=5]
 [ext_resource path="res://Assets/muzzle_flash.png" type="Texture" id=6]
 
-
 [sub_resource type="AtlasTexture" id=8]
 flags = 4
 atlas = ExtResource( 6 )

@@ -6,7 +6,6 @@
 [ext_resource path="res://Assets/Sounds/pin_pulled.wav" type="AudioStream" id=4]
 [ext_resource path="res://Assets/Sounds/grenade_explosion.wav" type="AudioStream" id=5]
 
-
 [sub_resource type="CircleShape2D" id=1]
 radius = 17.0294
 
@@ -80,7 +79,7 @@ stream = ExtResource( 4 )
 
 [node name="GrenadeExplosion" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 5 )
-volume_db = -4.0
+volume_db = -18.667
 
 [node name="Area2D" type="Area2D" parent="."]
 
