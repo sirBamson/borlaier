@@ -20,7 +20,9 @@ export (int) var speed: int = 600
 
 
 func _ready() -> void:
+	Shake.shake_nodes.clear()
 	Shake.shake_nodes[$PlayerCamera] = true
+	
 	if PlayerGlobals.player_has_gun:
 		var weapon = load(PlayerGlobals.current_weapon)
 		weapon = weapon.instance()
