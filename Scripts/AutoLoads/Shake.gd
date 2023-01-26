@@ -2,14 +2,15 @@ extends Timer
 
 
 var is_shaking := false
-var shake_amount: = 0
-var shake_nodes = {}
+var shake_amount: int = 0
+var shake_nodes: Dictionary = {}
 
-var noise_y := 0
+var noise_y: int = 0
 
-onready var tween := create_tween().set_parallel(true)
+onready var tween: SceneTreeTween = create_tween().set_parallel(true)
 
 onready var noise = OpenSimplexNoise.new()
+
 
 func _ready() -> void:
 	randomize()
@@ -26,7 +27,8 @@ func _process(delta: float) -> void:
 			if shake_nodes[node]:
 				node.rotation = 0.4 * noise.get_noise_2d(noise.seed*3, noise_y)
 		noise_y += 1
-		
+
+
 func start_shake(amount, duration) -> void:
 	if amount >= shake_amount:
 		tween.kill()
