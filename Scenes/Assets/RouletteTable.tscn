@@ -3,7 +3,8 @@
 [ext_resource path="res://Assets/roulette_table.png" type="Texture" id=1]
 
 [node name="StaticBody2D" type="StaticBody2D"]
-collision_layer = 33
+collision_layer = 32
+collision_mask = 6
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0, -158 )
