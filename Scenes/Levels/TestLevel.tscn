@@ -450,8 +450,8 @@ position = Vector2( 504, 408 )
 
 [node name="DroppedWeapon" parent="YSort" instance=ExtResource( 10 )]
 position = Vector2( 1024, 882 )
-weapon_type = "res://Scenes/Weapons/AssultRifle.tscn"
-bullets_in_mag = 12
+weapon_type = "res://Scenes/Weapons/SemiAutomaticRifle.tscn"
+bullets_in_mag = 3
 
 [node name="DroppedWeapon2" parent="YSort" instance=ExtResource( 10 )]
 position = Vector2( 473, 681 )

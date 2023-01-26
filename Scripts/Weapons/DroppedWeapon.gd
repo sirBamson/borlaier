@@ -3,7 +3,8 @@ extends Area2D
 
 onready var weapons: Dictionary = {
 	"res://Scenes/Weapons/AssultRifle.tscn": get_node("AssultRifleShape"),
-	"res://Scenes/Weapons/Pistol.tscn": get_node("PistolShape")
+	"res://Scenes/Weapons/Pistol.tscn": get_node("PistolShape"),
+	"res://Scenes/Weapons/SemiAutomaticRifle.tscn": get_node("SemiAutomaticRifleShape")
 	}
 
 
