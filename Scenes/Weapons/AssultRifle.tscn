@@ -30,9 +30,9 @@ animations = [ {
 "speed": 20.0
 } ]
 
-[node name="AssultRifle" type="Sprite" groups=["Weapon"]]
-texture = ExtResource( 1 )
+[node name="AssultRifle" type="Node2D" groups=["Weapon"]]
 script = ExtResource( 2 )
+bullet_speed = 4000
 auto = true
 
 [node name="BulletSpawn" type="Position2D" parent="."]
@@ -55,3 +55,7 @@ position = Vector2( 164, -21 )
 scale = Vector2( 2.625, 2.1875 )
 frames = SubResource( 11 )
 animation = "deafult"
+
+[node name="AssultRifle" type="Sprite" parent="."]
+position = Vector2( 0, 1 )
+texture = ExtResource( 1 )

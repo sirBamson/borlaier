@@ -1,4 +1,4 @@
-extends Sprite
+extends Node2D
 
 
 export (int) var bullet_speed = 3000

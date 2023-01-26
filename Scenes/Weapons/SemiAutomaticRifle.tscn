@@ -30,12 +30,12 @@ animations = [ {
 "speed": 20.0
 } ]
 
-[node name="SemiAutomaticRifle" type="Sprite" groups=["Weapon"]]
-texture = ExtResource( 6 )
+[node name="SemiAutomaticRifle" type="Node2D" groups=["Weapon"]]
 script = ExtResource( 2 )
-bullet_speed = 4000
-magazine_size = 7
-fire_rate = 0.3
+bullet_speed = 4500
+magazine_size = 10
+fire_rate = 1.0
+damage = 20
 
 [node name="BulletSpawn" type="Position2D" parent="."]
 
@@ -56,3 +56,6 @@ position = Vector2( 164, -21 )
 scale = Vector2( 2.625, 2.1875 )
 frames = SubResource( 14 )
 animation = "deafult"
+
+[node name="SemiAutomaticRifle" type="Sprite" parent="."]
+texture = ExtResource( 6 )
