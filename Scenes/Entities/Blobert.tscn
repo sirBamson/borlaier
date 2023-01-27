@@ -12,7 +12,7 @@ height = 70.0
 
 [node name="Blobert" type="KinematicBody2D" groups=["Enemy"]]
 collision_layer = 4
-collision_mask = 47
+collision_mask = 559
 script = ExtResource( 2 )
 
 [node name="IdleTimer" type="Timer" parent="."]

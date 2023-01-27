@@ -114,6 +114,7 @@ animations = [ {
 extents = Vector2( 20.97, 40.417 )
 
 [node name="ElevatorDoor" type="StaticBody2D"]
+collision_layer = 128
 collision_mask = 2
 script = ExtResource( 2 )
 

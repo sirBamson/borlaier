@@ -9,7 +9,7 @@ height = 14.0
 
 [node name="Bullet" type="RigidBody2D"]
 collision_layer = 8
-collision_mask = 141
+collision_mask = 13
 contacts_reported = 1
 contact_monitor = true
 script = ExtResource( 2 )
