@@ -32,12 +32,11 @@ animations = [ {
 
 [node name="Pistol" type="Node2D" groups=["Weapon"]]
 script = ExtResource( 2 )
-bullet_speed = 4000
 magazine_size = 12
 fire_rate = 0.3
 
 [node name="BulletSpawn" type="Position2D" parent="."]
-position = Vector2( 101, -4 )
+position = Vector2( 95, -30 )
 
 [node name="BulletSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 3 )
@@ -52,10 +51,11 @@ stream = ExtResource( 5 )
 volume_db = -5.0
 
 [node name="MuzzleFlash" type="AnimatedSprite" parent="."]
-position = Vector2( 115, -3 )
+position = Vector2( 110, -29 )
 scale = Vector2( 2.625, 2.1875 )
 frames = SubResource( 13 )
 animation = "deafult"
 
 [node name="Pistol" type="Sprite" parent="."]
+position = Vector2( -10, -26 )
 texture = ExtResource( 1 )

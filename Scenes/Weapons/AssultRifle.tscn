@@ -32,7 +32,6 @@ animations = [ {
 
 [node name="AssultRifle" type="Node2D" groups=["Weapon"]]
 script = ExtResource( 2 )
-bullet_speed = 4000
 auto = true
 
 [node name="BulletSpawn" type="Position2D" parent="."]

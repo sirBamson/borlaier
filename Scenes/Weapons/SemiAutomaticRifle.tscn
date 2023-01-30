@@ -32,30 +32,36 @@ animations = [ {
 
 [node name="SemiAutomaticRifle" type="Node2D" groups=["Weapon"]]
 script = ExtResource( 2 )
-bullet_speed = 4500
-magazine_size = 10
-fire_rate = 1.0
+bullet_speed = 4000
+magazine_size = 7
+fire_rate = 0.45
 damage = 20
 
 [node name="BulletSpawn" type="Position2D" parent="."]
+visible = false
+position = Vector2( 182, -23 )
 
 [node name="BulletSound" type="AudioStreamPlayer2D" parent="."]
+visible = false
 stream = ExtResource( 5 )
 volume_db = -10.0
 
 [node name="GunClickSound" type="AudioStreamPlayer2D" parent="."]
+visible = false
 stream = ExtResource( 3 )
 volume_db = -20.0
 
 [node name="GunReloadSound" type="AudioStreamPlayer2D" parent="."]
+visible = false
 stream = ExtResource( 4 )
 volume_db = -5.0
 
 [node name="MuzzleFlash" type="AnimatedSprite" parent="."]
-position = Vector2( 164, -21 )
+position = Vector2( 224, -20 )
 scale = Vector2( 2.625, 2.1875 )
 frames = SubResource( 14 )
 animation = "deafult"
 
 [node name="SemiAutomaticRifle" type="Sprite" parent="."]
+position = Vector2( 73, -13 )
 texture = ExtResource( 6 )
