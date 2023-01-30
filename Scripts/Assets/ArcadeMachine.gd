@@ -13,5 +13,5 @@ func _physics_process(_delta: float) -> void:
 				for node in get_node("/root/SceneController").get_children():
 					
 					if node.is_in_group("Level"):
-						EnvVar.minigame_load_scene = node.filename
+						EnvVar.minigame_load_scene_path = node.filename
 						scene_controller.change_scene(true, node, node.filename, "res://Scenes/Minigames/KBGS/KBGSStartMenu.tscn")

@@ -45,6 +45,7 @@ func _on_SwingArea_area_exited(area: Area2D) -> void:
 
 func _on_DamageArea_area_entered(area: Area2D) -> void:
 	if area.name == "PlayerPunchArea":
+		player.enemy_amount -= 1
 		queue_free()
 
 

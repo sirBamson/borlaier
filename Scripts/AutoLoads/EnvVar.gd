@@ -6,7 +6,10 @@ var saved_scenes: Dictionary = {}
 var saved_scenes_strings: Dictionary = {}
 var current_level_number: int = 0
 
-var minigame_load_scene: String = ""
+# Path to the node that loads the minigame
+var minigame_load_scene_path: String = ""
+var kbgs_minigame_first_time: bool = true
+var kbgs_minigame_won: bool = false
 
 # Shows which is the next scene in elevator
 var next_level: String = "res://Scenes/Levels/Level0.tscn"
