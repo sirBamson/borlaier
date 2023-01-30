@@ -1,11 +1,11 @@
 extends Node2D
 
 
-export (int) var bullet_speed = 3000
-export (int) var magazine_size = 20
-export (float) var fire_rate = 0.12
-export (int) var damage = 10
-export (bool) var auto = false
+export (int) var bullet_speed: int = 3000
+export (int) var magazine_size: int = 20
+export (float) var fire_rate: float = 0.12
+export (int) var damage: int = 10
+export (bool) var auto: bool = false
 
 
 
@@ -57,6 +57,7 @@ func _physics_process(_delta: float) -> void:
 		bullet_instance.global_position = $BulletSpawn.global_position
 		bullet_instance.rotation = rotation
 		bullet_instance.apply_impulse(Vector2(), Vector2(bullet_speed, 0).rotated(rotation))
+		bullet_instance.damage_output = damage
 		get_parent().get_parent().add_child(bullet_instance)
 		
 		
