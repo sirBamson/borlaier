@@ -1,10 +1,12 @@
 extends KinematicBody2D
 
 
-onready var pathfinding = get_parent().get_parent().get_node("Pathfinding")
-onready var player: KinematicBody2D = get_parent().get_node("Player")
+onready var pathfinding = get_parent().get_parent().get_parent().get_node("Pathfinding")
+onready var player: KinematicBody2D = get_parent().get_parent().get_node("Player")
 
-export (int) var speed: int = 250
+var speed: int = 250
+var healt: int = 100
+
 
 var path: Array
 var new_position: Vector2
@@ -12,6 +14,10 @@ var ai_state: String = "hunt"
 
 
 func _physics_process(_delta: float) -> void:
+	if healt <= 0:
+		queue_free()
+	
+	
 	detect_player()
 	
 	if ai_state == "idle":
@@ -25,10 +31,14 @@ func detect_player() -> void:
 	$RayCast1.add_exception(player)
 	$RayCast2.add_exception($DamageArea)
 	$RayCast2.add_exception(player)
-	$RayCast1.cast_to = player.get_node("PlayerCamera").global_position - global_position
-	$RayCast2.cast_to = player.get_node("CollisionShape").global_position - global_position
+	$RayCast1.cast_to = player.get_node("EnemyDetectionNode1").global_position - global_position
+	$RayCast2.cast_to = player.get_node("EnemyDetectionNode2").global_position - global_position
 	
-	print($RayCast2.get_collider())
+	if $RayCast1.cast_to.x <= 0:
+		$Sprite.scale.x = -0.5
+	elif $RayCast1.cast_to.x > 0:
+		$Sprite.scale.x = 0.5
+	
 	if $RayCast1.get_collider() == player.get_node("PlayerHitbox") or $RayCast2.get_collider() == player.get_node("PlayerHitbox"):
 		$IdleTimer.stop()
 		ai_state = "hunt"
@@ -64,3 +74,10 @@ func idle() -> void:
 
 func _on_IdleTimer_timeout() -> void:
 	ai_state = "idle"
+
+
+func _on_DamageArea_body_entered(body: Node) -> void:
+	if body.is_in_group("Bullet"):
+		print(body.damage_output)
+		healt -= body.damage_output
+		body.queue_free()
