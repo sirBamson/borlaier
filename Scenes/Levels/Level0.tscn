@@ -9,7 +9,7 @@
 [ext_resource path="res://Scenes/Assets/Plant.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/casino_tilemap.png" type="Texture" id=8]
 [ext_resource path="res://Scenes/Assets/SlotLeft.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scenes/Assets/ArcadeMachine.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Assets/ArcadeFutball.tscn" type="PackedScene" id=10]
 
 [sub_resource type="TileSet" id=65]
 0/name = "casino_tilemap.png 0"

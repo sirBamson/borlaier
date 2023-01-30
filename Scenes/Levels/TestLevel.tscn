@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://Assets/casino_tilemap.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Assets/SlotMachine.tscn" type="PackedScene" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Scenes/Weapons/DroppedWeapon.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/Assets/RouletteTable.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/Entities/NPC.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/Assets/TableStanding.tscn" type="PackedScene" id=13]
 
 [sub_resource type="TileSet" id=48]
 0/name = "casino_tilemap.png 0"
@@ -466,6 +467,12 @@ position = Vector2( 1329, 921 )
 
 [node name="Blobert" parent="YSort" instance=ExtResource( 9 )]
 position = Vector2( 273, 274 )
+
+[node name="TableStanding" parent="YSort" instance=ExtResource( 13 )]
+position = Vector2( 1631, 490 )
+
+[node name="TableStanding2" parent="YSort" instance=ExtResource( 13 )]
+position = Vector2( 1863, 489 )
 
 [node name="Walls" type="TileMap" parent="."]
 tile_set = SubResource( 59 )
