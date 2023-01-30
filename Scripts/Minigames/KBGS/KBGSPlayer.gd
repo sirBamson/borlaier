@@ -1,5 +1,6 @@
 extends KinematicBody2D
 
+onready var scene_controller: Node = get_node("/root/SceneController")
 
 export (int) var health: int = 100
 
@@ -9,6 +10,8 @@ var jump_force: int = 900
 
 var is_punching: bool = false
 var enemy: Node
+var enemy_amount: int = 6
+
 
 var velocity: Vector2 = Vector2.ZERO
 var last_velocity: Vector2 = Vector2(-1, 0)
@@ -20,6 +23,12 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	print(health)
+	if health <= 0:
+		EnvVar.kbgs_minigame_won = false
+		scene_controller.change_scene(false, get_parent(), get_parent().filename, "res://Scenes/Minigames/KBGS/KBGSStartMenu.tscn")
+	if enemy_amount <= 0:
+		EnvVar.kbgs_minigame_won = true
+		scene_controller.change_scene(false, get_parent(), get_parent().filename, "res://Scenes/Minigames/KBGS/KBGSStartMenu.tscn")
 	movement()
 
 
