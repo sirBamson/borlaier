@@ -8,7 +8,7 @@
 [ext_resource path="res://Scenes/Assets/Plant.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Elevator/ElevatorDoor.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Pathfinding.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Scenes/Entities/Blobert.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/EnemySpawner.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/Weapons/DroppedWeapon.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/Assets/RouletteTable.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/Entities/NPC.tscn" type="PackedScene" id=12]
@@ -465,8 +465,11 @@ position = Vector2( 279, 865 )
 [node name="NPC" parent="YSort" instance=ExtResource( 12 )]
 position = Vector2( 1329, 921 )
 
-[node name="Blobert" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 273, 274 )
+[node name="EnemySpawner" parent="YSort" instance=ExtResource( 9 )]
+position = Vector2( 256, 251 )
+enemy_path = "res://Scenes/Entities/EnemyChip.tscn"
+spawn_interval = 2
+max_enemy_amount = 5
 
 [node name="Walls" type="TileMap" parent="."]
 tile_set = SubResource( 59 )
