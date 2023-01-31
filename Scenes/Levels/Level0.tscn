@@ -9,7 +9,7 @@
 [ext_resource path="res://Scenes/Assets/Plant.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/casino_tilemap.png" type="Texture" id=8]
 [ext_resource path="res://Scenes/Assets/SlotLeft.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scenes/Assets/ArcadeFutball.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Assets/ArcadeKBGS.tscn" type="PackedScene" id=10]
 
 [sub_resource type="TileSet" id=65]
 0/name = "casino_tilemap.png 0"
@@ -495,8 +495,8 @@ position = Vector2( 2688, 1248 )
 [node name="SlotLeft6" parent="YSort" instance=ExtResource( 9 )]
 position = Vector2( 2688, 1056 )
 
-[node name="ArcadeMachine" parent="YSort" instance=ExtResource( 10 )]
-position = Vector2( 2432, 584 )
+[node name="ArcadeKBGS" parent="YSort" instance=ExtResource( 10 )]
+position = Vector2( 2448, 569 )
 
 [node name="Walls" type="TileMap" parent="."]
 tile_set = SubResource( 67 )
