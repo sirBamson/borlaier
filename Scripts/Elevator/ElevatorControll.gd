@@ -5,7 +5,7 @@ onready var scene_controller: Node = get_node("/root/SceneController")
 
 var changing_scene: bool = false
 var door_animation: String = "LevelDoor"
-var new_level_path: String = EnvVar.next_level
+var new_level_path: String = EnvVar.elevator_next_level
 
 var in_interaction_area: bool = false
 
@@ -38,12 +38,12 @@ func _change_scene() -> void:
 	if current_scene.is_in_group("Level"):
 		scene_controller.change_scene(true, current_scene, current_scene_path, "res://Scenes/Elevator/Elevator.tscn")
 	elif current_scene.is_in_group("Elevator"):
-		scene_controller.change_scene(false, current_scene, current_scene_path, EnvVar.next_level)
+		scene_controller.change_scene(false, current_scene, current_scene_path, EnvVar.elevator_next_level)
 
 
 func _physics_process(_delta: float) -> void:
 	if in_interaction_area:
-		if Input.is_action_pressed("interaction"):
+		if Input.is_action_pressed("interaction") and not EnvVar.elevator_moving:
 			changing_scene = true
 			$Door.play(door_animation)
 

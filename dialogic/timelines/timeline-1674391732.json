@@ -6,6 +6,12 @@
 		},
 		{
 			"condition": "",
+			"definition": "1674631318-648",
+			"event_id": "dialogic_012",
+			"value": "1"
+		},
+		{
+			"condition": "",
 			"definition": "1674392044-648",
 			"event_id": "dialogic_012",
 			"value": "0"
@@ -46,6 +52,24 @@
 			"event_id": "dialogic_001",
 			"portrait": "",
 			"text": "Floor [ElevatorFloorNumber] [nw=v]"
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"condition": "",
+			"definition": "1674631318-648",
+			"event_id": "dialogic_012",
+			"value": "0"
+		},
+		{
+			"character": "character-1674391749.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Access denied [nw=v]\nChose another floor [nw=v]"
 		},
 		{
 			"event_id": "dialogic_013"
