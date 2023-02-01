@@ -3,6 +3,8 @@ extends Node
 var player_healt: int = 100
 var player_has_gun: bool = true
 
+var coins: int = 0
+
 var magazine_size: int
 var bullets_in_mag: int 
 var bullets_left: int = 200
