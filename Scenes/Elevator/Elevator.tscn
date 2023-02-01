@@ -386,6 +386,8 @@ format = 1
 tile_data = PoolIntArray( -65537, 0, 0, -131069, 6, 0, -1, 1, 0, -65533, 5, 0, 65535, 1, 0, 3, 5, 0, 131071, 1, 0, 65539, 5, 0, 196607, 2, 0, 131072, 3, 0, 131073, 3, 0, 131074, 3, 0, 131075, 4, 0, 196608, 7, 0, 196609, 7, 0, 196610, 7, 0 )
 
 [node name="WaitTimer" type="Timer" parent="."]
+one_shot = true
 
 [connection signal="area_entered" from="ElevatorPanel" to="ElevatorPanel" method="_on_ElevatorPanel_area_entered"]
 [connection signal="area_exited" from="ElevatorPanel" to="ElevatorPanel" method="_on_ElevatorPanel_area_exited"]
+[connection signal="timeout" from="WaitTimer" to="ElevatorPanel" method="_on_WaitTimer_timeout"]
