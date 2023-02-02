@@ -34,6 +34,7 @@ func _ready() -> void:
 
 
 func _physics_process(_delta: float) -> void:
+	
 	weapon_pickup()
 	
 	throw_grenade()
@@ -146,14 +147,6 @@ func throw_grenade() -> void:
 	if Input.is_action_just_released("throw_grenade"):
 		emit_signal("throwing_grenade")
 		PlayerGlobals.holding_grenade = false
-
-
-# Temp func
-func take_damage(damage) -> void:
-	healt -= damage
-	
-	if healt <= 0:
-		emit_signal("player_dead")
 
 
 func _on_PlayerHitbox_area_entered(area: Area2D) -> void:
