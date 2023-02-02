@@ -13,6 +13,7 @@ var kbgs_minigame_won: bool = false
 # Shows which is the next scene in elevator
 var elevator_next_level: String = "res://Scenes/Levels/Level0.tscn"
 var elevator_current_level_number: int = 0
+var elevator_old_level_number: int = 0
 var elevator_button_number_pressed: int = 0
 var elevator_moving: bool = false
 
