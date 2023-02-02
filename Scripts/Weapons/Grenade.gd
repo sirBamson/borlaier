@@ -1,6 +1,8 @@
 extends RigidBody2D
 
 export (int) var throw_speed: int = 1200
+export (int) var drag: int = 500
+export (int) var damage_output: int = 50
 
 var player: Node
 
@@ -12,8 +14,8 @@ func _ready() -> void:
 	visible = true
 	$PinPull.play()
 	$Timer.start(2)
-	$Area2D/CollisionShape2D.disabled = true
-	$Area2D/AnimatedSprite.visible = false
+	$DamageArea/CollisionShape.disabled = true
+	$DamageArea/AnimatedSprite.visible = false
 
 
 func _physics_process(_delta: float) -> void:
@@ -26,9 +28,9 @@ func grenade_explosion():
 	$Sprite.visible = false
 	sleeping = true
 	$GrenadeExplosion.play()
-	$Area2D/CollisionShape2D.disabled = false
-	$Area2D/AnimatedSprite.visible = true
-	$Area2D/AnimatedSprite.play("default")
+	$DamageArea/CollisionShape.disabled = false
+	$DamageArea/AnimatedSprite.visible = true
+	$DamageArea/AnimatedSprite.play("default")
 
 
 func grenade_thrown() -> void:
@@ -36,7 +38,14 @@ func grenade_thrown() -> void:
 		thrown = true
 		look_at(get_global_mouse_position())
 		apply_impulse(Vector2.ZERO, Vector2(throw_speed, 0).rotated(rotation))
-		
+
+
+func _on_DamageArea_body_entered(body: Node) -> void:
+	if body.is_in_group("Enemy"):
+		body.healt -= damage_output
+	if body.is_in_group("Player"):
+		body.healt -= damage_output
+
 
 func _on_Timer_timeout() -> void:
 	grenade_exploded = true

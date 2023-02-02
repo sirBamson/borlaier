@@ -7,7 +7,7 @@
 [ext_resource path="res://Assets/Sounds/grenade_explosion.wav" type="AudioStream" id=5]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 17.0294
+radius = 23.0217
 
 [sub_resource type="CircleShape2D" id=2]
 radius = 209.0
@@ -61,12 +61,12 @@ animations = [ {
 } ]
 
 [node name="Grenade" type="RigidBody2D"]
-collision_layer = 8
-collision_mask = 5
+collision_layer = 256
+collision_mask = 677
 gravity_scale = 0.0
 script = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -81,17 +81,19 @@ stream = ExtResource( 4 )
 stream = ExtResource( 5 )
 volume_db = -18.667
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="DamageArea" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape" type="CollisionShape2D" parent="DamageArea"]
 shape = SubResource( 2 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Area2D"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="DamageArea"]
 modulate = Color( 1, 1, 1, 0.807843 )
 position = Vector2( 0, -9.53674e-07 )
 scale = Vector2( 1.71094, 1.6901 )
 frames = SubResource( 3 )
 
+[connection signal="body_entered" from="." to="." method="_on_Grenade_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="finished" from="GrenadeExplosion" to="." method="_on_GrenadeExplosion_finished"]
-[connection signal="animation_finished" from="Area2D/AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
+[connection signal="body_entered" from="DamageArea" to="." method="_on_DamageArea_body_entered"]
+[connection signal="animation_finished" from="DamageArea/AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
