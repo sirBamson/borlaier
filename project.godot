@@ -94,6 +94,7 @@ Shake="*res://Scenes/Shake.tscn"
 [display]
 
 window/size/height=640
+window/size/fullscreen=true
 
 [editor_plugins]
 
@@ -238,6 +239,7 @@ interaction={
 2d_physics/layer_6="Objects"
 2d_physics/layer_7="GunOnGround"
 2d_physics/layer_8="Elevator"
+2d_physics/layer_9="Grenade"
 2d_physics/layer_10="Walls2"
 
 [physics]
