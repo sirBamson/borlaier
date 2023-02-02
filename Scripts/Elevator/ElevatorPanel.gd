@@ -49,6 +49,8 @@ func _physics_process(_delta: float) -> void:
 						can_access_new_level = true
 						Dialogic.set_variable("ElevatorFloorAccess", 1)
 						
+						EnvVar.elevator_old_level_number = EnvVar.elevator_current_level_number
+						
 						EnvVar.elevator_current_level_number = EnvVar.elevator_button_number_pressed
 						EnvVar.elevator_next_level = available_levels.get(EnvVar.elevator_button_number_pressed)
 						Dialogic.set_variable("ElevatorFloorNumber", EnvVar.elevator_button_number_pressed)
