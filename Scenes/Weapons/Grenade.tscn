@@ -92,7 +92,6 @@ position = Vector2( 0, -9.53674e-07 )
 scale = Vector2( 1.71094, 1.6901 )
 frames = SubResource( 3 )
 
-[connection signal="body_entered" from="." to="." method="_on_Grenade_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="finished" from="GrenadeExplosion" to="." method="_on_GrenadeExplosion_finished"]
 [connection signal="body_entered" from="DamageArea" to="." method="_on_DamageArea_body_entered"]
