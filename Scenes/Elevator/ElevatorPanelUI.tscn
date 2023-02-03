@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Assets/Elevator_ui2.png" type="Texture" id=1]
-[ext_resource path="res://Scripts/Elevator/ElevatorPanelUI.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/Elevator/ElevatorButtonPanelUI.gd" type="Script" id=2]
 
 [node name="ElevatorPanelUI" type="CanvasLayer"]
 pause_mode = 2
