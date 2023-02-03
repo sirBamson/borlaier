@@ -1,14 +1,22 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=88 format=2]
 
 [ext_resource path="res://Assets/White_square.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Elevator/ElevatorDoor.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/elevator_inside.png" type="Texture" id=3]
-[ext_resource path="res://Scripts/Elevator/ElevatorPanel.gd" type="Script" id=4]
+[ext_resource path="res://Scripts/Elevator/ElevatorButtonPanel.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/Entities/Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Elevator/ElevatorPanelUI.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Sounds/Elevator-music.mp3" type="AudioStream" id=7]
 [ext_resource path="res://Assets/Elevator_panel.png" type="Texture" id=8]
-[ext_resource path="res://Scenes/Elevator/ElevatorFloorIndexPanel.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Assets/Sounds/elevator_ding.wav" type="AudioStream" id=9]
+[ext_resource path="res://Scripts/Elevator/ElevatorIndexPanel.gd" type="Script" id=10]
+[ext_resource path="res://Assets/eFloor_2-3.png" type="Texture" id=11]
+[ext_resource path="res://Assets/eFloor_3-4.png" type="Texture" id=12]
+[ext_resource path="res://Assets/eFloor_0-1.png" type="Texture" id=13]
+[ext_resource path="res://Assets/eFloor_4-5.png" type="Texture" id=14]
+[ext_resource path="res://Assets/eFloor_arrow_down.png" type="Texture" id=15]
+[ext_resource path="res://Assets/eFloor_1-2.png" type="Texture" id=16]
+[ext_resource path="res://Assets/eFloor_arrow_up.png" type="Texture" id=17]
 
 [sub_resource type="TileSet" id=1]
 0/name = "elevator_inside.png 0"
@@ -137,6 +145,284 @@ points = PoolVector2Array( 0, 0, 256, 0, 256, 256, 0, 256 )
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 3/z_index = 0
+
+[sub_resource type="AtlasTexture" id=46]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 0, 0, 256, 72 )
+
+[sub_resource type="AtlasTexture" id=47]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 256, 0, 256, 72 )
+
+[sub_resource type="AtlasTexture" id=48]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 512, 0, 256, 72 )
+
+[sub_resource type="AtlasTexture" id=49]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 768, 0, 256, 72 )
+
+[sub_resource type="AtlasTexture" id=50]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 1024, 0, 256, 72 )
+
+[sub_resource type="AtlasTexture" id=51]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 1280, 0, 256, 72 )
+
+[sub_resource type="AtlasTexture" id=52]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 1536, 0, 256, 72 )
+
+[sub_resource type="AtlasTexture" id=53]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 1792, 0, 256, 72 )
+
+[sub_resource type="AtlasTexture" id=54]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 2048, 0, 256, 72 )
+
+[sub_resource type="AtlasTexture" id=55]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 2304, 0, 256, 72 )
+
+[sub_resource type="AtlasTexture" id=56]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 2560, 0, 256, 72 )
+
+[sub_resource type="AtlasTexture" id=58]
+flags = 4
+atlas = ExtResource( 16 )
+region = Rect2( 256, 0, 256, 72 )
+
+[sub_resource type="AtlasTexture" id=59]
+flags = 4
+atlas = ExtResource( 16 )
+region = Rect2( 512, 0, 256, 72 )
+
+[sub_resource type="AtlasTexture" id=60]
+flags = 4
+atlas = ExtResource( 16 )
+region = Rect2( 768, 0, 256, 72 )
+
+[sub_resource type="AtlasTexture" id=61]
+flags = 4
+atlas = ExtResource( 16 )
+region = Rect2( 1024, 0, 256, 72 )
+
+[sub_resource type="AtlasTexture" id=62]
+flags = 4
+atlas = ExtResource( 16 )
+region = Rect2( 1280, 0, 256, 72 )
+
+[sub_resource type="AtlasTexture" id=63]
+flags = 4
+atlas = ExtResource( 16 )
+region = Rect2( 1536, 0, 256, 72 )
+
+[sub_resource type="AtlasTexture" id=64]
+flags = 4
+atlas = ExtResource( 16 )
+region = Rect2( 1792, 0, 256, 72 )
+
+[sub_resource type="AtlasTexture" id=65]
+flags = 4
+atlas = ExtResource( 16 )
+region = Rect2( 2048, 0, 256, 72 )
+
+[sub_resource type="AtlasTexture" id=66]
+flags = 4
+atlas = ExtResource( 16 )
+region = Rect2( 2304, 0, 256, 72 )
+
+[sub_resource type="AtlasTexture" id=67]
+flags = 4
+atlas = ExtResource( 16 )
+region = Rect2( 2560, 0, 256, 72 )
+
+[sub_resource type="AtlasTexture" id=68]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 0, 0, 256, 72 )
+
+[sub_resource type="AtlasTexture" id=69]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 256, 0, 256, 72 )
+
+[sub_resource type="AtlasTexture" id=70]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 512, 0, 256, 72 )
+
+[sub_resource type="AtlasTexture" id=71]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 768, 0, 256, 72 )
+
+[sub_resource type="AtlasTexture" id=72]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 1024, 0, 256, 72 )
+
+[sub_resource type="AtlasTexture" id=73]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 1280, 0, 256, 72 )
+
+[sub_resource type="AtlasTexture" id=74]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 1536, 0, 256, 72 )
+
+[sub_resource type="AtlasTexture" id=75]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 1792, 0, 256, 72 )
+
+[sub_resource type="AtlasTexture" id=76]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 2048, 0, 256, 72 )
+
+[sub_resource type="AtlasTexture" id=77]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 2304, 0, 256, 72 )
+
+[sub_resource type="AtlasTexture" id=78]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 2560, 0, 256, 72 )
+
+[sub_resource type="AtlasTexture" id=79]
+flags = 4
+atlas = ExtResource( 12 )
+region = Rect2( 0, 0, 256, 72 )
+
+[sub_resource type="AtlasTexture" id=80]
+flags = 4
+atlas = ExtResource( 12 )
+region = Rect2( 256, 0, 256, 72 )
+
+[sub_resource type="AtlasTexture" id=81]
+flags = 4
+atlas = ExtResource( 12 )
+region = Rect2( 512, 0, 256, 72 )
+
+[sub_resource type="AtlasTexture" id=82]
+flags = 4
+atlas = ExtResource( 12 )
+region = Rect2( 768, 0, 256, 72 )
+
+[sub_resource type="AtlasTexture" id=83]
+flags = 4
+atlas = ExtResource( 12 )
+region = Rect2( 1024, 0, 256, 72 )
+
+[sub_resource type="AtlasTexture" id=84]
+flags = 4
+atlas = ExtResource( 12 )
+region = Rect2( 1280, 0, 256, 72 )
+
+[sub_resource type="AtlasTexture" id=85]
+flags = 4
+atlas = ExtResource( 12 )
+region = Rect2( 1536, 0, 256, 72 )
+
+[sub_resource type="AtlasTexture" id=86]
+flags = 4
+atlas = ExtResource( 12 )
+region = Rect2( 1792, 0, 256, 72 )
+
+[sub_resource type="AtlasTexture" id=87]
+flags = 4
+atlas = ExtResource( 12 )
+region = Rect2( 2048, 0, 256, 72 )
+
+[sub_resource type="AtlasTexture" id=88]
+flags = 4
+atlas = ExtResource( 12 )
+region = Rect2( 2304, 0, 256, 72 )
+
+[sub_resource type="AtlasTexture" id=89]
+flags = 4
+atlas = ExtResource( 12 )
+region = Rect2( 2560, 0, 256, 72 )
+
+[sub_resource type="AtlasTexture" id=90]
+flags = 4
+atlas = ExtResource( 14 )
+region = Rect2( 0, 0, 256, 72 )
+
+[sub_resource type="AtlasTexture" id=91]
+flags = 4
+atlas = ExtResource( 14 )
+region = Rect2( 256, 0, 256, 72 )
+
+[sub_resource type="AtlasTexture" id=92]
+flags = 4
+atlas = ExtResource( 14 )
+region = Rect2( 512, 0, 256, 72 )
+
+[sub_resource type="AtlasTexture" id=93]
+flags = 4
+atlas = ExtResource( 14 )
+region = Rect2( 768, 0, 256, 72 )
+
+[sub_resource type="AtlasTexture" id=94]
+flags = 4
+atlas = ExtResource( 14 )
+region = Rect2( 1024, 0, 256, 72 )
+
+[sub_resource type="AtlasTexture" id=95]
+flags = 4
+atlas = ExtResource( 14 )
+region = Rect2( 1280, 0, 256, 72 )
+
+[sub_resource type="AtlasTexture" id=96]
+flags = 4
+atlas = ExtResource( 14 )
+region = Rect2( 1536, 0, 256, 72 )
+
+[sub_resource type="AtlasTexture" id=97]
+flags = 4
+atlas = ExtResource( 14 )
+region = Rect2( 1792, 0, 256, 72 )
+
+[sub_resource type="AtlasTexture" id=98]
+flags = 4
+atlas = ExtResource( 14 )
+region = Rect2( 2048, 0, 256, 72 )
+
+[sub_resource type="AtlasTexture" id=99]
+flags = 4
+atlas = ExtResource( 14 )
+region = Rect2( 2304, 0, 256, 72 )
+
+[sub_resource type="AtlasTexture" id=100]
+flags = 4
+atlas = ExtResource( 14 )
+region = Rect2( 2560, 0, 256, 72 )
+
+[sub_resource type="SpriteFrames" id=101]
+animations = [ {
+"frames": [ SubResource( 46 ), SubResource( 46 ), SubResource( 47 ), SubResource( 48 ), SubResource( 49 ), SubResource( 50 ), SubResource( 51 ), SubResource( 52 ), SubResource( 53 ), SubResource( 54 ), SubResource( 55 ), SubResource( 56 ), SubResource( 58 ), SubResource( 59 ), SubResource( 60 ), SubResource( 61 ), SubResource( 62 ), SubResource( 63 ), SubResource( 64 ), SubResource( 65 ), SubResource( 66 ), SubResource( 67 ), SubResource( 68 ), SubResource( 69 ), SubResource( 70 ), SubResource( 71 ), SubResource( 72 ), SubResource( 73 ), SubResource( 74 ), SubResource( 75 ), SubResource( 76 ), SubResource( 77 ), SubResource( 78 ), SubResource( 79 ), SubResource( 80 ), SubResource( 81 ), SubResource( 82 ), SubResource( 83 ), SubResource( 84 ), SubResource( 85 ), SubResource( 86 ), SubResource( 87 ), SubResource( 88 ), SubResource( 89 ), SubResource( 90 ), SubResource( 91 ), SubResource( 92 ), SubResource( 93 ), SubResource( 94 ), SubResource( 95 ), SubResource( 96 ), SubResource( 97 ), SubResource( 98 ), SubResource( 99 ), SubResource( 100 ) ],
+"loop": true,
+"name": "FloorIndex",
+"speed": 11.0
+} ]
 
 [sub_resource type="RectangleShape2D" id=15]
 extents = Vector2( 16, 24 )
@@ -355,24 +641,43 @@ tile_data = PoolIntArray( 0, 1, 0, 1, 0, 0, 2, 1, 0, 65536, 1, 0, 65537, 0, 0, 6
 [node name="ElevatorBackWalls" type="TileMap" parent="."]
 tile_set = SubResource( 6 )
 cell_size = Vector2( 256, 256 )
+collision_layer = 512
+collision_mask = 0
 format = 1
 tile_data = PoolIntArray( -131072, 0, 0, -131070, 2, 0, -65536, 1, 0, -65534, 3, 0 )
 
 [node name="ElevatorDoor" parent="." instance=ExtResource( 2 )]
 position = Vector2( 384, -240 )
 
-[node name="ElevatorPanel" type="Area2D" parent="."]
+[node name="ElevatorIndexPanel" type="Node2D" parent="."]
+position = Vector2( 384, -419 )
+script = ExtResource( 10 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="ElevatorIndexPanel"]
+position = Vector2( 0, -1 )
+frames = SubResource( 101 )
+animation = "FloorIndex"
+
+[node name="ArrowUp" type="Sprite" parent="ElevatorIndexPanel"]
+position = Vector2( -14, 0 )
+texture = ExtResource( 17 )
+
+[node name="ArrowDown" type="Sprite" parent="ElevatorIndexPanel"]
+position = Vector2( -14, -4 )
+texture = ExtResource( 15 )
+
+[node name="ElevatorButtonPanel" type="Area2D" parent="."]
 pause_mode = 2
 position = Vector2( 128, -192 )
 collision_layer = 128
 collision_mask = 2
 script = ExtResource( 4 )
 
-[node name="CollisionShape" type="CollisionShape2D" parent="ElevatorPanel"]
+[node name="CollisionShape" type="CollisionShape2D" parent="ElevatorButtonPanel"]
 scale = Vector2( 0.880001, 0.92 )
 shape = SubResource( 15 )
 
-[node name="Panel" type="Sprite" parent="ElevatorPanel"]
+[node name="Panel" type="Sprite" parent="ElevatorButtonPanel"]
 texture = ExtResource( 8 )
 
 [node name="YSort" type="YSort" parent="."]
@@ -384,14 +689,15 @@ position = Vector2( 416, 192 )
 tile_set = SubResource( 13 )
 cell_size = Vector2( 256, 256 )
 format = 1
-tile_data = PoolIntArray( -65537, 0, 0, -131069, 6, 0, -1, 1, 0, -65533, 5, 0, 65535, 1, 0, 3, 5, 0, 131071, 1, 0, 65539, 5, 0, 196607, 2, 0, 131072, 3, 0, 131073, 3, 0, 131074, 3, 0, 131075, 4, 0, 196608, 7, 0, 196609, 7, 0, 196610, 7, 0 )
+tile_data = PoolIntArray( -196608, 7, 0, -196607, 7, 0, -196606, 7, 0, -65537, 0, 0, -131069, 6, 0, -1, 1, 0, -65533, 5, 0, 65535, 1, 0, 3, 5, 0, 131071, 1, 0, 65539, 5, 0, 196607, 2, 0, 131072, 3, 0, 131073, 3, 0, 131074, 3, 0, 131075, 4, 0, 196608, 7, 0, 196609, 7, 0, 196610, 7, 0 )
 
 [node name="WaitTimer" type="Timer" parent="."]
 one_shot = true
 
-[node name="ElevatorFloorIndexPanel" parent="." instance=ExtResource( 9 )]
-position = Vector2( 384, -420 )
+[node name="Ding" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 384, 0 )
+stream = ExtResource( 9 )
 
-[connection signal="area_entered" from="ElevatorPanel" to="ElevatorPanel" method="_on_ElevatorPanel_area_entered"]
-[connection signal="area_exited" from="ElevatorPanel" to="ElevatorPanel" method="_on_ElevatorPanel_area_exited"]
-[connection signal="timeout" from="WaitTimer" to="ElevatorPanel" method="_on_WaitTimer_timeout"]
+[connection signal="area_entered" from="ElevatorButtonPanel" to="ElevatorButtonPanel" method="_on_ElevatorPanel_area_entered"]
+[connection signal="area_exited" from="ElevatorButtonPanel" to="ElevatorButtonPanel" method="_on_ElevatorPanel_area_exited"]
+[connection signal="timeout" from="WaitTimer" to="ElevatorButtonPanel" method="_on_WaitTimer_timeout"]
