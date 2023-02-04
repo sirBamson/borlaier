@@ -1,9 +1,16 @@
 extends Node
 
+
+var first_time_played: bool = false
+
 # A dictionary with the various saved scenes in PackedScene format
+# Saves scene path as key and scene as value
 var saved_scenes: Dictionary = {}
 # A dictionary that contains the different file paths
 var saved_scenes_strings: Dictionary = {}
+
+# A string that is set to the current or latest level / floor
+var latest_level_path: String = "res://Scenes/Levels/Level1.tscn"
 
 # Path to the node that loads the minigame
 var minigame_load_scene_path: String = ""

@@ -6,8 +6,8 @@ var new_scene: Node
 func _ready() -> void:
 	
 	# Sets the first scene
-	change_scene(false, Node.new(), "", "res://Scenes/Levels/Level0.tscn")
-	EnvVar.can_pause = true
+	change_scene(false, Node.new(), "", "res://Scenes/UI/MainMenu.tscn")
+	EnvVar.can_pause = false
 
 
 func _input(event: InputEvent) -> void:
@@ -29,11 +29,13 @@ func change_scene(save_current_scene: bool, current_scene: Node, current_scene_p
 	
 	
 	# Instantiates an old scene or new scene if no old one exists
-	
 	if new_scene_path in EnvVar.saved_scenes:
 		new_scene = EnvVar.saved_scenes[new_scene_path].instance()
 	else:
 		new_scene = load(new_scene_path).instance()
+	
+	if new_scene.is_in_group("Level"):
+		EnvVar.latest_level_path = new_scene.filename
 	
 	# Adds the new scene and removes the old one
 	$Transition/Animation.play("FadeIn")
