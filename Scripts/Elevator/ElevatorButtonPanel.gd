@@ -67,6 +67,9 @@ func _physics_process(_delta: float) -> void:
 				if can_access_new_level:
 					get_parent().get_node("WaitTimer").start(abs(EnvVar.elevator_old_level_number - EnvVar.elevator_button_number_pressed))
 					EnvVar.elevator_moving = true
+				elif not can_access_new_level:
+					get_parent().get_node("WaitTimer").start(4)
+					EnvVar.elevator_moving = true
 				add_child(Dialogic.start("ElevatorFloorNumber"))
 
 
