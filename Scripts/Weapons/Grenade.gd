@@ -28,6 +28,7 @@ func grenade_explosion():
 	$Sprite.visible = false
 	sleeping = true
 	$GrenadeExplosion.play()
+	$CollisionShape.disabled = true
 	$DamageArea/CollisionShape.disabled = false
 	$DamageArea/AnimatedSprite.visible = true
 	$DamageArea/AnimatedSprite.play("default")
