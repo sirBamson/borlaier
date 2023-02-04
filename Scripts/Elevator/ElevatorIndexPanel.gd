@@ -10,9 +10,6 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	
 	if EnvVar.elevator_old_level_number != EnvVar.elevator_oldest_level_number:
-		print("Current: " + str(EnvVar.elevator_current_level_number))
-		print("Old: " + str(EnvVar.elevator_old_level_number))
-		print("Oldest: " + str(EnvVar.elevator_oldest_level_number))
 		
 		if EnvVar.elevator_current_level_number > EnvVar.elevator_old_level_number:
 			EnvVar.elevator_oldest_level_number = EnvVar.elevator_old_level_number

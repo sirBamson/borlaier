@@ -12,13 +12,6 @@ var elevator_moving: bool = false
 var is_new_level: bool = false
 var can_access_new_level: bool = false
 
-var available_levels: Dictionary = {
-	0: "res://Scenes/Levels/Level0.tscn",
-	1: "res://Scenes/Levels/Level1.tscn",
-	2: "res://Scenes/Levels/Level2.tscn",
-	3: "res://Scenes/Levels/Level2.tscn"
-	}
-
 
 func _physics_process(_delta: float) -> void:
 	if in_interaction_area:
@@ -42,7 +35,7 @@ func _physics_process(_delta: float) -> void:
 			EnvVar.can_pause = true
 			
 			
-			if EnvVar.elevator_button_number_pressed in available_levels:
+			if EnvVar.elevator_button_number_pressed in EnvVar.available_levels:
 				if not EnvVar.elevator_button_number_pressed == EnvVar.elevator_current_level_number:
 					is_new_level = true
 					if EnvVar.elevator_button_number_pressed in PlayerGlobals.elevator_floor_access:
@@ -52,7 +45,7 @@ func _physics_process(_delta: float) -> void:
 						EnvVar.elevator_old_level_number = EnvVar.elevator_current_level_number
 						
 						EnvVar.elevator_current_level_number = EnvVar.elevator_button_number_pressed
-						EnvVar.elevator_next_level = available_levels.get(EnvVar.elevator_button_number_pressed)
+						EnvVar.elevator_next_level = EnvVar.available_levels.get(EnvVar.elevator_button_number_pressed)
 						Dialogic.set_variable("ElevatorFloorNumber", EnvVar.elevator_button_number_pressed)
 						
 					elif not EnvVar.elevator_button_number_pressed in PlayerGlobals.elevator_floor_access:

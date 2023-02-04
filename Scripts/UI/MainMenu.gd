@@ -5,6 +5,7 @@ onready var scene_controller: Node = get_node("/root/SceneController")
 
 
 func _ready() -> void:
+	EnvVar.can_pause = false
 	if EnvVar.first_time_played:
 		$VBoxContainer/VBoxContainer/ContinueGame.text = "Start new game"
 	else:
