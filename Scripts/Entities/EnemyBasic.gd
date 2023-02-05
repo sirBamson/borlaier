@@ -9,6 +9,7 @@ onready var detection_ray_1: RayCast2D = $DetectionRay1
 onready var detection_ray_2: RayCast2D = $DetectionRay2
 onready var detection_area: Area2D = $DetectionArea
 onready var animated_sprite: AnimatedSprite = $AnimatedSprite
+onready var cpu_particles_2d: CPUParticles2D = $CPUParticles2D
 
 
 var speed: int = 250
@@ -27,6 +28,11 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	if healt <= 0:
+		cpu_particles_2d.emitting = true
+		animated_sprite.visible = false
+		$DamageArea/CollisionShape.disabled = true
+		$CollisionShape.disabled = true
+		yield(get_tree().create_timer(2), "timeout")
 		queue_free()
 	
 	set_state()
