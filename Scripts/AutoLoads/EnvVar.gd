@@ -10,7 +10,7 @@ var saved_scenes: Dictionary = {}
 var saved_scenes_strings: Dictionary = {}
 
 # A string that is set to the current or latest level / floor
-var latest_level_path: String = "res://Scenes/Levels/Level1.tscn"
+var latest_level_path: String = "res://Scenes/Levels/Level0.tscn"
 
 # Path to the node that loads the minigame
 var minigame_load_scene_path: String = ""
