@@ -41,13 +41,6 @@ func grenade_thrown() -> void:
 		apply_impulse(Vector2.ZERO, Vector2(throw_speed, 0).rotated(rotation))
 
 
-func _on_DamageArea_body_entered(body: Node) -> void:
-	if body.is_in_group("Enemy"):
-		body.healt -= damage_output
-	if body.is_in_group("Player"):
-		body.healt -= damage_output
-
-
 func _on_Timer_timeout() -> void:
 	grenade_exploded = true
 	grenade_explosion()
@@ -56,3 +49,7 @@ func _on_Timer_timeout() -> void:
 
 func _on_GrenadeExplosion_finished() -> void:
 	queue_free()
+
+
+func _on_AnimatedSprite_animation_finished() -> void:
+	$DamageArea/CollisionShape.disabled = true

@@ -14,8 +14,6 @@ var weapon_on_ground: Node
 
 var grenade_count = 2
 
-var healt: int = PlayerGlobals.player_healt
-
 export (int) var speed: int = 600
 
 
@@ -34,6 +32,7 @@ func _ready() -> void:
 
 
 func _physics_process(_delta: float) -> void:
+	print(PlayerGlobals.player_healt)
 	
 	weapon_pickup()
 	
@@ -140,8 +139,7 @@ func throw_grenade() -> void:
 		var _error = connect("throwing_grenade", grenade_instance, "grenade_thrown")
 		
 		grenade_instance.player = self
-		get_parent().get_parent().add_child(grenade_instance)
-		get_parent().get_parent().move_child(get_parent().get_parent().get_node("Walls"), get_parent().get_parent().get_child_count() )
+		get_parent().add_child(grenade_instance)
 	
 	
 	if Input.is_action_just_released("throw_grenade"):
@@ -153,8 +151,12 @@ func _on_PlayerHitbox_area_entered(area: Area2D) -> void:
 	if area.is_in_group("DroppedWeapon"):
 		weapon_on_ground = area
 		on_weapon = true
+	
+	if area.get_parent().is_in_group("Grenade"):
+		PlayerGlobals.player_healt -= area.get_parent().damage_output
 
 func _on_PlayerHitbox_area_exited(area: Area2D) -> void:
 	if area.is_in_group("DroppedWeapon"):
 		weapon_on_ground = null
 		on_weapon = false
+
