@@ -1,83 +1,104 @@
 extends KinematicBody2D
 
 
-onready var pathfinding = get_parent().get_parent().get_parent().get_node("Pathfinding")
 onready var player: KinematicBody2D = get_parent().get_parent().get_node("Player")
+onready var agent: NavigationAgent2D = $NavigationAgent2D
+onready var nav_timer: Timer = $NavTimer
+onready var attack_timer: Timer = $AttackTimer
+onready var detection_ray_1: RayCast2D = $DetectionRay1
+onready var detection_ray_2: RayCast2D = $DetectionRay2
+onready var detection_area: Area2D = $DetectionArea
+onready var animated_sprite: AnimatedSprite = $AnimatedSprite
+
 
 var speed: int = 250
 var healt: int = 100
+var velocity: Vector2 = Vector2.ZERO
+
+var target_position: Vector2 = Vector2.ZERO
+
+# Accepted states: Idling, Hunting
+var state: String = "Hunting"
 
 
-var path: Array
-var new_position: Vector2
-var ai_state: String = "hunt"
+func _ready() -> void:
+	animated_sprite.frame = 0
 
 
-func _physics_process(_delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	if healt <= 0:
 		queue_free()
 	
+	set_state()
 	
-	detect_player()
-	
-	if ai_state == "idle":
-		idle()
-	if ai_state == "hunt":
-		hunt()
-
-
-func detect_player() -> void:
-	$RayCast1.add_exception($DamageArea)
-	$RayCast1.add_exception(player)
-	$RayCast2.add_exception($DamageArea)
-	$RayCast2.add_exception(player)
-	$RayCast1.cast_to = player.get_node("EnemyDetectionNode1").global_position - global_position
-	$RayCast2.cast_to = player.get_node("EnemyDetectionNode2").global_position - global_position
-	
-	if $RayCast1.cast_to.x <= 0:
-		$Sprite.scale.x = -0.5
-	elif $RayCast1.cast_to.x > 0:
-		$Sprite.scale.x = 0.5
-	
-	if $RayCast1.get_collider() == player.get_node("PlayerHitbox") or $RayCast2.get_collider() == player.get_node("PlayerHitbox"):
-		$IdleTimer.stop()
-		ai_state = "hunt"
-	elif ai_state == "hunt":
-		#$IdleTimer.start(0.5)
-		ai_state = "wait"
-
-
-func hunt() -> void:
-	var velocity: Vector2 = Vector2.ZERO
-	path = pathfinding.get_new_path(global_position, player.global_position)
-	if path.size() > 2:
-		velocity = global_position.direction_to(path[1])
+	if state == "Hunting":
+		if detection_ray_1.cast_to.x <= 0:
+			animated_sprite.scale.x = -0.5
+		elif detection_ray_1.cast_to.x > 0:
+			animated_sprite.scale.x = 0.5
 		
-		velocity = velocity.normalized() * speed
-		velocity = move_and_slide(velocity)
-
-
-func idle() -> void:
-	randomize()
-	
-	if global_position == new_position:
-		new_position = Vector2(global_position.x + randi()% 401, global_position.y + randi()% 401)
-	
-	var velocity: Vector2 = Vector2.ZERO
-	
-	
-	velocity = global_position.direction_to(new_position)
+		animated_sprite.play("default")
+		target_position = player.global_position
+	elif state == "Idling":
+		animated_sprite.stop()
+		animated_sprite.frame = 0
+		target_position = global_position
 		
-	velocity = velocity.normalized() * speed
+	move()
+
+
+func move() -> void:
+	if agent.is_navigation_finished():
+		return
+	
+	var direction: Vector2 = global_position.direction_to(agent.get_next_location())
+	velocity= Vector2.ZERO
+	
+	velocity = direction.normalized() * speed
+	agent.set_velocity(velocity)
+
+
+func set_state() -> void:
+	detection_ray_1.add_exception(player)
+	detection_ray_2.add_exception(player)
+	detection_ray_1.cast_to = player.get_node("EnemyDetectionNode1").global_position - global_position
+	detection_ray_2.cast_to = player.get_node("EnemyDetectionNode2").global_position - global_position
+	
+	
+	if detection_ray_1.get_collider() == player.get_node("PlayerHitbox") or detection_ray_2.get_collider() == player.get_node("PlayerHitbox"):
+		state = "Hunting"
+	elif player.get_node("PlayerHitbox") in detection_area.get_overlapping_areas():
+		state = "Hunting"
+	else:
+		state = "Idling"
+
+
+func _on_NavigationAgent2D_velocity_computed(safe_velocity: Vector2) -> void:
 	velocity = move_and_slide(velocity)
-
-
-func _on_IdleTimer_timeout() -> void:
-	ai_state = "idle"
 
 
 func _on_DamageArea_body_entered(body: Node) -> void:
 	if body.is_in_group("Bullet"):
-		print(body.damage_output)
 		healt -= body.damage_output
 		body.queue_free()
+
+
+func _on_DamageArea_area_entered(area: Area2D) -> void:
+	if area.get_parent().is_in_group("Grenade"):
+		healt -= area.get_parent().damage_output
+	
+	if area.get_parent().is_in_group("Player"):
+		attack_timer.start()
+
+
+func _on_DamageArea_area_exited(area: Area2D) -> void:
+	if area.get_parent().is_in_group("Player"):
+		attack_timer.stop()
+
+
+func _on_NavTimer_timeout() -> void:
+	agent.set_target_location(target_position)
+
+
+func _on_AttackTimer_timeout() -> void:
+	PlayerGlobals.player_healt -= 25

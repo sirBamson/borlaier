@@ -1,0 +1,114 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Assets/ChiperRed-Sheet.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Entities/EnemyBasic.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 41, 75 )
+
+[sub_resource type="CircleShape2D" id=11]
+radius = 69.0072
+
+[sub_resource type="CircleShape2D" id=12]
+radius = 190.003
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 256, 256 )
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 256, 0, 256, 256 )
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 512, 0, 256, 256 )
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 768, 0, 256, 256 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 1024, 0, 256, 256 )
+
+[sub_resource type="AtlasTexture" id=8]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 1280, 0, 256, 256 )
+
+[sub_resource type="SpriteFrames" id=10]
+animations = [ {
+"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
+"loop": true,
+"name": "default",
+"speed": 18.0
+} ]
+
+[node name="EnemyBasic" type="KinematicBody2D" groups=["Enemy"]]
+collision_layer = 4
+collision_mask = 559
+script = ExtResource( 2 )
+
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
+position = Vector2( 9.77398e-05, 5 )
+rotation = 1.5708
+scale = Vector2( 1, 0.720001 )
+shape = SubResource( 9 )
+
+[node name="DamageArea" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 264
+
+[node name="CollisionShape" type="CollisionShape2D" parent="DamageArea"]
+shape = SubResource( 11 )
+
+[node name="DetectionArea" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape" type="CollisionShape2D" parent="DetectionArea"]
+shape = SubResource( 12 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 10 )
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_desired_distance = 5.0
+target_desired_distance = 10.0
+avoidance_enabled = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="NavTimer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[node name="AttackTimer" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="DetectionRay1" type="RayCast2D" parent="."]
+enabled = true
+exclude_parent = false
+collision_mask = 43
+collide_with_areas = true
+
+[node name="DetectionRay2" type="RayCast2D" parent="."]
+enabled = true
+exclude_parent = false
+collision_mask = 43
+collide_with_areas = true
+
+[connection signal="area_entered" from="DamageArea" to="." method="_on_DamageArea_area_entered"]
+[connection signal="area_exited" from="DamageArea" to="." method="_on_DamageArea_area_exited"]
+[connection signal="body_entered" from="DamageArea" to="." method="_on_DamageArea_body_entered"]
+[connection signal="velocity_computed" from="NavigationAgent2D" to="." method="_on_NavigationAgent2D_velocity_computed"]
+[connection signal="timeout" from="NavTimer" to="." method="_on_NavTimer_timeout"]
+[connection signal="timeout" from="AttackTimer" to="." method="_on_AttackTimer_timeout"]
