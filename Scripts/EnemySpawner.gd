@@ -6,7 +6,7 @@ export (int) var max_enemy_amount: int
 
 onready var enemy: = load(enemy_path)
 
-var enemy_amount: int = 0
+var enemy_amount: int
 
 
 func _ready() -> void:
@@ -15,6 +15,6 @@ func _ready() -> void:
 
 func _on_SpawnTimer_timeout() -> void:
 	enemy_amount = get_children().size()
-	if !(enemy_amount >= max_enemy_amount):
+	if !(enemy_amount > max_enemy_amount):
 		var enemy_instance = enemy.instance()
 		add_child(enemy_instance)
