@@ -61,9 +61,9 @@ func _physics_process(_delta: float) -> void:
 					get_parent().get_node("WaitTimer").start(abs(EnvVar.elevator_old_level_number - EnvVar.elevator_button_number_pressed))
 					EnvVar.elevator_moving = true
 				elif not can_access_new_level:
+					add_child(Dialogic.start("ElevatorFloorNumber"))
 					get_parent().get_node("WaitTimer").start(4)
 					EnvVar.elevator_moving = true
-				add_child(Dialogic.start("ElevatorFloorNumber"))
 
 
 
@@ -79,6 +79,7 @@ func _on_ElevatorPanel_area_exited(area: Area2D) -> void:
 
 
 func _on_WaitTimer_timeout() -> void:
+	add_child(Dialogic.start("ElevatorFloorNumber"))
 	get_parent().get_node("Ding").play()
 	EnvVar.elevator_moving = false
 	is_new_level = false
