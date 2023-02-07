@@ -22,7 +22,8 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	print(health)
+	$Overlay/EnemiesLeft.text = "Enemies left: " + str(enemy_amount)
+	$Overlay/ProgressBar.value = health
 	if health <= 0:
 		EnvVar.kbgs_minigame_won = false
 		scene_controller.change_scene(false, get_parent(), get_parent().filename, "res://Scenes/Minigames/KBGS/KBGSStartMenu.tscn")
