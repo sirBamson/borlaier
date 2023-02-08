@@ -90,6 +90,7 @@ PlayerGlobals="*res://Scripts/AutoLoads/PlayerGlobals.gd"
 EnvVar="*res://Scripts/AutoLoads/EnvVar.gd"
 Pause="*res://Scenes/UI/Pause.tscn"
 Shake="*res://Scenes/Shake.tscn"
+QuestController="*res://Scenes/QuestController.tscn"
 
 [display]
 

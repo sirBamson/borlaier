@@ -7,7 +7,7 @@ func _ready() -> void:
 	$ArrowUp.visible = false
 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	
 	if EnvVar.elevator_old_level_number != EnvVar.elevator_oldest_level_number:
 		
@@ -23,7 +23,7 @@ func _physics_process(delta: float) -> void:
 			$AnimatedSprite.frame = (EnvVar.elevator_old_level_number * 11)
 			$AnimatedSprite.play("FloorIndex", true)
 		
-	if $AnimatedSprite.frame == (EnvVar.elevator_current_level_number * 11):
+	if $AnimatedSprite.frame == (EnvVar.elevator_button_number_pressed * 11):
 		$ArrowDown.visible = false
 		$ArrowUp.visible = false
 		$AnimatedSprite.stop()

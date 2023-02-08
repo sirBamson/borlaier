@@ -4,10 +4,10 @@
 	],
 	"variables": [
 		{
-			"id": "1674346580-787",
-			"name": "LikeCheese",
+			"id": "1674631318-648",
+			"name": "ElevatorFloorAccess",
 			"type": 0,
-			"value": "false"
+			"value": "1"
 		},
 		{
 			"id": "1674392044-648",
@@ -16,10 +16,10 @@
 			"value": "0"
 		},
 		{
-			"id": "1674631318-648",
-			"name": "ElevatorFloorAccess",
+			"id": "1675760437-648",
+			"name": "CurrentChar",
 			"type": 0,
-			"value": "1"
+			"value": ""
 		}
 	]
 }

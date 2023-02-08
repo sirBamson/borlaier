@@ -1,123 +1,49 @@
 {
 	"events": [
 		{
-			"event_id": "dialogic_024",
-			"set_theme": "theme-1674346841.cfg"
+			"condition": "",
+			"definition": "1675760437-648",
+			"event_id": "dialogic_012",
+			"value": "FatMan"
 		},
 		{
-			"character": "character-1674336435.json",
+			"character": "character-1675760651.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Wuzz up"
+			"text": "Hello player dude man thing"
 		},
 		{
-			"character": "character-1674336622.json",
+			"event_id": "dialogic_013"
+		},
+		{
+			"condition": "",
+			"definition": "1675760437-648",
+			"event_id": "dialogic_012",
+			"value": "TopHat"
+		},
+		{
+			"character": "character-1675763182.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Hello Hampe Dampe"
+			"text": "Well, well, well if it isnt the player"
 		},
 		{
-			"character": "character-1674336435.json",
-			"event_id": "dialogic_010",
-			"options": [
+			"event_id": "dialogic_013"
+		},
+		{
+			"call_node": {
+				"arguments": [
 
-			],
-			"portrait": "",
-			"question": "Do you like cheese?"
-		},
-		{
-			"choice": "Hell na!",
-			"condition": "",
-			"definition": "",
-			"event_id": "dialogic_011",
-			"value": ""
-		},
-		{
-			"definition": "1674346580-787",
-			"event_id": "dialogic_014",
-			"operation": "=",
-			"random_upper_limit": 100,
-			"set_random": false,
-			"set_value": "false"
-		},
-		{
-			"character": "character-1674336622.json",
-			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "NO I DONT LIKE CHEESE"
-		},
-		{
-			"choice": "Oh yea!",
-			"condition": "",
-			"definition": "",
-			"event_id": "dialogic_011",
-			"value": ""
-		},
-		{
-			"character": "character-1674336622.json",
-			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "yes ofc"
-		},
-		{
-			"definition": "1674346580-787",
-			"event_id": "dialogic_014",
-			"operation": "=",
-			"random_upper_limit": 100,
-			"set_random": false,
-			"set_value": "true"
-		},
-		{
-			"event_id": "dialogic_013"
-		},
-		{
-			"condition": "",
-			"definition": "1674346580-787",
-			"event_id": "dialogic_012",
-			"value": "true"
-		},
-		{
-			"character": "character-1674336435.json",
-			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "You like cheese"
-		},
-		{
-			"event_id": "dialogic_013"
-		},
-		{
-			"condition": "",
-			"definition": "",
-			"event_id": "dialogic_012",
-			"value": "false"
-		},
-		{
-			"character": "character-1674336435.json",
-			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "You dont like the cheese"
-		},
-		{
-			"event_id": "dialogic_013"
-		},
-		{
-			"event_id": "dialogic_022",
-			"transition_duration": 0
-		},
-		{
-			"anchor_id": "",
-			"event_id": "dialogic_016"
-		},
-		{
-			"event_id": "dialogic_015",
-			"id": "anchor-1674348287",
-			"index": 0,
-			"name": ""
+				],
+				"method_name": "set_talking_state",
+				"target_node_path": "./PlayerGlobals"
+			},
+			"event_id": "dialogic_042"
 		}
 	],
 	"metadata": {
 		"dialogic-version": "1.4.5",
 		"file": "timeline-1674336594.json",
-		"name": "Test"
+		"name": "Npc"
 	}
 }
