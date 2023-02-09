@@ -26,3 +26,15 @@ func _ready() -> void:
 
 func set_talking_state() -> void:
 	talking = false
+
+
+func dialogic_get_coins() -> void:
+	print(coins)
+	Dialogic.set_variable("PlayerCoins", str(coins))
+
+
+func give_next_keycard(amount: String) -> void:
+	coins -= int(amount)
+	elevator_floor_access.append(elevator_floor_access.size())
+	print(elevator_floor_access)
+	Dialogic.set_variable("KeycardBought", "true")
