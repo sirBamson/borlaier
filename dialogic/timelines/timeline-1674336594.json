@@ -17,7 +17,7 @@
 				"arguments": [
 
 				],
-				"method_name": "dialogic_get_coins()",
+				"method_name": "dialogic_get_coins",
 				"target_node_path": "./PlayerGlobals"
 			},
 			"event_id": "dialogic_042"
