@@ -20,6 +20,42 @@
 			"name": "CurrentChar",
 			"type": 0,
 			"value": ""
+		},
+		{
+			"id": "1675893255-366",
+			"name": "FatManQuestStarted",
+			"type": 0,
+			"value": "false"
+		},
+		{
+			"id": "1675953506-648",
+			"name": "FatManNextQuestAvalible",
+			"type": 0,
+			"value": "false"
+		},
+		{
+			"id": "1675891388-787",
+			"name": "FatManCurrentQuestDone",
+			"type": 0,
+			"value": "false"
+		},
+		{
+			"id": "1675891257-648",
+			"name": "FatManCurrentQuest",
+			"type": 0,
+			"value": "1"
+		},
+		{
+			"id": "1675972282-648",
+			"name": "PlayerCoins",
+			"type": 0,
+			"value": "0"
+		},
+		{
+			"id": "1675972946-787",
+			"name": "KeycardBought",
+			"type": 0,
+			"value": "false"
 		}
 	]
 }
