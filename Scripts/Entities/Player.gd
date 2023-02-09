@@ -32,7 +32,6 @@ func _ready() -> void:
 
 
 func _physics_process(_delta: float) -> void:
-	print(PlayerGlobals.player_healt)
 	
 	weapon_pickup()
 	
