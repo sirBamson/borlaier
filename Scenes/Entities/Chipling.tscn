@@ -5,7 +5,7 @@
 [ext_resource path="res://Scripts/Entities/EnemyBasic.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=9]
-extents = Vector2( 41, 75 )
+extents = Vector2( 17, 75 )
 
 [sub_resource type="CircleShape2D" id=11]
 radius = 69.0072
@@ -58,7 +58,7 @@ script = ExtResource( 3 )
 enemy_type = "Chipling"
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
-position = Vector2( 9.77398e-05, 5 )
+position = Vector2( 1.08601e-05, 29 )
 rotation = 1.5708
 scale = Vector2( 1, 0.720001 )
 shape = SubResource( 9 )
