@@ -1,6 +1,9 @@
 extends KinematicBody2D
 
 
+export var enemy_type: String
+
+
 onready var player: KinematicBody2D = get_parent().get_parent().get_node("Player")
 onready var agent: NavigationAgent2D = $NavigationAgent2D
 onready var nav_timer: Timer = $NavTimer
@@ -20,7 +23,7 @@ var target_position: Vector2 = Vector2.ZERO
 
 # Accepted states: Idling, Hunting
 var state: String = "Hunting"
-
+var one_shot: bool = false
 
 func _ready() -> void:
 	animated_sprite.frame = 0
@@ -28,6 +31,9 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	if healt <= 0:
+		if enemy_type == "Chipling" and !one_shot:
+			one_shot = true
+			Stats.chiplings_killed += 1
 		cpu_particles_2d.emitting = true
 		animated_sprite.visible = false
 		$DamageArea/CollisionShape.disabled = true
