@@ -6,7 +6,7 @@
 [ext_resource path="res://Assets/White_square.png" type="Texture" id=4]
 [ext_resource path="res://Scenes/Assets/Plant.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Elevator/ElevatorDoor.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/EnemySpawner.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Entities/EnemySpawner.tscn" type="PackedScene" id=9]
 
 [sub_resource type="TileSet" id=48]
 0/name = "casino_tilemap.png 0"
@@ -426,7 +426,7 @@ navpoly = SubResource( 73 )
 
 [node name="EnemySpawner" parent="Navigation2D/YSort" instance=ExtResource( 9 )]
 position = Vector2( 448, 544 )
-enemy_path = "res://Scenes/Entities/EnemyBasic.tscn"
+enemy_path = "res://Scenes/Entities/Chipling.tscn"
 spawn_interval = 2
 max_enemy_amount = 4
 
