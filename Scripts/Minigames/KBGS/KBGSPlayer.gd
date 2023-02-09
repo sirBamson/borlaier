@@ -93,4 +93,9 @@ func _on_AnimatedSprite_animation_finished() -> void:
 func _on_PlayerHitbox_area_entered(area: Area2D) -> void:
 	if area.name == "EnemySwingArea":
 		health -= 20
+	if area.is_in_group("Medkit"):
+		health += 40
+		if health > 100:
+			health = 100
+		area.queue_free()
 
