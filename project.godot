@@ -86,12 +86,12 @@ config/icon="res://icon.png"
 
 [autoload]
 
-PlayerGlobals="*res://Scripts/AutoLoads/PlayerGlobals.gd"
 EnvVar="*res://Scripts/AutoLoads/EnvVar.gd"
 Pause="*res://Scenes/UI/Pause.tscn"
 Shake="*res://Scenes/Shake.tscn"
 QuestController="*res://Scenes/QuestController.tscn"
 Stats="*res://Scripts/AutoLoads/Stats.gd"
+PlayerGlobals="*res://Scenes/PlayerGlobals.tscn"
 
 [display]
 
