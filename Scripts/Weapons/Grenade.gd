@@ -11,6 +11,7 @@ var thrown: bool = false
 
 
 func _ready() -> void:
+	Stats.grenades_thrown += 1
 	visible = true
 	$PinPull.play()
 	$Timer.start(2)

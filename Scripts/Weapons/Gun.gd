@@ -50,6 +50,7 @@ func _physics_process(_delta: float) -> void:
 		can_fire_auto = false
 		
 		bullets_in_mag -= 1
+		Stats.bullets_fired += 1
 		$BulletSound.play()
 		$MuzzleFlash.frame = 0
 		$MuzzleFlash.play("deafult")
