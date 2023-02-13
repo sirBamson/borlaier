@@ -8,75 +8,6 @@
 		},
 		{
 			"condition": "",
-			"definition": "1675972946-787",
-			"event_id": "dialogic_012",
-			"value": "false"
-		},
-		{
-			"call_node": {
-				"arguments": [
-
-				],
-				"method_name": "dialogic_get_coins",
-				"target_node_path": "./PlayerGlobals"
-			},
-			"event_id": "dialogic_042"
-		},
-		{
-			"character": "character-1675760651.json",
-			"event_id": "dialogic_010",
-			"options": [
-
-			],
-			"portrait": "",
-			"question": "Hey! Wanna buy an elevator keycard?"
-		},
-		{
-			"choice": "Yes, pleas!",
-			"condition": ">",
-			"definition": "1675972282-648",
-			"event_id": "dialogic_011",
-			"value": "99"
-		},
-		{
-			"character": "character-1675760651.json",
-			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "Here you go!"
-		},
-		{
-			"definition": "1675972946-787",
-			"event_id": "dialogic_014",
-			"operation": "+",
-			"random_upper_limit": 100,
-			"set_random": false,
-			"set_value": "1"
-		},
-		{
-			"call_node": {
-				"arguments": [
-					"100"
-				],
-				"method_name": "give_next_keycard",
-				"target_node_path": "./PlayerGlobals"
-			},
-			"event_id": "dialogic_042"
-		},
-		{
-			"choice": "No, im good for now!",
-			"condition": "",
-			"definition": "",
-			"event_id": "dialogic_011",
-			"value": ""
-		},
-		{
-			"event_id": "dialogic_013"
-		},
-		{
-			"event_id": "dialogic_013"
-		},
-		{
-			"condition": "",
 			"definition": "1675891257-648",
 			"event_id": "dialogic_012",
 			"value": "1"
@@ -136,9 +67,25 @@
 		},
 		{
 			"character": "character-1675760651.json",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "Hey, could I interest you in a quest? I pay pretty nicely you know!"
+		},
+		{
+			"choice": "Yeah, sure!",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1675760651.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Hey you! i Got a mission for you.\nThose pesky Chiplings have been eating my heartworm medication.\nLet's say you kill at least 10 of them and ill give you money to buy an access card to the next level. Sounds good?"
+			"text": "Those crazy poker chips have been consuming all the cheese dip. I can't seem to find anymore anywhere!\nIf you kill off at least 20 of them I will give you enough cash to buy an elevator access card (100c) to the next level.\nOh, and you should find a lot of those pesky varmints on floor 1!"
 		},
 		{
 			"call_node": {
@@ -149,6 +96,22 @@
 				"target_node_path": "./QuestController"
 			},
 			"event_id": "dialogic_042"
+		},
+		{
+			"choice": "No, I'm good!",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1675760651.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Come back when you change your mind!"
+		},
+		{
+			"event_id": "dialogic_013"
 		},
 		{
 			"event_id": "dialogic_013"
@@ -238,9 +201,25 @@
 		},
 		{
 			"character": "character-1675760651.json",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "Hey, could I maybe occupy you with another quest?"
+		},
+		{
+			"choice": "Yeah, why not!",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1675760651.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Hey you! i Got another mission for you.\nThose pesky Chiplings have been eating my mac and chees.\nLet's say you kill at least 20 of them and ill give you money to buy some ammol. Sounds good?"
+			"text": "Those pesky Chiplings have been eating my mac and chees.\nLet's say you kill at least 20 of them and ill give you money to buy some ammol. Sounds good?"
 		},
 		{
 			"call_node": {
@@ -251,6 +230,22 @@
 				"target_node_path": "./QuestController"
 			},
 			"event_id": "dialogic_042"
+		},
+		{
+			"choice": "No thank you!",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1675760651.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Alright, your loss."
+		},
+		{
+			"event_id": "dialogic_013"
 		},
 		{
 			"event_id": "dialogic_013"
@@ -272,6 +267,94 @@
 		},
 		{
 			"event_id": "dialogic_013"
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"condition": "",
+			"definition": "1675972946-787",
+			"event_id": "dialogic_012",
+			"value": "false"
+		},
+		{
+			"call_node": {
+				"arguments": [
+
+				],
+				"method_name": "dialogic_get_coins",
+				"target_node_path": "./PlayerGlobals"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"character": "character-1675760651.json",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "Hey! Wanna buy an elevator keycard? They are only 100c"
+		},
+		{
+			"choice": "Yes, please!",
+			"condition": "<",
+			"definition": "1675972282-648",
+			"event_id": "dialogic_011",
+			"value": "100"
+		},
+		{
+			"character": "character-1675760651.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Hey! You don't have enough money!\nCome back when you have 100c!"
+		},
+		{
+			"choice": "Yes, please! (Pay 100c)",
+			"condition": ">",
+			"definition": "1675972282-648",
+			"event_id": "dialogic_011",
+			"value": "99"
+		},
+		{
+			"character": "character-1675760651.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Well, here you go then."
+		},
+		{
+			"definition": "1675972946-787",
+			"event_id": "dialogic_014",
+			"operation": "+",
+			"random_upper_limit": 100,
+			"set_random": false,
+			"set_value": "1"
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"100"
+				],
+				"method_name": "give_next_keycard",
+				"target_node_path": "./PlayerGlobals"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"choice": "No, im good for now!",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1675760651.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Come back if you change your mind!"
 		},
 		{
 			"event_id": "dialogic_013"
