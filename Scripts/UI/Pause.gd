@@ -27,11 +27,11 @@ func _on_ContinueGame_pressed() -> void:
 
 
 func _on_SaveGame_pressed() -> void:
-	pass # Replace with function body.
+	SaveGame.save_data()
 
 
 func _on_Settings_pressed() -> void:
-	pass # Replace with function body.
+	SaveGame.reset_data()
 
 
 func _on_QuitToMenu_pressed() -> void:
