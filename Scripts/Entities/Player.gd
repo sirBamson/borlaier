@@ -21,7 +21,7 @@ func _ready() -> void:
 	Shake.shake_nodes.clear()
 	Shake.shake_nodes[$PlayerCamera] = true
 	
-	if PlayerGlobals.player_has_gun:
+	if PlayerGlobals.has_gun:
 		var weapon = load(PlayerGlobals.current_weapon)
 		weapon = weapon.instance()
 		weapon.position = $PlayerCamera.position
@@ -55,7 +55,7 @@ func movment() -> void:
 	# Uses two different movement scripts if player has a weapon or not
 	
 	# This script if the player has weapons
-	if PlayerGlobals.player_has_gun:
+	if PlayerGlobals.has_gun:
 		if get_global_mouse_position().x < global_position.x:
 			looking_direction = Vector2.LEFT
 		else:
@@ -97,8 +97,8 @@ func movment() -> void:
 
 
 func weapon_pickup() -> void:
-	if Input.is_action_pressed("drop") and PlayerGlobals.player_has_gun:
-		PlayerGlobals.player_has_gun = false
+	if Input.is_action_pressed("drop") and PlayerGlobals.has_gun:
+		PlayerGlobals.has_gun = false
 		
 		var dropped_weapon = load("res://Scenes/Weapons/DroppedWeapon.tscn")
 		dropped_weapon = dropped_weapon.instance()
@@ -111,8 +111,8 @@ func weapon_pickup() -> void:
 			if child.is_in_group("Weapon"):
 				child.queue_free()
 	
-	if Input.is_action_pressed("pick_up") and on_weapon and !PlayerGlobals.player_has_gun:
-		PlayerGlobals.player_has_gun = true
+	if Input.is_action_pressed("pick_up") and on_weapon and !PlayerGlobals.has_gun:
+		PlayerGlobals.has_gun = true
 		
 		var weapon = load(weapon_on_ground.weapon_type)
 		PlayerGlobals.current_weapon = weapon_on_ground.weapon_type
@@ -152,7 +152,7 @@ func _on_PlayerHitbox_area_entered(area: Area2D) -> void:
 		on_weapon = true
 	
 	if area.get_parent().is_in_group("Grenade"):
-		PlayerGlobals.player_healt -= area.get_parent().damage_output
+		PlayerGlobals.health -= area.get_parent().damage_output
 
 func _on_PlayerHitbox_area_exited(area: Area2D) -> void:
 	if area.is_in_group("DroppedWeapon"):
