@@ -2,7 +2,8 @@ extends KinematicBody2D
 
 
 export var enemy_type: String
-
+export var speed: int = 250
+export var healt: int = 40
 
 onready var player: KinematicBody2D = get_parent().get_parent().get_node("Player")
 onready var agent: NavigationAgent2D = $NavigationAgent2D
@@ -12,11 +13,9 @@ onready var detection_ray_1: RayCast2D = $DetectionRay1
 onready var detection_ray_2: RayCast2D = $DetectionRay2
 onready var detection_area: Area2D = $DetectionArea
 onready var animated_sprite: AnimatedSprite = $AnimatedSprite
-onready var cpu_particles_2d: CPUParticles2D = $CPUParticles2D
+onready var cpu_particles_2d: CPUParticles2D = $Blood
 
 
-var speed: int = 250
-var healt: int = 100
 var velocity: Vector2 = Vector2.ZERO
 
 var target_position: Vector2 = Vector2.ZERO
@@ -26,6 +25,7 @@ var state: String = "Hunting"
 var one_shot: bool = false
 
 func _ready() -> void:
+	randomize()
 	animated_sprite.frame = 0
 
 
@@ -35,10 +35,12 @@ func _physics_process(delta: float) -> void:
 			one_shot = true
 			Stats.chiplings_killed += 1
 		cpu_particles_2d.emitting = true
-		animated_sprite.visible = false
+		animated_sprite.stop()
+		animated_sprite.frame = 0
 		$DamageArea/CollisionShape.disabled = true
 		$CollisionShape.disabled = true
-		yield(get_tree().create_timer(2), "timeout")
+		var rand_int: int = randi() % 10 + 2
+		yield(get_tree().create_timer(rand_int), "timeout")
 		queue_free()
 	
 	set_state()
@@ -49,7 +51,7 @@ func _physics_process(delta: float) -> void:
 		elif detection_ray_1.cast_to.x > 0:
 			animated_sprite.scale.x = 0.5
 		
-		animated_sprite.play("default")
+		animated_sprite.play("Red")
 		target_position = player.global_position
 	elif state == "Idling":
 		animated_sprite.stop()
@@ -113,4 +115,4 @@ func _on_NavTimer_timeout() -> void:
 
 
 func _on_AttackTimer_timeout() -> void:
-	PlayerGlobals.player_healt -= 25
+	PlayerGlobals.health -= 25
