@@ -1,14 +1,19 @@
 extends CanvasLayer
 
 func _ready() -> void:
-	$TextureRect/Bullets.visible = false
+	$VBox/BulletsInMag.visible = false
+	$VBox/BulletsLeft.visible = false
 
 
 func _physics_process(_delta: float) -> void:
-	if PlayerGlobals.player_has_gun:
-		$TextureRect/Bullets.visible = true
-		$TextureRect/Bullets/FPS.text = "FPS: " + str(Engine.get_frames_per_second())
-		$TextureRect/Bullets/BulletsInMag.text = "Bullets in mag: " + str(PlayerGlobals.bullets_in_mag)
-		$TextureRect/Bullets/BulletsLeft.text = "Bullets left: " + str(PlayerGlobals.bullets_left)
+	if PlayerGlobals.has_gun:
+		$VBox/BulletsInMag.visible = true
+		$VBox/BulletsLeft.visible = true
+		$VBox/BulletsInMag.text = "Bullets in mag: " + str(PlayerGlobals.bullets_in_mag)
+		$VBox/BulletsLeft.text = "Bullets left: " + str(PlayerGlobals.bullets_left)
 	else:
-		$TextureRect/Bullets.visible = false
+		$VBox/BulletsInMag.visible = false
+		$VBox/BulletsLeft.visible = false
+	
+	$VBox/Coins.text = "Money: " + str(PlayerGlobals.coins) + "c"
+	$VBox/FPS.text = "FPS: " + str(Engine.get_frames_per_second())
