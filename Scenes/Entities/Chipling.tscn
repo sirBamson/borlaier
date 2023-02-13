@@ -1,17 +1,16 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Assets/ChiperRed-Sheet.png" type="Texture" id=1]
-[ext_resource path="res://Assets/Coin.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/Entities/EnemyBasic.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=9]
-extents = Vector2( 17, 75 )
+extents = Vector2( 28.5, 75 )
 
 [sub_resource type="CircleShape2D" id=11]
 radius = 69.0072
 
 [sub_resource type="CircleShape2D" id=12]
-radius = 190.003
+radius = 320.4
 
 [sub_resource type="AtlasTexture" id=3]
 flags = 4
@@ -47,7 +46,7 @@ region = Rect2( 1280, 0, 256, 256 )
 animations = [ {
 "frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
 "loop": true,
-"name": "default",
+"name": "Red",
 "speed": 18.0
 } ]
 
@@ -58,7 +57,7 @@ script = ExtResource( 3 )
 enemy_type = "Chipling"
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
-position = Vector2( 1.08601e-05, 29 )
+position = Vector2( 5.249e-05, 17.5 )
 rotation = 1.5708
 scale = Vector2( 1, 0.720001 )
 shape = SubResource( 9 )
@@ -80,6 +79,7 @@ shape = SubResource( 12 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 10 )
+animation = "Red"
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 path_desired_distance = 5.0
@@ -108,18 +108,21 @@ exclude_parent = false
 collision_mask = 43
 collide_with_areas = true
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+[node name="Blood" type="CPUParticles2D" parent="."]
 emitting = false
-amount = 16
-texture = ExtResource( 2 )
+amount = 64
+emission_shape = 1
+emission_sphere_radius = 25.0
 direction = Vector2( 0, -5 )
 spread = 100.0
-initial_velocity = 150.0
+initial_velocity = 100.0
 initial_velocity_random = 1.0
 angle_random = 1.0
-scale_amount = 0.5
+scale_amount = 15.0
 scale_amount_random = 0.5
-color = Color( 0.713726, 0.223529, 0.223529, 1 )
+color = Color( 0.490196, 0.0666667, 0.0666667, 1 )
+hue_variation = 0.03
+hue_variation_random = 1.0
 
 [connection signal="area_entered" from="DamageArea" to="." method="_on_DamageArea_area_entered"]
 [connection signal="area_exited" from="DamageArea" to="." method="_on_DamageArea_area_exited"]
