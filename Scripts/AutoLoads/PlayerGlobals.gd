@@ -1,7 +1,7 @@
 extends Node
 
-var player_healt: int = 100
-var player_has_gun: bool = true
+var health: int = 100
+var has_gun: bool = true
 
 var talking: bool = false
 

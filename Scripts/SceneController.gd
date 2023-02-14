@@ -1,6 +1,5 @@
 extends Node
 # A scene control node for packaging, saving and switching scenes
-var new_scene: Node
 
 
 func _ready() -> void:
@@ -17,7 +16,7 @@ func _input(event: InputEvent) -> void:
 	#---------------------------------------
 
 func change_scene(save_current_scene: bool, current_scene: Node, current_scene_path: String, new_scene_path: String):
-	# TODO: Add a tansition
+	var new_scene: Node
 	
 	# Now packages the scene and overwrites the old one, if it exists
 	# Adds to dictionary with PackedScene as value and file path as key
