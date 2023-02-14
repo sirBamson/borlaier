@@ -2,6 +2,7 @@ extends Node
 
 
 const SAVE_FILE: String = "res://DEBUG/borlaier_game.save"
+const SAVE_FILE_DIR: String = "res://DEBUG"
 # Use user://borlaier_game.save
 
 var game_data: Dictionary = {}
@@ -15,6 +16,10 @@ func _ready() -> void:
 
 func save_data() -> void:
 	get_game_data()
+	var dir: Directory = Directory.new()
+	if not dir.dir_exists(SAVE_FILE_DIR):
+		dir.make_dir(SAVE_FILE_DIR)
+	
 	var file: File = File.new()
 	file.open(SAVE_FILE, File.WRITE)
 	file.store_var(game_data)
