@@ -373,9 +373,28 @@
 		},
 		{
 			"character": "character-1675763182.json",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "Well, well, well if it isn't the one who brought the demons. Have you come here to cause more pain and suffering, or do you come in search of a quest?"
+		},
+		{
+			"choice": "Yes pleas",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"character": "character-1675763182.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Well, well, well if it isnt the player"
+			"text": ""
 		},
 		{
 			"event_id": "dialogic_013"
