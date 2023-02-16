@@ -46,7 +46,7 @@ func _physics_process(_delta: float) -> void:
 		can_fire = true
 	
 	
-	if Input.is_action_pressed("fire") and can_fire and can_fire_auto and bullets_in_mag > 0:
+	if Input.is_action_pressed("fire") and can_fire and can_fire_auto and bullets_in_mag > 0 and not PlayerGlobals.talking:
 		can_fire_auto = false
 		
 		bullets_in_mag -= 1
