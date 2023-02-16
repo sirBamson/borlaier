@@ -683,7 +683,7 @@ texture = ExtResource( 8 )
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Player" parent="YSort" instance=ExtResource( 5 )]
-position = Vector2( 416, 192 )
+position = Vector2( 384, 24 )
 
 [node name="Walls" type="TileMap" parent="."]
 tile_set = SubResource( 13 )
