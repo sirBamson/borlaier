@@ -1,5 +1,8 @@
 extends Node
 # A scene control node for packaging, saving and switching scenes
+var level0_variables: Dictionary = {"player_position": Vector2.ZERO}
+var level1_variables: Dictionary = {"player_position": Vector2.ZERO}
+var level2_variables: Dictionary = {"player_position": Vector2.ZERO}
 
 
 func _ready() -> void:
@@ -36,8 +39,20 @@ func change_scene(save_current_scene: bool, current_scene: Node, current_scene_p
 	if new_scene.is_in_group("Level"):
 		EnvVar.latest_level_path = new_scene.filename
 	
+	set_level_variables(new_scene)
 	# Adds the new scene and removes the old one
 	$Transition/Animation.play("FadeIn")
 	current_scene.queue_free()
 	yield(get_tree().create_timer(0.2),"timeout")
 	add_child(new_scene)
+
+
+func set_level_variables(level: Node):
+	if level.name == "Level0":
+		level0_variables["player_position"] = level.get_node("Navigation2D/YSort/Player").global_position
+	if level.name == "Level1":
+		level0_variables["player_position"] = level.get_node("Navigation2D/YSort/Player").global_position
+
+
+func get_level_variables(level: Node):
+	pass
