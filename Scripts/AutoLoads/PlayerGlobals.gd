@@ -24,6 +24,7 @@ func _ready() -> void:
 	bullets_in_mag = magazine_size
 
 
+# Needs to be a function for dialogic to access
 func set_talking_state() -> void:
 	talking = false
 
