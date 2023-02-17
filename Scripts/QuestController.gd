@@ -27,9 +27,14 @@ class Quest:
 
 var quests: Array = []
 
+var FatMan1: Quest = Quest.new()
+var FatMan2: Quest = Quest.new()
+
+var FatMan_dialogic: Dictionary = {}
+var FatMan1_dict: Dictionary = {}
+var FatMan2_dict: Dictionary = {}
 
 func _ready() -> void:
-	var FatMan1 = Quest.new()
 	FatMan1.id_name = "FatMan1"
 	FatMan1.description = "Kill 10 chiplings"
 	FatMan1.dependencies = {
@@ -41,8 +46,6 @@ func _ready() -> void:
 	FatMan1.quest_series_number = 1
 	quests.append(FatMan1)
 	
-	
-	var FatMan2 = Quest.new()
 	FatMan2.id_name = "FatMan2"
 	FatMan2.description = "Kill 10 chiplings"
 	FatMan2.dependencies = {
@@ -54,16 +57,7 @@ func _ready() -> void:
 	FatMan2.dialogic_next_quest_avalible_name = "Npc/FatMan/FatManNextQuestAvalible"
 	FatMan2.quest_series_number = 2
 	quests.append(FatMan2)
-	
-	
-	var Quest3 = Quest.new()
-	Quest3.id_name = "Quest3"
-	Quest3.description = "Linus mamma"
-	Quest3.dependencies = {
-		"Quest2": true,
-		"Quest3": true
-		}
-	quests.append(Quest3)
+
 
 
 func start_quest(string) -> void:
@@ -78,7 +72,7 @@ func start_quest(string) -> void:
 				return
 
 
-var chiplings_killed_start: int
+var chiplings_killed_start: int = 0
 
 
 func check_and_set_quest_objectives(string: String) -> void:
@@ -128,3 +122,53 @@ func check_dependencies(string: String):
 				Dialogic.set_variable(quest.dialogic_next_quest_avalible_name, "true")
 			else:
 				Dialogic.set_variable(quest.dialogic_next_quest_avalible_name, "false")
+
+
+func get_quest_variables():
+	FatMan_dialogic = {
+		"FatManCurrentQuestDone": Dialogic.get_variable("Npc/FatMan/FatManCurrentQuestDone"),
+		"FatManQuestStarted": Dialogic.get_variable("Npc/FatMan/FatManQuestStarted"),
+		"FatManCurrentQuest": Dialogic.get_variable("Npc/FatMan/FatManCurrentQuest")
+	}
+	
+	FatMan1_dict = {
+		"Id_name": FatMan1.id_name,
+		"Description": FatMan1.description,
+		"Dependencies": FatMan1.dependencies,
+		"Dialogic_quest_series_name": FatMan1.dialogic_quest_series_name,
+		"Dialogic_quest_started_name": FatMan1.dialogic_quest_started_name,
+		"Dialogic_next_quest_avalible_name": FatMan1.dialogic_next_quest_avalible_name,
+		"Quest_series_number": FatMan1.quest_series_number,
+		}
+	
+	FatMan2_dict = {
+		"Id_name": FatMan2.id_name,
+		"Description": FatMan2.description,
+		"Dependencies": FatMan2.dependencies,
+		"Dialogic_quest_series_name": FatMan2.dialogic_quest_series_name,
+		"Dialogic_quest_started_name": FatMan2.dialogic_quest_started_name,
+		"Dialogic_next_quest_avalible_name": FatMan2.dialogic_next_quest_avalible_name,
+		"Quest_series_number": FatMan2.quest_series_number
+		}
+
+
+func set_quest_variables():
+	Dialogic.set_variable("Npc/FatMan/FatManCurrentQuestDone", FatMan_dialogic["FatManCurrentQuestDone"])
+	Dialogic.set_variable("Npc/FatMan/FatManQuestStarted", FatMan_dialogic["FatManQuestStarted"])
+	Dialogic.set_variable("Npc/FatMan/FatManCurrentQuest", FatMan_dialogic["FatManCurrentQuest"])
+	
+	FatMan1.id_name = FatMan1_dict["Id_name"]
+	FatMan1.description = FatMan1_dict["Description"]
+	FatMan1.dependencies = FatMan1_dict["Dependencies"]
+	FatMan1.dialogic_quest_series_name = FatMan1_dict["Dialogic_quest_series_name"]
+	FatMan1.dialogic_quest_started_name = FatMan1_dict["Dialogic_quest_started_name"]
+	FatMan1.dialogic_next_quest_avalible_name = FatMan1_dict["Dialogic_next_quest_avalible_name"]
+	FatMan1.quest_series_number = FatMan1_dict["Quest_series_number"]
+	
+	FatMan2.id_name = FatMan2_dict["Id_name"]
+	FatMan2.description = FatMan2_dict["Description"]
+	FatMan2.dependencies = FatMan2_dict["Dependencies"]
+	FatMan2.dialogic_quest_series_name = FatMan2_dict["Dialogic_quest_series_name"]
+	FatMan2.dialogic_quest_started_name = FatMan2_dict["Dialogic_quest_started_name"]
+	FatMan2.dialogic_next_quest_avalible_name = FatMan2_dict["Dialogic_next_quest_avalible_name"]
+	FatMan2.quest_series_number = FatMan2_dict["Quest_series_number"]
