@@ -244,6 +244,7 @@ interaction={
 2d_physics/layer_8="Elevator"
 2d_physics/layer_9="Grenade"
 2d_physics/layer_10="Walls2"
+2d_physics/layer_11="Lightning"
 
 [physics]
 
