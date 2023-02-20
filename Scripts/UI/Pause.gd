@@ -37,7 +37,5 @@ func _on_Settings_pressed() -> void:
 func _on_QuitToMenu_pressed() -> void:
 	pause_game()
 	for node in scene_controller.get_children():
-		if node.is_in_group("Level"):
-			scene_controller.change_scene(true, node, node.filename, "res://Scenes/UI/MainMenu.tscn")
-		elif node.is_in_group("Elevator"):
+		if node.is_in_group("Level") or node.is_in_group("Elevator"):
 			scene_controller.change_scene(false, node, node.filename, "res://Scenes/UI/MainMenu.tscn")
