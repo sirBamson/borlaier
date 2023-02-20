@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/circle.png-c4157733c2ad3470a49e52db87e6ad2d.stex"
+path="res://.import/BulletMan-Sheet.png-bad09224f6076c971090c23178f7f1c6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/circle.png"
-dest_files=[ "res://.import/circle.png-c4157733c2ad3470a49e52db87e6ad2d.stex" ]
+source_file="res://Assets/BulletMan-Sheet.png"
+dest_files=[ "res://.import/BulletMan-Sheet.png-bad09224f6076c971090c23178f7f1c6.stex" ]
 
 [params]
 
