@@ -50,11 +50,10 @@ animations = [ {
 "speed": 18.0
 } ]
 
-[node name="Chipling" type="KinematicBody2D" groups=["Enemy"]]
+[node name="Chipling" type="KinematicBody2D" groups=["Chipling", "Enemy"]]
 collision_layer = 4
 collision_mask = 559
 script = ExtResource( 3 )
-enemy_type = "Chipling"
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
 position = Vector2( 5.249e-05, 17.5 )

@@ -1,11 +1,9 @@
 extends KinematicBody2D
 
-
-export var enemy_type: String
 export var speed: int = 250
 export var healt: int = 40
 
-onready var player: KinematicBody2D = get_parent().get_parent().get_node("Player")
+onready var player: KinematicBody2D = get_parent().get_node("Player")
 onready var agent: NavigationAgent2D = $NavigationAgent2D
 onready var nav_timer: Timer = $NavTimer
 onready var attack_timer: Timer = $AttackTimer
@@ -31,7 +29,7 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	if healt <= 0:
-		if enemy_type == "Chipling" and !one_shot:
+		if !one_shot:
 			one_shot = true
 			Stats.chiplings_killed += 1
 		cpu_particles_2d.emitting = true

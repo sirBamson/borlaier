@@ -14,7 +14,10 @@ func _ready() -> void:
 
 
 func _on_SpawnTimer_timeout() -> void:
-	enemy_amount = get_children().size()
+	for node in get_parent().get_children():
+		if node.is_in_group("Chipling"):
+			enemy_amount += 1
 	if !(enemy_amount > max_enemy_amount):
 		var enemy_instance = enemy.instance()
-		add_child(enemy_instance)
+		enemy_instance.global_position = global_position
+		get_parent().add_child(enemy_instance)
