@@ -1,7 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/UI/Overlay.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Fonts/Casino3DMarqueeRegular-d9A2V.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Assets/Coin.png" type="Texture" id=3]
+[ext_resource path="res://Assets/bullets_icon.png" type="Texture" id=4]
+[ext_resource path="res://Assets/grenade_icon.png" type="Texture" id=5]
 
 [sub_resource type="Theme" id=1]
 default_font = ExtResource( 2 )
@@ -36,16 +39,30 @@ text = "FPS: "
 margin_top = 124.0
 margin_right = 1492.0
 margin_bottom = 244.0
-text = "Money: "
+text = "     : "
 
-[node name="BulletsInMag" type="Label" parent="VBox"]
+[node name="Sprite" type="Sprite" parent="VBox/Coins"]
+position = Vector2( 84, 48 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 3 )
+
+[node name="Grenades" type="Label" parent="VBox"]
 margin_top = 248.0
 margin_right = 1492.0
 margin_bottom = 368.0
-text = "Bullets In mag: "
 
-[node name="BulletsLeft" type="Label" parent="VBox"]
+[node name="Sprite" type="Sprite" parent="VBox/Grenades"]
+position = Vector2( 88, 44 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 5 )
+
+[node name="Bullets" type="Label" parent="VBox"]
 margin_top = 372.0
 margin_right = 1492.0
 margin_bottom = 492.0
-text = "Bullets left: "
+text = "     : "
+
+[node name="Sprite" type="Sprite" parent="VBox/Bullets"]
+position = Vector2( 84, 40 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 4 )
