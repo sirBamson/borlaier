@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/circle.png-c4157733c2ad3470a49e52db87e6ad2d.stex"
+path="res://.import/Gun_dude.png-9f2ab6fe1e9f9311dea6808cdd2aee2e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/circle.png"
-dest_files=[ "res://.import/circle.png-c4157733c2ad3470a49e52db87e6ad2d.stex" ]
+source_file="res://Assets/Gun_dude.png"
+dest_files=[ "res://.import/Gun_dude.png-9f2ab6fe1e9f9311dea6808cdd2aee2e.stex" ]
 
 [params]
 
