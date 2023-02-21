@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/assult_rifle.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Weapons/DroppedWeapon.gd" type="Script" id=2]
 [ext_resource path="res://Assets/hand_gun_wHands.png" type="Texture" id=3]
 [ext_resource path="res://Assets/DMR.png" type="Texture" id=4]
+[ext_resource path="res://Assets/uzi.png" type="Texture" id=5]
 
 [sub_resource type="CircleShape2D" id=2]
 radius = 68.1175
@@ -43,3 +44,12 @@ shape = SubResource( 3 )
 
 [node name="SemiAutomaticRifle" type="Sprite" parent="SemiAutomaticRifleShape"]
 texture = ExtResource( 4 )
+
+[node name="SMGShape" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource( 2 )
+disabled = true
+
+[node name="SMG" type="Sprite" parent="SMGShape"]
+position = Vector2( -30, 12 )
+texture = ExtResource( 5 )
