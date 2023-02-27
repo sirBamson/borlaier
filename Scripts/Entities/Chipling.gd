@@ -32,6 +32,7 @@ func _physics_process(delta: float) -> void:
 		if !one_shot:
 			one_shot = true
 			Stats.chiplings_killed += 1
+			PlayerGlobals.coins += 2
 		cpu_particles_2d.emitting = true
 		animated_sprite.stop()
 		animated_sprite.frame = 0
