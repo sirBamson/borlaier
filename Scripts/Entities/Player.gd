@@ -157,7 +157,6 @@ func _on_PlayerHitbox_area_entered(area: Area2D) -> void:
 	# Lightning strike damage
 	if area.get_parent().is_in_group("LightningStrike"):
 		PlayerGlobals.health -= 80
-		print(PlayerGlobals.health)
 
 
 func _on_PlayerHitbox_area_exited(area: Area2D) -> void:
