@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=2]
+[gd_scene load_steps=51 format=2]
 
 [ext_resource path="res://Assets/player_right_no_hands.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Entities/Player.gd" type="Script" id=2]
@@ -257,6 +257,10 @@ extents = Vector2( 32, 9.1 )
 radius = 31.2
 height = 155.2
 
+[sub_resource type="OccluderPolygon2D" id=106]
+cull_mode = 1
+polygon = PoolVector2Array( 36.3636, 0, 36.3636, -14.5455, 29.0909, -58.1818, 29.0909, -116.364, 36.3636, -130.909, 36.3636, -152.727, 21.8182, -167.273, 21.8182, -181.818, 29.0909, -196.364, 29.0909, -210.909, 21.8182, -225.455, 0, -232.727, -21.8182, -225.455, -29.0909, -218.182, -29.0909, -196.364, -21.8182, -174.545, -21.8182, -167.273, -29.0909, -160, -43.6364, -152.727, -43.6364, -138.182, -36.3636, -138.182, -29.0909, -116.364, -29.0909, -65.4545, -36.3636, -58.1818, -36.3636, -14.5455, -43.6364, -7.27273, -43.6364, 0 )
+
 [node name="Player" type="KinematicBody2D" groups=["Player"]]
 scale = Vector2( 1.1, 1.1 )
 collision_layer = 2
@@ -293,6 +297,9 @@ position = Vector2( 0, -28.1818 )
 
 [node name="EnemyDetectionNode2" type="Position2D" parent="."]
 position = Vector2( 0, -190.909 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource( 106 )
 
 [connection signal="area_entered" from="PlayerHitbox" to="." method="_on_PlayerHitbox_area_entered"]
 [connection signal="area_exited" from="PlayerHitbox" to="." method="_on_PlayerHitbox_area_exited"]
