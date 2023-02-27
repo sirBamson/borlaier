@@ -1,7 +1,10 @@
 extends KinematicBody2D
 
 export var speed: int = 250
-export var healt: int = 40
+export var healt: int = 100
+
+var colors: Array = ["Blue", "Green", "Red"]
+var color: String = colors[randi() % colors.size()]
 
 onready var player: KinematicBody2D = get_parent().get_node("Player")
 onready var agent: NavigationAgent2D = $NavigationAgent2D
@@ -11,8 +14,8 @@ onready var detection_ray_1: RayCast2D = $DetectionRay1
 onready var detection_ray_2: RayCast2D = $DetectionRay2
 onready var detection_area: Area2D = $DetectionArea
 onready var animated_sprite: AnimatedSprite = $AnimatedSprite
-onready var cpu_particles_2d: CPUParticles2D = $Blood
 
+onready var dead_chipling: Resource = load("res://Scenes/Entities/DeadChipling.tscn")
 
 var velocity: Vector2 = Vector2.ZERO
 
@@ -25,6 +28,16 @@ var one_shot: bool = false
 func _ready() -> void:
 	randomize()
 	animated_sprite.frame = 0
+	
+	match color:
+		"Red":
+			healt = 25
+		"Blue":
+			healt = 50
+		"Green":
+			healt = 75
+		"Black":
+			healt = 100
 
 
 func _physics_process(delta: float) -> void:
@@ -33,13 +46,10 @@ func _physics_process(delta: float) -> void:
 			one_shot = true
 			Stats.chiplings_killed += 1
 			PlayerGlobals.coins += 2
-		cpu_particles_2d.emitting = true
-		animated_sprite.stop()
-		animated_sprite.frame = 0
-		$DamageArea/CollisionShape.disabled = true
-		$CollisionShape.disabled = true
-		var rand_int: int = randi() % 10 + 2
-		yield(get_tree().create_timer(rand_int), "timeout")
+		var dead_chipling_instance: Node2D = dead_chipling.instance()
+		dead_chipling_instance.color = color
+		dead_chipling_instance.global_position = global_position
+		get_parent().add_child(dead_chipling_instance)
 		queue_free()
 	
 	set_state()
@@ -50,7 +60,7 @@ func _physics_process(delta: float) -> void:
 		elif detection_ray_1.cast_to.x > 0:
 			animated_sprite.scale.x = 0.5
 		
-		animated_sprite.play("Red")
+		animated_sprite.play(color)
 		target_position = player.global_position
 	elif state == "Idling":
 		animated_sprite.stop()
