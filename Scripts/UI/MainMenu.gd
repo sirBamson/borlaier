@@ -15,6 +15,7 @@ func _ready() -> void:
 func _on_ContinueGame_pressed() -> void:
 	EnvVar.can_pause = true
 	if EnvVar.first_time_played:
+		EnvVar.first_time_played = false
 		# Set lobby or intro
 		scene_controller.change_scene(false, self, self.filename, "res://Scenes/Levels/Level0.tscn")
 	elif not EnvVar.first_time_played:
