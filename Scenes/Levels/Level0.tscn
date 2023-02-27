@@ -458,7 +458,7 @@ position = Vector2( 216, 1024 )
 texture = ExtResource( 10 )
 
 [node name="ElevatorDoor" parent="." instance=ExtResource( 3 )]
-position = Vector2( 2696, 272 )
+position = Vector2( 2688, 272 )
 
 [node name="Navigation2D" type="Navigation2D" parent="."]
 
@@ -471,6 +471,7 @@ navpoly = SubResource( 81 )
 [node name="EnemySpawner" parent="Navigation2D/YSort" instance=ExtResource( 17 )]
 position = Vector2( 1536, 1664 )
 enemy_path = "res://Scenes/Entities/Chipling.tscn"
+enemy_name = "Chipling"
 
 [node name="Player" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
 position = Vector2( 216, 1312 )
