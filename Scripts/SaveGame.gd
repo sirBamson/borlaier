@@ -71,8 +71,6 @@ func get_game_data() -> void:
 		"EnvVar_first_time_played": EnvVar.first_time_played,
 		"EnvVar_latest_level_path": EnvVar.latest_level_path,
 		"EnvVar_minigame_load_scene_path": EnvVar.minigame_load_scene_path,
-		"EnvVar_kbgs_minigame_first_time": EnvVar.kbgs_minigame_first_time,
-		"EnvVar_kbgs_minigame_won": EnvVar.kbgs_minigame_won,
 		"EnvVar_elevator_next_level": EnvVar.elevator_next_level,
 		"EnvVar_elevator_current_level_number": EnvVar.elevator_current_level_number,
 		"EnvVar_elevator_old_level_number": EnvVar.elevator_old_level_number,
@@ -108,8 +106,6 @@ func set_game_data() -> void:
 	EnvVar.first_time_played = game_data["EnvVar_first_time_played"]
 	EnvVar.latest_level_path = game_data["EnvVar_latest_level_path"]
 	EnvVar.minigame_load_scene_path = game_data["EnvVar_minigame_load_scene_path"]
-	EnvVar.kbgs_minigame_first_time = game_data["EnvVar_kbgs_minigame_first_time"]
-	EnvVar.kbgs_minigame_won = game_data["EnvVar_kbgs_minigame_won"]
 	EnvVar.elevator_next_level = game_data["EnvVar_elevator_next_level"]
 	EnvVar.elevator_current_level_number = game_data["EnvVar_elevator_current_level_number"]
 	EnvVar.elevator_old_level_number = game_data["EnvVar_elevator_old_level_number"]

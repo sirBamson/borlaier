@@ -1,7 +1,7 @@
 extends Node
 
 
-var first_time_played: bool = false
+var first_time_played: bool = true
 
 # A string that is set to the current or latest level / floor
 var latest_level_path: String = "res://Scenes/Levels/Level0.tscn"
