@@ -1,11 +1,13 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Assets/casino_tilemap.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Entities/NPC.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Entities/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/White_square.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/Weapons/AmmoPouch.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Assets/Plant.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Elevator/ElevatorDoor.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Assets/Light.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Entities/EnemySpawner.tscn" type="PackedScene" id=9]
 
 [sub_resource type="TileSet" id=48]
@@ -427,11 +429,13 @@ navpoly = SubResource( 73 )
 [node name="EnemySpawner" parent="Navigation2D/YSort" instance=ExtResource( 9 )]
 position = Vector2( 448, 544 )
 enemy_path = "res://Scenes/Entities/Chipling.tscn"
-spawn_interval = 2
-max_enemy_amount = 4
+enemy_name = "Chipling"
+spawn_interval = 1
+max_enemy_amount = 3
+active = true
 
 [node name="Player" parent="Navigation2D/YSort" instance=ExtResource( 3 )]
-position = Vector2( 904, 472 )
+position = Vector2( 880, 486 )
 
 [node name="Plant" parent="Navigation2D/YSort" instance=ExtResource( 6 )]
 position = Vector2( 920, 960 )
@@ -454,7 +458,14 @@ position = Vector2( 1144, 960 )
 [node name="NPC" parent="Navigation2D/YSort" instance=ExtResource( 2 )]
 position = Vector2( 1536, 441 )
 
+[node name="AmmoPouch" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 1104, 488 )
+
+[node name="Light" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1052, 576 )
+
 [node name="Walls" type="TileMap" parent="."]
+light_mask = 2
 tile_set = SubResource( 59 )
 cell_size = Vector2( 256, 256 )
 collision_mask = 0

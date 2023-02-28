@@ -1,4 +1,4 @@
-[gd_scene load_steps=88 format=2]
+[gd_scene load_steps=89 format=2]
 
 [ext_resource path="res://Assets/White_square.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Elevator/ElevatorDoor.tscn" type="PackedScene" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://Assets/eFloor_arrow_down.png" type="Texture" id=15]
 [ext_resource path="res://Assets/eFloor_1-2.png" type="Texture" id=16]
 [ext_resource path="res://Assets/eFloor_arrow_up.png" type="Texture" id=17]
+[ext_resource path="res://Scenes/Assets/Light.tscn" type="PackedScene" id=18]
 
 [sub_resource type="TileSet" id=1]
 0/name = "elevator_inside.png 0"
@@ -685,11 +686,16 @@ texture = ExtResource( 8 )
 [node name="Player" parent="YSort" instance=ExtResource( 5 )]
 position = Vector2( 384, 24 )
 
+[node name="Light" parent="." instance=ExtResource( 18 )]
+position = Vector2( 384, 256 )
+energy = 0.25
+
 [node name="Walls" type="TileMap" parent="."]
+light_mask = 2
 tile_set = SubResource( 13 )
 cell_size = Vector2( 256, 256 )
 format = 1
-tile_data = PoolIntArray( -196608, 7, 0, -196607, 7, 0, -196606, 7, 0, -65537, 0, 0, -131069, 6, 0, -1, 1, 0, -65533, 5, 0, 65535, 1, 0, 3, 5, 0, 131071, 1, 0, 65539, 5, 0, 196607, 2, 0, 131072, 3, 0, 131073, 3, 0, 131074, 3, 0, 131075, 4, 0, 196608, 7, 0, 196609, 7, 0, 196610, 7, 0 )
+tile_data = PoolIntArray( -131074, 7, 0, -131073, 7, 0, -196608, 7, 0, -196607, 7, 0, -196606, 7, 0, -196605, 7, 0, -196604, 7, 0, -65538, 7, 0, -65537, 0, 0, -131069, 6, 0, -131068, 7, 0, -2, 7, 0, -1, 1, 0, -65533, 5, 0, -65532, 7, 0, 65534, 7, 0, 65535, 1, 0, 3, 5, 0, 4, 7, 0, 131070, 7, 0, 131071, 1, 0, 65539, 5, 0, 65540, 7, 0, 196606, 7, 0, 196607, 2, 0, 131072, 3, 0, 131073, 3, 0, 131074, 3, 0, 131075, 4, 0, 131076, 7, 0, 262142, 7, 0, 262143, 7, 0, 196608, 7, 0, 196609, 7, 0, 196610, 7, 0, 196611, 7, 0, 196612, 7, 0 )
 
 [node name="WaitTimer" type="Timer" parent="."]
 one_shot = true
