@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Circle.png-4c2daeed5b68bce1e78feca310d5dbd2.stex"
+path="res://.import/arcade_machine_sahara.png-54fe38bf0ac7535362c20f9e3df6abae.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Circle.png"
-dest_files=[ "res://.import/Circle.png-4c2daeed5b68bce1e78feca310d5dbd2.stex" ]
+source_file="res://Assets/arcade_machine_sahara.png"
+dest_files=[ "res://.import/arcade_machine_sahara.png-54fe38bf0ac7535362c20f9e3df6abae.stex" ]
 
 [params]
 
