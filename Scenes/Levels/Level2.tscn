@@ -661,7 +661,7 @@ navpoly = SubResource( 84 )
 [node name="YSort" type="YSort" parent="Navigation2D"]
 
 [node name="Player" parent="Navigation2D/YSort" instance=ExtResource( 4 )]
-position = Vector2( 3968, 3617 )
+position = Vector2( 3968, 3624 )
 
 [node name="SlotMachine" parent="Navigation2D/YSort" instance=ExtResource( 6 )]
 position = Vector2( 6032, 3360 )
