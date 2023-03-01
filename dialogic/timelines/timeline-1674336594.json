@@ -138,6 +138,21 @@
 			"event_id": "dialogic_013"
 		},
 		{
+			"condition": "",
+			"definition": "1675953506-648",
+			"event_id": "dialogic_012",
+			"value": "false"
+		},
+		{
+			"character": "character-1675760651.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Hey dude!"
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
 			"event_id": "dialogic_013"
 		},
 		{
@@ -219,7 +234,7 @@
 			"character": "character-1675760651.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Those pesky Chiplings have been eating my mac and chees.\nLet's say you kill at least 20 of them and ill give you money to buy some ammol. Sounds good?"
+			"text": "Those pesky Chiplings have been eating my mac and chees.\nLet's say you kill at least 40 of them and ill give you money to buy some ammol. Sounds good?"
 		},
 		{
 			"call_node": {
@@ -391,10 +406,320 @@
 			"event_id": "dialogic_013"
 		},
 		{
-			"character": "character-1675763182.json",
+			"event_id": "dialogic_013"
+		},
+		{
+			"condition": "",
+			"definition": "1675760437-648",
+			"event_id": "dialogic_012",
+			"value": "Bartender2"
+		},
+		{
+			"condition": "",
+			"definition": "1677707763-703",
+			"event_id": "dialogic_012",
+			"value": "1"
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"Bartender21"
+				],
+				"method_name": "check_dependencies",
+				"target_node_path": "./QuestController"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"condition": "",
+			"definition": "1677707793-249",
+			"event_id": "dialogic_012",
+			"value": "true"
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"Bartender21"
+				],
+				"method_name": "check_and_set_quest_objectives",
+				"target_node_path": "./QuestController"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"condition": "",
+			"definition": "1677707777-335",
+			"event_id": "dialogic_012",
+			"value": "false"
+		},
+		{
+			"condition": "",
+			"definition": "1677707781-958",
+			"event_id": "dialogic_012",
+			"value": "true"
+		},
+		{
+			"character": "character-1677707686.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": ""
+			"text": "So... Have you got hold of the item yet?"
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"condition": "",
+			"definition": "1677707781-958",
+			"event_id": "dialogic_012",
+			"value": "false"
+		},
+		{
+			"character": "character-1677707686.json",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "Psst! I heard you might be interested in making a few bucks. Could I offer you a quest to retrieve an item?"
+		},
+		{
+			"choice": "Hmm, why not.",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1677707686.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "So when I first came here from the motherland, I brought something from home. Now I have lost that bottle of the finest liquor, right here, in this very casino. \nLet's say you find it for me and I could make it worth your time. How about 250c?\nOh and the last time I saw it was when I got drunk at the arcades here on floor two. So you might want to have a look around and talk to someone there. "
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"Bartender21"
+				],
+				"method_name": "start_quest",
+				"target_node_path": "./QuestController"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"choice": "Nah, I will skip it for now!",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1677707686.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Well, come back later then. the motherland needs you!"
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"condition": "",
+			"definition": "1677707777-335",
+			"event_id": "dialogic_012",
+			"value": "true"
+		},
+		{
+			"character": "character-1677707686.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Oh, my precious baby, come to me! Thank you so much. Tonight we will party!"
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"condition": "",
+			"definition": "1677707793-249",
+			"event_id": "dialogic_012",
+			"value": "false"
+		},
+		{
+			"character": "character-1677707686.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Hey! Im bussy. Come back when you helpt the fat man."
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"condition": "",
+			"definition": "1675760437-648",
+			"event_id": "dialogic_012",
+			"value": "Mohamed"
+		},
+		{
+			"condition": "",
+			"definition": "1677709994-206",
+			"event_id": "dialogic_012",
+			"value": "1"
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"Mohamed1"
+				],
+				"method_name": "check_dependencies",
+				"target_node_path": "./QuestController"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"condition": "",
+			"definition": "1677710041-158",
+			"event_id": "dialogic_012",
+			"value": "true"
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"Mohamed1"
+				],
+				"method_name": "check_and_set_quest_objectives",
+				"target_node_path": "./QuestController"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"condition": "",
+			"definition": "1677710013-552",
+			"event_id": "dialogic_012",
+			"value": "false"
+		},
+		{
+			"condition": "",
+			"definition": "1677710020-539",
+			"event_id": "dialogic_012",
+			"value": "true"
+		},
+		{
+			"character": "character-1677709887.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "I see you haven't beaten me yet. I knew you couldn't do it."
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"condition": "",
+			"definition": "1677710020-539",
+			"event_id": "dialogic_012",
+			"value": "false"
+		},
+		{
+			"character": "character-1677709887.json",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "Yo, yanii! I think you could beat me at Kill Bad Guys Simulator? (KGBS)\nIf you beat me I will give you this old bottle of moonshine I found in the arcade. It's haram any way!"
+		},
+		{
+			"choice": "Game on!",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1677709887.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Yanii, you will find the game to the right in the arcade. Good luck!"
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"Mohamed1"
+				],
+				"method_name": "start_quest",
+				"target_node_path": "./QuestController"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"choice": "Nah bro. Im good!",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1677709887.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Well, you won't be getting the moonshine then!"
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"condition": "",
+			"definition": "1677710013-552",
+			"event_id": "dialogic_012",
+			"value": "true"
+		},
+		{
+			"character": "character-1677709887.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Oh, shit you actually beat it. Nice job yanii. Here you go!"
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"condition": "",
+			"definition": "1677710041-158",
+			"event_id": "dialogic_012",
+			"value": "false"
+		},
+		{
+			"character": "character-1677709887.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Yanii, I'm busy jao!"
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"event_id": "dialogic_013"
 		},
 		{
 			"event_id": "dialogic_013"
