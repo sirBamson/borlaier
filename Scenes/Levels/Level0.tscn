@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=2]
+[gd_scene load_steps=44 format=2]
 
 [ext_resource path="res://Assets/White_square.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Assets/SlotMachine.tscn" type="PackedScene" id=2]
@@ -17,13 +17,14 @@
 [ext_resource path="res://Scenes/Assets/ArmChairBack.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Scenes/Assets/ArmChair.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Scenes/Entities/EnemySpawner.tscn" type="PackedScene" id=17]
-[ext_resource path="res://Scenes/Entities/NPC.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Scenes/Entities/Npc/NpcFatMan.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Assets/cash_register.png" type="Texture" id=19]
 [ext_resource path="res://Assets/bar_counter_corner_left.png" type="Texture" id=20]
 [ext_resource path="res://Assets/bar_counter_side.png" type="Texture" id=21]
 [ext_resource path="res://Assets/bar_counter_front.png" type="Texture" id=22]
 [ext_resource path="res://Assets/bar_counter_corner_right_wLine.png" type="Texture" id=23]
 [ext_resource path="res://Scenes/Assets/Light.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Scenes/Entities/Npc/NpcTopHat.tscn" type="PackedScene" id=25]
 
 [sub_resource type="TileSet" id=65]
 0/name = "casino_tilemap.png 0"
@@ -481,6 +482,12 @@ enemy_name = "Chipling"
 [node name="Player" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
 position = Vector2( 216, 1312 )
 
+[node name="NpcFatMan" parent="Navigation2D/YSort" instance=ExtResource( 18 )]
+position = Vector2( 2960, 2480 )
+
+[node name="NpcTopHat" parent="Navigation2D/YSort" instance=ExtResource( 25 )]
+position = Vector2( 888, 1416 )
+
 [node name="ArmChair" parent="Navigation2D/YSort" instance=ExtResource( 16 )]
 position = Vector2( 376, 1896 )
 
@@ -647,9 +654,6 @@ position = Vector2( 1968, 2448 )
 [node name="Plant4" parent="Navigation2D/YSort" instance=ExtResource( 7 )]
 position = Vector2( 1592, 2720 )
 
-[node name="NPC" parent="Navigation2D/YSort" instance=ExtResource( 18 )]
-position = Vector2( 2883, 1541 )
-
 [node name="SlotMachine28" parent="Navigation2D/YSort" instance=ExtResource( 2 )]
 position = Vector2( 2302, 1744 )
 
@@ -717,12 +721,6 @@ position = Vector2( 216, 1664 )
 
 [node name="Light2" parent="." instance=ExtResource( 24 )]
 position = Vector2( 1024, 1656 )
-
-[node name="Light3" parent="." instance=ExtResource( 24 )]
-position = Vector2( 2306, 1720 )
-
-[node name="Light4" parent="." instance=ExtResource( 24 )]
-position = Vector2( 2306, 2424 )
 
 [node name="Light5" parent="." instance=ExtResource( 24 )]
 position = Vector2( 2688, 704 )

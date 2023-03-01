@@ -1,7 +1,7 @@
 [gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Assets/casino_tilemap.png" type="Texture" id=1]
-[ext_resource path="res://Scenes/Entities/NPC.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Entities/Npc/NpcFatMan.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Entities/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/White_square.png" type="Texture" id=4]
 [ext_resource path="res://Scenes/Weapons/AmmoPouch.tscn" type="PackedScene" id=5]
@@ -437,6 +437,9 @@ active = true
 [node name="Player" parent="Navigation2D/YSort" instance=ExtResource( 3 )]
 position = Vector2( 880, 486 )
 
+[node name="NpcFatMan" parent="Navigation2D/YSort" instance=ExtResource( 2 )]
+position = Vector2( 1456, 672 )
+
 [node name="Plant" parent="Navigation2D/YSort" instance=ExtResource( 6 )]
 position = Vector2( 920, 960 )
 
@@ -454,9 +457,6 @@ position = Vector2( 1224, 960 )
 
 [node name="Plant6" parent="Navigation2D/YSort" instance=ExtResource( 6 )]
 position = Vector2( 1144, 960 )
-
-[node name="NPC" parent="Navigation2D/YSort" instance=ExtResource( 2 )]
-position = Vector2( 1536, 441 )
 
 [node name="AmmoPouch" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
 position = Vector2( 1104, 488 )

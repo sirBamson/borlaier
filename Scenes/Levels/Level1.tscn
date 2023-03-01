@@ -5,7 +5,6 @@
 [ext_resource path="res://Scenes/Elevator/ElevatorDoor.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Entities/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/bar_wall.png" type="Texture" id=5]
-[ext_resource path="res://Scenes/Entities/NPC.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Sounds/casino_ambiant1.wav" type="AudioStream" id=7]
 [ext_resource path="res://Assets/bar_counter_corner_left.png" type="Texture" id=8]
 [ext_resource path="res://Assets/bar_counter_corner_right.png" type="Texture" id=9]
@@ -23,6 +22,7 @@
 [ext_resource path="res://Scenes/Assets/SlotMachine.tscn" type="PackedScene" id=21]
 [ext_resource path="res://Assets/cash_register.png" type="Texture" id=22]
 [ext_resource path="res://Scenes/Entities/EnemySpawner.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Scenes/Entities/Npc/NpcBartender.tscn" type="PackedScene" id=24]
 
 [sub_resource type="TileSet" id=65]
 0/name = "casino_tilemap.png 0"
@@ -473,9 +473,8 @@ active = true
 [node name="Player" parent="Navigation2D/YSort" instance=ExtResource( 4 )]
 position = Vector2( 3968, 3624 )
 
-[node name="NPC" parent="Navigation2D/YSort" instance=ExtResource( 6 )]
-position = Vector2( 1913, 3420 )
-npc_name = "Bartender"
+[node name="NpcBartender" parent="Navigation2D/YSort" instance=ExtResource( 24 )]
+position = Vector2( 1792, 3464 )
 
 [node name="BarCounter" type="StaticBody2D" parent="Navigation2D/YSort"]
 position = Vector2( 1792, 3464 )
