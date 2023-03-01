@@ -1,7 +1,8 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://Assets/BulletMan-Sheet.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Entities/BulletMan.gd" type="Script" id=2]
+[ext_resource path="res://Assets/grenade_explosion.png" type="Texture" id=3]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -113,56 +114,97 @@ flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 5376, 0, 256, 256 )
 
+[sub_resource type="AtlasTexture" id=26]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 256, 256 )
+
+[sub_resource type="AtlasTexture" id=27]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 256, 0, 256, 256 )
+
+[sub_resource type="AtlasTexture" id=28]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 512, 0, 256, 256 )
+
+[sub_resource type="AtlasTexture" id=29]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 768, 0, 256, 256 )
+
+[sub_resource type="AtlasTexture" id=30]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 1024, 0, 256, 256 )
+
+[sub_resource type="AtlasTexture" id=31]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 1280, 0, 256, 256 )
+
+[sub_resource type="AtlasTexture" id=32]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 1536, 0, 256, 256 )
+
+[sub_resource type="AtlasTexture" id=33]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 1792, 0, 256, 256 )
+
 [sub_resource type="SpriteFrames" id=23]
 animations = [ {
 "frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ) ],
 "loop": true,
 "name": "default",
 "speed": 44.0
+}, {
+"frames": [ SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ) ],
+"loop": false,
+"name": "explosion",
+"speed": 16.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=24]
+radius = 32.0
+height = 144.0
+
+[sub_resource type="CapsuleShape2D" id=25]
 radius = 40.0
-height = 160.0
-
-[sub_resource type="CircleShape2D" id=26]
-radius = 144.0
-
-[sub_resource type="CircleShape2D" id=25]
-radius = 17.8885
+height = 176.0
 
 [node name="BulletMan" type="KinematicBody2D" groups=["BulletMan"]]
 collision_layer = 2056
 collision_mask = 0
 script = ExtResource( 2 )
+speed = 800
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -2, 0 )
+z_index = 2
 frames = SubResource( 23 )
-frame = 8
+frame = 19
 playing = true
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
-position = Vector2( 2, -8 )
+position = Vector2( 0, -16 )
 shape = SubResource( 24 )
 
 [node name="DetectionArea" type="Area2D" parent="."]
-collision_layer = 2048
+collision_layer = 2056
 collision_mask = 2
 
 [node name="CollisionShape" type="CollisionShape2D" parent="DetectionArea"]
-shape = SubResource( 26 )
-
-[node name="TargetArea" type="Area2D" parent="."]
-collision_layer = 0
-collision_mask = 2048
-
-[node name="CollisionShape" type="CollisionShape2D" parent="TargetArea"]
+position = Vector2( 0, -8 )
 shape = SubResource( 25 )
 
 [node name="PauseTimer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
 
+[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
 [connection signal="area_entered" from="DetectionArea" to="." method="_on_DetectionArea_area_entered"]
-[connection signal="body_entered" from="TargetArea" to="." method="_on_TargetArea_body_entered"]
+[connection signal="body_entered" from="DetectionArea" to="." method="_on_DetectionArea_body_entered"]
 [connection signal="timeout" from="PauseTimer" to="." method="_on_PauseTimer_timeout"]
