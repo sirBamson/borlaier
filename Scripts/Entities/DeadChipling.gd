@@ -9,5 +9,5 @@ func _ready() -> void:
 	randomize()
 	animated_sprite.play(color)
 	
-	yield(get_tree().create_timer(randi() % 11 + 40), "timeout")
+	yield(get_tree().create_timer(randi() % 31 + 120), "timeout")
 	queue_free()
