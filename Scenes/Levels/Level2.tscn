@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=2]
+[gd_scene load_steps=55 format=2]
 
 [ext_resource path="res://Assets/White_square.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Sounds/casino_ambiant1.wav" type="AudioStream" id=2]
@@ -23,6 +23,12 @@
 [ext_resource path="res://Scenes/Assets/ArmChair.tscn" type="PackedScene" id=21]
 [ext_resource path="res://Scenes/Assets/ArmChairSide.tscn" type="PackedScene" id=22]
 [ext_resource path="res://Scenes/Assets/Plant.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Scenes/Assets/ArcadeFutballPlaying.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Scenes/Assets/ArcadeSahara.tscn" type="PackedScene" id=25]
+[ext_resource path="res://Scenes/Assets/ArcadeRacerSide.tscn" type="PackedScene" id=26]
+[ext_resource path="res://Scenes/Assets/ArcadeShooterSide.tscn" type="PackedScene" id=27]
+[ext_resource path="res://Scenes/Assets/ArcadeKBGS.tscn" type="PackedScene" id=28]
+[ext_resource path="res://Scenes/Assets/ArcadeKillEmSide.tscn" type="PackedScene" id=29]
 
 [sub_resource type="TileSet" id=81]
 0/name = "casino_tilemap.png 0"
@@ -669,10 +675,6 @@ position = Vector2( 6032, 3360 )
 [node name="SlotMachine2" parent="Navigation2D/YSort" instance=ExtResource( 6 )]
 position = Vector2( 6224, 3360 )
 
-[node name="NPC" parent="Navigation2D/YSort" instance=ExtResource( 13 )]
-position = Vector2( 8800, 3928 )
-npc_name = "Bartender"
-
 [node name="BarCounter" type="StaticBody2D" parent="Navigation2D/YSort"]
 position = Vector2( 8960, 3976 )
 collision_layer = 32
@@ -722,7 +724,7 @@ position = Vector2( -264, -102 )
 texture = ExtResource( 14 )
 
 [node name="ArcadeRacer" parent="Navigation2D/YSort" instance=ExtResource( 15 )]
-position = Vector2( 2920, 1600 )
+position = Vector2( 2920, 1614 )
 
 [node name="SlotMachine4" parent="Navigation2D/YSort" instance=ExtResource( 6 )]
 position = Vector2( 6552, 3360 )
@@ -740,7 +742,10 @@ position = Vector2( 7264, 3360 )
 position = Vector2( 7592, 3360 )
 
 [node name="ArcadeFutball" parent="Navigation2D/YSort" instance=ExtResource( 16 )]
-position = Vector2( 3184, 1600 )
+position = Vector2( 3320, 1614 )
+
+[node name="ArcadeFutball2" parent="Navigation2D/YSort" instance=ExtResource( 16 )]
+position = Vector2( 4568, 2144 )
 
 [node name="ArmChair3" parent="Navigation2D/YSort" instance=ExtResource( 21 )]
 position = Vector2( 8424, 4696 )
@@ -996,6 +1001,48 @@ position = Vector2( 7432, 3360 )
 
 [node name="SlotMachine11" parent="Navigation2D/YSort" instance=ExtResource( 6 )]
 position = Vector2( 7784, 3360 )
+
+[node name="ArcadeSahara" parent="Navigation2D/YSort" instance=ExtResource( 25 )]
+position = Vector2( 3720, 1614 )
+
+[node name="ArcadeRacer2" parent="Navigation2D/YSort" instance=ExtResource( 15 )]
+position = Vector2( 3120, 1614 )
+
+[node name="ArcadeFutballPlaying" parent="Navigation2D/YSort" instance=ExtResource( 24 )]
+position = Vector2( 3520, 1614 )
+
+[node name="ArcadeSahara2" parent="Navigation2D/YSort" instance=ExtResource( 25 )]
+position = Vector2( 3920, 1614 )
+
+[node name="ArcadeShooterSide" parent="Navigation2D/YSort" instance=ExtResource( 27 )]
+position = Vector2( 4424, 1632 )
+scale = Vector2( -1, 1 )
+
+[node name="ArcadeShooterSide2" parent="Navigation2D/YSort" instance=ExtResource( 27 )]
+position = Vector2( 4424, 1744 )
+scale = Vector2( -1, 1 )
+
+[node name="ArcadeRacerSide" parent="Navigation2D/YSort" instance=ExtResource( 26 )]
+position = Vector2( 4560, 1632 )
+
+[node name="ArcadeRacerSide2" parent="Navigation2D/YSort" instance=ExtResource( 26 )]
+position = Vector2( 4560, 1744 )
+
+[node name="ArcadeKillEmSide" parent="Navigation2D/YSort" instance=ExtResource( 29 )]
+position = Vector2( 4424, 2032 )
+scale = Vector2( -1, 1 )
+
+[node name="ArcadeKillEmSide2" parent="Navigation2D/YSort" instance=ExtResource( 29 )]
+position = Vector2( 4424, 2144 )
+scale = Vector2( -1, 1 )
+
+[node name="ArcadeKBGS" parent="Navigation2D/YSort" instance=ExtResource( 28 )]
+position = Vector2( 4992, 1616 )
+
+[node name="NPC" parent="Navigation2D/YSort" instance=ExtResource( 13 )]
+npc_name = "Bartender"
+
+[node name="NPC2" parent="Navigation2D/YSort" instance=ExtResource( 13 )]
 
 [node name="Walls" type="TileMap" parent="."]
 tile_set = SubResource( 83 )
