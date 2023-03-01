@@ -648,7 +648,7 @@ position = Vector2( 1968, 2448 )
 position = Vector2( 1592, 2720 )
 
 [node name="NPC" parent="Navigation2D/YSort" instance=ExtResource( 18 )]
-position = Vector2( 2976, 1728 )
+position = Vector2( 2883, 1541 )
 
 [node name="SlotMachine28" parent="Navigation2D/YSort" instance=ExtResource( 2 )]
 position = Vector2( 2302, 1744 )
