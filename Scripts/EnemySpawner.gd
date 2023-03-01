@@ -19,7 +19,8 @@ func _on_SpawnTimer_timeout() -> void:
 	for node in get_parent().get_children():
 		if node.is_in_group(enemy_name):
 			enemy_amount += 1
-	if enemy_amount < max_enemy_amount and active:
+	if (enemy_amount < max_enemy_amount or max_enemy_amount == -1) and active:
 		var enemy_instance = enemy.instance()
 		enemy_instance.global_position = global_position
 		get_parent().add_child(enemy_instance)
+	
