@@ -3,7 +3,7 @@ extends Node
 var elevator_variables: Dictionary = {}
 var level0_variables: Dictionary = {"player_position": Vector2(216, 1312)}
 var level1_variables: Dictionary = {"player_position": Vector2(3968, 3624)}
-var level2_variables: Dictionary = {"player_position": Vector2(2176, 3098)}
+var level2_variables: Dictionary = {"player_position": Vector2(3968, 3624)}
 
 
 func _ready() -> void:
