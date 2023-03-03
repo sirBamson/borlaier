@@ -4,7 +4,7 @@ extends Node
 class Quest:
 	var id_name: String = ""
 	var active: bool = false
-	var completed: bool = false
+	var completed: int = 0
 	
 	var dependencies: Dictionary = {} 
 	var description: String = ""
@@ -19,9 +19,21 @@ class Quest:
 			for dependency in dependencies.keys():
 				print("Dependency: " + str(dependency))
 				if quest.id_name == dependency:
-					if !dependencies.get(dependency) == quest.completed:
-						return false
-					return true
+					if dependencies.get(dependency) == 0:
+						if quest.completed == 0:
+							return true
+						else:
+							return false
+					if dependencies.get(dependency) == 1:
+						if quest.completed == 1:
+							return true
+						else:
+							return false
+					if dependencies.get(dependency) == 2:
+						if quest.active:
+							return true
+						else:
+							return false
 		return false
 
 
@@ -52,7 +64,7 @@ func _ready() -> void:
 	FatMan1.id_name = "FatMan1"
 	FatMan1.description = "Kill 20 chiplings"
 	FatMan1.dependencies = {
-		"FatMan1": false
+		"FatMan1": 0
 	}
 	FatMan1.dialogic_quest_series_name = "Npc/FatMan/FatManCurrentQuest"
 	FatMan1.dialogic_quest_started_name = "Npc/FatMan/FatManQuestStarted"
@@ -64,8 +76,8 @@ func _ready() -> void:
 	FatMan2.id_name = "FatMan2"
 	FatMan2.description = "Kill 20 chiplings"
 	FatMan2.dependencies = {
-		"FatMan1": true,
-		"FatMan2": false
+		"FatMan1": 1,
+		"FatMan2": 0
 	}
 	FatMan2.dialogic_quest_series_name = "Npc/FatMan/FatManCurrentQuest"
 	FatMan2.dialogic_quest_started_name = "Npc/FatMan/FatManQuestStarted"
@@ -77,7 +89,7 @@ func _ready() -> void:
 	Bartender21.id_name = "Bartender21"
 	Bartender21.description = "Get a drink"
 	Bartender21.dependencies = {
-		"FatMan1": true
+		"FatMan1": 1
 	}
 	Bartender21.dialogic_quest_series_name = "Npc/Bartender2/Bartender2CurrentQuest"
 	Bartender21.dialogic_quest_started_name = "Npc/Bartender2/Bartender2QuestStarted"
@@ -89,7 +101,7 @@ func _ready() -> void:
 	Mohamed1.id_name = "Mohamed1"
 	Mohamed1.description = "Get a drink"
 	Mohamed1.dependencies = {
-		"Bartender21": true
+		"Bartender21": 2
 	}
 	Mohamed1.dialogic_quest_series_name = "Npc/Mohamed/MohamedCurrentQuest"
 	Mohamed1.dialogic_quest_started_name = "Npc/Mohamed/MohamedQuestStarted"
@@ -134,7 +146,7 @@ func check_and_set_quest_objectives(string: String) -> void:
 			Dialogic.set_variable("Npc/FatMan/FatManCurrentQuestDone", "true")
 			Dialogic.set_variable("Npc/FatMan/FatManQuestStarted", "false")
 			Dialogic.set_variable("Npc/FatMan/FatManCurrentQuest", "2")
-			quest.completed = true
+			quest.completed = 1
 			PlayerGlobals.coins += 100
 	
 	# FatMan2 quest objective
@@ -150,7 +162,7 @@ func check_and_set_quest_objectives(string: String) -> void:
 		if Stats.chiplings_killed - chiplings_killed_start >= 40:
 			Dialogic.set_variable("Npc/FatMan/FatManCurrentQuestDone", "true")
 			Dialogic.set_variable("Npc/FatMan/FatManQuestStarted", "false")
-			quest.completed = true
+			quest.completed = 1
 			PlayerGlobals.coins += 200
 	
 	# Bartender21 quest objective
@@ -167,7 +179,7 @@ func check_and_set_quest_objectives(string: String) -> void:
 			Dialogic.set_variable("Npc/Bartender2/Bartender2CurrentQuestDone", "true")
 			Dialogic.set_variable("Npc/Bartender2/Bartender2QuestStarted", "false")
 			Dialogic.set_variable("Npc/Bartender2/Bartender2CurrentQuest", "1")
-			quest.completed = true
+			quest.completed = 1
 			PlayerGlobals.coins += 250
 	
 	# Mohamed1 quest objective
@@ -184,7 +196,7 @@ func check_and_set_quest_objectives(string: String) -> void:
 			Dialogic.set_variable("Npc/Mohamed/MohamedCurrentQuestDone", "true")
 			Dialogic.set_variable("Npc/Mohamed/MohamedQuestStarted", "false")
 			Dialogic.set_variable("Npc/Mohamed/MohamedCurrentQuest", "1")
-			quest.completed = true
+			quest.completed = 1
 			PlayerGlobals.coins += 250
 
 
