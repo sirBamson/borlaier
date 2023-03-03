@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/16-Bit Wave ΓÇó Super Nintendo & Sega Genesis RetroWave Mix-[AudioTrimmer.com].mp3-3b351aa412cee1b580d334aef15e1464.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/KGBS/16-Bit Wave ΓÇó Super Nintendo & Sega Genesis RetroWave Mix-[AudioTrimmer.com].mp3"
+dest_files=[ "res://.import/16-Bit Wave ΓÇó Super Nintendo & Sega Genesis RetroWave Mix-[AudioTrimmer.com].mp3-3b351aa412cee1b580d334aef15e1464.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

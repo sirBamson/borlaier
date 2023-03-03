@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Plastic Love [8 Bit Tribute to Mariya Takeuchi] - 8 Bit Universe.mp3-0c706bcc216ae8a74bf4c2052b5ec141.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/KGBS/Plastic Love [8 Bit Tribute to Mariya Takeuchi] - 8 Bit Universe.mp3"
+dest_files=[ "res://.import/Plastic Love [8 Bit Tribute to Mariya Takeuchi] - 8 Bit Universe.mp3-0c706bcc216ae8a74bf4c2052b5ec141.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

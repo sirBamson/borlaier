@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/pickupMedkit.wav-199c7579dacd7b2fcf17bc17ee07a50a.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/KGBS/pickupMedkit.wav"
+dest_files=[ "res://.import/pickupMedkit.wav-199c7579dacd7b2fcf17bc17ee07a50a.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
