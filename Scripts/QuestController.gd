@@ -175,7 +175,7 @@ func check_and_set_quest_objectives(string: String) -> void:
 	# Quest done check
 	elif quest.id_name == "Bartender21" and quest.active:
 		print("Quest check")
-		if Stats.chiplings_killed - chiplings_killed_start >= 2:
+		if Mohamed1.completed:
 			Dialogic.set_variable("Npc/Bartender2/Bartender2CurrentQuestDone", "true")
 			Dialogic.set_variable("Npc/Bartender2/Bartender2QuestStarted", "false")
 			Dialogic.set_variable("Npc/Bartender2/Bartender2CurrentQuest", "1")
@@ -187,12 +187,11 @@ func check_and_set_quest_objectives(string: String) -> void:
 	if quest.id_name == "Mohamed1" and !quest.active:
 		print("Quest start")
 		Dialogic.set_variable("Npc/Mohamed/MohamedCurrentQuestDone", "false")
-		chiplings_killed_start = Stats.chiplings_killed
 	
 	# Quest done check
 	elif quest.id_name == "Mohamed1" and quest.active:
 		print("Quest check")
-		if Stats.chiplings_killed - chiplings_killed_start >= 2:
+		if Stats.kgbs_times_won > 0:
 			Dialogic.set_variable("Npc/Mohamed/MohamedCurrentQuestDone", "true")
 			Dialogic.set_variable("Npc/Mohamed/MohamedQuestStarted", "false")
 			Dialogic.set_variable("Npc/Mohamed/MohamedCurrentQuest", "1")
