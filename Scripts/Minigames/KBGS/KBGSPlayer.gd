@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 onready var scene_controller: Node = get_node("/root/SceneController")
 
-export (int) var health: int = 100
+var health: int = 100
 
 var walk_speed: int = 400
 var gravity: int = 1500
@@ -48,6 +48,7 @@ func movement() -> void:
 	if Input.is_action_pressed("mini_hit") and not is_punching:
 		$PlayerPunchArea/PlayerHitShape.disabled = false
 		is_punching = true
+		$Punch.play()
 		$AnimatedSprite.play("Hit")
 	
 	
@@ -92,8 +93,10 @@ func _on_AnimatedSprite_animation_finished() -> void:
 
 func _on_PlayerHitbox_area_entered(area: Area2D) -> void:
 	if area.name == "EnemySwingArea":
+		$Hit.play()
 		health -= 20
 	if area.is_in_group("Medkit") and health < 100:
+		$MedkitPickup.play()
 		health += 40
 		if health > 100:
 			health = 100

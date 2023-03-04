@@ -1,8 +1,11 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://Assets/KBGS/KGBS-player-Sheet.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Fonts/ThaleahFat.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Assets/Sounds/KGBS/pickupMedkit.wav" type="AudioStream" id=3]
 [ext_resource path="res://Scripts/Minigames/KBGS/KBGSPlayer.gd" type="Script" id=4]
+[ext_resource path="res://Assets/Sounds/KGBS/Impact4.wav" type="AudioStream" id=5]
+[ext_resource path="res://Assets/Sounds/KGBS/Hit6.wav" type="AudioStream" id=6]
 
 [sub_resource type="DynamicFont" id=49]
 size = 32
@@ -184,6 +187,16 @@ animations = [ {
 scale = Vector2( 1.5, 1.5 )
 collision_layer = 2
 script = ExtResource( 4 )
+
+[node name="MedkitPickup" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = 5.0
+
+[node name="Punch" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+
+[node name="Hit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
 
 [node name="Overlay" type="CanvasLayer" parent="."]
 
