@@ -3,7 +3,7 @@
 [ext_resource path="res://Assets/Sounds/gun_click.wav" type="AudioStream" id=1]
 [ext_resource path="res://Assets/Sounds/reload_gun.wav" type="AudioStream" id=2]
 [ext_resource path="res://Assets/muzzle_flash.png" type="Texture" id=3]
-[ext_resource path="res://Assets/uzi.png" type="Texture" id=4]
+[ext_resource path="res://Assets/uzi_wHands.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Sounds/bullet.wav" type="AudioStream" id=5]
 [ext_resource path="res://Scripts/Weapons/Gun.gd" type="Script" id=6]
 
@@ -62,3 +62,4 @@ animation = "deafult"
 [node name="Uzi" type="Sprite" parent="."]
 position = Vector2( 0, 1 )
 texture = ExtResource( 4 )
+offset = Vector2( 60, -10 )
