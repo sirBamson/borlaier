@@ -16,7 +16,7 @@ var available_levels: Dictionary = {
 	0: "res://Scenes/Levels/Level0.tscn",
 	1: "res://Scenes/Levels/Level1.tscn",
 	2: "res://Scenes/Levels/Level2.tscn",
-	3: "res://Scenes/Levels/Level2.tscn"
+	3: "res://Scenes/Levels/Level3.tscn"
 	}
 
 

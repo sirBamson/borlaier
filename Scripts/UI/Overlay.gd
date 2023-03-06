@@ -1,18 +1,21 @@
 extends CanvasLayer
 
 func _ready() -> void:
-	$VBox/Bullets.visible = false
+	$VBoxLeft/Bullets.visible = false
 
 
 func _physics_process(_delta: float) -> void:
+	$HealthBar.value = PlayerGlobals.health
+	
+	
 	if PlayerGlobals.has_gun:
-		$VBox/Bullets.visible = true
-		$VBox/Bullets.text = "    : " + str(PlayerGlobals.bullets_in_mag) + " | " + str(PlayerGlobals.bullets_left)
+		$VBoxLeft/Bullets.visible = true
+		$VBoxLeft/Bullets.text = "    : " + str(PlayerGlobals.bullets_in_mag) + " | " + str(PlayerGlobals.bullets_left)
 
 	else:
-		$VBox/Bullets.visible = false
+		$VBoxLeft/Bullets.visible = false
 	
-	$VBox/FPS.text = "FPS: " + str(Engine.get_frames_per_second())
-	$VBox/Coins.text = "    : " + str(PlayerGlobals.coins) + "c"
-	$VBox/Grenades.text = "    : " + str(PlayerGlobals.grenades_left)
+	$VBoxLeft/FPS.text = "FPS: " + str(Engine.get_frames_per_second())
+	$VBoxLeft/Coins.text = "    : " + str(PlayerGlobals.coins) + "c"
+	$VBoxLeft/Grenades.text = "    : " + str(PlayerGlobals.grenades_left)
 
