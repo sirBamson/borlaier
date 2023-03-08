@@ -17,47 +17,47 @@ flags = 4
 atlas = ExtResource( 8 )
 region = Rect2( 0, 0, 180, 256 )
 
-[sub_resource type="AtlasTexture" id=66]
+[sub_resource type="AtlasTexture" id=107]
 flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 0, 0, 180, 256 )
 
-[sub_resource type="AtlasTexture" id=67]
+[sub_resource type="AtlasTexture" id=108]
 flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 180, 0, 180, 256 )
 
-[sub_resource type="AtlasTexture" id=103]
+[sub_resource type="AtlasTexture" id=109]
 flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 360, 0, 180, 256 )
 
-[sub_resource type="AtlasTexture" id=68]
+[sub_resource type="AtlasTexture" id=110]
 flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 360, 0, 180, 256 )
 
-[sub_resource type="AtlasTexture" id=69]
+[sub_resource type="AtlasTexture" id=111]
 flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 540, 0, 180, 256 )
 
-[sub_resource type="AtlasTexture" id=70]
+[sub_resource type="AtlasTexture" id=112]
 flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 720, 0, 180, 256 )
 
-[sub_resource type="AtlasTexture" id=71]
+[sub_resource type="AtlasTexture" id=113]
 flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 900, 0, 180, 256 )
 
-[sub_resource type="AtlasTexture" id=72]
+[sub_resource type="AtlasTexture" id=114]
 flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 1080, 0, 180, 256 )
 
-[sub_resource type="AtlasTexture" id=73]
+[sub_resource type="AtlasTexture" id=115]
 flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 1260, 0, 180, 256 )
@@ -219,10 +219,10 @@ animations = [ {
 "name": "IdleRight",
 "speed": 0.0
 }, {
-"frames": [ SubResource( 66 ), SubResource( 67 ), SubResource( 103 ), SubResource( 68 ), SubResource( 69 ), SubResource( 70 ), SubResource( 71 ), SubResource( 72 ), SubResource( 73 ) ],
+"frames": [ SubResource( 107 ), SubResource( 108 ), SubResource( 109 ), SubResource( 110 ), SubResource( 111 ), SubResource( 112 ), SubResource( 113 ), SubResource( 114 ), SubResource( 115 ) ],
 "loop": true,
 "name": "Left",
-"speed": 14.0
+"speed": 16.0
 }, {
 "frames": [ SubResource( 84 ) ],
 "loop": true,
@@ -247,7 +247,7 @@ animations = [ {
 "frames": [ SubResource( 74 ), SubResource( 75 ), SubResource( 105 ), SubResource( 76 ), SubResource( 77 ), SubResource( 78 ), SubResource( 79 ), SubResource( 80 ), SubResource( 81 ) ],
 "loop": true,
 "name": "Right",
-"speed": 14.0
+"speed": 16.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=56]

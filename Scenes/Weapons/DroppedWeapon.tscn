@@ -46,10 +46,8 @@ shape = SubResource( 3 )
 texture = ExtResource( 4 )
 
 [node name="SMGShape" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource( 2 )
 disabled = true
 
 [node name="SMG" type="Sprite" parent="SMGShape"]
-position = Vector2( -30, 12 )
 texture = ExtResource( 5 )
