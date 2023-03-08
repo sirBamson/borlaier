@@ -14,14 +14,14 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	#----------------- DEV -----------------
 	if event.is_action_pressed("dev"):
-		change_scene(false, get_child(1), get_child(1).filename, "res://Scenes/Levels/Level3.tscn")
+		change_scene(false, get_child(1), get_child(1).filename, "res://Scenes/Levels/TestLevel.tscn")
 	#---------------------------------------
 
 
 func change_scene(save_current_scene: bool, current_scene: Node, current_scene_path: String, new_scene_path: String):
 	var new_scene: Node = load(new_scene_path).instance()
 	
-	if new_scene.is_in_group("Level"):
+	if new_scene.is_in_group("Level") and !new_scene.is_in_group("MinigameLevel"):
 		EnvVar.latest_level_path = new_scene.filename
 	
 	if save_current_scene:
