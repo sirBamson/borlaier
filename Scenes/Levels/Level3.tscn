@@ -1161,7 +1161,7 @@ points = PoolVector2Array( 0, 0, 256, 0, 256, 256, 0, 256 )
 29/shapes = [  ]
 29/z_index = 0
 
-[node name="Level3" type="Node2D" groups=["Level"]]
+[node name="Level3" type="Node2D" groups=["Level", "Roof"]]
 
 [node name="VoidLayer" type="CanvasLayer" parent="."]
 layer = -101
@@ -1231,7 +1231,7 @@ collision_mask = 0
 format = 1
 tile_data = PoolIntArray( -65534, 14, 0, -65533, 14, 0, -65532, 14, 0, -65531, 14, 0, -65530, 14, 0, -65529, 14, 0, -65528, 14, 0, 65534, 14, 0, 65535, 14, 0, 0, 14, 0, 1, 16, 0, 65545, 15, 0, 65546, 14, 0, 65547, 14, 0, 393219, 6, 0 )
 
-[node name="ElevatorDoor" parent="." groups=["Level", "Roof"] instance=ExtResource( 3 )]
+[node name="ElevatorDoor" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1752, 256 )
 
 [node name="Navigation2D" type="Navigation2D" parent="."]
