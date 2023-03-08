@@ -15,6 +15,8 @@ func _ready() -> void:
 	# Can choose between: ElevatorDoor, "LevelDoor"
 	if get_parent().is_in_group("Elevator"):
 		door_animation = "ElevatorDoor"
+	elif get_parent().is_in_group("Roof"):
+		door_animation = "RoofDoor"
 	
 	
 	# Add player to scene

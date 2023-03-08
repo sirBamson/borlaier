@@ -19,7 +19,7 @@ var holding_grenade: bool = false
 
 var current_weapon: String = "res://Scenes/Weapons/AssultRifle.tscn"
 
-var elevator_floor_access: Array = [0, 1, 2]
+var elevator_floor_access: Array = [0, 1, 2, 3]
 
 
 func _ready() -> void:
