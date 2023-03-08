@@ -12,7 +12,7 @@ var last_velocity: Vector2 = Vector2.RIGHT
 var on_weapon: bool = false
 var weapon_on_ground: Node
 
-var grenade_count = 2
+
 
 export (int) var speed: int = 600
 
@@ -138,7 +138,7 @@ func throw_grenade() -> void:
 		var _error = connect("throwing_grenade", grenade_instance, "grenade_thrown")
 		
 		grenade_instance.player = self
-		get_parent().add_child(grenade_instance)
+		get_parent().get_parent().add_child(grenade_instance)
 	
 	
 	if Input.is_action_just_released("throw_grenade"):
