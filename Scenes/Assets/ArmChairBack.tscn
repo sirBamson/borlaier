@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 72, 36.5 )
 
-[node name="ArmChair" type="StaticBody2D"]
+[node name="ArmChairBack" type="StaticBody2D"]
 collision_layer = 32
 collision_mask = 6
 

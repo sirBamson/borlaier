@@ -169,7 +169,7 @@ wait_time = 0.1
 autostart = true
 
 [node name="AttackTimer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 0.2
 
 [node name="DetectionRay1" type="RayCast2D" parent="."]
 enabled = true

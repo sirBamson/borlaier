@@ -9,6 +9,8 @@ onready var player: KinematicBody2D = get_parent().get_node("Player")
 var target_position: Vector2 = Vector2.ZERO
 var on_target: bool = false
 
+var is_dead: bool = false
+
 var ammo_pouch: Resource = load("res://Scenes/Weapons/AmmoPouch.tscn")
 
 func _ready() -> void:
@@ -18,7 +20,8 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	if healt <= 0:
+	if healt <= 0 and !is_dead:
+		is_dead = true
 		var ammo_pouch_instance: Area2D = ammo_pouch.instance()
 		ammo_pouch_instance.global_position = global_position
 		get_parent().add_child(ammo_pouch_instance)
@@ -77,4 +80,7 @@ func _on_DetectionArea_body_entered(body: Node) -> void:
 
 func _on_AnimatedSprite_animation_finished() -> void:
 	if $AnimatedSprite.animation == "explosion":
+		Stats.bullet_man_killed += 1
+		if !EnvVar.in_challenge_run:
+				PlayerGlobals.coins += 2
 		queue_free()

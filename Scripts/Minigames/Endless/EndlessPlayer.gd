@@ -12,7 +12,14 @@ var last_velocity: Vector2 = Vector2.RIGHT
 var on_weapon: bool = false
 var weapon_on_ground: Node
 
+var health: int = 100
+var points: int = 0
+var points_counter: int = 0
 
+var has_gun: bool = false
+var current_weapon: String = ""
+var grenades_left: int = 5
+var holding_grenade: bool = false
 
 export (int) var speed: int = 600
 
@@ -20,18 +27,13 @@ export (int) var speed: int = 600
 func _ready() -> void:
 	Shake.shake_nodes.clear()
 	Shake.shake_nodes[$PlayerCamera] = true
-	
-	if PlayerGlobals.has_gun:
-		var weapon = load(PlayerGlobals.current_weapon)
-		weapon = weapon.instance()
-		weapon.position = $PlayerCamera.position
-		add_child(weapon)
-		
-		weapon.bullets_in_mag = PlayerGlobals.bullets_in_mag
 
 
 
 func _physics_process(_delta: float) -> void:
+	points_counter += 1
+	if points_counter % 60 == 0:
+		points += 1
 	
 	weapon_pickup()
 	
@@ -55,7 +57,7 @@ func movment() -> void:
 	# Uses two different movement scripts if player has a weapon or not
 	
 	# This script if the player has weapons
-	if PlayerGlobals.has_gun:
+	if has_gun:
 		if get_global_mouse_position().x < global_position.x:
 			looking_direction = Vector2.LEFT
 		else:
@@ -97,11 +99,12 @@ func movment() -> void:
 
 
 func weapon_pickup() -> void:
-	if Input.is_action_pressed("drop") and PlayerGlobals.has_gun:
-		PlayerGlobals.has_gun = false
+	if Input.is_action_pressed("drop") and has_gun:
+		has_gun = false
 		
 		var dropped_weapon = load("res://Scenes/Weapons/DroppedWeapon.tscn")
 		dropped_weapon = dropped_weapon.instance()
+		dropped_weapon.weapon_type = current_weapon
 		dropped_weapon.position = position
 		dropped_weapon.bullets_in_mag = PlayerGlobals.bullets_in_mag
 		
@@ -111,11 +114,11 @@ func weapon_pickup() -> void:
 			if child.is_in_group("Weapon"):
 				child.queue_free()
 	
-	if Input.is_action_pressed("pick_up") and on_weapon and !PlayerGlobals.has_gun:
-		PlayerGlobals.has_gun = true
+	if Input.is_action_pressed("pick_up") and on_weapon and !has_gun:
+		has_gun = true
 		
 		var weapon = load(weapon_on_ground.weapon_type)
-		PlayerGlobals.current_weapon = weapon_on_ground.weapon_type
+		current_weapon = weapon_on_ground.weapon_type
 		weapon = weapon.instance()
 		weapon.position = $PlayerCamera.position
 		weapon.bullets_in_mag = weapon_on_ground.bullets_in_mag
@@ -127,11 +130,11 @@ func weapon_pickup() -> void:
 
 func throw_grenade() -> void:
 	if Input.is_action_just_pressed("add_nades"):
-		PlayerGlobals.grenades_left += 2
+		grenades_left += 2
 	
-	if Input.is_action_just_pressed("throw_grenade") and PlayerGlobals.grenades_left > 0:
-		PlayerGlobals.grenades_left -= 1
-		PlayerGlobals.holding_grenade = true
+	if Input.is_action_just_pressed("throw_grenade") and grenades_left > 0:
+		grenades_left -= 1
+		holding_grenade = true
 		
 		var grenade_instance = grenade.instance()
 		grenade_instance.global_position = $PlayerCamera.global_position
@@ -143,7 +146,7 @@ func throw_grenade() -> void:
 	
 	if Input.is_action_just_released("throw_grenade"):
 		emit_signal("throwing_grenade")
-		PlayerGlobals.holding_grenade = false
+		holding_grenade = false
 
 
 func _on_PlayerHitbox_area_entered(area: Area2D) -> void:
@@ -152,11 +155,11 @@ func _on_PlayerHitbox_area_entered(area: Area2D) -> void:
 		on_weapon = true
 	
 	if area.get_parent().is_in_group("Grenade"):
-		PlayerGlobals.health -= area.get_parent().damage_output
+		health -= area.get_parent().damage_output
 	
 	# Lightning strike damage
 	if area.get_parent().is_in_group("LightningStrike"):
-		PlayerGlobals.health -= 80
+		health -= 80
 
 
 func _on_PlayerHitbox_area_exited(area: Area2D) -> void:

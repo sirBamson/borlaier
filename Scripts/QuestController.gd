@@ -53,7 +53,7 @@ var Bartender21: Quest = Quest.new()
 var Bartender2_dialogic: Dictionary = {}
 var Bartender21_dict: Dictionary = {}
 
-
+# Mohamed quests
 var Mohamed1: Quest = Quest.new()
 
 var Mohamed_dialogic: Dictionary = {}

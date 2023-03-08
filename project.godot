@@ -93,6 +93,7 @@ QuestController="*res://Scenes/QuestController.tscn"
 Stats="*res://Scripts/AutoLoads/Stats.gd"
 PlayerGlobals="*res://Scenes/PlayerGlobals.tscn"
 SaveGame="*res://Scripts/SaveGame.gd"
+DeathScreen="*res://Scenes/UI/DeathScreen.tscn"
 
 [display]
 
