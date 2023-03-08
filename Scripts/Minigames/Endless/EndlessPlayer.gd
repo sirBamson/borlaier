@@ -19,7 +19,6 @@ var points_counter: int = 0
 var has_gun: bool = false
 var current_weapon: String = ""
 var grenades_left: int = 5
-var holding_grenade: bool = false
 
 export (int) var speed: int = 600
 
@@ -134,7 +133,7 @@ func throw_grenade() -> void:
 	
 	if Input.is_action_just_pressed("throw_grenade") and grenades_left > 0:
 		grenades_left -= 1
-		holding_grenade = true
+		PlayerGlobals.holding_grenade = true
 		
 		var grenade_instance = grenade.instance()
 		grenade_instance.global_position = $PlayerCamera.global_position
@@ -146,7 +145,7 @@ func throw_grenade() -> void:
 	
 	if Input.is_action_just_released("throw_grenade"):
 		emit_signal("throwing_grenade")
-		holding_grenade = false
+		PlayerGlobals.holding_grenade = false
 
 
 func _on_PlayerHitbox_area_entered(area: Area2D) -> void:
