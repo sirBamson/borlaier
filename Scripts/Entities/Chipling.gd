@@ -1,12 +1,12 @@
 extends KinematicBody2D
 
 export var speed: int = 250
-export var healt: int = 100
+export var health: int = 100
 
 var colors: Array = ["Blue", "Green", "Red"]
 var color: String = colors[randi() % colors.size()]
 
-onready var player: KinematicBody2D = get_parent().get_node("Player")
+onready var player: KinematicBody2D
 onready var agent: NavigationAgent2D = $NavigationAgent2D
 onready var nav_timer: Timer = $NavTimer
 onready var attack_timer: Timer = $AttackTimer
@@ -29,23 +29,28 @@ func _ready() -> void:
 	randomize()
 	animated_sprite.frame = 0
 	
+	for node in get_parent().get_children():
+		if node.is_in_group("Player"):
+			player = node
+	
 	match color:
 		"Red":
-			healt = 25
+			health = 25
 		"Blue":
-			healt = 50
+			health = 50
 		"Green":
-			healt = 75
+			health = 75
 		"Black":
-			healt = 100
+			health = 100
 
 
 func _physics_process(delta: float) -> void:
-	if healt <= 0:
+	if health <= 0:
 		if !one_shot:
 			one_shot = true
 			Stats.chiplings_killed += 1
-			PlayerGlobals.coins += 2
+			if !EnvVar.in_challenge_run:
+				PlayerGlobals.coins += 2
 		var dead_chipling_instance: Node2D = dead_chipling.instance()
 		dead_chipling_instance.color = color
 		dead_chipling_instance.global_position = global_position
@@ -102,19 +107,19 @@ func _on_NavigationAgent2D_velocity_computed(safe_velocity: Vector2) -> void:
 
 func _on_DamageArea_body_entered(body: Node) -> void:
 	if body.is_in_group("Bullet"):
-		healt -= body.damage_output
+		health -= body.damage_output
 		body.queue_free()
 
 
 func _on_DamageArea_area_entered(area: Area2D) -> void:
 	if area.get_parent().is_in_group("Grenade"):
-		healt -= area.get_parent().damage_output
+		health -= area.get_parent().damage_output
 	
 	if area.get_parent().is_in_group("Player"):
 		attack_timer.start()
 	
 	if area.get_parent().is_in_group("BulletMan"):
-		healt = 0
+		health = 0
 
 
 func _on_DamageArea_area_exited(area: Area2D) -> void:
