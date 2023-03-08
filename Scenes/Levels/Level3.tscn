@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=2]
+[gd_scene load_steps=55 format=2]
 
 [ext_resource path="res://Scenes/Weapons/DroppedWeapon.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Sounds/casino_ambiant1.wav" type="AudioStream" id=2]
@@ -558,9 +558,6 @@ points = PoolVector2Array( 0, 0, 256, 0, 256, 256, 0, 256 )
 vertices = PoolVector2Array( 2368, 1368, 2368, 536, 3008, 536, 2752, 1856, 3008, 2752, 2752, 2752, 1464, 1368, 1856, 1856, 936, 1752, 1856, 2752, 1728, 2752, 1728, 2368, 1600, 2368, 1600, 2240, 1088, 2240, 1088, 1984, 936, 1984, 280, 1752, 280, 1856, 96, 1856, -104, 1312, 96, 2240, -104, 2240, 1464, 1320 )
 polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 2, 4, 5, 3 ), PoolIntArray( 6, 0, 3, 7, 8 ), PoolIntArray( 7, 9, 10, 11 ), PoolIntArray( 11, 12, 13, 7 ), PoolIntArray( 13, 14, 15, 7 ), PoolIntArray( 15, 16, 8, 7 ), PoolIntArray( 17, 18, 19, 20 ), PoolIntArray( 19, 21, 22, 20 ), PoolIntArray( 8, 17, 20, 23, 6 ) ]
 outlines = [ PoolVector2Array( -104, 1312, 1464, 1320, 1464, 1368, 2368, 1368, 2368, 536, 3008, 536, 3008, 2752, 2752, 2752, 2752, 1856, 1856, 1856, 1856, 2752, 1728, 2752, 1728, 2368, 1600, 2368, 1600, 2240, 1088, 2240, 1088, 1984, 936, 1984, 936, 1752, 280, 1752, 280, 1856, 96, 1856, 96, 2240, -104, 2240 ) ]
-
-[sub_resource type="RectangleShape2D" id=110]
-extents = Vector2( 128.25, 52.5 )
 
 [sub_resource type="ConvexPolygonShape2D" id=74]
 points = PoolVector2Array( 0, 0, 256, 0, 256, 256, 0, 256 )
@@ -1234,6 +1231,9 @@ collision_mask = 0
 format = 1
 tile_data = PoolIntArray( -65534, 14, 0, -65533, 14, 0, -65532, 14, 0, -65531, 14, 0, -65530, 14, 0, -65529, 14, 0, -65528, 14, 0, 65534, 14, 0, 65535, 14, 0, 0, 14, 0, 1, 16, 0, 65545, 15, 0, 65546, 14, 0, 65547, 14, 0, 393219, 6, 0 )
 
+[node name="ElevatorDoor" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1950, 195 )
+
 [node name="Navigation2D" type="Navigation2D" parent="."]
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation2D"]
@@ -1268,13 +1268,6 @@ position = Vector2( 1224, 872 )
 
 [node name="VentSide2" parent="Navigation2D/YSort" instance=ExtResource( 14 )]
 position = Vector2( 1480, 872 )
-
-[node name="ElevatorDoor" parent="Navigation2D/YSort" instance=ExtResource( 3 )]
-position = Vector2( 1950, 195 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Navigation2D/YSort/ElevatorDoor"]
-position = Vector2( 1.75, 177.5 )
-shape = SubResource( 110 )
 
 [node name="DroppedWeapon" parent="." instance=ExtResource( 1 )]
 position = Vector2( 832, 448 )

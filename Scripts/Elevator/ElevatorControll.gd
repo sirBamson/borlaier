@@ -29,6 +29,7 @@ func _change_scene() -> void:
 	
 	# Checks which group current_scene belongs to
 	# Then calls the change_scene signal
+	print("here")
 	if current_scene.is_in_group("Level"):
 		scene_controller.change_scene(true, current_scene, current_scene_path, "res://Scenes/Elevator/Elevator.tscn")
 	elif current_scene.is_in_group("Elevator"):

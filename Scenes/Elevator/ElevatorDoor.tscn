@@ -156,7 +156,7 @@ animations = [ {
 "speed": 12.0
 }, {
 "frames": [ SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ), SubResource( 43 ), SubResource( 44 ), SubResource( 45 ) ],
-"loop": true,
+"loop": false,
 "name": "RoofDoor",
 "speed": 12.0
 } ]
@@ -178,6 +178,7 @@ shape = SubResource( 8 )
 [node name="Door" type="AnimatedSprite" parent="."]
 position = Vector2( 0, -16 )
 frames = SubResource( 7 )
+animation = "ElevatorDoor"
 
 [node name="InteractionArea" type="Area2D" parent="."]
 position = Vector2( 0.532024, -168 )
