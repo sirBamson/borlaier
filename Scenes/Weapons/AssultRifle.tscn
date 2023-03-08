@@ -36,7 +36,7 @@ fire_rate = 0.09
 auto = true
 
 [node name="BulletSpawn" type="Position2D" parent="."]
-position = Vector2( 152, -22 )
+position = Vector2( 150, -22 )
 
 [node name="BulletSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 3 )
@@ -57,5 +57,4 @@ frames = SubResource( 11 )
 animation = "deafult"
 
 [node name="AssultRifle" type="Sprite" parent="."]
-position = Vector2( 0, 1 )
 texture = ExtResource( 1 )

@@ -39,7 +39,7 @@ damage = 7
 auto = true
 
 [node name="BulletSpawn" type="Position2D" parent="."]
-position = Vector2( 41, -5 )
+position = Vector2( 98, -16 )
 
 [node name="BulletSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 5 )
@@ -54,12 +54,11 @@ stream = ExtResource( 2 )
 volume_db = -5.0
 
 [node name="MuzzleFlash" type="AnimatedSprite" parent="."]
-position = Vector2( 57, -4 )
+position = Vector2( 116, -16 )
 scale = Vector2( 2.625, 2.1875 )
 frames = SubResource( 11 )
 animation = "deafult"
 
 [node name="Uzi" type="Sprite" parent="."]
-position = Vector2( 0, 1 )
+position = Vector2( 60, -10 )
 texture = ExtResource( 4 )
-offset = Vector2( 60, -10 )

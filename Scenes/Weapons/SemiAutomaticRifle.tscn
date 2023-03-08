@@ -38,8 +38,7 @@ fire_rate = 0.45
 damage = 20
 
 [node name="BulletSpawn" type="Position2D" parent="."]
-visible = false
-position = Vector2( 182, -23 )
+position = Vector2( 178, -26 )
 
 [node name="BulletSound" type="AudioStreamPlayer2D" parent="."]
 visible = false
@@ -63,5 +62,5 @@ frames = SubResource( 14 )
 animation = "deafult"
 
 [node name="SemiAutomaticRifle" type="Sprite" parent="."]
-position = Vector2( 73, -13 )
+position = Vector2( 72, -16 )
 texture = ExtResource( 6 )
