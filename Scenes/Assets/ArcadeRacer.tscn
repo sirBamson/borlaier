@@ -7,7 +7,7 @@ extents = Vector2( 74.25, 68 )
 
 [node name="ArcadeRacer" type="StaticBody2D"]
 collision_layer = 32
-collision_mask = 6
+collision_mask = 0
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
