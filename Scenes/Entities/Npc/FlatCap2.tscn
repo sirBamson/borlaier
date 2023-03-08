@@ -1,0 +1,92 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scripts/Entities/NpcWithDialog.gd" type="Script" id=1]
+[ext_resource path="res://Assets/npc_flat_cap2.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 48, 24 )
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 112.0
+height = 144.0
+
+[sub_resource type="OccluderPolygon2D" id=3]
+cull_mode = 2
+polygon = PoolVector2Array( 32, -48, 40, 0, -48, 0, -40, -13.3333, -40, -66.6667, -56, -88, -40, -106.667, -40, -152, -20, -166.667, -33.3333, -206.667, -13.3333, -226.667, 13.3333, -226.667, 33.3333, -213.333, 20, -166.667, 40, -146.667, 33.3333, -100, 40, -80 )
+
+[sub_resource type="Animation" id=4]
+resource_name = "Bobbing"
+length = 0.8
+loop = true
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 4 ), Vector2( 0, 0 ), Vector2( 0, -4 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, -152 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[node name="NpcFlatCap2" type="StaticBody2D"]
+scale = Vector2( 1.2, 1.2 )
+script = ExtResource( 1 )
+npc_name = "FlatCap2"
+
+[node name="CollisionBox" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -16 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, -152 )
+texture = ExtResource( 2 )
+
+[node name="QuestArea" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 2
+
+[node name="CollisionShape" type="CollisionShape2D" parent="QuestArea"]
+position = Vector2( 0, 40 )
+shape = SubResource( 2 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource( 3 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Bobbing"
+anims/Bobbing = SubResource( 4 )
+anims/RESET = SubResource( 5 )
+
+[connection signal="area_entered" from="QuestArea" to="." method="_on_QuestArea_area_entered"]
+[connection signal="area_exited" from="QuestArea" to="." method="_on_QuestArea_area_exited"]
