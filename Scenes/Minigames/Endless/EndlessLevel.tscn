@@ -1,0 +1,1474 @@
+[gd_scene load_steps=48 format=2]
+
+[ext_resource path="res://Assets/casino_tilemap.png" type="Texture" id=1]
+[ext_resource path="res://Assets/elevator_door_outside.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Minigames/Endless/EndlessPlayer.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/White_square.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/Assets/SlotMachine.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Assets/ArmChair.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Assets/ArmChairBack.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Assets/Light.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Spawners/EnemySpawner.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Assets/ArcadeRacer.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Assets/ArcadeFutball.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/Assets/ArcadeSahara.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/Assets/SmallTable.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/Assets/SlotLeft.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/Assets/Plant.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/Assets/TableStanding.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Scenes/Assets/ArcadeShooterSide.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Scenes/Assets/ArcadeRacerSide.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Scenes/Assets/ArcadeKillEmSide.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Assets/bar_counter_front.png" type="Texture" id=20]
+[ext_resource path="res://Assets/cash_register.png" type="Texture" id=21]
+[ext_resource path="res://Assets/bar_counter_corner_left.png" type="Texture" id=22]
+[ext_resource path="res://Assets/bar_counter_side.png" type="Texture" id=23]
+[ext_resource path="res://Assets/bar_counter_corner_right.png" type="Texture" id=24]
+[ext_resource path="res://Assets/bar_wall.png" type="Texture" id=25]
+[ext_resource path="res://Scenes/Spawners/WeaponSpawner.tscn" type="PackedScene" id=26]
+[ext_resource path="res://Scenes/Assets/ArmChairSide.tscn" type="PackedScene" id=27]
+[ext_resource path="res://Scripts/Minigames/Endless/EndlessLevel.gd" type="Script" id=28]
+
+[sub_resource type="TileSet" id=48]
+0/name = "casino_tilemap.png 0"
+0/texture = ExtResource( 1 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 768, 0, 256, 256 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+
+[sub_resource type="ConvexPolygonShape2D" id=60]
+points = PoolVector2Array( 0, 0, 256, 0, 256, 256, 0, 256 )
+
+[sub_resource type="ConvexPolygonShape2D" id=61]
+points = PoolVector2Array( 0, 0, 256, 0, 256, 256, 0, 256 )
+
+[sub_resource type="ConvexPolygonShape2D" id=62]
+points = PoolVector2Array( 0, 0, 256, 0, 256, 256, 0, 256 )
+
+[sub_resource type="ConvexPolygonShape2D" id=63]
+points = PoolVector2Array( 0, 0, 256, 0, 256, 256, 0, 256 )
+
+[sub_resource type="ConvexPolygonShape2D" id=64]
+points = PoolVector2Array( 0, 0, 256, 0, 256, 256, 0, 256 )
+
+[sub_resource type="ConvexPolygonShape2D" id=65]
+points = PoolVector2Array( 0, 0, 256, 0, 256, 256, 0, 256 )
+
+[sub_resource type="TileSet" id=51]
+0/name = "casino_tilemap.png 0"
+0/texture = ExtResource( 1 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 256, 0, 256, 256 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 60 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 60 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+1/name = "casino_tilemap.png 1"
+1/texture = ExtResource( 1 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 256, 256, 256, 256 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape = SubResource( 61 )
+1/shape_one_way = false
+1/shape_one_way_margin = 1.0
+1/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 61 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+1/z_index = 0
+2/name = "casino_tilemap.png 2"
+2/texture = ExtResource( 1 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 0, 768, 256, 256 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape = SubResource( 62 )
+2/shape_one_way = false
+2/shape_one_way_margin = 1.0
+2/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 62 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+2/z_index = 0
+3/name = "casino_tilemap.png 3"
+3/texture = ExtResource( 1 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 256, 768, 256, 256 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape = SubResource( 63 )
+3/shape_one_way = false
+3/shape_one_way_margin = 1.0
+3/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 63 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+3/z_index = 0
+4/name = "casino_tilemap.png 4"
+4/texture = ExtResource( 1 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 512, 768, 256, 256 )
+4/tile_mode = 0
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shape_offset = Vector2( 0, 0 )
+4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+4/shape = SubResource( 64 )
+4/shape_one_way = false
+4/shape_one_way_margin = 1.0
+4/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 64 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+4/z_index = 0
+5/name = "casino_tilemap.png 5"
+5/texture = ExtResource( 1 )
+5/tex_offset = Vector2( 0, 0 )
+5/modulate = Color( 1, 1, 1, 1 )
+5/region = Rect2( 768, 768, 256, 256 )
+5/tile_mode = 0
+5/occluder_offset = Vector2( 0, 0 )
+5/navigation_offset = Vector2( 0, 0 )
+5/shape_offset = Vector2( 0, 0 )
+5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+5/shape = SubResource( 65 )
+5/shape_one_way = false
+5/shape_one_way_margin = 1.0
+5/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 65 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+5/z_index = 0
+
+[sub_resource type="AtlasTexture" id=73]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 256, 512 )
+
+[sub_resource type="SpriteFrames" id=74]
+animations = [ {
+"frames": [ SubResource( 73 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="NavigationPolygon" id=75]
+vertices = PoolVector2Array( 5672, 1704, 9400, 1720, 9216, 1720, 2224, 1712, 4568, 1704, 5672, 1384, 9320, 1216, 10928, 1200, 11712, 1200, 11712, 1456, 10928, 1456, 5360, 3480, 6336, 3456, 8192, 3456, 5520, 3480, 8560, 4008, 10176, 4288, 6336, 4288, 3536, 4184, 8336, 4008, 5744, 3880, 5904, 3880, 5520, 3880, 3920, 4008, 9712, 4008, 10056, 3880, 10176, 3880, 5672, 2024, 6256, 2240, 5056, 2240, 4568, 2024, 2224, 2672, 2224, 2480, 2752, 1728, 2752, 3648, 2224, 2224, 2224, 2032, 9400, 2536, 10056, 3064, 9712, 3608, 9488, 3608, 9272, 3368, 9272, 2936, 9280, 2624, 10176, 2240, 10176, 3064, 6256, 1728, 5672, 1856, 5056, 3240, 5136, 3480, 5136, 3880, 4160, 3648, 4160, 1728, 4976, 3080, 8336, 3608, 6128, 3880, 6128, 3480, 2224, 1264, 4568, 1048, 4568, 1384, 2224, 1520, 4352, 896, 2224, 1072, 2560, 896, 3536, 4584, 4032, 4544, 3152, 3648, 3312, 3648, 3304, 4008, 3152, 4008, 8216, 1216, 7680, 896, 8216, 1048, 5672, 1048, 5888, 896, 9320, 1048, 10928, 1008, 4568, 1536, 1104, 1072, 320, 1073.59, 320, 832, 2560, 832, 320, 2480.2, 320, 2223.5, 1104, 2224, 1104, 2480, 5056, 3079.95, 4352, 832, 4824, 832, 4824, 1064, 4728, 1048, 5416, 1064, 5416, 832, 5888, 832, 5512, 1048, 7680, 832, 8216, 832, 8216, 896, 9320, 896, 9320, 832, 11712, 832, 11712, 1008, 5512, 1240, 4728, 1240, 10928, 1648, 11712, 1648, 11712, 2240, 9216, 1728, 5056, 2272, 4976, 2272, 6336, 3240, 1392, 2224, 1392, 2480, 2928, 3648, 2928, 4008, 3536, 4008, 3536, 3648, 3696, 3648, 3696, 4008, 3920, 3648, 8192, 3392, 8256, 3392, 8256, 2672, 8400, 2672, 8400, 2728, 8392, 2936, 9200, 2728, 9200, 2624, 9280, 2536, 9048, 2936, 9048, 3064, 8912, 3064, 8912, 3368, 8752, 3368, 8752, 3064, 8616, 2936, 8616, 3064, 8392, 3368, 9488, 4008, 9328, 4008, 9328, 3608, 9104, 3608, 3152, 4584, 3152, 4184, 3312, 4184, 3312, 4584, 6336, 4544, 4032, 5312, 3008, 5312, 1936, 4608, 2928, 4584, 1936, 5424, 3008, 6080, 1856, 6080, 1856, 5424, 1856, 4608, 1856, 4144, 1936, 4144, 2928, 4184, 1936, 3328, 1856, 3328, 1856, 3008, 320, 3008, 320, 2672.6, 1104, 2672, 1104, 1520, 320, 1520, 320, 1264, 1104, 1264, 1104, 2032, 320, 2031.75, 320, 1712.82, 1104, 1712, 1392, 1712, 5672, 1536, 1392, 1264, 1392, 1520, 1392, 2672, 4568, 1856, 8944, 3608, 1392, 2032, 1392, 1072, 9104, 4008, 8944, 4008, 8720, 3608, 8720, 4008, 8560, 3608, 5360, 3880, 5744, 3480, 5904, 3480 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4 ), PoolIntArray( 5, 6, 7, 8, 9, 10 ), PoolIntArray( 11, 12, 13, 14 ), PoolIntArray( 15, 16, 17, 18, 19 ), PoolIntArray( 19, 18, 20, 21 ), PoolIntArray( 22, 20, 18, 23 ), PoolIntArray( 24, 25, 26, 16 ), PoolIntArray( 27, 28, 29, 30 ), PoolIntArray( 31, 32, 33, 34 ), PoolIntArray( 35, 33, 32 ), PoolIntArray( 33, 35, 36 ), PoolIntArray( 37, 38, 39, 40, 41, 42, 43 ), PoolIntArray( 37, 1, 44, 45, 38 ), PoolIntArray( 25, 24, 39, 38 ), PoolIntArray( 46, 28, 27, 47 ), PoolIntArray( 48, 49, 50, 51, 52, 53 ), PoolIntArray( 54, 19, 55, 56, 13 ), PoolIntArray( 57, 58, 59, 60 ), PoolIntArray( 61, 58, 57, 62, 63 ), PoolIntArray( 64, 18, 17, 65 ), PoolIntArray( 66, 67, 68, 69 ), PoolIntArray( 70, 6, 5 ), PoolIntArray( 71, 72, 70, 5, 73, 74 ), PoolIntArray( 7, 6, 75, 76 ), PoolIntArray( 4, 3, 60, 77 ), PoolIntArray( 78, 79, 80, 81, 63 ), PoolIntArray( 82, 83, 84, 85 ), PoolIntArray( 53, 86, 48 ), PoolIntArray( 61, 87, 88, 89, 90 ), PoolIntArray( 91, 92, 93, 74, 94 ), PoolIntArray( 71, 95, 96, 97 ), PoolIntArray( 98, 99, 100, 101, 76 ), PoolIntArray( 97, 98, 76, 75, 72 ), PoolIntArray( 71, 97, 72 ), PoolIntArray( 94, 102, 103, 91 ), PoolIntArray( 104, 105, 106, 44, 1 ), PoolIntArray( 2, 107, 46, 3 ), PoolIntArray( 29, 108, 109, 30 ), PoolIntArray( 48, 110, 12, 11, 49 ), PoolIntArray( 111, 35, 32, 112 ), PoolIntArray( 34, 113, 114 ), PoolIntArray( 115, 116, 117, 118 ), PoolIntArray( 23, 119, 51, 50 ), PoolIntArray( 13, 120, 121 ), PoolIntArray( 121, 122, 123, 124, 125 ), PoolIntArray( 126, 127, 43, 42 ), PoolIntArray( 43, 128, 37 ), PoolIntArray( 126, 42, 129, 124 ), PoolIntArray( 129, 130, 131, 124 ), PoolIntArray( 131, 132, 133, 134 ), PoolIntArray( 124, 131, 134, 135 ), PoolIntArray( 134, 136, 135 ), PoolIntArray( 124, 135, 125 ), PoolIntArray( 121, 125, 137 ), PoolIntArray( 40, 138, 139, 140 ), PoolIntArray( 41, 40, 140 ), PoolIntArray( 41, 140, 141, 132 ), PoolIntArray( 142, 143, 68, 144, 145 ), PoolIntArray( 17, 146, 65 ), PoolIntArray( 64, 65, 147, 148 ), PoolIntArray( 145, 64, 148 ), PoolIntArray( 142, 145, 148 ), PoolIntArray( 149, 150, 142, 148, 151 ), PoolIntArray( 148, 152, 153, 151 ), PoolIntArray( 153, 154, 151 ), PoolIntArray( 150, 149, 155, 156, 157, 158 ), PoolIntArray( 159, 160, 161 ), PoolIntArray( 161, 162, 163, 164 ), PoolIntArray( 165, 166, 167, 168 ), PoolIntArray( 169, 170, 171, 172, 173 ), PoolIntArray( 1, 0, 174 ), PoolIntArray( 5, 10, 104, 1, 174, 59 ), PoolIntArray( 143, 158, 157, 159, 114 ), PoolIntArray( 59, 174, 77, 60 ), PoolIntArray( 175, 57, 60, 176 ), PoolIntArray( 161, 164, 85, 177 ), PoolIntArray( 177, 31, 34, 161 ), PoolIntArray( 30, 109, 53 ), PoolIntArray( 30, 53, 52 ), PoolIntArray( 178, 30, 52 ), PoolIntArray( 133, 132, 141 ), PoolIntArray( 74, 73, 94 ), PoolIntArray( 89, 91, 103 ), PoolIntArray( 89, 103, 90 ), PoolIntArray( 61, 90, 58 ), PoolIntArray( 13, 121, 137, 133, 141, 179 ), PoolIntArray( 138, 24, 16 ), PoolIntArray( 33, 36, 180, 3 ), PoolIntArray( 63, 62, 181 ), PoolIntArray( 78, 63, 181 ), PoolIntArray( 78, 181, 175, 168 ), PoolIntArray( 168, 175, 176, 165 ), PoolIntArray( 165, 176, 173, 172 ), PoolIntArray( 169, 173, 3, 180 ), PoolIntArray( 139, 138, 16 ), PoolIntArray( 182, 139, 16 ), PoolIntArray( 182, 16, 183 ), PoolIntArray( 141, 182, 183, 179 ), PoolIntArray( 13, 179, 184 ), PoolIntArray( 47, 178, 52, 46 ), PoolIntArray( 3, 46, 52 ), PoolIntArray( 3, 52, 33 ), PoolIntArray( 169, 180, 111, 84 ), PoolIntArray( 84, 111, 112, 85 ), PoolIntArray( 85, 112, 177 ), PoolIntArray( 159, 161, 34, 114 ), PoolIntArray( 143, 114, 69 ), PoolIntArray( 143, 69, 68 ), PoolIntArray( 144, 68, 115, 18 ), PoolIntArray( 18, 115, 118 ), PoolIntArray( 18, 118, 23 ), PoolIntArray( 185, 183, 16 ), PoolIntArray( 185, 16, 15 ), PoolIntArray( 184, 185, 15, 186 ), PoolIntArray( 13, 184, 186 ), PoolIntArray( 13, 186, 54 ), PoolIntArray( 23, 50, 187 ), PoolIntArray( 22, 23, 187 ), PoolIntArray( 22, 187, 11, 14 ), PoolIntArray( 188, 14, 13 ), PoolIntArray( 21, 55, 19 ), PoolIntArray( 189, 21, 20, 188 ), PoolIntArray( 189, 188, 13 ), PoolIntArray( 189, 13, 56 ) ]
+outlines = [ PoolVector2Array( 320, 832, 2560, 832, 2560, 896, 4352, 896, 4352, 832, 4824, 832, 4824, 1064, 5416, 1064, 5416, 832, 5888, 832, 5888, 896, 7680, 896, 7680, 832, 8216, 832, 8216, 896, 9320, 896, 9320, 832, 11712, 832, 11712, 1008, 10928, 1008, 10928, 1200, 11712, 1200, 11712, 1456, 10928, 1456, 10928, 1648, 11712, 1648, 11712, 2240, 10176, 2240, 10176, 3064, 10056, 3064, 10056, 3880, 10176, 3880, 10176, 4288, 6336, 4288, 6336, 4544, 4032, 4544, 4032, 5312, 3008, 5312, 3008, 6080, 1856, 6080, 1856, 5424, 1936, 5424, 1936, 4608, 1856, 4608, 1856, 4144, 1936, 4144, 1936, 3328, 1856, 3328, 1856, 3008, 320, 3008, 320, 2672.6, 1104, 2672, 1104, 2480, 320, 2480.2, 320, 2223.5, 1104, 2224, 1104, 2032, 320, 2031.75, 320, 1712.82, 1104, 1712, 1104, 1520, 320, 1520, 320, 1264, 1104, 1264, 1104, 1072, 320, 1073.59 ), PoolVector2Array( 2752, 1728, 4160, 1728, 4160, 3648, 3920, 3648, 3920, 4008, 3696, 4008, 3696, 3648, 3536, 3648, 3536, 4008, 3304, 4008, 3312, 3648, 3152, 3648, 3152, 4008, 2928, 4008, 2928, 3648, 2752, 3648 ), PoolVector2Array( 5056, 2240, 6256, 2240, 6256, 1728, 9216, 1728, 9216, 1720, 9400, 1720, 9400, 2536, 9280, 2536, 9280, 2624, 9200, 2624, 9200, 2728, 8400, 2728, 8400, 2672, 8256, 2672, 8256, 3392, 8192, 3392, 8192, 3456, 6336, 3456, 6336, 3240, 5056, 3240, 5056, 3079.95, 4976, 3080, 4976, 2272, 5056, 2272 ), PoolVector2Array( 1392, 1264, 1392, 1072, 2224, 1072, 2224, 1264 ), PoolVector2Array( 1392, 1520, 1392, 1712, 2224, 1712, 2224, 1520 ), PoolVector2Array( 2224, 2032, 2224, 2224, 1392, 2224, 1392, 2032 ), PoolVector2Array( 1392, 2672, 1392, 2480, 2224, 2480, 2224, 2672 ), PoolVector2Array( 3536, 4584, 3312, 4584, 3312, 4184, 3536, 4184 ), PoolVector2Array( 3152, 4584, 2928, 4584, 2928, 4184, 3152, 4184 ), PoolVector2Array( 8752, 3368, 8752, 3064, 8616, 3064, 8616, 2936, 8392, 2936, 8392, 3368 ), PoolVector2Array( 8912, 3368, 9272, 3368, 9272, 2936, 9048, 2936, 9048, 3064, 8912, 3064 ), PoolVector2Array( 8560, 3608, 8560, 4008, 8336, 4008, 8336, 3608 ), PoolVector2Array( 8720, 4008, 8944, 4008, 8944, 3608, 8720, 3608 ), PoolVector2Array( 9104, 4008, 9328, 4008, 9328, 3608, 9104, 3608 ), PoolVector2Array( 9488, 4008, 9712, 4008, 9712, 3608, 9488, 3608 ), PoolVector2Array( 4728, 1048, 4568, 1048, 4568, 1384, 5672, 1384, 5672, 1048, 5512, 1048, 5512, 1240, 4728, 1240 ), PoolVector2Array( 4568, 2024, 5672, 2024, 5672, 1856, 4568, 1856 ), PoolVector2Array( 4568, 1704, 5672, 1704, 5672, 1536, 4568, 1536 ), PoolVector2Array( 8216, 1216, 9320, 1216, 9320, 1048, 8216, 1048 ), PoolVector2Array( 5360, 3880, 5136, 3880, 5136, 3480, 5360, 3480 ), PoolVector2Array( 5520, 3880, 5744, 3880, 5744, 3480, 5520, 3480 ), PoolVector2Array( 5904, 3880, 6128, 3880, 6128, 3480, 5904, 3480 ) ]
+
+[sub_resource type="ConvexPolygonShape2D" id=66]
+points = PoolVector2Array( 0, 0, 256, 0, 256, 256, 0, 256 )
+
+[sub_resource type="ConvexPolygonShape2D" id=67]
+points = PoolVector2Array( 0, 0, 256, 0, 256, 256, 0, 256 )
+
+[sub_resource type="ConvexPolygonShape2D" id=68]
+points = PoolVector2Array( 0, 0, 256, 0, 256, 256, 0, 256 )
+
+[sub_resource type="ConvexPolygonShape2D" id=69]
+points = PoolVector2Array( 0, 0, 256, 0, 256, 256, 0, 256 )
+
+[sub_resource type="ConvexPolygonShape2D" id=70]
+points = PoolVector2Array( 0, 0, 256, 0, 256, 256, 0, 256 )
+
+[sub_resource type="ConvexPolygonShape2D" id=71]
+points = PoolVector2Array( 0, 0, 256, 0, 256, 256, 0, 256 )
+
+[sub_resource type="ConvexPolygonShape2D" id=72]
+points = PoolVector2Array( 0, 0, 256, 0, 256, 256, 0, 256 )
+
+[sub_resource type="TileSet" id=59]
+0/name = "casino_tilemap.png 0"
+0/texture = ExtResource( 1 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 256, 256 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 66 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 66 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+1/name = "casino_tilemap.png 1"
+1/texture = ExtResource( 1 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 256, 256, 256 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape = SubResource( 67 )
+1/shape_one_way = false
+1/shape_one_way_margin = 1.0
+1/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 67 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+1/z_index = 0
+2/name = "casino_tilemap.png 2"
+2/texture = ExtResource( 1 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 0, 512, 256, 256 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape = SubResource( 68 )
+2/shape_one_way = false
+2/shape_one_way_margin = 1.0
+2/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 68 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+2/z_index = 0
+3/name = "casino_tilemap.png 3"
+3/texture = ExtResource( 1 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 512, 0, 256, 256 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape = SubResource( 69 )
+3/shape_one_way = false
+3/shape_one_way_margin = 1.0
+3/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 69 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+3/z_index = 0
+4/name = "casino_tilemap.png 4"
+4/texture = ExtResource( 1 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 512, 256, 256, 256 )
+4/tile_mode = 0
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shape_offset = Vector2( 0, 0 )
+4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+4/shape = SubResource( 70 )
+4/shape_one_way = false
+4/shape_one_way_margin = 1.0
+4/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 70 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+4/z_index = 0
+5/name = "casino_tilemap.png 5"
+5/texture = ExtResource( 1 )
+5/tex_offset = Vector2( 0, 0 )
+5/modulate = Color( 1, 1, 1, 1 )
+5/region = Rect2( 512, 512, 256, 256 )
+5/tile_mode = 0
+5/occluder_offset = Vector2( 0, 0 )
+5/navigation_offset = Vector2( 0, 0 )
+5/shape_offset = Vector2( 0, 0 )
+5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+5/shape = SubResource( 71 )
+5/shape_one_way = false
+5/shape_one_way_margin = 1.0
+5/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 71 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+5/z_index = 0
+6/name = "casino_tilemap.png 6"
+6/texture = ExtResource( 1 )
+6/tex_offset = Vector2( 0, 0 )
+6/modulate = Color( 1, 1, 1, 1 )
+6/region = Rect2( 256, 512, 256, 256 )
+6/tile_mode = 0
+6/occluder_offset = Vector2( 0, 0 )
+6/navigation_offset = Vector2( 0, 0 )
+6/shape_offset = Vector2( 0, 0 )
+6/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+6/shape_one_way = false
+6/shape_one_way_margin = 0.0
+6/shapes = [  ]
+6/z_index = 0
+7/name = "casino_tilemap.png 7"
+7/texture = ExtResource( 1 )
+7/tex_offset = Vector2( 0, 0 )
+7/modulate = Color( 1, 1, 1, 1 )
+7/region = Rect2( 1280, 256, 256, 256 )
+7/tile_mode = 0
+7/occluder_offset = Vector2( 0, 0 )
+7/navigation_offset = Vector2( 0, 0 )
+7/shape_offset = Vector2( 0, 0 )
+7/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+7/shape_one_way = false
+7/shape_one_way_margin = 0.0
+7/shapes = [  ]
+7/z_index = 0
+8/name = "casino_tilemap.png 8"
+8/texture = ExtResource( 1 )
+8/tex_offset = Vector2( 0, 0 )
+8/modulate = Color( 1, 1, 1, 1 )
+8/region = Rect2( 1536, 256, 256, 256 )
+8/tile_mode = 0
+8/occluder_offset = Vector2( 0, 0 )
+8/navigation_offset = Vector2( 0, 0 )
+8/shape_offset = Vector2( 0, 0 )
+8/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+8/shape_one_way = false
+8/shape_one_way_margin = 0.0
+8/shapes = [  ]
+8/z_index = 0
+9/name = "casino_tilemap.png 9"
+9/texture = ExtResource( 1 )
+9/tex_offset = Vector2( 0, 0 )
+9/modulate = Color( 1, 1, 1, 1 )
+9/region = Rect2( 1024, 768, 256, 256 )
+9/tile_mode = 0
+9/occluder_offset = Vector2( 0, 0 )
+9/navigation_offset = Vector2( 0, 0 )
+9/shape_offset = Vector2( 0, 0 )
+9/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+9/shape = SubResource( 72 )
+9/shape_one_way = false
+9/shape_one_way_margin = 1.0
+9/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 72 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+9/z_index = 0
+
+[node name="Level" type="Node2D" groups=["Level", "MinigameLevel"]]
+script = ExtResource( 28 )
+
+[node name="VoidLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="Void" type="TextureRect" parent="VoidLayer"]
+modulate = Color( 0.121569, 0.105882, 0.196078, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 4 )
+expand = true
+
+[node name="Floor" type="TileMap" parent="."]
+tile_set = SubResource( 48 )
+cell_size = Vector2( 256, 256 )
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 0, 0, 196615, 0, 0, 196616, 0, 0, 196617, 0, 0, 196618, 0, 0, 196619, 0, 0, 196620, 0, 0, 196621, 0, 0, 196622, 0, 0, 196623, 0, 0, 196624, 0, 0, 196625, 0, 0, 196626, 0, 0, 196629, 0, 0, 196630, 0, 0, 196631, 0, 0, 196632, 0, 0, 196633, 0, 0, 196634, 0, 0, 196635, 0, 0, 196636, 0, 0, 196637, 0, 0, 196638, 0, 0, 196639, 0, 0, 196640, 0, 0, 196641, 0, 0, 196642, 0, 0, 196643, 0, 0, 196644, 0, 0, 196645, 0, 0, 196646, 0, 0, 196647, 0, 0, 196648, 0, 0, 196649, 0, 0, 196650, 0, 0, 196651, 0, 0, 196652, 0, 0, 196653, 0, 0, 262145, 0, 0, 262146, 0, 0, 262147, 0, 0, 262148, 0, 0, 262149, 0, 0, 262150, 0, 0, 262151, 0, 0, 262152, 0, 0, 262153, 0, 0, 262154, 0, 0, 262155, 0, 0, 262156, 0, 0, 262157, 0, 0, 262158, 0, 0, 262159, 0, 0, 262160, 0, 0, 262161, 0, 0, 262162, 0, 0, 262163, 0, 0, 262164, 0, 0, 262165, 0, 0, 262166, 0, 0, 262167, 0, 0, 262168, 0, 0, 262169, 0, 0, 262170, 0, 0, 262171, 0, 0, 262172, 0, 0, 262173, 0, 0, 262174, 0, 0, 262175, 0, 0, 262176, 0, 0, 262177, 0, 0, 262178, 0, 0, 262179, 0, 0, 262180, 0, 0, 262181, 0, 0, 262182, 0, 0, 262183, 0, 0, 262184, 0, 0, 262185, 0, 0, 262186, 0, 0, 262187, 0, 0, 262188, 0, 0, 262189, 0, 0, 327681, 0, 0, 327682, 0, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327688, 0, 0, 327689, 0, 0, 327690, 0, 0, 327691, 0, 0, 327692, 0, 0, 327693, 0, 0, 327694, 0, 0, 327695, 0, 0, 327696, 0, 0, 327697, 0, 0, 327698, 0, 0, 327699, 0, 0, 327700, 0, 0, 327701, 0, 0, 327702, 0, 0, 327703, 0, 0, 327704, 0, 0, 327705, 0, 0, 327706, 0, 0, 327707, 0, 0, 327708, 0, 0, 327709, 0, 0, 327710, 0, 0, 327711, 0, 0, 327712, 0, 0, 327713, 0, 0, 327714, 0, 0, 327715, 0, 0, 327716, 0, 0, 327717, 0, 0, 327718, 0, 0, 327719, 0, 0, 327720, 0, 0, 327721, 0, 0, 327722, 0, 0, 327723, 0, 0, 327724, 0, 0, 327725, 0, 0, 393217, 0, 0, 393218, 0, 0, 393219, 0, 0, 393220, 0, 0, 393221, 0, 0, 393222, 0, 0, 393223, 0, 0, 393224, 0, 0, 393225, 0, 0, 393226, 0, 0, 393232, 0, 0, 393233, 0, 0, 393234, 0, 0, 393235, 0, 0, 393236, 0, 0, 393237, 0, 0, 393238, 0, 0, 393239, 0, 0, 393240, 0, 0, 393252, 0, 0, 393253, 0, 0, 393254, 0, 0, 393255, 0, 0, 393256, 0, 0, 393257, 0, 0, 393258, 0, 0, 393259, 0, 0, 393260, 0, 0, 393261, 0, 0, 458753, 0, 0, 458754, 0, 0, 458755, 0, 0, 458756, 0, 0, 458757, 0, 0, 458758, 0, 0, 458759, 0, 0, 458760, 0, 0, 458761, 0, 0, 458762, 0, 0, 458768, 0, 0, 458769, 0, 0, 458770, 0, 0, 458771, 0, 0, 458772, 0, 0, 458773, 0, 0, 458774, 0, 0, 458775, 0, 0, 458776, 0, 0, 458788, 0, 0, 458789, 0, 0, 458790, 0, 0, 458791, 0, 0, 458792, 0, 0, 458793, 0, 0, 458794, 0, 0, 458795, 0, 0, 458796, 0, 0, 458797, 0, 0, 524289, 0, 0, 524290, 0, 0, 524291, 0, 0, 524292, 0, 0, 524293, 0, 0, 524294, 0, 0, 524295, 0, 0, 524296, 0, 0, 524297, 0, 0, 524298, 0, 0, 524304, 0, 0, 524305, 0, 0, 524306, 0, 0, 524307, 0, 0, 524324, 0, 0, 524325, 0, 0, 524326, 0, 0, 524327, 0, 0, 589825, 0, 0, 589826, 0, 0, 589827, 0, 0, 589828, 0, 0, 589829, 0, 0, 589830, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589840, 0, 0, 589841, 0, 0, 589842, 0, 0, 589843, 0, 0, 589860, 0, 0, 589861, 0, 0, 589862, 0, 0, 589863, 0, 0, 655361, 0, 0, 655362, 0, 0, 655363, 0, 0, 655364, 0, 0, 655365, 0, 0, 655366, 0, 0, 655367, 0, 0, 655368, 0, 0, 655369, 0, 0, 655370, 0, 0, 655376, 0, 0, 655377, 0, 0, 655378, 0, 0, 655379, 0, 0, 655392, 0, 0, 655393, 0, 0, 655394, 0, 0, 655395, 0, 0, 655396, 0, 0, 655397, 0, 0, 655398, 0, 0, 655399, 0, 0, 720903, 0, 0, 720904, 0, 0, 720905, 0, 0, 720906, 0, 0, 720912, 0, 0, 720913, 0, 0, 720914, 0, 0, 720915, 0, 0, 720928, 0, 0, 720929, 0, 0, 720930, 0, 0, 720931, 0, 0, 720932, 0, 0, 720933, 0, 0, 720934, 0, 0, 720935, 0, 0, 786439, 0, 0, 786440, 0, 0, 786441, 0, 0, 786442, 0, 0, 786448, 0, 0, 786449, 0, 0, 786450, 0, 0, 786451, 0, 0, 786452, 0, 0, 786453, 0, 0, 786454, 0, 0, 786455, 0, 0, 786456, 0, 0, 786464, 0, 0, 786465, 0, 0, 786466, 0, 0, 786467, 0, 0, 786468, 0, 0, 786469, 0, 0, 786470, 0, 0, 786471, 0, 0, 851975, 0, 0, 851976, 0, 0, 851977, 0, 0, 851978, 0, 0, 851984, 0, 0, 851985, 0, 0, 851986, 0, 0, 851987, 0, 0, 851988, 0, 0, 851989, 0, 0, 851990, 0, 0, 851991, 0, 0, 851992, 0, 0, 851993, 0, 0, 851994, 0, 0, 851995, 0, 0, 851996, 0, 0, 851997, 0, 0, 851998, 0, 0, 851999, 0, 0, 852000, 0, 0, 852001, 0, 0, 852002, 0, 0, 852003, 0, 0, 852004, 0, 0, 852005, 0, 0, 852006, 0, 0, 852007, 0, 0, 917511, 0, 0, 917512, 0, 0, 917513, 0, 0, 917514, 0, 0, 917515, 0, 0, 917516, 0, 0, 917517, 0, 0, 917518, 0, 0, 917519, 0, 0, 917520, 0, 0, 917521, 0, 0, 917522, 0, 0, 917523, 0, 0, 917524, 0, 0, 917525, 0, 0, 917526, 0, 0, 917527, 0, 0, 917528, 0, 0, 917529, 0, 0, 917530, 0, 0, 917531, 0, 0, 917532, 0, 0, 917533, 0, 0, 917534, 0, 0, 917535, 0, 0, 917536, 0, 0, 917537, 0, 0, 917538, 0, 0, 917539, 0, 0, 917540, 0, 0, 917541, 0, 0, 917542, 0, 0, 917543, 0, 0, 983047, 0, 0, 983048, 0, 0, 983049, 0, 0, 983050, 0, 0, 983051, 0, 0, 983052, 0, 0, 983053, 0, 0, 983054, 0, 0, 983055, 0, 0, 983056, 0, 0, 983057, 0, 0, 983058, 0, 0, 983059, 0, 0, 983060, 0, 0, 983061, 0, 0, 983062, 0, 0, 983063, 0, 0, 983064, 0, 0, 983065, 0, 0, 983066, 0, 0, 983067, 0, 0, 983068, 0, 0, 983069, 0, 0, 983070, 0, 0, 983071, 0, 0, 983072, 0, 0, 983073, 0, 0, 983074, 0, 0, 983075, 0, 0, 983076, 0, 0, 983077, 0, 0, 983078, 0, 0, 983079, 0, 0, 1048583, 0, 0, 1048584, 0, 0, 1048585, 0, 0, 1048586, 0, 0, 1048587, 0, 0, 1048588, 0, 0, 1048589, 0, 0, 1048590, 0, 0, 1048591, 0, 0, 1048592, 0, 0, 1048593, 0, 0, 1048594, 0, 0, 1048595, 0, 0, 1048596, 0, 0, 1048597, 0, 0, 1048598, 0, 0, 1048599, 0, 0, 1048600, 0, 0, 1114119, 0, 0, 1114120, 0, 0, 1114121, 0, 0, 1114122, 0, 0, 1114123, 0, 0, 1114124, 0, 0, 1114125, 0, 0, 1114126, 0, 0, 1114127, 0, 0, 1179655, 0, 0, 1179656, 0, 0, 1179657, 0, 0, 1179658, 0, 0, 1179659, 0, 0, 1179660, 0, 0, 1179661, 0, 0, 1179662, 0, 0, 1179663, 0, 0, 1245191, 0, 0, 1245192, 0, 0, 1245193, 0, 0, 1245194, 0, 0, 1245195, 0, 0, 1245196, 0, 0, 1245197, 0, 0, 1245198, 0, 0, 1245199, 0, 0, 1310727, 0, 0, 1310728, 0, 0, 1310729, 0, 0, 1310730, 0, 0, 1310731, 0, 0, 1376263, 0, 0, 1376264, 0, 0, 1376265, 0, 0, 1376266, 0, 0, 1376267, 0, 0, 1441799, 0, 0, 1441800, 0, 0, 1441801, 0, 0, 1441802, 0, 0, 1441803, 0, 0 )
+
+[node name="BackWalls" type="TileMap" parent="."]
+tile_set = SubResource( 51 )
+cell_size = Vector2( 256, 256 )
+collision_layer = 512
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 65537, 0, 0, 65538, 0, 0, 65539, 0, 0, 65540, 0, 0, 65541, 0, 0, 65542, 0, 0, 65543, 0, 0, 65544, 0, 0, 65545, 0, 0, 65546, 0, 0, 65547, 0, 0, 65548, 0, 0, 65549, 0, 0, 65550, 0, 0, 65551, 0, 0, 65552, 0, 0, 65553, 0, 0, 65554, 0, 0, 65557, 0, 0, 65558, 0, 0, 65559, 0, 0, 65560, 0, 0, 65561, 0, 0, 65562, 0, 0, 65563, 0, 0, 65564, 0, 0, 65565, 0, 0, 65566, 0, 0, 65567, 0, 0, 65568, 0, 0, 65569, 0, 0, 65570, 0, 0, 65571, 0, 0, 65572, 0, 0, 65573, 0, 0, 65574, 0, 0, 65575, 0, 0, 65576, 0, 0, 65577, 0, 0, 65578, 0, 0, 65579, 0, 0, 65580, 0, 0, 65581, 0, 0, 131073, 1, 0, 131074, 1, 0, 131075, 1, 0, 131076, 1, 0, 131077, 1, 0, 131078, 1, 0, 131079, 1, 0, 131080, 1, 0, 131081, 1, 0, 131082, 1, 0, 131083, 1, 0, 131084, 1, 0, 131085, 1, 0, 131086, 1, 0, 131087, 1, 0, 131088, 1, 0, 131089, 1, 0, 131090, 1, 0, 131091, 3, 0, 131092, 2, 0, 131093, 1, 0, 131094, 1, 0, 131095, 1, 0, 131096, 1, 0, 131097, 1, 0, 131098, 1, 0, 131099, 1, 0, 131100, 1, 0, 131101, 1, 0, 131102, 1, 0, 131103, 1, 0, 131104, 1, 0, 131105, 1, 0, 131106, 1, 0, 131107, 1, 0, 131108, 1, 0, 131109, 1, 0, 131110, 1, 0, 131111, 1, 0, 131112, 1, 0, 131113, 1, 0, 131114, 1, 0, 131115, 1, 0, 131116, 1, 0, 131117, 1, 0, 196627, 1, 0, 196628, 1, 0, 524320, 0, 0, 524321, 0, 0, 524322, 0, 0, 524323, 2, 0, 589856, 1, 0, 589857, 1, 0, 589858, 1, 0, 589859, 1, 0, 655380, 3, 0, 655381, 0, 0, 655382, 0, 0, 655383, 0, 0, 655384, 0, 0, 720916, 1, 0, 720917, 1, 0, 720918, 1, 0, 720919, 1, 0, 720920, 1, 0, 720921, 3, 0, 720922, 0, 0, 720923, 0, 0, 720924, 0, 0, 720925, 0, 0, 720926, 0, 0, 720927, 2, 0, 786443, 3, 0, 786444, 0, 0, 786445, 0, 0, 786446, 0, 0, 786447, 2, 0, 786457, 1, 0, 786458, 1, 0, 786459, 1, 0, 786460, 1, 0, 786461, 1, 0, 786462, 1, 0, 786463, 1, 0, 851979, 1, 0, 851980, 1, 0, 851981, 1, 0, 851982, 1, 0, 851983, 1, 0 )
+
+[node name="BarBackWall" type="Sprite" parent="."]
+position = Vector2( 5120, 768 )
+texture = ExtResource( 25 )
+
+[node name="FakeElevatorDoor" type="AnimatedSprite" parent="."]
+position = Vector2( 1152, 512 )
+frames = SubResource( 74 )
+
+[node name="Navigation2D" type="Navigation2D" parent="."]
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation2D"]
+navpoly = SubResource( 75 )
+
+[node name="YSort" type="YSort" parent="Navigation2D"]
+
+[node name="WeaponSpawner" parent="Navigation2D/YSort" instance=ExtResource( 26 )]
+position = Vector2( 3456, 4800 )
+weapon_path = "res://Scenes/Weapons/SMG.tscn"
+ammo_in_weapon = 30
+spawn_in_time = 60
+active = true
+
+[node name="WeaponSpawner2" parent="Navigation2D/YSort" instance=ExtResource( 26 )]
+position = Vector2( 11392, 1856 )
+weapon_path = "res://Scenes/Weapons/SemiAutomaticRifle.tscn"
+ammo_in_weapon = 7
+spawn_in_time = 180
+active = true
+
+[node name="WeaponSpawner3" parent="Navigation2D/YSort" instance=ExtResource( 26 )]
+position = Vector2( 1280, 1392 )
+weapon_path = "res://Scenes/Weapons/Pistol.tscn"
+ammo_in_weapon = 12
+spawn_in_time = 1
+active = true
+
+[node name="WeaponSpawner4" parent="Navigation2D/YSort" instance=ExtResource( 26 )]
+position = Vector2( 5120, 1153 )
+weapon_path = "res://Scenes/Weapons/AssultRifle.tscn"
+ammo_in_weapon = 20
+spawn_in_time = 300
+active = true
+
+[node name="EnemySpawner" parent="Navigation2D/YSort" instance=ExtResource( 9 )]
+position = Vector2( 7296, 4224 )
+enemy_path = "res://Scenes/Entities/Chipling.tscn"
+enemy_name = "Chipling"
+spawn_interval = 1
+max_enemy_amount = 30
+active = true
+
+[node name="EnemySpawner5" parent="Navigation2D/YSort" instance=ExtResource( 9 )]
+position = Vector2( 10880, 2176 )
+enemy_path = "res://Scenes/Entities/Chipling.tscn"
+enemy_name = "Chipling"
+spawn_interval = 1
+max_enemy_amount = 30
+active = true
+
+[node name="EnemySpawner6" parent="Navigation2D/YSort" instance=ExtResource( 9 )]
+position = Vector2( 3456, 1665 )
+enemy_path = "res://Scenes/Entities/Chipling.tscn"
+enemy_name = "Chipling"
+spawn_interval = 1
+max_enemy_amount = 30
+active = true
+
+[node name="EnemySpawner7" parent="Navigation2D/YSort" instance=ExtResource( 9 )]
+position = Vector2( 896, 2944 )
+enemy_path = "res://Scenes/Entities/Chipling.tscn"
+enemy_name = "Chipling"
+spawn_interval = 1
+max_enemy_amount = 30
+active = true
+
+[node name="EnemySpawner8" parent="Navigation2D/YSort" instance=ExtResource( 9 )]
+position = Vector2( 2560, 6016 )
+enemy_path = "res://Scenes/Entities/Chipling.tscn"
+enemy_name = "Chipling"
+spawn_interval = 1
+max_enemy_amount = 30
+active = true
+
+[node name="EnemySpawner2" parent="Navigation2D/YSort" instance=ExtResource( 9 )]
+position = Vector2( 5248, 5120 )
+enemy_path = "res://Scenes/Entities/BulletMan.tscn"
+enemy_name = "BulletMan"
+spawn_interval = 20
+max_enemy_amount = 3
+active = true
+
+[node name="EnemySpawner3" parent="Navigation2D/YSort" instance=ExtResource( 9 )]
+position = Vector2( 7232, 2304 )
+enemy_path = "res://Scenes/Entities/BulletMan.tscn"
+enemy_name = "BulletMan"
+spawn_interval = 20
+max_enemy_amount = 3
+active = true
+
+[node name="EnemySpawner4" parent="Navigation2D/YSort" instance=ExtResource( 9 )]
+position = Vector2( -192, 1856 )
+enemy_path = "res://Scenes/Entities/BulletMan.tscn"
+enemy_name = "BulletMan"
+spawn_interval = 20
+max_enemy_amount = 3
+active = true
+
+[node name="EnemySpawner9" parent="Navigation2D/YSort" instance=ExtResource( 9 )]
+position = Vector2( 5120, 0 )
+enemy_path = "res://Scenes/Entities/BulletMan.tscn"
+enemy_name = "BulletMan"
+spawn_interval = 20
+max_enemy_amount = 3
+active = true
+
+[node name="Player" parent="Navigation2D/YSort" instance=ExtResource( 3 )]
+position = Vector2( 1152, 784 )
+
+[node name="SlotMachine" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 384, 1217 )
+
+[node name="SlotMachine2" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 536, 1217 )
+
+[node name="SlotMachine3" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 688, 1217 )
+
+[node name="SlotMachine4" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 840, 1217 )
+
+[node name="SlotMachine5" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 992, 1217 )
+
+[node name="SlotMachine6" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 388, 1184 )
+scale = Vector2( -1, 1 )
+
+[node name="SlotMachine7" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 540, 1184 )
+scale = Vector2( -1, 1 )
+
+[node name="SlotMachine8" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 692, 1184 )
+scale = Vector2( -1, 1 )
+
+[node name="SlotMachine9" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 844, 1184 )
+scale = Vector2( -1, 1 )
+
+[node name="SlotMachine10" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 996, 1184 )
+scale = Vector2( -1, 1 )
+
+[node name="SlotMachine11" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 384, 1665 )
+
+[node name="SlotMachine12" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 536, 1665 )
+
+[node name="SlotMachine13" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 688, 1665 )
+
+[node name="SlotMachine14" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 840, 1665 )
+
+[node name="SlotMachine15" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 992, 1665 )
+
+[node name="SlotMachine16" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 388, 1632 )
+scale = Vector2( -1, 1 )
+
+[node name="SlotMachine17" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 540, 1632 )
+scale = Vector2( -1, 1 )
+
+[node name="SlotMachine18" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 692, 1632 )
+scale = Vector2( -1, 1 )
+
+[node name="SlotMachine19" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 844, 1632 )
+scale = Vector2( -1, 1 )
+
+[node name="SlotMachine20" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 996, 1632 )
+scale = Vector2( -1, 1 )
+
+[node name="SlotMachine81" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 11040, 1153 )
+
+[node name="SlotMachine82" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 11192, 1153 )
+
+[node name="SlotMachine83" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 11344, 1153 )
+
+[node name="SlotMachine84" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 11496, 1153 )
+
+[node name="SlotMachine85" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 11648, 1153 )
+
+[node name="SlotMachine86" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 11044, 1120 )
+scale = Vector2( -1, 1 )
+
+[node name="SlotMachine87" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 11196, 1120 )
+scale = Vector2( -1, 1 )
+
+[node name="SlotMachine88" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 11348, 1120 )
+scale = Vector2( -1, 1 )
+
+[node name="SlotMachine89" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 11500, 1120 )
+scale = Vector2( -1, 1 )
+
+[node name="SlotMachine90" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 11652, 1120 )
+scale = Vector2( -1, 1 )
+
+[node name="SlotMachine91" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 11040, 1601 )
+
+[node name="SlotMachine92" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 11192, 1601 )
+
+[node name="SlotMachine93" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 11344, 1601 )
+
+[node name="SlotMachine94" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 11496, 1601 )
+
+[node name="SlotMachine95" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 11648, 1601 )
+
+[node name="SlotMachine96" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 11044, 1568 )
+scale = Vector2( -1, 1 )
+
+[node name="SlotMachine97" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 11196, 1568 )
+scale = Vector2( -1, 1 )
+
+[node name="SlotMachine98" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 11348, 1568 )
+scale = Vector2( -1, 1 )
+
+[node name="SlotMachine99" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 11500, 1568 )
+scale = Vector2( -1, 1 )
+
+[node name="SlotMachine100" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 11652, 1568 )
+scale = Vector2( -1, 1 )
+
+[node name="SlotMachine21" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 386, 2177 )
+
+[node name="SlotMachine22" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 538, 2177 )
+
+[node name="SlotMachine23" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 690, 2177 )
+
+[node name="SlotMachine24" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 842, 2177 )
+
+[node name="SlotMachine25" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 994, 2177 )
+
+[node name="SlotMachine26" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 390, 2144 )
+scale = Vector2( -1, 1 )
+
+[node name="SlotMachine27" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 542, 2144 )
+scale = Vector2( -1, 1 )
+
+[node name="SlotMachine28" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 694, 2144 )
+scale = Vector2( -1, 1 )
+
+[node name="SlotMachine29" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 846, 2144 )
+scale = Vector2( -1, 1 )
+
+[node name="SlotMachine30" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 998, 2144 )
+scale = Vector2( -1, 1 )
+
+[node name="SlotMachine31" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 386, 2625 )
+
+[node name="SlotMachine32" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 538, 2625 )
+
+[node name="SlotMachine33" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 690, 2625 )
+
+[node name="SlotMachine34" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 842, 2625 )
+
+[node name="SlotMachine35" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 994, 2625 )
+
+[node name="SlotMachine36" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 390, 2592 )
+scale = Vector2( -1, 1 )
+
+[node name="SlotMachine37" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 542, 2592 )
+scale = Vector2( -1, 1 )
+
+[node name="SlotMachine38" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 694, 2592 )
+scale = Vector2( -1, 1 )
+
+[node name="SlotMachine39" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 846, 2592 )
+scale = Vector2( -1, 1 )
+
+[node name="SlotMachine40" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 998, 2592 )
+scale = Vector2( -1, 1 )
+
+[node name="SlotMachine41" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 1504, 1217 )
+
+[node name="SlotMachine42" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 1656, 1217 )
+
+[node name="SlotMachine43" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 1808, 1217 )
+
+[node name="SlotMachine44" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 1960, 1217 )
+
+[node name="SlotMachine45" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 2112, 1217 )
+
+[node name="SlotMachine46" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 1508, 1184 )
+scale = Vector2( -1, 1 )
+
+[node name="SlotMachine47" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 1660, 1184 )
+scale = Vector2( -1, 1 )
+
+[node name="SlotMachine48" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 1812, 1184 )
+scale = Vector2( -1, 1 )
+
+[node name="SlotMachine49" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 1964, 1184 )
+scale = Vector2( -1, 1 )
+
+[node name="SlotMachine50" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 2116, 1184 )
+scale = Vector2( -1, 1 )
+
+[node name="SlotMachine51" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 1504, 1665 )
+
+[node name="SlotMachine52" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 1656, 1665 )
+
+[node name="SlotMachine53" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 1808, 1665 )
+
+[node name="SlotMachine54" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 1960, 1665 )
+
+[node name="SlotMachine55" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 2112, 1665 )
+
+[node name="SlotMachine56" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 1508, 1632 )
+scale = Vector2( -1, 1 )
+
+[node name="SlotMachine57" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 1660, 1632 )
+scale = Vector2( -1, 1 )
+
+[node name="SlotMachine58" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 1812, 1632 )
+scale = Vector2( -1, 1 )
+
+[node name="SlotMachine59" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 1964, 1632 )
+scale = Vector2( -1, 1 )
+
+[node name="SlotMachine60" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 2116, 1632 )
+scale = Vector2( -1, 1 )
+
+[node name="SlotMachine61" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 1506, 2177 )
+
+[node name="SlotMachine62" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 1658, 2177 )
+
+[node name="SlotMachine63" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 1810, 2177 )
+
+[node name="SlotMachine64" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 1962, 2177 )
+
+[node name="SlotMachine65" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 2114, 2177 )
+
+[node name="SlotMachine66" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 1510, 2144 )
+scale = Vector2( -1, 1 )
+
+[node name="SlotMachine67" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 1662, 2144 )
+scale = Vector2( -1, 1 )
+
+[node name="SlotMachine68" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 1814, 2144 )
+scale = Vector2( -1, 1 )
+
+[node name="SlotMachine69" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 1966, 2144 )
+scale = Vector2( -1, 1 )
+
+[node name="SlotMachine70" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 2118, 2144 )
+scale = Vector2( -1, 1 )
+
+[node name="SlotMachine71" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 1506, 2625 )
+
+[node name="SlotMachine72" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 1658, 2625 )
+
+[node name="SlotMachine73" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 1810, 2625 )
+
+[node name="SlotMachine74" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 1962, 2625 )
+
+[node name="SlotMachine75" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 2114, 2625 )
+
+[node name="SlotMachine76" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 1510, 2592 )
+scale = Vector2( -1, 1 )
+
+[node name="SlotMachine77" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 1662, 2592 )
+scale = Vector2( -1, 1 )
+
+[node name="SlotMachine78" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 1814, 2592 )
+scale = Vector2( -1, 1 )
+
+[node name="SlotMachine79" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 1966, 2592 )
+scale = Vector2( -1, 1 )
+
+[node name="SlotMachine80" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
+position = Vector2( 2118, 2592 )
+scale = Vector2( -1, 1 )
+
+[node name="ArcadeSahara" parent="Navigation2D/YSort" instance=ExtResource( 12 )]
+position = Vector2( 5248, 3200 )
+
+[node name="ArcadeSahara2" parent="Navigation2D/YSort" instance=ExtResource( 12 )]
+position = Vector2( 5440, 3200 )
+
+[node name="ArcadeSahara3" parent="Navigation2D/YSort" instance=ExtResource( 12 )]
+position = Vector2( 8512, 2688 )
+
+[node name="ArcadeSahara4" parent="Navigation2D/YSort" instance=ExtResource( 12 )]
+position = Vector2( 8704, 2688 )
+
+[node name="ArcadeFutball" parent="Navigation2D/YSort" instance=ExtResource( 11 )]
+position = Vector2( 5632, 3200 )
+
+[node name="ArcadeFutball2" parent="Navigation2D/YSort" instance=ExtResource( 11 )]
+position = Vector2( 6208, 3200 )
+
+[node name="ArcadeRacer" parent="Navigation2D/YSort" instance=ExtResource( 10 )]
+position = Vector2( 5824, 3200 )
+
+[node name="ArcadeRacer2" parent="Navigation2D/YSort" instance=ExtResource( 10 )]
+position = Vector2( 6016, 3200 )
+
+[node name="ArmChair" parent="Navigation2D/YSort" instance=ExtResource( 6 )]
+position = Vector2( 5632, 3592 )
+
+[node name="SmallTable" parent="Navigation2D/YSort" instance=ExtResource( 13 )]
+position = Vector2( 5632, 3680 )
+
+[node name="ArmChairBack" parent="Navigation2D/YSort" instance=ExtResource( 7 )]
+position = Vector2( 5632, 3840 )
+
+[node name="ArmChair3" parent="Navigation2D/YSort" instance=ExtResource( 6 )]
+position = Vector2( 5248, 3592 )
+
+[node name="SmallTable3" parent="Navigation2D/YSort" instance=ExtResource( 13 )]
+position = Vector2( 5248, 3680 )
+
+[node name="ArmChairBack3" parent="Navigation2D/YSort" instance=ExtResource( 7 )]
+position = Vector2( 5248, 3840 )
+
+[node name="ArmChair2" parent="Navigation2D/YSort" instance=ExtResource( 6 )]
+position = Vector2( 6016, 3592 )
+
+[node name="SmallTable2" parent="Navigation2D/YSort" instance=ExtResource( 13 )]
+position = Vector2( 6016, 3680 )
+
+[node name="ArmChairBack2" parent="Navigation2D/YSort" instance=ExtResource( 7 )]
+position = Vector2( 6016, 3840 )
+
+[node name="ArmChair10" parent="Navigation2D/YSort" instance=ExtResource( 6 )]
+position = Vector2( 8832, 3720 )
+
+[node name="SmallTable10" parent="Navigation2D/YSort" instance=ExtResource( 13 )]
+position = Vector2( 8832, 3808 )
+
+[node name="ArmChairBack10" parent="Navigation2D/YSort" instance=ExtResource( 7 )]
+position = Vector2( 8832, 3968 )
+
+[node name="ArmChair11" parent="Navigation2D/YSort" instance=ExtResource( 6 )]
+position = Vector2( 8448, 3720 )
+
+[node name="SmallTable11" parent="Navigation2D/YSort" instance=ExtResource( 13 )]
+position = Vector2( 8448, 3808 )
+
+[node name="ArmChairBack11" parent="Navigation2D/YSort" instance=ExtResource( 7 )]
+position = Vector2( 8448, 3968 )
+
+[node name="ArmChair12" parent="Navigation2D/YSort" instance=ExtResource( 6 )]
+position = Vector2( 9216, 3720 )
+
+[node name="SmallTable12" parent="Navigation2D/YSort" instance=ExtResource( 13 )]
+position = Vector2( 9216, 3808 )
+
+[node name="SmallTable13" parent="Navigation2D/YSort" instance=ExtResource( 13 )]
+position = Vector2( 9600, 3808 )
+
+[node name="ArmChairBack12" parent="Navigation2D/YSort" instance=ExtResource( 7 )]
+position = Vector2( 9216, 3968 )
+
+[node name="ArmChair13" parent="Navigation2D/YSort" instance=ExtResource( 6 )]
+position = Vector2( 9600, 3720 )
+
+[node name="ArmChairBack13" parent="Navigation2D/YSort" instance=ExtResource( 7 )]
+position = Vector2( 9600, 3968 )
+
+[node name="ArmChair4" parent="Navigation2D/YSort" instance=ExtResource( 6 )]
+position = Vector2( 3424, 3720 )
+
+[node name="SmallTable4" parent="Navigation2D/YSort" instance=ExtResource( 13 )]
+position = Vector2( 3424, 3808 )
+
+[node name="ArmChairBack4" parent="Navigation2D/YSort" instance=ExtResource( 7 )]
+position = Vector2( 3424, 3968 )
+
+[node name="ArmChair5" parent="Navigation2D/YSort" instance=ExtResource( 6 )]
+position = Vector2( 3040, 3720 )
+
+[node name="SmallTable5" parent="Navigation2D/YSort" instance=ExtResource( 13 )]
+position = Vector2( 3040, 3808 )
+
+[node name="ArmChairBack5" parent="Navigation2D/YSort" instance=ExtResource( 7 )]
+position = Vector2( 3040, 3968 )
+
+[node name="ArmChair6" parent="Navigation2D/YSort" instance=ExtResource( 6 )]
+position = Vector2( 3808, 3720 )
+
+[node name="SmallTable6" parent="Navigation2D/YSort" instance=ExtResource( 13 )]
+position = Vector2( 3808, 3808 )
+
+[node name="ArmChairBack6" parent="Navigation2D/YSort" instance=ExtResource( 7 )]
+position = Vector2( 3808, 3968 )
+
+[node name="ArmChair7" parent="Navigation2D/YSort" instance=ExtResource( 6 )]
+position = Vector2( 3424, 4296 )
+
+[node name="SmallTable7" parent="Navigation2D/YSort" instance=ExtResource( 13 )]
+position = Vector2( 3424, 4384 )
+
+[node name="ArmChairBack7" parent="Navigation2D/YSort" instance=ExtResource( 7 )]
+position = Vector2( 3424, 4544 )
+
+[node name="ArmChair8" parent="Navigation2D/YSort" instance=ExtResource( 6 )]
+position = Vector2( 3040, 4296 )
+
+[node name="SmallTable8" parent="Navigation2D/YSort" instance=ExtResource( 13 )]
+position = Vector2( 3040, 4384 )
+
+[node name="ArmChairBack8" parent="Navigation2D/YSort" instance=ExtResource( 7 )]
+position = Vector2( 3040, 4544 )
+
+[node name="SlotLeft" parent="Navigation2D/YSort" instance=ExtResource( 14 )]
+position = Vector2( 5120, 2368 )
+
+[node name="SlotLeft2" parent="Navigation2D/YSort" instance=ExtResource( 14 )]
+position = Vector2( 5120, 2456 )
+
+[node name="SlotLeft3" parent="Navigation2D/YSort" instance=ExtResource( 14 )]
+position = Vector2( 5120, 2544 )
+
+[node name="SlotLeft4" parent="Navigation2D/YSort" instance=ExtResource( 14 )]
+position = Vector2( 5120, 2632 )
+
+[node name="SlotLeft5" parent="Navigation2D/YSort" instance=ExtResource( 14 )]
+position = Vector2( 5120, 2720 )
+
+[node name="SlotLeft6" parent="Navigation2D/YSort" instance=ExtResource( 14 )]
+position = Vector2( 5120, 2808 )
+
+[node name="SlotLeft7" parent="Navigation2D/YSort" instance=ExtResource( 14 )]
+position = Vector2( 5120, 2896 )
+
+[node name="SlotLeft8" parent="Navigation2D/YSort" instance=ExtResource( 14 )]
+position = Vector2( 5120, 2984 )
+
+[node name="SlotLeft13" parent="Navigation2D/YSort" instance=ExtResource( 14 )]
+position = Vector2( 1792, 3432 )
+scale = Vector2( 1, 1 )
+
+[node name="SlotLeft14" parent="Navigation2D/YSort" instance=ExtResource( 14 )]
+position = Vector2( 1792, 3520 )
+scale = Vector2( 1, 1 )
+
+[node name="SlotLeft15" parent="Navigation2D/YSort" instance=ExtResource( 14 )]
+position = Vector2( 1792, 3608 )
+scale = Vector2( 1, 1 )
+
+[node name="SlotLeft16" parent="Navigation2D/YSort" instance=ExtResource( 14 )]
+position = Vector2( 1792, 3696 )
+scale = Vector2( 1, 1 )
+
+[node name="SlotLeft17" parent="Navigation2D/YSort" instance=ExtResource( 14 )]
+position = Vector2( 1792, 3784 )
+scale = Vector2( 1, 1 )
+
+[node name="SlotLeft18" parent="Navigation2D/YSort" instance=ExtResource( 14 )]
+position = Vector2( 1792, 3872 )
+scale = Vector2( 1, 1 )
+
+[node name="SlotLeft19" parent="Navigation2D/YSort" instance=ExtResource( 14 )]
+position = Vector2( 1792, 3960 )
+scale = Vector2( 1, 1 )
+
+[node name="SlotLeft20" parent="Navigation2D/YSort" instance=ExtResource( 14 )]
+position = Vector2( 1792, 4048 )
+scale = Vector2( 1, 1 )
+
+[node name="SlotLeft21" parent="Navigation2D/YSort" instance=ExtResource( 14 )]
+position = Vector2( 1792, 4709 )
+scale = Vector2( 1, 1 )
+
+[node name="SlotLeft22" parent="Navigation2D/YSort" instance=ExtResource( 14 )]
+position = Vector2( 1792, 4797 )
+scale = Vector2( 1, 1 )
+
+[node name="SlotLeft23" parent="Navigation2D/YSort" instance=ExtResource( 14 )]
+position = Vector2( 1792, 4885 )
+scale = Vector2( 1, 1 )
+
+[node name="SlotLeft24" parent="Navigation2D/YSort" instance=ExtResource( 14 )]
+position = Vector2( 1792, 4973 )
+scale = Vector2( 1, 1 )
+
+[node name="SlotLeft25" parent="Navigation2D/YSort" instance=ExtResource( 14 )]
+position = Vector2( 1792, 5061 )
+scale = Vector2( 1, 1 )
+
+[node name="SlotLeft26" parent="Navigation2D/YSort" instance=ExtResource( 14 )]
+position = Vector2( 1792, 5149 )
+scale = Vector2( 1, 1 )
+
+[node name="SlotLeft27" parent="Navigation2D/YSort" instance=ExtResource( 14 )]
+position = Vector2( 1792, 5237 )
+scale = Vector2( 1, 1 )
+
+[node name="SlotLeft28" parent="Navigation2D/YSort" instance=ExtResource( 14 )]
+position = Vector2( 1792, 5325 )
+scale = Vector2( 1, 1 )
+
+[node name="SlotLeft9" parent="Navigation2D/YSort" instance=ExtResource( 14 )]
+position = Vector2( 6400, 1848 )
+
+[node name="SlotLeft10" parent="Navigation2D/YSort" instance=ExtResource( 14 )]
+position = Vector2( 6400, 1936 )
+
+[node name="SlotLeft11" parent="Navigation2D/YSort" instance=ExtResource( 14 )]
+position = Vector2( 6400, 2024 )
+
+[node name="SlotLeft12" parent="Navigation2D/YSort" instance=ExtResource( 14 )]
+position = Vector2( 6400, 2112 )
+
+[node name="Plant" parent="Navigation2D/YSort" instance=ExtResource( 15 )]
+position = Vector2( 8128, 3392 )
+
+[node name="Plant5" parent="Navigation2D/YSort" instance=ExtResource( 15 )]
+position = Vector2( 8320, 2624 )
+
+[node name="Plant2" parent="Navigation2D/YSort" instance=ExtResource( 15 )]
+position = Vector2( 6464, 3392 )
+
+[node name="Plant3" parent="Navigation2D/YSort" instance=ExtResource( 15 )]
+position = Vector2( 7008, 3392 )
+
+[node name="Plant4" parent="Navigation2D/YSort" instance=ExtResource( 15 )]
+position = Vector2( 7584, 3392 )
+
+[node name="TableStanding" parent="Navigation2D/YSort" instance=ExtResource( 16 )]
+position = Vector2( 6752, 3416 )
+
+[node name="TableStanding2" parent="Navigation2D/YSort" instance=ExtResource( 16 )]
+position = Vector2( 7296, 3416 )
+
+[node name="TableStanding3" parent="Navigation2D/YSort" instance=ExtResource( 16 )]
+position = Vector2( 7840, 3416 )
+
+[node name="Plant6" parent="Navigation2D/YSort" instance=ExtResource( 15 )]
+position = Vector2( 7616, 832 )
+
+[node name="Plant7" parent="Navigation2D/YSort" instance=ExtResource( 15 )]
+position = Vector2( 5952, 832 )
+
+[node name="Plant8" parent="Navigation2D/YSort" instance=ExtResource( 15 )]
+position = Vector2( 6496, 832 )
+
+[node name="Plant9" parent="Navigation2D/YSort" instance=ExtResource( 15 )]
+position = Vector2( 7072, 832 )
+
+[node name="TableStanding4" parent="Navigation2D/YSort" instance=ExtResource( 16 )]
+position = Vector2( 6240, 856 )
+
+[node name="TableStanding5" parent="Navigation2D/YSort" instance=ExtResource( 16 )]
+position = Vector2( 6784, 856 )
+
+[node name="TableStanding6" parent="Navigation2D/YSort" instance=ExtResource( 16 )]
+position = Vector2( 7328, 856 )
+
+[node name="Plant10" parent="Navigation2D/YSort" instance=ExtResource( 15 )]
+position = Vector2( 4288, 832 )
+
+[node name="Plant11" parent="Navigation2D/YSort" instance=ExtResource( 15 )]
+position = Vector2( 2624, 832 )
+
+[node name="Plant12" parent="Navigation2D/YSort" instance=ExtResource( 15 )]
+position = Vector2( 3168, 832 )
+
+[node name="Plant13" parent="Navigation2D/YSort" instance=ExtResource( 15 )]
+position = Vector2( 3744, 832 )
+
+[node name="TableStanding7" parent="Navigation2D/YSort" instance=ExtResource( 16 )]
+position = Vector2( 2912, 856 )
+
+[node name="TableStanding8" parent="Navigation2D/YSort" instance=ExtResource( 16 )]
+position = Vector2( 3456, 856 )
+
+[node name="TableStanding9" parent="Navigation2D/YSort" instance=ExtResource( 16 )]
+position = Vector2( 4000, 856 )
+
+[node name="ArcadeRacer3" parent="Navigation2D/YSort" instance=ExtResource( 10 )]
+position = Vector2( 9088, 2688 )
+
+[node name="ArcadeRacer4" parent="Navigation2D/YSort" instance=ExtResource( 10 )]
+position = Vector2( 8896, 2688 )
+
+[node name="ArcadeRacerSide" parent="Navigation2D/YSort" instance=ExtResource( 18 )]
+position = Vector2( 9024, 3328 )
+scale = Vector2( -1, 1 )
+
+[node name="ArcadeRacerSide2" parent="Navigation2D/YSort" instance=ExtResource( 18 )]
+position = Vector2( 8504, 3328 )
+scale = Vector2( -1, 1 )
+
+[node name="ArcadeRacerSide3" parent="Navigation2D/YSort" instance=ExtResource( 18 )]
+position = Vector2( 9160, 3072 )
+
+[node name="ArcadeRacerSide4" parent="Navigation2D/YSort" instance=ExtResource( 18 )]
+position = Vector2( 9288, 2368 )
+
+[node name="ArcadeShooterSide" parent="Navigation2D/YSort" instance=ExtResource( 17 )]
+position = Vector2( 9160, 3200 )
+
+[node name="ArcadeShooterSide2" parent="Navigation2D/YSort" instance=ExtResource( 17 )]
+position = Vector2( 8640, 3328 )
+
+[node name="ArcadeShooterSide4" parent="Navigation2D/YSort" instance=ExtResource( 17 )]
+position = Vector2( 9288, 2496 )
+
+[node name="ArcadeShooterSide3" parent="Navigation2D/YSort" instance=ExtResource( 17 )]
+position = Vector2( 8640, 3200 )
+
+[node name="ArcadeRacerSide5" parent="Navigation2D/YSort" instance=ExtResource( 18 )]
+position = Vector2( 9288, 2368 )
+
+[node name="ArcadeShooterSide5" parent="Navigation2D/YSort" instance=ExtResource( 17 )]
+position = Vector2( 9160, 3200 )
+
+[node name="ArcadeShooterSide6" parent="Navigation2D/YSort" instance=ExtResource( 17 )]
+position = Vector2( 8640, 3328 )
+
+[node name="ArcadeShooterSide7" parent="Navigation2D/YSort" instance=ExtResource( 17 )]
+position = Vector2( 9288, 2496 )
+
+[node name="ArcadeRacerSide6" parent="Navigation2D/YSort" instance=ExtResource( 18 )]
+position = Vector2( 9288, 2112 )
+
+[node name="ArcadeShooterSide9" parent="Navigation2D/YSort" instance=ExtResource( 17 )]
+position = Vector2( 9288, 2240 )
+
+[node name="ArcadeShooterSide8" parent="Navigation2D/YSort" instance=ExtResource( 17 )]
+position = Vector2( 8640, 3200 )
+
+[node name="ArcadeKillEmSide" parent="Navigation2D/YSort" instance=ExtResource( 19 )]
+position = Vector2( 9160, 3328 )
+
+[node name="ArcadeKillEmSide5" parent="Navigation2D/YSort" instance=ExtResource( 19 )]
+position = Vector2( 9288, 1984 )
+
+[node name="ArcadeKillEmSide6" parent="Navigation2D/YSort" instance=ExtResource( 19 )]
+position = Vector2( 9288, 1856 )
+
+[node name="ArcadeRacerSide7" parent="Navigation2D/YSort" instance=ExtResource( 18 )]
+position = Vector2( 10168, 3712 )
+scale = Vector2( -1, 1 )
+
+[node name="ArcadeShooterSide10" parent="Navigation2D/YSort" instance=ExtResource( 17 )]
+position = Vector2( 10168, 3840 )
+scale = Vector2( -1, 1 )
+
+[node name="ArcadeRacerSide8" parent="Navigation2D/YSort" instance=ExtResource( 18 )]
+position = Vector2( 10168, 3456 )
+scale = Vector2( -1, 1 )
+
+[node name="ArcadeShooterSide11" parent="Navigation2D/YSort" instance=ExtResource( 17 )]
+position = Vector2( 10168, 3584 )
+scale = Vector2( -1, 1 )
+
+[node name="ArcadeKillEmSide7" parent="Navigation2D/YSort" instance=ExtResource( 19 )]
+position = Vector2( 10168, 3328 )
+scale = Vector2( -1, 1 )
+
+[node name="ArcadeKillEmSide8" parent="Navigation2D/YSort" instance=ExtResource( 19 )]
+position = Vector2( 10168, 3200 )
+scale = Vector2( -1, 1 )
+
+[node name="ArcadeKillEmSide2" parent="Navigation2D/YSort" instance=ExtResource( 19 )]
+position = Vector2( 9024, 3200 )
+scale = Vector2( -1, 1 )
+
+[node name="ArcadeKillEmSide3" parent="Navigation2D/YSort" instance=ExtResource( 19 )]
+position = Vector2( 8504, 3200 )
+scale = Vector2( -1, 1 )
+
+[node name="ArcadeKillEmSide4" parent="Navigation2D/YSort" instance=ExtResource( 19 )]
+position = Vector2( 8504, 3072 )
+scale = Vector2( -1, 1 )
+
+[node name="BarCounter" type="StaticBody2D" parent="Navigation2D/YSort"]
+position = Vector2( 5120, 1304 )
+collision_layer = 32
+collision_mask = 6
+
+[node name="BarCounter" type="Sprite" parent="Navigation2D/YSort/BarCounter"]
+position = Vector2( 744, 20 )
+texture = ExtResource( 20 )
+offset = Vector2( -1000, 0 )
+
+[node name="BarCounter2" type="Sprite" parent="Navigation2D/YSort/BarCounter"]
+position = Vector2( 1000, 20 )
+texture = ExtResource( 20 )
+offset = Vector2( -1000, 0 )
+
+[node name="BarCounter3" type="Sprite" parent="Navigation2D/YSort/BarCounter"]
+position = Vector2( 1256, 20 )
+texture = ExtResource( 20 )
+offset = Vector2( -1000, 0 )
+
+[node name="BarCounterLeftCorner" type="Sprite" parent="Navigation2D/YSort/BarCounter"]
+position = Vector2( 488, 20 )
+texture = ExtResource( 22 )
+offset = Vector2( -1000, 0 )
+
+[node name="BarCounterRightCorner" type="Sprite" parent="Navigation2D/YSort/BarCounter"]
+position = Vector2( 1512, 20 )
+texture = ExtResource( 24 )
+offset = Vector2( -1000, 0 )
+
+[node name="BarCounterSide" type="Sprite" parent="Navigation2D/YSort/BarCounter"]
+position = Vector2( 528, -196 )
+texture = ExtResource( 23 )
+offset = Vector2( -1000, 0 )
+
+[node name="BarCounterSide2" type="Sprite" parent="Navigation2D/YSort/BarCounter"]
+position = Vector2( 1472, -196 )
+texture = ExtResource( 23 )
+offset = Vector2( -1000, 0 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Navigation2D/YSort/BarCounter"]
+position = Vector2( -1792, -3480 )
+polygon = PoolVector2Array( 1280, 3520, 2304, 3520, 2304, 3264, 2224, 3264, 2224, 3456, 1360, 3456, 1360, 3264, 1280, 3264, 1280, 3520 )
+
+[node name="CashRegister" type="Sprite" parent="Navigation2D/YSort/BarCounter"]
+position = Vector2( 124, -102 )
+texture = ExtResource( 21 )
+
+[node name="ArmChairSide" parent="Navigation2D/YSort" instance=ExtResource( 27 )]
+position = Vector2( 4672, 1640 )
+
+[node name="SmallTable14" parent="Navigation2D/YSort" instance=ExtResource( 13 )]
+position = Vector2( 4864, 1640 )
+rotation = 3.14159
+scale = Vector2( 1, -1 )
+
+[node name="ArmChairSide2" parent="Navigation2D/YSort" instance=ExtResource( 27 )]
+position = Vector2( 5056, 1640 )
+scale = Vector2( -1, 1 )
+
+[node name="ArmChairSide3" parent="Navigation2D/YSort" instance=ExtResource( 27 )]
+position = Vector2( 5184, 1640 )
+
+[node name="SmallTable15" parent="Navigation2D/YSort" instance=ExtResource( 13 )]
+position = Vector2( 5376, 1640 )
+rotation = 3.14159
+scale = Vector2( 1, -1 )
+
+[node name="ArmChairSide4" parent="Navigation2D/YSort" instance=ExtResource( 27 )]
+position = Vector2( 5568, 1640 )
+scale = Vector2( -1, 1 )
+
+[node name="ArmChairSide5" parent="Navigation2D/YSort" instance=ExtResource( 27 )]
+position = Vector2( 4672, 1960 )
+
+[node name="SmallTable16" parent="Navigation2D/YSort" instance=ExtResource( 13 )]
+position = Vector2( 4864, 1960 )
+rotation = 3.14159
+scale = Vector2( 1, -1 )
+
+[node name="ArmChairSide6" parent="Navigation2D/YSort" instance=ExtResource( 27 )]
+position = Vector2( 5056, 1960 )
+scale = Vector2( -1, 1 )
+
+[node name="ArmChairSide7" parent="Navigation2D/YSort" instance=ExtResource( 27 )]
+position = Vector2( 5184, 1960 )
+
+[node name="SmallTable17" parent="Navigation2D/YSort" instance=ExtResource( 13 )]
+position = Vector2( 5376, 1960 )
+rotation = 3.14159
+scale = Vector2( 1, -1 )
+
+[node name="ArmChairSide8" parent="Navigation2D/YSort" instance=ExtResource( 27 )]
+position = Vector2( 5568, 1960 )
+scale = Vector2( -1, 1 )
+
+[node name="ArmChairSide9" parent="Navigation2D/YSort" instance=ExtResource( 27 )]
+position = Vector2( 8319, 832 )
+
+[node name="SmallTable18" parent="Navigation2D/YSort" instance=ExtResource( 13 )]
+position = Vector2( 8511, 832 )
+rotation = 3.14159
+scale = Vector2( 1, -1 )
+
+[node name="ArmChairSide10" parent="Navigation2D/YSort" instance=ExtResource( 27 )]
+position = Vector2( 8703, 832 )
+scale = Vector2( -1, 1 )
+
+[node name="ArmChairSide11" parent="Navigation2D/YSort" instance=ExtResource( 27 )]
+position = Vector2( 8831, 832 )
+
+[node name="SmallTable19" parent="Navigation2D/YSort" instance=ExtResource( 13 )]
+position = Vector2( 9023, 832 )
+rotation = 3.14159
+scale = Vector2( 1, -1 )
+
+[node name="ArmChairSide12" parent="Navigation2D/YSort" instance=ExtResource( 27 )]
+position = Vector2( 9215, 832 )
+scale = Vector2( -1, 1 )
+
+[node name="ArmChairSide13" parent="Navigation2D/YSort" instance=ExtResource( 27 )]
+position = Vector2( 8319, 1152 )
+
+[node name="SmallTable20" parent="Navigation2D/YSort" instance=ExtResource( 13 )]
+position = Vector2( 8511, 1152 )
+rotation = 3.14159
+scale = Vector2( 1, -1 )
+
+[node name="ArmChairSide14" parent="Navigation2D/YSort" instance=ExtResource( 27 )]
+position = Vector2( 8703, 1152 )
+scale = Vector2( -1, 1 )
+
+[node name="ArmChairSide15" parent="Navigation2D/YSort" instance=ExtResource( 27 )]
+position = Vector2( 8831, 1152 )
+
+[node name="SmallTable21" parent="Navigation2D/YSort" instance=ExtResource( 13 )]
+position = Vector2( 9023, 1152 )
+rotation = 3.14159
+scale = Vector2( 1, -1 )
+
+[node name="ArmChairSide16" parent="Navigation2D/YSort" instance=ExtResource( 27 )]
+position = Vector2( 9215, 1152 )
+scale = Vector2( -1, 1 )
+
+[node name="Light" parent="." instance=ExtResource( 8 )]
+visible = false
+position = Vector2( 1248, 1392 )
+
+[node name="Light2" parent="." instance=ExtResource( 8 )]
+visible = false
+position = Vector2( 1248, 2352 )
+
+[node name="Walls" type="TileMap" parent="."]
+light_mask = 2
+tile_set = SubResource( 59 )
+cell_size = Vector2( 256, 256 )
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( -2, 9, 0, -1, 9, 0, -65536, 9, 0, -65535, 9, 0, -65534, 9, 0, -65533, 9, 0, -65532, 9, 0, -65531, 9, 0, -65530, 9, 0, -65529, 9, 0, -65528, 9, 0, -65527, 9, 0, -65526, 9, 0, -65525, 9, 0, -65524, 9, 0, -65523, 9, 0, -65522, 9, 0, -65521, 9, 0, -65520, 9, 0, -65519, 9, 0, -65518, 9, 0, -65517, 9, 0, -65516, 9, 0, -65515, 9, 0, -65514, 9, 0, -65513, 9, 0, -65512, 9, 0, -65511, 9, 0, -65510, 9, 0, -65509, 9, 0, -65508, 9, 0, -65507, 9, 0, -65506, 9, 0, -65505, 9, 0, -65504, 9, 0, -65503, 9, 0, -65502, 9, 0, -65501, 9, 0, -65500, 9, 0, -65499, 9, 0, -65498, 9, 0, -65497, 9, 0, -65496, 9, 0, -65495, 9, 0, -65494, 9, 0, -65493, 9, 0, -65492, 9, 0, -65491, 9, 0, -65490, 9, 0, -65489, 9, 0, -65488, 9, 0, 65534, 9, 0, 65535, 9, 0, 0, 9, 0, 1, 9, 0, 2, 9, 0, 3, 9, 0, 4, 9, 0, 5, 9, 0, 6, 9, 0, 7, 9, 0, 8, 9, 0, 9, 9, 0, 10, 9, 0, 11, 9, 0, 12, 9, 0, 13, 9, 0, 14, 9, 0, 15, 9, 0, 16, 9, 0, 17, 9, 0, 18, 9, 0, 19, 9, 0, 20, 9, 0, 21, 9, 0, 22, 9, 0, 23, 9, 0, 24, 9, 0, 25, 9, 0, 26, 9, 0, 27, 9, 0, 28, 9, 0, 29, 9, 0, 30, 9, 0, 31, 9, 0, 32, 9, 0, 33, 9, 0, 34, 9, 0, 35, 9, 0, 36, 9, 0, 37, 9, 0, 38, 9, 0, 39, 9, 0, 40, 9, 0, 41, 9, 0, 42, 9, 0, 43, 9, 0, 44, 9, 0, 45, 9, 0, 46, 9, 0, 47, 9, 0, 48, 9, 0, 131070, 9, 0, 131071, 9, 0, 65536, 0, 0, 65555, 3, 0, 65556, 0, 0, 65582, 3, 0, 65583, 9, 0, 65584, 9, 0, 196606, 9, 0, 196607, 9, 0, 131072, 1, 0, 131118, 4, 0, 131119, 9, 0, 131120, 9, 0, 262142, 9, 0, 262143, 9, 0, 196608, 1, 0, 196654, 4, 0, 196655, 9, 0, 196656, 9, 0, 327678, 9, 0, 327679, 9, 0, 262144, 1, 0, 262190, 4, 0, 262191, 9, 0, 262192, 9, 0, 393214, 9, 0, 393215, 9, 0, 327680, 1, 0, 327726, 4, 0, 327727, 9, 0, 327728, 9, 0, 458750, 9, 0, 458751, 9, 0, 393216, 1, 0, 393227, 7, 0, 393228, 6, 0, 393229, 6, 0, 393230, 6, 0, 393231, 8, 0, 393241, 7, 0, 393242, 6, 0, 393243, 6, 0, 393244, 6, 0, 393245, 6, 0, 393246, 6, 0, 393247, 6, 0, 393248, 6, 0, 393249, 6, 0, 393250, 6, 0, 393251, 8, 0, 393262, 4, 0, 393263, 9, 0, 393264, 9, 0, 524286, 9, 0, 524287, 9, 0, 458752, 1, 0, 458763, 4, 0, 458764, 9, 0, 458765, 9, 0, 458766, 9, 0, 458767, 1, 0, 458777, 4, 0, 458778, 9, 0, 458779, 9, 0, 458780, 9, 0, 458781, 9, 0, 458782, 9, 0, 458783, 9, 0, 458784, 9, 0, 458785, 9, 0, 458786, 9, 0, 458787, 1, 0, 458798, 4, 0, 458799, 9, 0, 458800, 9, 0, 589822, 9, 0, 589823, 9, 0, 524288, 1, 0, 524299, 4, 0, 524300, 9, 0, 524301, 9, 0, 524302, 9, 0, 524303, 1, 0, 524308, 7, 0, 524309, 6, 0, 524310, 6, 0, 524311, 6, 0, 524312, 6, 0, 524313, 5, 0, 524314, 9, 0, 524315, 9, 0, 524316, 9, 0, 524317, 9, 0, 524318, 9, 0, 524319, 0, 0, 524328, 7, 0, 524329, 6, 0, 524330, 6, 0, 524331, 6, 0, 524332, 6, 0, 524333, 6, 0, 524334, 5, 0, 524335, 9, 0, 524336, 9, 0, 655358, 9, 0, 655359, 9, 0, 589824, 1, 0, 589835, 4, 0, 589836, 9, 0, 589837, 9, 0, 589838, 9, 0, 589839, 1, 0, 589844, 4, 0, 589845, 9, 0, 589846, 9, 0, 589847, 9, 0, 589848, 9, 0, 589849, 9, 0, 589850, 9, 0, 589851, 9, 0, 589852, 9, 0, 589853, 9, 0, 589854, 9, 0, 589855, 1, 0, 589864, 4, 0, 589865, 9, 0, 589866, 9, 0, 589867, 9, 0, 589868, 9, 0, 589869, 9, 0, 589870, 9, 0, 589871, 9, 0, 589872, 9, 0, 720894, 9, 0, 720895, 9, 0, 655360, 1, 0, 655371, 4, 0, 655372, 9, 0, 655373, 9, 0, 655374, 9, 0, 655375, 1, 0, 655385, 3, 0, 655386, 9, 0, 655387, 9, 0, 655388, 9, 0, 655389, 9, 0, 655390, 9, 0, 655391, 1, 0, 655400, 4, 0, 655401, 9, 0, 655402, 9, 0, 655403, 9, 0, 655404, 9, 0, 655405, 9, 0, 655406, 9, 0, 655407, 9, 0, 655408, 9, 0, 786430, 9, 0, 786431, 9, 0, 720896, 2, 0, 720897, 6, 0, 720898, 6, 0, 720899, 6, 0, 720900, 6, 0, 720901, 6, 0, 720902, 8, 0, 720907, 4, 0, 720908, 9, 0, 720909, 9, 0, 720910, 9, 0, 720911, 1, 0, 720936, 4, 0, 720937, 9, 0, 720938, 9, 0, 720939, 9, 0, 720940, 9, 0, 720941, 9, 0, 720942, 9, 0, 720943, 9, 0, 720944, 9, 0, 851966, 9, 0, 851967, 9, 0, 786432, 9, 0, 786433, 9, 0, 786434, 9, 0, 786435, 9, 0, 786436, 9, 0, 786437, 9, 0, 786438, 1, 0, 786472, 4, 0, 786473, 9, 0, 786474, 9, 0, 786475, 9, 0, 786476, 9, 0, 786477, 9, 0, 786478, 9, 0, 786479, 9, 0, 786480, 9, 0, 917502, 9, 0, 917503, 9, 0, 851968, 9, 0, 851969, 9, 0, 851970, 9, 0, 851971, 9, 0, 851972, 9, 0, 851973, 9, 0, 851974, 1, 0, 852008, 4, 0, 852009, 9, 0, 852010, 9, 0, 852011, 9, 0, 852012, 9, 0, 852013, 9, 0, 852014, 9, 0, 852015, 9, 0, 852016, 9, 0, 983038, 9, 0, 983039, 9, 0, 917504, 9, 0, 917505, 9, 0, 917506, 9, 0, 917507, 9, 0, 917508, 9, 0, 917509, 9, 0, 917510, 1, 0, 917544, 4, 0, 917545, 9, 0, 917546, 9, 0, 917547, 9, 0, 917548, 9, 0, 917549, 9, 0, 917550, 9, 0, 917551, 9, 0, 917552, 9, 0, 1048574, 9, 0, 1048575, 9, 0, 983040, 9, 0, 983041, 9, 0, 983042, 9, 0, 983043, 9, 0, 983044, 9, 0, 983045, 9, 0, 983046, 1, 0, 983080, 4, 0, 983081, 9, 0, 983082, 9, 0, 983083, 9, 0, 983084, 9, 0, 983085, 9, 0, 983086, 9, 0, 983087, 9, 0, 983088, 9, 0, 1114110, 9, 0, 1114111, 9, 0, 1048576, 9, 0, 1048577, 9, 0, 1048578, 9, 0, 1048579, 9, 0, 1048580, 9, 0, 1048581, 9, 0, 1048582, 1, 0, 1048601, 7, 0, 1048602, 6, 0, 1048603, 6, 0, 1048604, 6, 0, 1048605, 6, 0, 1048606, 6, 0, 1048607, 6, 0, 1048608, 6, 0, 1048609, 6, 0, 1048610, 6, 0, 1048611, 6, 0, 1048612, 6, 0, 1048613, 6, 0, 1048614, 6, 0, 1048615, 6, 0, 1048616, 5, 0, 1048617, 9, 0, 1048618, 9, 0, 1048619, 9, 0, 1048620, 9, 0, 1048621, 9, 0, 1048622, 9, 0, 1048623, 9, 0, 1048624, 9, 0, 1179646, 9, 0, 1179647, 9, 0, 1114112, 9, 0, 1114113, 9, 0, 1114114, 9, 0, 1114115, 9, 0, 1114116, 9, 0, 1114117, 9, 0, 1114118, 1, 0, 1114128, 7, 0, 1114129, 6, 0, 1114130, 6, 0, 1114131, 6, 0, 1114132, 6, 0, 1114133, 6, 0, 1114134, 6, 0, 1114135, 6, 0, 1114136, 6, 0, 1114137, 5, 0, 1114138, 9, 0, 1114139, 9, 0, 1114140, 9, 0, 1114141, 9, 0, 1114142, 9, 0, 1114143, 9, 0, 1114144, 9, 0, 1114145, 9, 0, 1114146, 9, 0, 1114147, 9, 0, 1114148, 9, 0, 1114149, 9, 0, 1114150, 9, 0, 1114151, 9, 0, 1114152, 9, 0, 1114153, 9, 0, 1114154, 9, 0, 1114155, 9, 0, 1114156, 9, 0, 1114157, 9, 0, 1114158, 9, 0, 1114159, 9, 0, 1114160, 9, 0, 1245182, 9, 0, 1245183, 9, 0, 1179648, 9, 0, 1179649, 9, 0, 1179650, 9, 0, 1179651, 9, 0, 1179652, 9, 0, 1179653, 9, 0, 1179654, 1, 0, 1179664, 4, 0, 1179665, 9, 0, 1179666, 9, 0, 1179667, 9, 0, 1179668, 9, 0, 1179669, 9, 0, 1179670, 9, 0, 1179671, 9, 0, 1179672, 9, 0, 1179673, 9, 0, 1179674, 9, 0, 1179675, 9, 0, 1179676, 9, 0, 1179677, 9, 0, 1179678, 9, 0, 1179679, 9, 0, 1179680, 9, 0, 1179681, 9, 0, 1179682, 9, 0, 1179683, 9, 0, 1179684, 9, 0, 1179685, 9, 0, 1179686, 9, 0, 1179687, 9, 0, 1179688, 9, 0, 1179689, 9, 0, 1179690, 9, 0, 1179691, 9, 0, 1179692, 9, 0, 1179693, 9, 0, 1179694, 9, 0, 1179695, 9, 0, 1179696, 9, 0, 1310718, 9, 0, 1310719, 9, 0, 1245184, 9, 0, 1245185, 9, 0, 1245186, 9, 0, 1245187, 9, 0, 1245188, 9, 0, 1245189, 9, 0, 1245190, 1, 0, 1245200, 4, 0, 1245201, 9, 0, 1245202, 9, 0, 1245203, 9, 0, 1245204, 9, 0, 1245205, 9, 0, 1245206, 9, 0, 1245207, 9, 0, 1245208, 9, 0, 1245209, 9, 0, 1245210, 9, 0, 1245211, 9, 0, 1245212, 9, 0, 1245213, 9, 0, 1245214, 9, 0, 1245215, 9, 0, 1245216, 9, 0, 1245217, 9, 0, 1245218, 9, 0, 1245219, 9, 0, 1245220, 9, 0, 1245221, 9, 0, 1245222, 9, 0, 1245223, 9, 0, 1245224, 9, 0, 1245225, 9, 0, 1245226, 9, 0, 1245227, 9, 0, 1245228, 9, 0, 1245229, 9, 0, 1245230, 9, 0, 1245231, 9, 0, 1245232, 9, 0, 1376254, 9, 0, 1376255, 9, 0, 1310720, 9, 0, 1310721, 9, 0, 1310722, 9, 0, 1310723, 9, 0, 1310724, 9, 0, 1310725, 9, 0, 1310726, 1, 0, 1310732, 7, 0, 1310733, 6, 0, 1310734, 6, 0, 1310735, 6, 0, 1310736, 5, 0, 1310737, 9, 0, 1310738, 9, 0, 1310739, 9, 0, 1310740, 9, 0, 1310741, 9, 0, 1310742, 9, 0, 1310743, 9, 0, 1310744, 9, 0, 1310745, 9, 0, 1310746, 9, 0, 1310747, 9, 0, 1310748, 9, 0, 1310749, 9, 0, 1310750, 9, 0, 1310751, 9, 0, 1310752, 9, 0, 1310753, 9, 0, 1310754, 9, 0, 1310755, 9, 0, 1310756, 9, 0, 1310757, 9, 0, 1310758, 9, 0, 1310759, 9, 0, 1310760, 9, 0, 1310761, 9, 0, 1310762, 9, 0, 1310763, 9, 0, 1310764, 9, 0, 1310765, 9, 0, 1310766, 9, 0, 1310767, 9, 0, 1310768, 9, 0, 1441790, 9, 0, 1441791, 9, 0, 1376256, 9, 0, 1376257, 9, 0, 1376258, 9, 0, 1376259, 9, 0, 1376260, 9, 0, 1376261, 9, 0, 1376262, 1, 0, 1376268, 4, 0, 1376269, 9, 0, 1376270, 9, 0, 1376271, 9, 0, 1376272, 9, 0, 1376273, 9, 0, 1376274, 9, 0, 1376275, 9, 0, 1376276, 9, 0, 1376277, 9, 0, 1376278, 9, 0, 1376279, 9, 0, 1376280, 9, 0, 1376281, 9, 0, 1376282, 9, 0, 1376283, 9, 0, 1376284, 9, 0, 1376285, 9, 0, 1376286, 9, 0, 1376287, 9, 0, 1376288, 9, 0, 1376289, 9, 0, 1376290, 9, 0, 1376291, 9, 0, 1376292, 9, 0, 1376293, 9, 0, 1376294, 9, 0, 1376295, 9, 0, 1376296, 9, 0, 1376297, 9, 0, 1376298, 9, 0, 1376299, 9, 0, 1376300, 9, 0, 1376301, 9, 0, 1376302, 9, 0, 1376303, 9, 0, 1376304, 9, 0, 1507326, 9, 0, 1507327, 9, 0, 1441792, 9, 0, 1441793, 9, 0, 1441794, 9, 0, 1441795, 9, 0, 1441796, 9, 0, 1441797, 9, 0, 1441798, 1, 0, 1441804, 4, 0, 1441805, 9, 0, 1441806, 9, 0, 1441807, 9, 0, 1441808, 9, 0, 1441809, 9, 0, 1441810, 9, 0, 1441811, 9, 0, 1441812, 9, 0, 1441813, 9, 0, 1441814, 9, 0, 1441815, 9, 0, 1441816, 9, 0, 1441817, 9, 0, 1441818, 9, 0, 1441819, 9, 0, 1441820, 9, 0, 1441821, 9, 0, 1441822, 9, 0, 1441823, 9, 0, 1441824, 9, 0, 1441825, 9, 0, 1441826, 9, 0, 1441827, 9, 0, 1441828, 9, 0, 1441829, 9, 0, 1441830, 9, 0, 1441831, 9, 0, 1441832, 9, 0, 1441833, 9, 0, 1441834, 9, 0, 1441835, 9, 0, 1441836, 9, 0, 1441837, 9, 0, 1441838, 9, 0, 1441839, 9, 0, 1441840, 9, 0, 1572862, 9, 0, 1572863, 9, 0, 1507328, 9, 0, 1507329, 9, 0, 1507330, 9, 0, 1507331, 9, 0, 1507332, 9, 0, 1507333, 9, 0, 1507334, 2, 0, 1507335, 6, 0, 1507336, 6, 0, 1507337, 6, 0, 1507338, 6, 0, 1507339, 6, 0, 1507340, 5, 0, 1507341, 9, 0, 1507342, 9, 0, 1507343, 9, 0, 1507344, 9, 0, 1507345, 9, 0, 1507346, 9, 0, 1507347, 9, 0, 1507348, 9, 0, 1507349, 9, 0, 1507350, 9, 0, 1507351, 9, 0, 1507352, 9, 0, 1507353, 9, 0, 1507354, 9, 0, 1507355, 9, 0, 1507356, 9, 0, 1507357, 9, 0, 1507358, 9, 0, 1507359, 9, 0, 1507360, 9, 0, 1507361, 9, 0, 1507362, 9, 0, 1507363, 9, 0, 1507364, 9, 0, 1507365, 9, 0, 1507366, 9, 0, 1507367, 9, 0, 1507368, 9, 0, 1507369, 9, 0, 1507370, 9, 0, 1507371, 9, 0, 1507372, 9, 0, 1507373, 9, 0, 1507374, 9, 0, 1507375, 9, 0, 1507376, 9, 0, 1638398, 9, 0, 1638399, 9, 0, 1572864, 9, 0, 1572865, 9, 0, 1572866, 9, 0, 1572867, 9, 0, 1572868, 9, 0, 1572869, 9, 0, 1572870, 9, 0, 1572871, 9, 0, 1572872, 9, 0, 1572873, 9, 0, 1572874, 9, 0, 1572875, 9, 0, 1572876, 9, 0, 1572877, 9, 0, 1572878, 9, 0, 1572879, 9, 0, 1572880, 9, 0, 1572881, 9, 0, 1572882, 9, 0, 1572883, 9, 0, 1572884, 9, 0, 1572885, 9, 0, 1572886, 9, 0, 1572887, 9, 0, 1572888, 9, 0, 1572889, 9, 0, 1572890, 9, 0, 1572891, 9, 0, 1572892, 9, 0, 1572893, 9, 0, 1572894, 9, 0, 1572895, 9, 0, 1572896, 9, 0, 1572897, 9, 0, 1572898, 9, 0, 1572899, 9, 0, 1572900, 9, 0, 1572901, 9, 0, 1572902, 9, 0, 1572903, 9, 0, 1572904, 9, 0, 1572905, 9, 0, 1572906, 9, 0, 1572907, 9, 0, 1572908, 9, 0, 1572909, 9, 0, 1572910, 9, 0, 1572911, 9, 0, 1572912, 9, 0, 1703934, 9, 0, 1703935, 9, 0, 1638400, 9, 0, 1638401, 9, 0, 1638402, 9, 0, 1638403, 9, 0, 1638404, 9, 0, 1638405, 9, 0, 1638406, 9, 0, 1638407, 9, 0, 1638408, 9, 0, 1638409, 9, 0, 1638410, 9, 0, 1638411, 9, 0, 1638412, 9, 0, 1638413, 9, 0, 1638414, 9, 0, 1638415, 9, 0, 1638416, 9, 0, 1638417, 9, 0, 1638418, 9, 0, 1638419, 9, 0, 1638420, 9, 0, 1638421, 9, 0, 1638422, 9, 0, 1638423, 9, 0, 1638424, 9, 0, 1638425, 9, 0, 1638426, 9, 0, 1638427, 9, 0, 1638428, 9, 0, 1638429, 9, 0, 1638430, 9, 0, 1638431, 9, 0, 1638432, 9, 0, 1638433, 9, 0, 1638434, 9, 0, 1638435, 9, 0, 1638436, 9, 0, 1638437, 9, 0, 1638438, 9, 0, 1638439, 9, 0, 1638440, 9, 0, 1638441, 9, 0, 1638442, 9, 0, 1638443, 9, 0, 1638444, 9, 0, 1638445, 9, 0, 1638446, 9, 0, 1638447, 9, 0, 1638448, 9, 0 )
