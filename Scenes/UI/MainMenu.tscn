@@ -154,17 +154,16 @@ __meta__ = {
 }
 
 [node name="Title" type="Label" parent="VBoxContainer"]
-margin_top = 32.0
 margin_right = 423.0
-margin_bottom = 152.0
+margin_bottom = 120.0
 theme = SubResource( 11 )
 text = "borlair"
 align = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
-margin_top = 167.0
+margin_top = 135.0
 margin_right = 423.0
-margin_bottom = 347.0
+margin_bottom = 380.0
 custom_constants/separation = 15
 alignment = 1
 
@@ -174,17 +173,24 @@ margin_bottom = 50.0
 theme = SubResource( 12 )
 text = "Continue"
 
-[node name="Settings" type="Button" parent="VBoxContainer/VBoxContainer"]
+[node name="ChallengeRun" type="Button" parent="VBoxContainer/VBoxContainer"]
 margin_top = 65.0
 margin_right = 423.0
 margin_bottom = 115.0
 theme = SubResource( 12 )
-text = "Setting"
+text = "challenge run"
 
-[node name="QuitToDesktop" type="Button" parent="VBoxContainer/VBoxContainer"]
+[node name="Settings" type="Button" parent="VBoxContainer/VBoxContainer"]
 margin_top = 130.0
 margin_right = 423.0
 margin_bottom = 180.0
+theme = SubResource( 12 )
+text = "Setting"
+
+[node name="QuitToDesktop" type="Button" parent="VBoxContainer/VBoxContainer"]
+margin_top = 195.0
+margin_right = 423.0
+margin_bottom = 245.0
 theme = SubResource( 12 )
 text = "Quit to desktop"
 
@@ -214,5 +220,6 @@ text = "BETA_1.0"
 valign = 1
 
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/ContinueGame" to="." method="_on_ContinueGame_pressed"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/ChallengeRun" to="." method="_on_ChallengeRun_pressed"]
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/Settings" to="." method="_on_Settings_pressed"]
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/QuitToDesktop" to="." method="_on_QuitToDesktop_pressed"]
