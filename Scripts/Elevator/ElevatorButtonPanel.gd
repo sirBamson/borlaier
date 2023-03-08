@@ -80,6 +80,5 @@ func _on_ElevatorPanel_area_exited(area: Area2D) -> void:
 
 func _on_WaitTimer_timeout() -> void:
 	add_child(Dialogic.start("ElevatorFloorNumber"))
-	get_parent().get_node("Ding").play()
 	EnvVar.elevator_moving = false
 	is_new_level = false
