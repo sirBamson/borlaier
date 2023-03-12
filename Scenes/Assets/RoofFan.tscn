@@ -24,9 +24,12 @@ animations = [ {
 extents = Vector2( 128, 72 )
 
 [node name="RoofFan" type="StaticBody2D"]
+collision_layer = 4096
+collision_mask = 0
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 3 )
+frame = 1
 playing = true
 offset = Vector2( 0, -125 )
 
