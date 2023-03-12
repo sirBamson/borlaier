@@ -1335,9 +1335,10 @@ format = 1
 tile_data = PoolIntArray( -8, 17, 0, -7, 14, 0, -6, 14, 0, -5, 14, 0, -4, 14, 0, -3, 18, 0, -65535, 17, 0, -65534, 14, 0, -65533, 14, 0, -65532, 14, 0, -65531, 14, 0, -65530, 14, 0, -65529, 14, 0, -65528, 14, 0, -65527, 18, 0, 65526, 17, 0, 65527, 14, 0, 65528, 16, 0, 65533, 15, 0, 65534, 14, 0, 65535, 14, 0, 0, 14, 0, 1, 16, 0, 65545, 15, 0, 65546, 14, 0, 65547, 14, 0, 65548, 18, 0 )
 
 [node name="ElevatorDoor" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1920, 36 )
+position = Vector2( 1920, -16 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ElevatorDoor"]
+position = Vector2( 0, 40 )
 shape = SubResource( 110 )
 
 [node name="Navigation2D" type="Navigation2D" parent="."]
@@ -1355,7 +1356,7 @@ spawn_interval = 5
 max_enemy_amount = 10
 
 [node name="Player" parent="Navigation2D/YSort" instance=ExtResource( 13 )]
-position = Vector2( 1920, 296 )
+position = Vector2( 1920, 344 )
 
 [node name="God" parent="Navigation2D/YSort" instance=ExtResource( 17 )]
 position = Vector2( 968, -256 )
