@@ -35,6 +35,10 @@ func _physics_process(_delta: float) -> void:
 	if auto:
 		can_fire_auto = true
 	
+	"""
+	Om spelaren trycker ned ladda-omknappen och det finns utrymme i magasinet för fler kulor 
+	samt att reservamunitionen är mer än 0. Laddar då om vapnet.
+	"""
 	
 	if Input.is_action_just_pressed("reload") and bullets_in_mag < magazine_size and PlayerGlobals.bullets_left > 0 and can_fire:
 		
@@ -45,6 +49,11 @@ func _physics_process(_delta: float) -> void:
 		yield(get_tree().create_timer(1.5),"timeout")
 		can_fire = true
 	
+	"""
+	Om spelaren trycker ned skjutknappen så kollas det om det finns amunition och om spelare kan skjuta.
+	Skapar kulor utifrån vad skjuthastigheten på det nuvarande vapnet som spelaren håller i är satt till. 
+	Skapar samt skjutljud. Ger kulorna en riktning mot musen.
+	"""
 	
 	if Input.is_action_pressed("fire") and can_fire and can_fire_auto and bullets_in_mag > 0 and not PlayerGlobals.talking:
 		can_fire_auto = false
@@ -79,7 +88,9 @@ func _physics_process(_delta: float) -> void:
 	
 	PlayerGlobals.bullets_in_mag = bullets_in_mag
 
-
+"""
+När vapnet laddas om förs möjliga kulor över från extraamunitionen till vapnets magasin.
+"""
 
 func reload_gun() -> void:
 	for _i in range(magazine_size): 

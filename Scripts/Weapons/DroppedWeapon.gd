@@ -16,6 +16,9 @@ export var weapon_type: String = player_current_weapon
 
 export var bullets_in_mag: int 
 
+"""
+Aktiverar interaktionsarean till valt vapen.
+"""
 
 func _ready() -> void:
 	var weapon: CollisionShape2D = weapons[weapon_type]

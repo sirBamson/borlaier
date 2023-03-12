@@ -22,6 +22,9 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_released("fire"):
 		can_fire_auto = true
 
+"""
+Samma princip som vapenscriptet men har fler bullet_spawn's och en animation som spelas när den skjuter.
+"""
 
 func _physics_process(_delta: float) -> void:
 	look_at(get_global_mouse_position())
