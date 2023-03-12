@@ -1353,7 +1353,6 @@ enemy_path = "res://Scenes/Entities/Chipling.tscn"
 enemy_name = "Chipling"
 spawn_interval = 5
 max_enemy_amount = 10
-active = true
 
 [node name="Player" parent="Navigation2D/YSort" instance=ExtResource( 13 )]
 position = Vector2( 1920, 296 )

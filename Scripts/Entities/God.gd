@@ -5,7 +5,7 @@ var velocity: int = 0
 var health: int = 1000
 
 var player: KinematicBody2D
-var spawner1: Position2D = get_parent().get_node("EnemySpawner")
+onready var spawner1: Position2D = get_parent().get_node("EnemySpawner")
 
 var target_x_position: int
 
