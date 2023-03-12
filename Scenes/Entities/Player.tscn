@@ -264,7 +264,7 @@ polygon = PoolVector2Array( 36.3636, 0, 36.3636, -14.5455, 29.0909, -58.1818, 29
 [node name="Player" type="KinematicBody2D" groups=["Player"]]
 scale = Vector2( 1.1, 1.1 )
 collision_layer = 2
-collision_mask = 549
+collision_mask = 4645
 script = ExtResource( 2 )
 
 [node name="Overlay" parent="." instance=ExtResource( 7 )]
@@ -281,7 +281,7 @@ shape = SubResource( 56 )
 
 [node name="PlayerHitbox" type="Area2D" parent="."]
 collision_layer = 2
-collision_mask = 3324
+collision_mask = 7420
 
 [node name="HitboxShape" type="CollisionShape2D" parent="PlayerHitbox"]
 position = Vector2( 0, -109.6 )
