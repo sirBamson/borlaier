@@ -64,8 +64,12 @@ margin_top = 208.0
 margin_right = 178.0
 margin_bottom = 238.0
 theme = SubResource( 53 )
-max_value = 1000.0
+max_value = 2000.0
 value = 100.0
 percent_visible = false
 
+[node name="AttackTimer" type="Timer" parent="."]
+wait_time = 2.0
+
 [connection signal="body_entered" from="." to="." method="_on_God_body_entered"]
+[connection signal="timeout" from="AttackTimer" to="." method="_on_AttackTimer_timeout"]

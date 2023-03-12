@@ -1,4 +1,7 @@
 extends Control
+"""
+Används ej nu
+"""
 
 var bubble_text = "I wouldn't step closer if I were you"
 var bubble_text_length = 0
@@ -16,7 +19,7 @@ func _ready() -> void:
 
 
 func _on_Timer_timeout() -> void:
-	if ! close:
+	if !close:
 		current_text += bubble_text[bubble_text_index]
 		$VBoxContainer/Label.text = current_text
 		

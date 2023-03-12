@@ -19,7 +19,7 @@ func _ready() -> void:
 	noise.octaves = 3
 
 
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	if is_shaking:
 		for node in shake_nodes.keys():
 			node.offset.x = shake_amount * noise.get_noise_2d(noise.seed, noise_y)

@@ -5,6 +5,10 @@ var color: String = "Red"
 onready var animated_sprite: AnimatedSprite = $AnimatedSprite
 
 
+"""
+Sätter rätt färg på död Chipling och startar livs timer på ca 2min
+"""
+
 func _ready() -> void:
 	randomize()
 	animated_sprite.play(color)

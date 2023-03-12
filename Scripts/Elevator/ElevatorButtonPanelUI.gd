@@ -1,5 +1,10 @@
 extends CanvasLayer
 
+"""
+Alla funktioner sätter vilken knapp som pressas.
+Används av knappanelen.
+"""
+
 
 func _ready() -> void:
 	$UI/Floor.text = "Floor: " + str(EnvVar.elevator_current_level_number)

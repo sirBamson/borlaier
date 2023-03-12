@@ -1,11 +1,20 @@
 extends Node2D
 
 
+"""
+Sätter alla pilar till false och ska sätta rätt number på index panelen i hissen.
+"""
+
 func _ready() -> void:
 	$AnimatedSprite.frame = (EnvVar.elevator_current_level_number * 11)
 	$ArrowDown.visible = false
 	$ArrowUp.visible = false
 
+
+"""
+Beroende på om hissen körs upp eller ner så sätts pilen i hissen till olika håll.
+Sätter även vilket number som ska visas av AnimatedSprite.
+"""
 
 func _physics_process(_delta: float) -> void:
 	

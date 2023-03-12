@@ -13,6 +13,28 @@ var is_new_level: bool = false
 var can_access_new_level: bool = false
 
 
+"""
+Huvudfunktionen för hissknapparna
+
+Kollar först att spelaren är vid knapparna och om "interaction" pressas.
+Kollar även så att panelen inte är aktiv och att spelet inte är pausat eller att
+hissen rör sig.
+Panelen är ett sorts pop-up fönster och inte ny scene.
+Funktionen används även för att stänga panelen.
+
+När panelen stängs kollas det om våningsnummret som är pressat existerar.
+Efter det kollas det så att hissen inte redan är på samma våning.
+Ifall allt är ok sätts den nya vånigen samt att hiss dialogen startar.
+
+Om hissen inte kan ta sig till den nya vånigen på grund av att spelaren inte
+besitter rätt tillstånd så körs en annan dialog som förklarar detta.
+
+En "EnvVar.elevator_moving" sätt också beroende på om hissen rör sig eller inte,
+detta för att låsa dörarna.
+
+"""
+
+
 func _physics_process(_delta: float) -> void:
 	if in_interaction_area:
 		
@@ -66,7 +88,9 @@ func _physics_process(_delta: float) -> void:
 					EnvVar.elevator_moving = true
 
 
-
+"""
+Simpel snignal funktion
+"""
 
 
 func _on_ElevatorPanel_area_entered(area: Area2D) -> void:
@@ -77,6 +101,11 @@ func _on_ElevatorPanel_area_exited(area: Area2D) -> void:
 	if area.name == "PlayerHitbox":
 		in_interaction_area = false
 
+
+"""
+En timer funktion som körs då hissen rör sig. Timer sätts beroende på hur långt 
+hissen färdas.
+"""
 
 func _on_WaitTimer_timeout() -> void:
 	add_child(Dialogic.start("ElevatorFloorNumber"))
