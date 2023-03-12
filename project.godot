@@ -247,6 +247,7 @@ interaction={
 2d_physics/layer_10="Walls2"
 2d_physics/layer_11="Lightning"
 2d_physics/layer_12="BulletMan"
+2d_physics/layer_14="God"
 
 [physics]
 
