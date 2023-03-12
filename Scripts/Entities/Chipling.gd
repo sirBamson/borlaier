@@ -36,15 +36,20 @@ func _ready() -> void:
 	match color:
 		"Red":
 			health = 25
+			$HealthBar.max_value = 25
 		"Blue":
 			health = 50
+			$HealthBar.max_value = 50
 		"Green":
 			health = 75
+			$HealthBar.max_value = 75
 		"Black":
 			health = 100
+			$HealthBar.max_value = 100
 
 
 func _physics_process(delta: float) -> void:
+	$HealthBar.value = health
 	if health <= 0:
 		if !one_shot:
 			one_shot = true

@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 export var enemy_type: String
 export var speed: int = 400
-export var healt: int = 250
+export var health: int = 250
 
 onready var player: KinematicBody2D = get_parent().get_node("Player")
 
@@ -20,7 +20,8 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	if healt <= 0 and !is_dead:
+	$AnimatedSprite/HealthBar.value = health
+	if health <= 0 and !is_dead:
 		is_dead = true
 		var ammo_pouch_instance: Area2D = ammo_pouch.instance()
 		ammo_pouch_instance.global_position = global_position
@@ -69,12 +70,12 @@ func _on_DetectionArea_area_entered(area: Area2D) -> void:
 		$AnimatedSprite.play("explosion")
 	
 	if area.get_parent().is_in_group("Grenade"):
-		healt -= area.get_parent().damage_output
+		health -= area.get_parent().damage_output
 
 
 func _on_DetectionArea_body_entered(body: Node) -> void:
 	if body.is_in_group("Bullet"):
-		healt -= body.damage_output
+		health -= body.damage_output
 		body.queue_free()
 
 
