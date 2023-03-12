@@ -1,0 +1,29 @@
+{
+	"events": [
+		{
+			"event_id": "dialogic_024",
+			"set_theme": "theme-1678573138.cfg"
+		},
+		{
+			"character": "character-1678572531.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Well, well, so you've made it to the top. [nw = v]\nYou've gambled your life just for it to end here. \nI am the one who looked at you in this casino to punish your sins. \nAs you are one of the most notorious gamblers this universe has seen, I can no longer allow you to continue. \nThe truth is, me, my child and the holy spirit have been running all the world's casinos. \nYou know it's quite expensive to keep heaven up and running.\nBut now that you know this, I can not allow you to leave. \nYour journey ends now!"
+		},
+		{
+			"call_node": {
+				"arguments": [
+
+				],
+				"method_name": "dialog_done",
+				"target_node_path": "./SceneController/Level3/Navigation2D/YSort/God"
+			},
+			"event_id": "dialogic_042"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.5",
+		"file": "timeline-1678572521.json",
+		"name": "God"
+	}
+}

@@ -1,0 +1,21 @@
+{
+	"color": "#ffebb245",
+	"description": "",
+	"display_name": "God",
+	"display_name_bool": true,
+	"id": "character-1678572531.json",
+	"mirror_portraits": false,
+	"name": "God",
+	"nickname": "",
+	"nickname_bool": false,
+	"offset_x": 0,
+	"offset_y": 0,
+	"portraits": [
+		{
+			"name": "Default",
+			"path": ""
+		}
+	],
+	"scale": 100,
+	"theme": ""
+}
