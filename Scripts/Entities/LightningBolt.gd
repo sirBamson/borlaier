@@ -1,18 +1,24 @@
 extends Node2D
-
+"""
+Används ej nu
+"""
 
 onready var bolt: Line2D = $Bolt
 
 var number_of_points: int = 5
 
-export var origin_position: Vector2 = position
-export var target_position: Vector2 = to_local(Vector2(634, 612))
+export var origin_position: Vector2 = global_position
+export var target_position: Vector2
+
+
+var random: RandomNumberGenerator = RandomNumberGenerator.new()
+
 
 func _ready() -> void:
-	print(target_position)
-	var random: RandomNumberGenerator = RandomNumberGenerator.new()
 	random.randomize()
-	
+
+
+func _physics_process(delta: float) -> void:
 	bolt.add_point(origin_position)
 	bolt.add_point(target_position)
 	

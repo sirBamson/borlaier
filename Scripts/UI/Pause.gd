@@ -37,8 +37,9 @@ func _on_Settings_pressed() -> void:
 
 func _on_QuitToMenu_pressed() -> void:
 	pause_game()
-	if !EnvVar.in_challenge_run:
-		SaveGame.save_data()
 	for node in scene_controller.get_children():
 		if node.is_in_group("Level") or node.is_in_group("Elevator"):
+			if !EnvVar.in_challenge_run and !node.is_in_group("Roof"):
+				SaveGame.save_data()
 			scene_controller.change_scene(false, node, node.filename, "res://Scenes/UI/MainMenu.tscn")
+	

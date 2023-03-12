@@ -208,7 +208,7 @@ speed = 800
 position = Vector2( -2, 0 )
 z_index = 2
 frames = SubResource( 23 )
-frame = 4
+frame = 9
 playing = true
 
 [node name="HealthBar" type="ProgressBar" parent="AnimatedSprite"]

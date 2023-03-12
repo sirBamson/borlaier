@@ -6,7 +6,10 @@ export (String) var npc_name: String = "npc name here"
 
 var in_quest_area: bool = false
 
-
+"""
+Om spelaren befinner sig i quest_area och "talk" är trykt
+startas dialogic med den nuvarande npc:n
+"""
 
 func _physics_process(_delta: float) -> void:
 	if in_quest_area:

@@ -1,5 +1,7 @@
 extends Node2D
-
+"""
+Används ej nu
+"""
 
 var big_hand_path: String = "res://Scenes/Minigames/PunishingPoker/BigHand.tscn"
 

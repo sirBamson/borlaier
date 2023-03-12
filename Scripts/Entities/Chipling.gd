@@ -48,6 +48,15 @@ func _ready() -> void:
 			$HealthBar.max_value = 100
 
 
+"""
+Kollar om Chipling är död och om sätter vilket läge som Chipling ska vara i.
+Lägger även till en död Chipling sprite på samma position som den befintliga
+Chiplingen.
+
+Sätter state för Chipling och sätter vilket håll some Chipling ska kolla åt med
+hjälp av detection_ray1 och 2.
+"""
+
 func _physics_process(delta: float) -> void:
 	$HealthBar.value = health
 	if health <= 0:
@@ -80,6 +89,10 @@ func _physics_process(delta: float) -> void:
 	move()
 
 
+"""
+Flyttar på Chipling inom navigations arean
+"""
+
 func move() -> void:
 	if agent.is_navigation_finished():
 		return
@@ -90,6 +103,12 @@ func move() -> void:
 	velocity = direction.normalized() * speed
 	agent.set_velocity(velocity)
 
+
+"""
+Sätter state av Chipling.
+Känner av spelaren och beroende på om Chipling kan se spelaren.
+Om spelaren syns (Inte bakom vägg) så sätts state = "Hunting"
+"""
 
 func set_state() -> void:
 	detection_ray_1.add_exception(player)
@@ -106,15 +125,29 @@ func set_state() -> void:
 		state = "Idling"
 
 
+"""
+Anropas när NavigationAgent2D är färdig räknad
+"""
+
 func _on_NavigationAgent2D_velocity_computed(safe_velocity: Vector2) -> void:
 	velocity = move_and_slide(velocity)
 
+
+"""
+Sätter hp när Chipling blir skjuten
+"""
 
 func _on_DamageArea_body_entered(body: Node) -> void:
 	if body.is_in_group("Bullet"):
 		health -= body.damage_output
 		body.queue_free()
 
+
+"""
+Sätter hp när Chipling träffas av granat.
+Samt startar attack_timer.
+Samt sätter hp till 0 om träffas av BulletMan
+"""
 
 func _on_DamageArea_area_entered(area: Area2D) -> void:
 	if area.get_parent().is_in_group("Grenade"):
@@ -127,14 +160,26 @@ func _on_DamageArea_area_entered(area: Area2D) -> void:
 		health = 0
 
 
+"""
+Stoppar attack_timer om Chipling inte är nära player längre
+"""
+
 func _on_DamageArea_area_exited(area: Area2D) -> void:
 	if area.get_parent().is_in_group("Player"):
 		attack_timer.stop()
 
 
+"""
+Sätter target_location vid timeout
+"""
+
 func _on_NavTimer_timeout() -> void:
 	agent.set_target_location(target_position)
 
+
+"""
+När attack timern går ut tar spelaren skada
+"""
 
 func _on_AttackTimer_timeout() -> void:
 	PlayerGlobals.health -= 25

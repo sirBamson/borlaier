@@ -1355,6 +1355,20 @@ enemy_name = "Chipling"
 spawn_interval = 5
 max_enemy_amount = 10
 
+[node name="EnemySpawner2" parent="Navigation2D/YSort" instance=ExtResource( 16 )]
+position = Vector2( -1600, 184 )
+enemy_path = "res://Scenes/Entities/Chipling.tscn"
+enemy_name = "Chipling"
+spawn_interval = 5
+max_enemy_amount = 10
+
+[node name="EnemySpawner3" parent="Navigation2D/YSort" instance=ExtResource( 16 )]
+position = Vector2( 2832, 728 )
+enemy_path = "res://Scenes/Entities/Chipling.tscn"
+enemy_name = "Chipling"
+spawn_interval = 5
+max_enemy_amount = 10
+
 [node name="Player" parent="Navigation2D/YSort" instance=ExtResource( 13 )]
 position = Vector2( 1920, 344 )
 

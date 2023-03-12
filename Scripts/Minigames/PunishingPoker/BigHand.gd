@@ -1,5 +1,7 @@
 extends StaticBody2D
-
+"""
+Används ej nu
+"""
 
 func _ready() -> void:
 	$AnimatedSprite.play("Slam")

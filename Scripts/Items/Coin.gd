@@ -1,5 +1,7 @@
 extends Node2D
-
+"""
+Används ej nu
+"""
 
 var stack_amount: int = 1
 
