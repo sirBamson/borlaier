@@ -23,7 +23,7 @@ Label/constants/shadow_offset_y = 0
 Label/fonts/font = SubResource( 2 )
 Label/styles/normal = null
 
-[sub_resource type="StyleBoxFlat" id=51]
+[sub_resource type="StyleBoxFlat" id=54]
 bg_color = Color( 0.764706, 0.32549, 0.294118, 1 )
 border_width_left = 3
 border_width_top = 2
@@ -31,7 +31,7 @@ border_width_right = 3
 border_width_bottom = 2
 border_color = Color( 0.172549, 0.172549, 0.172549, 1 )
 
-[sub_resource type="StyleBoxFlat" id=52]
+[sub_resource type="StyleBoxFlat" id=55]
 bg_color = Color( 0.466667, 0.705882, 0.360784, 1 )
 border_width_left = 3
 border_width_top = 2
@@ -43,8 +43,8 @@ border_color = Color( 0.172549, 0.172549, 0.172549, 1 )
 ProgressBar/colors/font_color = Color( 0, 0, 0, 1 )
 ProgressBar/colors/font_color_shadow = Color( 0, 0, 0, 1 )
 ProgressBar/fonts/font = null
-ProgressBar/styles/bg = SubResource( 51 )
-ProgressBar/styles/fg = SubResource( 52 )
+ProgressBar/styles/bg = SubResource( 54 )
+ProgressBar/styles/fg = SubResource( 55 )
 
 [node name="Overlay" type="CanvasLayer"]
 layer = 10
