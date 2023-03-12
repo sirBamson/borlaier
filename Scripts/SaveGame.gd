@@ -92,7 +92,7 @@ func get_game_data() -> void:
 		"LevelVar_level0_variables": scene_controller.level0_variables,
 		"LevelVar_level1_variables": scene_controller.level1_variables,
 		"LevelVar_level2_variables": scene_controller.level2_variables,
-		
+		"LevelVar_level3_variables": scene_controller.level3_variables,
 
 		# Quest data
 		"Quest_FatMan_dialogic": QuestController.FatMan_dialogic,
@@ -140,7 +140,7 @@ func set_game_data() -> void:
 	scene_controller.level0_variables = game_data["LevelVar_level0_variables"]
 	scene_controller.level1_variables = game_data["LevelVar_level1_variables"]
 	scene_controller.level2_variables = game_data["LevelVar_level2_variables"]
-
+	scene_controller.level3_variables = game_data["LevelVar_level3_variables"]
 
 	QuestController.FatMan_dialogic = game_data["Quest_FatMan_dialogic"]
 	QuestController.FatMan1_dict = game_data["Quest_FatMan1_dict"]

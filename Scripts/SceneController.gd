@@ -4,6 +4,7 @@ var elevator_variables: Dictionary = {}
 var level0_variables: Dictionary = {"player_position": Vector2(216, 1312)}
 var level1_variables: Dictionary = {"player_position": Vector2(3968, 3624)}
 var level2_variables: Dictionary = {"player_position": Vector2(3968, 3624)}
+var level3_variables: Dictionary = {"player_position": Vector2(1920, 296)}
 
 
 func _ready() -> void:
@@ -43,6 +44,8 @@ func get_level_variables(level: Node):
 		level1_variables["player_position"] = level.get_node("Navigation2D/YSort/Player").global_position
 	if level.name == "Level2":
 		level2_variables["player_position"] = level.get_node("Navigation2D/YSort/Player").global_position
+	if level.name == "Level3":
+		level3_variables["player_position"] = level.get_node("Navigation2D/YSort/Player").global_position
 
 
 func set_level_variables(level: Node):
@@ -52,3 +55,5 @@ func set_level_variables(level: Node):
 		level.get_node("Navigation2D/YSort/Player").global_position = level1_variables["player_position"]
 	if level.name == "Level2":
 		level.get_node("Navigation2D/YSort/Player").global_position = level2_variables["player_position"]
+	if level.name == "Level3":
+		level.get_node("Navigation2D/YSort/Player").global_position = level3_variables["player_position"]
