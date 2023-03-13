@@ -148,6 +148,7 @@ margin_right = 399.0
 margin_bottom = 180.0
 focus_mode = 0
 theme = SubResource( 4 )
+disabled = true
 text = "Setting"
 
 [node name="QuitToMenu" type="Button" parent="VBoxContainer/VBoxContainer"]

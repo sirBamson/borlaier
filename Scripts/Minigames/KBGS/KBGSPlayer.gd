@@ -21,6 +21,13 @@ func _ready() -> void:
 	$PlayerPunchArea/PlayerHitShape.disabled = true
 
 
+"""
+Uppdaterar overlay.
+Kollar om spelaren är död och sätter isåfall "EnvVar.kbgs_minigame_won = false"
+Om det inte finns någon ememy kvar så EnvVar.kbgs_minigame_won = true.
+Därefter byts scene
+"""
+
 func _physics_process(delta: float) -> void:
 	$Overlay/EnemiesLeft.text = "Enemies left: " + str(enemy_amount)
 	$Overlay/ProgressBar.value = health
@@ -32,6 +39,11 @@ func _physics_process(delta: float) -> void:
 		scene_controller.change_scene(false, get_parent(), get_parent().filename, "res://Scenes/Minigames/KBGS/KBGSStartMenu.tscn")
 	movement()
 
+
+"""
+Sköter spelarens rörelse.
+Regulerar olika rörelser beroende på spelarens tidigare rörelser.
+"""
 
 func movement() -> void:
 	
@@ -85,11 +97,20 @@ func movement() -> void:
 	velocity = move_and_slide(velocity, Vector2.UP)
 
 
+"""
+När animationen är körd så aktiveras "PlayerPunchArea"
+"""
+
 func _on_AnimatedSprite_animation_finished() -> void:
 	if is_punching:
 		$PlayerPunchArea/PlayerHitShape.disabled = true
 		is_punching = false
 
+
+"""
+Kollar om spelaren befinner sig i "EnemySwingArea" och tar skada isåfall.
+Om spelaren befinner sig på "Medkit" så bostas hp.
+"""
 
 func _on_PlayerHitbox_area_entered(area: Area2D) -> void:
 	if area.name == "EnemySwingArea":

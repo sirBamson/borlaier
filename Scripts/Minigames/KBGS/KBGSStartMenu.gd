@@ -4,6 +4,9 @@ extends Control
 onready var scene_controller: Node = get_node("/root/SceneController")
 
 
+"""
+Beroende på vilket tillfälle som start menyn körs vid sätts olika texter
+"""
 
 func _ready() -> void:
 	if EnvVar.kbgs_minigame_first_time:
@@ -18,10 +21,13 @@ func _ready() -> void:
 		$GameOver.play()
 
 
+"""
+Byter scene beroende på den knapp som trycks
+"""
+
 func _on_Start_button_up() -> void:
 	EnvVar.kbgs_minigame_first_time = false
 	scene_controller.change_scene(false, self, self.filename, "res://Scenes/Minigames/KBGS/KBGSLevel.tscn")
-
 
 func _on_Exit_button_up() -> void:
 	EnvVar.kbgs_minigame_first_time = true

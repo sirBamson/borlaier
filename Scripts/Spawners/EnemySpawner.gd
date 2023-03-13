@@ -10,9 +10,20 @@ onready var enemy: = load(enemy_path)
 
 var enemy_amount: int
 
+
+"""
+Startar en timer med tid beroende på "spawn_interval"
+"""
+
 func _ready() -> void:
 	$SpawnTimer.start(spawn_interval)
 
+
+
+"""
+Ansvarar för att spawna nya enemy av typen enemy_path
+Kollar så att det inte spawnar mer än tillåtet
+"""
 
 func _on_SpawnTimer_timeout() -> void:
 	enemy_amount = 0
