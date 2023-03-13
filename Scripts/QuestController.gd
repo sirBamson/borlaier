@@ -1,6 +1,15 @@
 extends Node
 
 
+"""
+En klass för quests
+Används som en blueprint för att skapa alla quests.
+
+Innehåller även en funktion som kollar om alla "dependencies" uppfylls.
+Denna funktion tar in en lista av alla quests och retunerar antingen false om
+det finns dependencies som inte uppfylls och annars retunerar true.
+"""
+
 class Quest:
 	var id_name: String = ""
 	var active: bool = false
@@ -60,6 +69,10 @@ var Mohamed_dialogic: Dictionary = {}
 var Mohamed1_dict: Dictionary = {}
 
 
+"""
+Förbereder och sätter upp alla quests
+"""
+
 func _ready() -> void:
 	FatMan1.id_name = "FatMan1"
 	FatMan1.description = "Kill 20 chiplings"
@@ -110,6 +123,11 @@ func _ready() -> void:
 	quests.append(Mohamed1)
 
 
+"""
+Kallas av dialogic och försöker starta quest.
+Kollar om questet har rätt behörigheter
+Funktionen tar in en string som är namnet på det quest som ska aktiveras.
+"""
 
 func start_quest(string) -> void:
 	for quest in quests:
@@ -123,9 +141,17 @@ func start_quest(string) -> void:
 				return
 
 
+"""
+En funktion som körs av både koden och dialogic.
+Används för att aktivera quest.
+
+Används också för att kolla om varje quest uppfyller en custom made quest objective.
+Om questet är klarat så sätts några dialogic variablar som sedan används i dialog systemet.
+
+Denna funktion tar in en string vilket symboliserar namnet av det quest som ska kollas.
+"""
+
 var chiplings_killed_start: int = 0
-
-
 func check_and_set_quest_objectives(string: String) -> void:
 	var quest: Quest
 	for quest_item in quests:
@@ -202,8 +228,11 @@ func check_and_set_quest_objectives(string: String) -> void:
 
 
 
+"""
+Körs av dialogic för att komma åt quest objecten.
 
-
+Denna funktion tar in en string vilket symboliserar namnet av det quest som ska kollas.
+"""
 
 func check_dependencies(string: String):
 	for quest in quests:
@@ -214,6 +243,14 @@ func check_dependencies(string: String):
 				Dialogic.set_variable(quest.dialogic_next_quest_avalible_name, "false")
 
 
+
+"""
+Dessa två funktioner använda för att spara quest och hämta information.
+
+Detta är nödvändigt då spelet sparas som en .save fil. I detta formatet kan vi
+inte spara objeckt och krävs därför att vi plockar isär varje objeckt och lägger
+det i en dict.
+"""
 
 func get_quest_variables():
 	FatMan_dialogic = {
