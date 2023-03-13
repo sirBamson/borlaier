@@ -4,6 +4,11 @@ func _ready() -> void:
 	$VBoxLeft/Bullets.visible = false
 
 
+"""
+Overlay för spelaren
+Uppdaterar health, bullets_left, fps och coins
+"""
+
 func _physics_process(_delta: float) -> void:
 	$HealthBar.value = PlayerGlobals.health
 	
