@@ -13,6 +13,11 @@ func _ready() -> void:
 	load_data()
 
 
+"""
+Används för att spara data.
+Kan anropas från hela koden.
+Skriver till SAVE_FILE som .save format.
+"""
 
 func save_data() -> void:
 	for node in scene_controller.get_children():
@@ -32,6 +37,15 @@ func save_data() -> void:
 	print("Game data saved")
 
 
+"""
+Används när all data ska laddas in.
+Om ingen data finns så sparas först alla start variablar.
+
+Bättrings område:
+	Om koden throws exeption så sparas en ny data fil och den gammla döps om.
+	Detta för att spelet inte ska krasha när det updateras
+"""
+
 func load_data() -> void:
 	var file: File = File.new()
 	if not file.file_exists(SAVE_FILE):
@@ -44,6 +58,11 @@ func load_data() -> void:
 	QuestController.set_quest_variables()
 
 
+"""
+Körs när datan ska tas bort.
+Framförallt för debug syfte.
+"""
+
 func reset_data() -> void:
 	var dir: Directory = Directory.new()
 	if dir.file_exists(SAVE_FILE):
@@ -51,6 +70,10 @@ func reset_data() -> void:
 	else:
 		print("Can't delet file. Doesn't exist!")
 
+
+"""
+Hämtar alla variablar som ska laddas och lägger de i en dict.
+"""
 
 func get_game_data() -> void:
 	game_data = {
@@ -106,6 +129,10 @@ func get_game_data() -> void:
 		"Quest_Mohamed1_dict": QuestController.Mohamed1_dict,
 		}
 
+
+"""
+Sätter alla variablar som är sparade.
+"""
 
 func set_game_data() -> void:
 	PlayerGlobals.health = game_data["Player_health"]
