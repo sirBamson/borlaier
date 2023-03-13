@@ -6,6 +6,11 @@ onready var player = get_parent()
 func _ready() -> void:
 	$VBoxLeft/Bullets.visible = false
 
+"""
+Hanterar "EndlessPlayer" overlay.
+Fungerar liknade till den vanliga overlayen.
+Skillnaden är att denna visar poäng.
+"""
 
 func _physics_process(_delta: float) -> void:
 	$HealthBar.value = player.health
