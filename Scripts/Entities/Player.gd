@@ -16,6 +16,10 @@ var weapon_on_ground: Node
 
 export (int) var speed: int = 600
 
+"""
+Om skärmen skakar så slutar den skaka.
+Kollar om spelaren ska hålla i ett vapen, om, ger spelaren vapnet som child.
+"""
 
 func _ready() -> void:
 	Shake.shake_nodes.clear()
@@ -29,7 +33,9 @@ func _ready() -> void:
 		
 		weapon.bullets_in_mag = PlayerGlobals.bullets_in_mag
 
-
+"""
+Anropar "weapon_pickup", "throw_grenade" och "movement" funktionerna.
+"""
 
 func _physics_process(_delta: float) -> void:
 	
@@ -37,10 +43,14 @@ func _physics_process(_delta: float) -> void:
 	
 	throw_grenade()
 	
-	movment()
+	movement()
 
+"""
+Anger spelarens rörelse. Spelaren kan röra sig i 8 riktnignar med hjälp av tangenter.
+Beroende på om spelaren har ett vapen eller inte så använd olika spelaranimationen.
+"""
 
-func movment() -> void:
+func movement() -> void:
 	velocity = Vector2.ZERO
 	if Input.is_action_pressed("ui_up"):
 		velocity += Vector2.UP
@@ -94,7 +104,10 @@ func movment() -> void:
 	velocity = velocity.normalized() * speed
 	velocity = move_and_slide(velocity)
 
-
+"""
+Kollar om man kan plocka upp eller släppa ett vapen.
+Skapar ett "DroppedWeapon" om man håller i ett vapen och släpper det.
+"""
 
 func weapon_pickup() -> void:
 	if Input.is_action_pressed("drop") and PlayerGlobals.has_gun:
@@ -123,7 +136,10 @@ func weapon_pickup() -> void:
 		add_child(weapon)
 		get_parent().get_node(weapon_on_ground.get_path()).queue_free()
 
-
+"""
+KKollar om spelaren har granater och kan då kasta dem.
+Kan hålla i granat tills att knappen är släppt.
+"""
 
 func throw_grenade() -> void:
 	if Input.is_action_just_pressed("add_nades"):
@@ -145,6 +161,11 @@ func throw_grenade() -> void:
 		emit_signal("throwing_grenade")
 		PlayerGlobals.holding_grenade = false
 
+"""
+Kollar om spelaren är i "DroppedWeapon"-arean.
+Kollar om spelaren är i granatexplosionsarean.
+Kollar om spelaren är i blixtarean.
+"""
 
 func _on_PlayerHitbox_area_entered(area: Area2D) -> void:
 	if area.is_in_group("DroppedWeapon"):
@@ -158,6 +179,9 @@ func _on_PlayerHitbox_area_entered(area: Area2D) -> void:
 	if area.get_parent().is_in_group("LightningStrike"):
 		PlayerGlobals.health -= 80
 
+"""
+Kollar om spelaren lämnar "DroppedWeapon"-arean.
+"""
 
 func _on_PlayerHitbox_area_exited(area: Area2D) -> void:
 	if area.is_in_group("DroppedWeapon"):

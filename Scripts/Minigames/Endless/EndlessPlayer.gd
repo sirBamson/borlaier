@@ -27,7 +27,10 @@ func _ready() -> void:
 	Shake.shake_nodes.clear()
 	Shake.shake_nodes[$PlayerCamera] = true
 
-
+"""
+Samma script som "Player" + extra variabler.
+I denna funktion läggs även til poäng för varje 60 frames => 1 poäng/sekund.
+"""
 
 func _physics_process(_delta: float) -> void:
 	points_counter += 1
