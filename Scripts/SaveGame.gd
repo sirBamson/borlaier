@@ -97,8 +97,6 @@ func get_game_data() -> void:
 		"EnvVar_minigame_load_scene_path": EnvVar.minigame_load_scene_path,
 		"EnvVar_elevator_next_level": EnvVar.elevator_next_level,
 		"EnvVar_elevator_current_level_number": EnvVar.elevator_current_level_number,
-		"EnvVar_elevator_old_level_number": EnvVar.elevator_old_level_number,
-		"EnvVar_elevator_oldest_level_number": EnvVar.elevator_next_level,
 		"EnvVar_elevator_button_number_pressed": EnvVar.elevator_button_number_pressed,
 		"EnvVar_elevator_moving": EnvVar.elevator_moving,
 		
@@ -153,8 +151,6 @@ func set_game_data() -> void:
 	EnvVar.minigame_load_scene_path = game_data["EnvVar_minigame_load_scene_path"]
 	EnvVar.elevator_next_level = game_data["EnvVar_elevator_next_level"]
 	EnvVar.elevator_current_level_number = game_data["EnvVar_elevator_current_level_number"]
-	EnvVar.elevator_old_level_number = game_data["EnvVar_elevator_old_level_number"]
-	EnvVar.elevator_oldest_level_number = game_data["EnvVar_elevator_oldest_level_number"]
 	EnvVar.elevator_button_number_pressed = game_data["EnvVar_elevator_button_number_pressed"]
 	EnvVar.elevator_moving = game_data["EnvVar_elevator_moving"]
 

@@ -7,6 +7,7 @@ Sätter alla pilar till false och ska sätta rätt number på index panelen i hi
 """
 
 func _ready() -> void:
+	$AnimatedSprite.frame = EnvVar.elevator_current_level_number * 11
 	$ArrowDown.visible = false
 	$ArrowUp.visible = false
 
@@ -44,13 +45,13 @@ func set_index(to: int, from: int):
 	
 	$AnimatedSprite.frame = from * 11
 	
-	if from > to:
+	if from < to:
 		# Going up!
 		$ArrowDown.visible = false
 		$ArrowUp.visible = true
 		
 		$AnimatedSprite.play("FloorIndex")
-	elif from < to:
+	elif from > to:
 		# Going down!
 		$ArrowDown.visible = true
 		$ArrowUp.visible = false
@@ -62,7 +63,7 @@ func set_index(to: int, from: int):
 
 
 func _on_AnimatedSprite_frame_changed() -> void:
-	if $AnimatedSprite.frame == (_to * 11) - 1:
+	if $AnimatedSprite.frame == _to * 11:
 		$AnimatedSprite.stop()
 		$ArrowDown.visible = false
 		$ArrowUp.visible = false
