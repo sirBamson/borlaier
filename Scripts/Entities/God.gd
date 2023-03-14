@@ -110,6 +110,7 @@ Körs av dialogic när dialogen är klar
 """
 
 func dialog_done():
+	$Music.play()
 	PlayerGlobals.talking = false
 	spawner1.active = true
 	spawner2.active = true

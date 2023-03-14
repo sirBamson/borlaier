@@ -1,7 +1,7 @@
-[gd_scene load_steps=65 format=2]
+[gd_scene load_steps=66 format=2]
 
 [ext_resource path="res://Scenes/Weapons/DroppedWeapon.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Assets/Sounds/casino_ambiant1.wav" type="AudioStream" id=2]
+[ext_resource path="res://Assets/Sounds/epic-storm-thunder-rainwindwaves-no-loops-106800.mp3" type="AudioStream" id=2]
 [ext_resource path="res://Scenes/Elevator/ElevatorDoor.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/paralaxBG_1.png" type="Texture" id=4]
 [ext_resource path="res://Assets/casino_tilemap.png" type="Texture" id=5]
@@ -17,6 +17,7 @@
 [ext_resource path="res://Scenes/Assets/VentDown.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Scenes/Spawners/EnemySpawner.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Scenes/Entities/God.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Scenes/UI/Rain.tscn" type="PackedScene" id=18]
 
 [sub_resource type="TileSet" id=81]
 0/name = "casino_tilemap.png 0"
@@ -1310,15 +1311,6 @@ motion_mirroring = Vector2( 672, 0 )
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer4"]
 texture = ExtResource( 7 )
 
-[node name="Music" type="AudioStreamPlayer" parent="."]
-volume_db = -16.095
-autoplay = true
-
-[node name="Ambiant" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 2 )
-volume_db = -16.238
-autoplay = true
-
 [node name="Floor" type="TileMap" parent="."]
 tile_set = SubResource( 81 )
 cell_size = Vector2( 256, 256 )
@@ -1371,6 +1363,12 @@ max_enemy_amount = 10
 
 [node name="Player" parent="Navigation2D/YSort" instance=ExtResource( 13 )]
 position = Vector2( 1920, 344 )
+
+[node name="Rain" parent="Navigation2D/YSort/Player" instance=ExtResource( 18 )]
+position = Vector2( -1280, -1025.45 )
+scale = Vector2( 4.54545, 10.9091 )
+z_index = 3
+lifetime = 3.0
 
 [node name="God" parent="Navigation2D/YSort" instance=ExtResource( 17 )]
 position = Vector2( 968, -256 )
@@ -1453,3 +1451,8 @@ cell_size = Vector2( 256, 256 )
 collision_mask = 0
 format = 1
 tile_data = PoolIntArray( 9, 24, 0, 131062, 20, 0, 196598, 20, 0, 131084, 24, 0, 262134, 20, 0, 262142, 29, 0, 262143, 22, 0, 196608, 22, 0, 196609, 28, 0, 196620, 24, 0, 327670, 20, 0, 327678, 24, 0, 262145, 20, 0, 262156, 24, 0, 393206, 20, 0, 393214, 24, 0, 327681, 20, 0, 327692, 24, 0, 458742, 20, 0, 458750, 24, 0, 393217, 21, 0, 393218, 22, 0, 393219, 22, 0, 393220, 22, 0, 393221, 22, 0, 393222, 22, 0, 393223, 22, 0, 393224, 22, 0, 393225, 22, 0, 393226, 22, 0, 393227, 22, 0, 393228, 23, 0, 524278, 20, 0, 524286, 24, 0, 589814, 21, 0, 589815, 22, 0, 589816, 22, 0, 589817, 22, 0, 589818, 22, 0, 589819, 22, 0, 589820, 22, 0, 589821, 22, 0, 589822, 23, 0 )
+
+[node name="Ambiant" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+volume_db = -30.0
+autoplay = true

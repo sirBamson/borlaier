@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Retro Synth RPG Battle Theme  Upbeat Battle Theme  Royalty Free Music.mp3-d27503c6cfa4cf6f37aa06502244dc14.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/Retro Synth RPG Battle Theme  Upbeat Battle Theme  Royalty Free Music.mp3"
+dest_files=[ "res://.import/Retro Synth RPG Battle Theme  Upbeat Battle Theme  Royalty Free Music.mp3-d27503c6cfa4cf6f37aa06502244dc14.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
