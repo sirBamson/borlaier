@@ -61,6 +61,7 @@ func _physics_process(_delta: float) -> void:
 				if not EnvVar.elevator_button_number_pressed == EnvVar.elevator_current_level_number:
 					is_new_level = true
 					if EnvVar.elevator_button_number_pressed in PlayerGlobals.elevator_floor_access:
+						get_parent().get_node("ElevatorIndexPanel").set_index(EnvVar.elevator_current_level_number, EnvVar.elevator_button_number_pressed)
 						can_access_new_level = true
 						Dialogic.set_variable("ElevatorFloorAccess", 1)
 						
