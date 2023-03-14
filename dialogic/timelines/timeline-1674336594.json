@@ -388,22 +388,9 @@
 		},
 		{
 			"character": "character-1675763182.json",
-			"event_id": "dialogic_010",
-			"options": [
-
-			],
+			"event_id": "dialogic_001",
 			"portrait": "",
-			"question": "Well, well, well if it isn't the one who brought the demons. Have you come here to cause more pain and suffering, or do you come in search of a quest?"
-		},
-		{
-			"choice": "Yes pleas",
-			"condition": "",
-			"definition": "",
-			"event_id": "dialogic_011",
-			"value": ""
-		},
-		{
-			"event_id": "dialogic_013"
+			"text": "Hello! Are you the pest controll? \nOh, never mind, I know who you are. He said you would come...\nAaany way, to traverse the different floors you need elevator access cards. \nI will give you an access card for the first level. The rest is up to you to get hold of."
 		},
 		{
 			"event_id": "dialogic_013"
@@ -638,7 +625,7 @@
 
 			],
 			"portrait": "",
-			"question": "Yo, yanii! I think you could beat me at Kill Bad Guys Simulator? (KGBS)\nIf you beat me I will give you this old bottle of moonshine I found in the arcade. It's haram any way!"
+			"question": "Yo, yanii! Think you could beat me at Kill Bad Guys Simulator?\nIf you beat me I will give you this old bottle of moonshine I found in the arcade. It's haram any way!"
 		},
 		{
 			"choice": "Game on!",
@@ -651,7 +638,7 @@
 			"character": "character-1677709887.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Yanii, you will find the game to the right in the arcade. Good luck!"
+			"text": "Yanii, you will find the game to the right in the arcade. Good luck yanii!"
 		},
 		{
 			"call_node": {
@@ -695,7 +682,7 @@
 			"character": "character-1677709887.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Oh, shit you actually beat it. Nice job yanii. Here you go!"
+			"text": "Oh shit, you actually beat it. Nice job yanii. Here you go!"
 		},
 		{
 			"event_id": "dialogic_013"
@@ -713,7 +700,7 @@
 			"character": "character-1677709887.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Yanii, I'm busy jao!"
+			"text": "I'm busy yanii!"
 		},
 		{
 			"event_id": "dialogic_013"
