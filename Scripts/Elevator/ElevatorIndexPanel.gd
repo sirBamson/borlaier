@@ -43,7 +43,7 @@ func _physics_process(_delta: float) -> void:
 func set_index(to: int, from: int):
 	_to = to
 	
-	$AnimatedSprite.frame = from * 11
+	$AnimatedSprite.frame = from * 10
 	
 	if from < to:
 		# Going up!
@@ -57,13 +57,11 @@ func set_index(to: int, from: int):
 		$ArrowUp.visible = false
 		
 		$AnimatedSprite.play("FloorIndex", true)
-	elif from == to:
-		$AnimatedSprite.frame = from * 11
 
 
 
 func _on_AnimatedSprite_frame_changed() -> void:
-	if $AnimatedSprite.frame == _to * 11:
+	if $AnimatedSprite.frame == _to * 10:
 		$AnimatedSprite.stop()
 		$ArrowDown.visible = false
 		$ArrowUp.visible = false
