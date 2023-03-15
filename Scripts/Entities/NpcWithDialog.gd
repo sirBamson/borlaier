@@ -15,6 +15,7 @@ func _physics_process(_delta: float) -> void:
 	if in_quest_area:
 		if Input.is_action_pressed("talk") and not PlayerGlobals.talking:
 			PlayerGlobals.talking = true
+			EnvVar.can_pause = false
 			Dialogic.set_variable("CurrentChar", npc_name)
 			add_child(Dialogic.start("Npc"))
 

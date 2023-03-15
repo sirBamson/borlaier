@@ -26,25 +26,19 @@ class Quest:
 	func check_dependencies(quests: Array) -> bool:
 		for quest in quests:
 			for dependency in dependencies.keys():
-				print("Dependency: " + str(dependency))
+				print("Cheking dependency for: " + str(dependency))
 				if quest.id_name == dependency:
 					if dependencies.get(dependency) == 0:
-						if quest.completed == 0:
-							return true
-						else:
+						if !(quest.completed == 0):
 							return false
 					if dependencies.get(dependency) == 1:
-						if quest.completed == 1:
-							return true
-						else:
+						if !(quest.completed == 1):
 							return false
 					if dependencies.get(dependency) == 2:
-						if quest.active:
-							return true
-						else:
+						if !(quest.active == 2):
 							return false
-					if dependencies.empty():
-						return true
+			print("True")
+			return true
 		return false
 
 
@@ -159,7 +153,6 @@ func start_quest(string) -> void:
 				Dialogic.set_variable(quest.dialogic_quest_series_name, str(quest.quest_series_number))
 				check_and_set_quest_objectives(quest.id_name)
 				quest.active = true
-				SaveGame.save_data()
 				print("Quest started: " + quest.id_name)
 				return
 
@@ -196,7 +189,7 @@ func check_and_set_quest_objectives(string: String) -> void:
 			Dialogic.set_variable("Npc/FatMan/FatManQuestStarted", "false")
 			Dialogic.set_variable("Npc/FatMan/FatManCurrentQuest", "2")
 			quest.completed = 1
-			PlayerGlobals.coins += 100
+			PlayerGlobals.give_next_keycard(2)
 	
 	# FatMan2 quest objective
 	# Quest init

@@ -35,6 +35,8 @@ func _physics_process(delta: float) -> void:
 # Needs to be a function for dialogic to access
 func set_talking_state() -> void:
 	talking = false
+	EnvVar.can_pause = true
+	SaveGame.save_data()
 
 
 func dialogic_get_coins() -> void:
@@ -42,8 +44,8 @@ func dialogic_get_coins() -> void:
 	Dialogic.set_variable("PlayerCoins", str(coins))
 
 
-func give_next_keycard(amount: String) -> void:
-	coins -= int(amount)
-	elevator_floor_access.append(elevator_floor_access.size())
-	print(elevator_floor_access)
-	Dialogic.set_variable("KeycardBought", "true")
+func give_next_keycard(floor_number: int) -> void:
+	if !(floor_number in elevator_floor_access):
+		elevator_floor_access.append(floor_number)
+		# For readability
+		print(elevator_floor_access.sort())
