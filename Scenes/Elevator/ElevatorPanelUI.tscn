@@ -14,23 +14,6 @@ anchor_bottom = 1.0
 texture = ExtResource( 1 )
 expand = true
 
-[node name="Text" type="Label" parent="UI"]
-margin_left = 136.0
-margin_top = 88.0
-margin_right = 176.0
-margin_bottom = 102.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Elevator Panel
-"
-
-[node name="Floor" type="Label" parent="UI"]
-margin_left = 248.0
-margin_top = 88.0
-margin_right = 288.0
-margin_bottom = 102.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Floor 0"
-
 [node name="HBoxContainer" type="HBoxContainer" parent="UI"]
 anchor_right = 1.0
 anchor_bottom = 1.0

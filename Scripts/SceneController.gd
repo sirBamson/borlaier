@@ -25,7 +25,7 @@ Byter sen när knapp trycks
 func _input(event: InputEvent) -> void:
 	#----------------- DEV -----------------
 	if event.is_action_pressed("dev"):
-		change_scene(false, get_child(1), get_child(1).filename, "res://Scenes/Levels/TestLevel.tscn")
+		change_scene(false, get_child(1), get_child(1).filename, "res://Scenes/Levels/Level3.tscn")
 	#---------------------------------------
 
 
