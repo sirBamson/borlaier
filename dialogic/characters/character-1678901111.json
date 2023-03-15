@@ -1,0 +1,21 @@
+{
+	"color": "#ff3c43f2",
+	"description": "Guy with flat cap who needs summin.",
+	"display_name": "Kahlid",
+	"display_name_bool": true,
+	"id": "character-1678901111.json",
+	"mirror_portraits": false,
+	"name": "FlatCap",
+	"nickname": "",
+	"nickname_bool": false,
+	"offset_x": 0,
+	"offset_y": 0,
+	"portraits": [
+		{
+			"name": "Default",
+			"path": ""
+		}
+	],
+	"scale": 100,
+	"theme": ""
+}

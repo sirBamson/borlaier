@@ -12,7 +12,8 @@
 				"character-1675763182.json",
 				"character-1677707686.json",
 				"character-1677709887.json",
-				"character-1678572531.json"
+				"character-1678572531.json",
+				"character-1678901111.json"
 			],
 			"folders": {
 
@@ -66,6 +67,21 @@
 								"folded": false
 							}
 						},
+						"FlatCap": {
+							"files": [
+								"1678901350-648",
+								"1678901392-787",
+								"1678901430-366",
+								"1678901451-146"
+							],
+							"folders": {
+
+							},
+							"metadata": {
+								"color": null,
+								"folded": false
+							}
+						},
 						"Mohamed": {
 							"files": [
 								"1677709994-206",
@@ -90,7 +106,7 @@
 			},
 			"metadata": {
 				"color": null,
-				"folded": true
+				"folded": false
 			}
 		},
 		"Themes": {

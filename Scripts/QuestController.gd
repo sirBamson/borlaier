@@ -68,6 +68,12 @@ var Mohamed1: Quest = Quest.new()
 var Mohamed_dialogic: Dictionary = {}
 var Mohamed1_dict: Dictionary = {}
 
+# FlatCap quests
+var FlatCap1: Quest = Quest.new()
+
+var FlatCap_dialogic: Dictionary = {}
+var FlatCap1_dict: Dictionary = {}
+
 
 """
 Förbereder och sätter upp alla quests
@@ -121,6 +127,17 @@ func _ready() -> void:
 	Mohamed1.dialogic_next_quest_avalible_name = "Npc/Mohamed/MohamedNextQuestAvalible"
 	Mohamed1.quest_series_number = 1
 	quests.append(Mohamed1)
+	
+	
+	FlatCap1.id_name = "FlatCap1"
+	FlatCap1.description = "Bounka"
+	FlatCap1.dependencies = {}
+	
+	FlatCap1.dialogic_quest_series_name = "Npc/FlatCap/FlatCapCurrentQuest"
+	FlatCap1.dialogic_quest_started_name = "Npc/FlatCap/FlatCapQuestStarted"
+	FlatCap1.dialogic_next_quest_avalible_name = "Npc/FlatCap/FlatCapNextQuestAvalible"
+	FlatCap1.quest_series_number = 1
+	quests.append(FlatCap1)
 
 
 """
@@ -150,7 +167,7 @@ Om questet är klarat så sätts några dialogic variablar som sedan används i 
 
 Denna funktion tar in en string vilket symboliserar namnet av det quest som ska kollas.
 """
-
+var bullet_man_killed_start: int = 0
 var chiplings_killed_start: int = 0
 func check_and_set_quest_objectives(string: String) -> void:
 	var quest: Quest
@@ -223,6 +240,23 @@ func check_and_set_quest_objectives(string: String) -> void:
 			Dialogic.set_variable("Npc/Mohamed/MohamedCurrentQuest", "1")
 			quest.completed = 1
 			PlayerGlobals.coins += 250
+
+
+	# FlatCap1 quest objective
+	# Quest init
+	if quest.id_name == "FlatCap1" and !quest.active:
+		print("Quest start")
+		Dialogic.set_variable("Npc/FlatCap/FlatCapCurrentQuestDone", "false")
+		bullet_man_killed_start = Stats.bullet_man_killed
+	
+	# Quest done check
+	elif quest.id_name == "FlatCap1" and quest.active:
+		print("Quest check")
+		if Stats.bullet_man_killed - bullet_man_killed_start >= 5:
+			Dialogic.set_variable("Npc/FlatCap/FlatCapCurrentQuestDone", "true")
+			Dialogic.set_variable("Npc/FlatCap/FlatCapQuestStarted", "false")
+			Dialogic.set_variable("Npc/FlatCap/FlatCapCurrentQuest", "1")
+			quest.completed = 1
 
 
 

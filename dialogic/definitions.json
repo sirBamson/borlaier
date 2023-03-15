@@ -4,12 +4,6 @@
 	],
 	"variables": [
 		{
-			"id": "1674631318-648",
-			"name": "ElevatorFloorAccess",
-			"type": 0,
-			"value": "1"
-		},
-		{
 			"id": "1674392044-648",
 			"name": "ElevatorFloorNumber",
 			"type": 0,
@@ -100,8 +94,38 @@
 			"value": "false"
 		},
 		{
+			"id": "1674631318-648",
+			"name": "ElevatorFloorAccess",
+			"type": 0,
+			"value": "1"
+		},
+		{
 			"id": "1677710041-158",
 			"name": "MohamedNextQuestAvalible",
+			"type": 0,
+			"value": "false"
+		},
+		{
+			"id": "1678901350-648",
+			"name": "FlatCapCurrentQuest",
+			"type": 0,
+			"value": "1"
+		},
+		{
+			"id": "1678901392-787",
+			"name": "FlatCapCurrentQuestDone",
+			"type": 0,
+			"value": "false"
+		},
+		{
+			"id": "1678901430-366",
+			"name": "FlatCapQuestStarted",
+			"type": 0,
+			"value": "false"
+		},
+		{
+			"id": "1678901451-146",
+			"name": "FlatCapCurrentQuestAvalible",
 			"type": 0,
 			"value": "false"
 		}
