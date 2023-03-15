@@ -43,6 +43,8 @@ class Quest:
 							return true
 						else:
 							return false
+					if dependencies.empty():
+						return true
 		return false
 
 
@@ -95,8 +97,8 @@ func _ready() -> void:
 	FatMan2.id_name = "FatMan2"
 	FatMan2.description = "Kill 20 chiplings"
 	FatMan2.dependencies = {
-		"FatMan1": 1,
-		"FatMan2": 0
+		"FatMan2": 0,
+		"FatMan1": 1
 	}
 	FatMan2.dialogic_quest_series_name = "Npc/FatMan/FatManCurrentQuest"
 	FatMan2.dialogic_quest_started_name = "Npc/FatMan/FatManQuestStarted"
@@ -108,6 +110,7 @@ func _ready() -> void:
 	Bartender21.id_name = "Bartender21"
 	Bartender21.description = "Get a drink"
 	Bartender21.dependencies = {
+		"Bartender21": 0,
 		"FatMan1": 1
 	}
 	Bartender21.dialogic_quest_series_name = "Npc/Bartender2/Bartender2CurrentQuest"
@@ -120,6 +123,7 @@ func _ready() -> void:
 	Mohamed1.id_name = "Mohamed1"
 	Mohamed1.description = "Get a drink"
 	Mohamed1.dependencies = {
+		"Mohamed1": 0,
 		"Bartender21": 2
 	}
 	Mohamed1.dialogic_quest_series_name = "Npc/Mohamed/MohamedCurrentQuest"
@@ -131,8 +135,9 @@ func _ready() -> void:
 	
 	FlatCap1.id_name = "FlatCap1"
 	FlatCap1.description = "Bounka"
-	FlatCap1.dependencies = {}
-	
+	FlatCap1.dependencies = {
+		"FlatCap1": 0
+	}
 	FlatCap1.dialogic_quest_series_name = "Npc/FlatCap/FlatCapCurrentQuest"
 	FlatCap1.dialogic_quest_started_name = "Npc/FlatCap/FlatCapQuestStarted"
 	FlatCap1.dialogic_next_quest_avalible_name = "Npc/FlatCap/FlatCapNextQuestAvalible"
@@ -154,6 +159,7 @@ func start_quest(string) -> void:
 				Dialogic.set_variable(quest.dialogic_quest_series_name, str(quest.quest_series_number))
 				check_and_set_quest_objectives(quest.id_name)
 				quest.active = true
+				SaveGame.save_data()
 				print("Quest started: " + quest.id_name)
 				return
 
@@ -178,7 +184,7 @@ func check_and_set_quest_objectives(string: String) -> void:
 	# FatMan1 quest objective
 	# Quest init
 	if quest.id_name == "FatMan1" and !quest.active:
-		print("Quest start")
+		print("Quest init")
 		Dialogic.set_variable("Npc/FatMan/FatManCurrentQuestDone", "false")
 		chiplings_killed_start = Stats.chiplings_killed
 	
@@ -205,6 +211,7 @@ func check_and_set_quest_objectives(string: String) -> void:
 		if Stats.chiplings_killed - chiplings_killed_start >= 40:
 			Dialogic.set_variable("Npc/FatMan/FatManCurrentQuestDone", "true")
 			Dialogic.set_variable("Npc/FatMan/FatManQuestStarted", "false")
+			Dialogic.set_variable("Npc/FatMan/FatManCurrentQuest", "3")
 			quest.completed = 1
 			PlayerGlobals.coins += 200
 	
@@ -221,7 +228,7 @@ func check_and_set_quest_objectives(string: String) -> void:
 		if Mohamed1.completed:
 			Dialogic.set_variable("Npc/Bartender2/Bartender2CurrentQuestDone", "true")
 			Dialogic.set_variable("Npc/Bartender2/Bartender2QuestStarted", "false")
-			Dialogic.set_variable("Npc/Bartender2/Bartender2CurrentQuest", "1")
+			Dialogic.set_variable("Npc/Bartender2/Bartender2CurrentQuest", "2")
 			quest.completed = 1
 			PlayerGlobals.coins += 250
 	
@@ -237,7 +244,7 @@ func check_and_set_quest_objectives(string: String) -> void:
 		if Stats.kgbs_times_won > 0:
 			Dialogic.set_variable("Npc/Mohamed/MohamedCurrentQuestDone", "true")
 			Dialogic.set_variable("Npc/Mohamed/MohamedQuestStarted", "false")
-			Dialogic.set_variable("Npc/Mohamed/MohamedCurrentQuest", "1")
+			Dialogic.set_variable("Npc/Mohamed/MohamedCurrentQuest", "2")
 			quest.completed = 1
 			PlayerGlobals.coins += 250
 
@@ -255,7 +262,7 @@ func check_and_set_quest_objectives(string: String) -> void:
 		if Stats.bullet_man_killed - bullet_man_killed_start >= 5:
 			Dialogic.set_variable("Npc/FlatCap/FlatCapCurrentQuestDone", "true")
 			Dialogic.set_variable("Npc/FlatCap/FlatCapQuestStarted", "false")
-			Dialogic.set_variable("Npc/FlatCap/FlatCapCurrentQuest", "1")
+			Dialogic.set_variable("Npc/FlatCap/FlatCapCurrentQuest", "2")
 			quest.completed = 1
 
 

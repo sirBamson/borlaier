@@ -125,7 +125,7 @@
 		},
 		{
 			"id": "1678901451-146",
-			"name": "FlatCapCurrentQuestAvalible",
+			"name": "FlatCapNextQuestAvalible",
 			"type": 0,
 			"value": "false"
 		}

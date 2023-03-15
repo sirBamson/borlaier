@@ -54,7 +54,7 @@
 			"character": "character-1675760651.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Hey! Have you killed them all yet?"
+			"text": "Hey, what are you waiting for? I can not eat cheese dip all day. I need the gamble!"
 		},
 		{
 			"event_id": "dialogic_013"
@@ -72,10 +72,10 @@
 
 			],
 			"portrait": "",
-			"question": "Hey, could I interest you in a quest? I pay pretty nicely you know!"
+			"question": "Oh... hello... I did not see you there. I have something I need help with. Would you be down to help me?"
 		},
 		{
-			"choice": "Yeah, sure!",
+			"choice": "Okey, what do you need help with?",
 			"condition": "",
 			"definition": "",
 			"event_id": "dialogic_011",
@@ -85,7 +85,7 @@
 			"character": "character-1675760651.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Those crazy poker chips have been consuming all the cheese dip. I can't seem to find anymore anywhere!\nIf you kill off at least 20 of them I will give you enough cash to buy an elevator access card (100c) to the next level.\nOh, and you should find a lot of those pesky varmints on floor 1!"
+			"text": "My name is George I have been in this casino for a long time and know a lot about it.\nLately, something odd has been going on and these pesky poker chips have come to life. \nI think it is just the air in here, but either way, someone needs to fix it.\nI can't feed my crippling gambling addiction while these savage little vermins are running around nibbling on my toes.\nIf you manage to put down 20 or more of them I will give you an elevator access card to the second floor.\nSince you are new here you can only access the lobby and first floor, but with this card, you could get to floor number two.\nSo what are you waiting for? My addiction is not going to feed itself."
 		},
 		{
 			"call_node": {
@@ -98,7 +98,7 @@
 			"event_id": "dialogic_042"
 		},
 		{
-			"choice": "No, I'm good!",
+			"choice": "Nah, I'm just going to look around.",
 			"condition": "",
 			"definition": "",
 			"event_id": "dialogic_011",
@@ -108,7 +108,7 @@
 			"character": "character-1675760651.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Come back when you change your mind!"
+			"text": "That is too bad. Could use the help.\nAnd besides, you cant just leave this place."
 		},
 		{
 			"event_id": "dialogic_013"
@@ -129,7 +129,7 @@
 			"character": "character-1675760651.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Wow you killed them! Here you go."
+			"text": "Alright, you killed them all!\nGreat work. I can finally get to the poker table without having to worry too much about those critters.\nThe only problem is that the new elevator they just installed. It has a maximum weight limit of 400kg..."
 		},
 		{
 			"event_id": "dialogic_013"
@@ -147,7 +147,7 @@
 			"character": "character-1675760651.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Hey dude!"
+			"text": "Hope you dont see this!"
 		},
 		{
 			"event_id": "dialogic_013"
@@ -291,88 +291,15 @@
 		},
 		{
 			"condition": "",
-			"definition": "1675972946-787",
+			"definition": "1675891257-648",
 			"event_id": "dialogic_012",
-			"value": "false"
-		},
-		{
-			"call_node": {
-				"arguments": [
-
-				],
-				"method_name": "dialogic_get_coins",
-				"target_node_path": "./PlayerGlobals"
-			},
-			"event_id": "dialogic_042"
-		},
-		{
-			"character": "character-1675760651.json",
-			"event_id": "dialogic_010",
-			"options": [
-
-			],
-			"portrait": "",
-			"question": "Hey! Wanna buy an elevator keycard? They are only 100c"
-		},
-		{
-			"choice": "Yes, please!",
-			"condition": "<",
-			"definition": "1675972282-648",
-			"event_id": "dialogic_011",
-			"value": "100"
+			"value": "3"
 		},
 		{
 			"character": "character-1675760651.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Hey! You don't have enough money!\nCome back when you have 100c!"
-		},
-		{
-			"choice": "Yes, please! (Pay 100c)",
-			"condition": ">",
-			"definition": "1675972282-648",
-			"event_id": "dialogic_011",
-			"value": "99"
-		},
-		{
-			"character": "character-1675760651.json",
-			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "Well, here you go then."
-		},
-		{
-			"definition": "1675972946-787",
-			"event_id": "dialogic_014",
-			"operation": "+",
-			"random_upper_limit": 100,
-			"set_random": false,
-			"set_value": "1"
-		},
-		{
-			"call_node": {
-				"arguments": [
-					"100"
-				],
-				"method_name": "give_next_keycard",
-				"target_node_path": "./PlayerGlobals"
-			},
-			"event_id": "dialogic_042"
-		},
-		{
-			"choice": "No, im good for now!",
-			"condition": "",
-			"definition": "",
-			"event_id": "dialogic_011",
-			"value": ""
-		},
-		{
-			"character": "character-1675760651.json",
-			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "Come back if you change your mind!"
-		},
-		{
-			"event_id": "dialogic_013"
+			"text": "Hey, thanks for all the help."
 		},
 		{
 			"event_id": "dialogic_013"
