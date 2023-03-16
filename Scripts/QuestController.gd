@@ -26,18 +26,23 @@ class Quest:
 	func check_dependencies(quests: Array) -> bool:
 		for quest in quests:
 			for dependency in dependencies.keys():
-				print("Cheking dependency for: " + str(dependency))
 				if quest.id_name == dependency:
 					if dependencies.get(dependency) == 0:
 						if !(quest.completed == 0):
+							print("Quest dependency check failed at 0")
+							print("Dependency: %s | Status: %s" % [dependency, quest.completed])
 							return false
 					if dependencies.get(dependency) == 1:
 						if !(quest.completed == 1):
+							print("Quest dependency check failed at 1")
+							print("Dependency: %s | Status: %s" % [dependency, quest.completed])
 							return false
 					if dependencies.get(dependency) == 2:
 						if !(quest.active == 2):
+							print("Quest dependency check failed at 2")
+							print("Dependency: %s | Status: %s" % [dependency, quest.completed])
 							return false
-			print("True")
+			print("Quest dependency check OK")
 			return true
 		return false
 
@@ -78,9 +83,7 @@ Förbereder och sätter upp alla quests
 func _ready() -> void:
 	FatMan1.id_name = "FatMan1"
 	FatMan1.description = "Kill 20 chiplings"
-	FatMan1.dependencies = {
-		"FatMan1": 0
-	}
+	FatMan1.dependencies = {}
 	FatMan1.dialogic_quest_series_name = "Npc/FatMan/FatManCurrentQuest"
 	FatMan1.dialogic_quest_started_name = "Npc/FatMan/FatManQuestStarted"
 	FatMan1.dialogic_next_quest_avalible_name = "Npc/FatMan/FatManNextQuestAvalible"
@@ -91,7 +94,6 @@ func _ready() -> void:
 	FatMan2.id_name = "FatMan2"
 	FatMan2.description = "Kill 20 chiplings"
 	FatMan2.dependencies = {
-		"FatMan2": 0,
 		"FatMan1": 1
 	}
 	FatMan2.dialogic_quest_series_name = "Npc/FatMan/FatManCurrentQuest"
@@ -104,7 +106,6 @@ func _ready() -> void:
 	Bartender21.id_name = "Bartender21"
 	Bartender21.description = "Get a drink"
 	Bartender21.dependencies = {
-		"Bartender21": 0,
 		"FatMan1": 1
 	}
 	Bartender21.dialogic_quest_series_name = "Npc/Bartender2/Bartender2CurrentQuest"
@@ -117,7 +118,6 @@ func _ready() -> void:
 	Mohamed1.id_name = "Mohamed1"
 	Mohamed1.description = "Get a drink"
 	Mohamed1.dependencies = {
-		"Mohamed1": 0,
 		"Bartender21": 2
 	}
 	Mohamed1.dialogic_quest_series_name = "Npc/Mohamed/MohamedCurrentQuest"
@@ -129,9 +129,7 @@ func _ready() -> void:
 	
 	FlatCap1.id_name = "FlatCap1"
 	FlatCap1.description = "Bounka"
-	FlatCap1.dependencies = {
-		"FlatCap1": 0
-	}
+	FlatCap1.dependencies = {}
 	FlatCap1.dialogic_quest_series_name = "Npc/FlatCap/FlatCapCurrentQuest"
 	FlatCap1.dialogic_quest_started_name = "Npc/FlatCap/FlatCapQuestStarted"
 	FlatCap1.dialogic_next_quest_avalible_name = "Npc/FlatCap/FlatCapNextQuestAvalible"
@@ -151,10 +149,12 @@ func start_quest(string) -> void:
 			if quest.check_dependencies(quests):
 				Dialogic.set_variable(quest.dialogic_quest_started_name, "true")
 				Dialogic.set_variable(quest.dialogic_quest_series_name, str(quest.quest_series_number))
-				check_and_set_quest_objectives(quest.id_name)
 				quest.active = true
-				print("Quest started: " + quest.id_name)
-				return
+				check_and_set_quest_objectives(quest.id_name)
+				print("Quest: " + quest.id_name)
+				print("Active: " + str(quest.active))
+			else:
+				print("Could not start quest")
 
 
 """
@@ -179,12 +179,13 @@ func check_and_set_quest_objectives(string: String) -> void:
 	if quest.id_name == "FatMan1" and !quest.active:
 		print("Quest init")
 		Dialogic.set_variable("Npc/FatMan/FatManCurrentQuestDone", "false")
+		quest.completed = 2
 		chiplings_killed_start = Stats.chiplings_killed
 	
 	# Quest done check
 	elif quest.id_name == "FatMan1" and quest.active:
 		print("Quest check")
-		if Stats.chiplings_killed - chiplings_killed_start >= 20:
+		if Stats.chiplings_killed - chiplings_killed_start >= 2:
 			Dialogic.set_variable("Npc/FatMan/FatManCurrentQuestDone", "true")
 			Dialogic.set_variable("Npc/FatMan/FatManQuestStarted", "false")
 			Dialogic.set_variable("Npc/FatMan/FatManCurrentQuest", "2")
@@ -196,6 +197,7 @@ func check_and_set_quest_objectives(string: String) -> void:
 	if quest.id_name == "FatMan2" and !quest.active:
 		print("Quest start")
 		Dialogic.set_variable("Npc/FatMan/FatManCurrentQuestDone", "false")
+		quest.completed = 2
 		chiplings_killed_start = Stats.chiplings_killed
 	
 	# Quest done check
@@ -213,12 +215,13 @@ func check_and_set_quest_objectives(string: String) -> void:
 	if quest.id_name == "Bartender21" and !quest.active:
 		print("Quest start")
 		Dialogic.set_variable("Npc/Bartender2/Bartender2CurrentQuestDone", "false")
+		quest.completed = 2
 		chiplings_killed_start = Stats.chiplings_killed
 	
 	# Quest done check
 	elif quest.id_name == "Bartender21" and quest.active:
 		print("Quest check")
-		if Mohamed1.completed:
+		if Mohamed1.completed == 1:
 			Dialogic.set_variable("Npc/Bartender2/Bartender2CurrentQuestDone", "true")
 			Dialogic.set_variable("Npc/Bartender2/Bartender2QuestStarted", "false")
 			Dialogic.set_variable("Npc/Bartender2/Bartender2CurrentQuest", "2")
@@ -230,6 +233,7 @@ func check_and_set_quest_objectives(string: String) -> void:
 	if quest.id_name == "Mohamed1" and !quest.active:
 		print("Quest start")
 		Dialogic.set_variable("Npc/Mohamed/MohamedCurrentQuestDone", "false")
+		quest.completed = 2
 	
 	# Quest done check
 	elif quest.id_name == "Mohamed1" and quest.active:
@@ -247,6 +251,7 @@ func check_and_set_quest_objectives(string: String) -> void:
 	if quest.id_name == "FlatCap1" and !quest.active:
 		print("Quest start")
 		Dialogic.set_variable("Npc/FlatCap/FlatCapCurrentQuestDone", "false")
+		quest.completed = 2
 		bullet_man_killed_start = Stats.bullet_man_killed
 	
 	# Quest done check
