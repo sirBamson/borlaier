@@ -59,6 +59,7 @@ Resetar data för nu
 
 func _on_Settings_pressed() -> void:
 	SaveGame.reset_data()
+	get_tree().quit()
 
 """
 Avslutar spelet
