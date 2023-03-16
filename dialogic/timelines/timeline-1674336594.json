@@ -291,9 +291,9 @@
 		},
 		{
 			"condition": "",
-			"definition": "1675891257-648",
+			"definition": "1675953506-648",
 			"event_id": "dialogic_012",
-			"value": "3"
+			"value": "false"
 		},
 		{
 			"character": "character-1675760651.json",
