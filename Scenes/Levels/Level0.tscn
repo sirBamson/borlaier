@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://Assets/White_square.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Assets/SlotMachine.tscn" type="PackedScene" id=2]
@@ -25,6 +25,7 @@
 [ext_resource path="res://Assets/bar_counter_corner_right_wLine.png" type="Texture" id=23]
 [ext_resource path="res://Scenes/Assets/Light.tscn" type="PackedScene" id=24]
 [ext_resource path="res://Scenes/Entities/Npc/NpcTopHat.tscn" type="PackedScene" id=25]
+[ext_resource path="res://Assets/Sounds/(No Copyright Music) Together With You by JR Tundra.mp3" type="AudioStream" id=26]
 
 [sub_resource type="TileSet" id=65]
 0/name = "casino_tilemap.png 0"
@@ -426,12 +427,13 @@ points = PoolVector2Array( 0, 0, 256, 0, 256, 256, 0, 256 )
 [node name="Level0" type="Node2D" groups=["Level"]]
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
-volume_db = -16.095
+stream = ExtResource( 26 )
+volume_db = -15.0
 autoplay = true
 
 [node name="Ambiant" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
-volume_db = -16.238
+volume_db = -23.0
 autoplay = true
 
 [node name="VoidLayer" type="CanvasLayer" parent="."]
