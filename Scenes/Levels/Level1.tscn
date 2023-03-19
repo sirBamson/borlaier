@@ -918,6 +918,7 @@ position = Vector2( 1304, 576 )
 
 [node name="NpcPurpleDress" parent="Navigation2D/YSort" instance=ExtResource( 26 )]
 position = Vector2( 4984, 4093 )
+npc_name = "WeaponWoman"
 
 [node name="Walls" type="TileMap" parent="."]
 tile_set = SubResource( 67 )
