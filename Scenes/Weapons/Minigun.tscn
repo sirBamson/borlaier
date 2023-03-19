@@ -50,9 +50,10 @@ animations = [ {
 
 [node name="Minigun" type="Node2D" groups=["Weapon"]]
 script = ExtResource( 2 )
+bullet_speed = 2000
 magazine_size = 1000
-fire_rate = 0.05
-damage = 2
+fire_rate = 0.08
+damage = 5
 auto = true
 
 [node name="BulletSound" type="AudioStreamPlayer2D" parent="."]

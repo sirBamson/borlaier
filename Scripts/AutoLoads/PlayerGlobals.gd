@@ -15,7 +15,7 @@ var bullets_in_mag_main: int
 var bullets_left: int = 200
 var bullets_left_main: int = bullets_left
 
-var grenades_left: int = 2
+var grenades_left: int = 5
 var holding_grenade: bool = false
 
 var current_weapon: String = "res://Scenes/Weapons/Pistol.tscn"
