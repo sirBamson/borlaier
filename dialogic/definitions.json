@@ -10,24 +10,6 @@
 			"value": "0"
 		},
 		{
-			"id": "1675972282-648",
-			"name": "PlayerCoins",
-			"type": 0,
-			"value": "0"
-		},
-		{
-			"id": "1675972946-787",
-			"name": "KeycardBought",
-			"type": 0,
-			"value": "false"
-		},
-		{
-			"id": "1675760437-648",
-			"name": "CurrentChar",
-			"type": 0,
-			"value": ""
-		},
-		{
 			"id": "1675891388-787",
 			"name": "FatManCurrentQuestDone",
 			"type": 0,
@@ -38,30 +20,6 @@
 			"name": "FatManCurrentQuest",
 			"type": 0,
 			"value": "1"
-		},
-		{
-			"id": "1677707763-703",
-			"name": "Bartender2CurrentQuest",
-			"type": 0,
-			"value": "1"
-		},
-		{
-			"id": "1677707777-335",
-			"name": "Bartender2CurrentQuestDone",
-			"type": 0,
-			"value": "false"
-		},
-		{
-			"id": "1677707781-958",
-			"name": "Bartender2QuestStarted",
-			"type": 0,
-			"value": "false"
-		},
-		{
-			"id": "1677707793-249",
-			"name": "Bartender2NextQuestAvalible",
-			"type": 0,
-			"value": "false"
 		},
 		{
 			"id": "1675893255-366",
@@ -100,12 +58,6 @@
 			"value": "1"
 		},
 		{
-			"id": "1677710041-158",
-			"name": "MohamedNextQuestAvalible",
-			"type": 0,
-			"value": "false"
-		},
-		{
 			"id": "1678901350-648",
 			"name": "FlatCapCurrentQuest",
 			"type": 0,
@@ -128,6 +80,54 @@
 			"name": "FlatCapNextQuestAvalible",
 			"type": 0,
 			"value": "false"
+		},
+		{
+			"id": "1677707781-958",
+			"name": "Bartender2QuestStarted",
+			"type": 0,
+			"value": "false"
+		},
+		{
+			"id": "1677710041-158",
+			"name": "MohamedNextQuestAvalible",
+			"type": 0,
+			"value": "false"
+		},
+		{
+			"id": "1677707763-703",
+			"name": "Bartender2CurrentQuest",
+			"type": 0,
+			"value": "1"
+		},
+		{
+			"id": "1677707793-249",
+			"name": "Bartender2NextQuestAvalible",
+			"type": 0,
+			"value": "false"
+		},
+		{
+			"id": "1677707777-335",
+			"name": "Bartender2CurrentQuestDone",
+			"type": 0,
+			"value": "false"
+		},
+		{
+			"id": "1675972282-648",
+			"name": "PlayerCoins",
+			"type": 0,
+			"value": "0"
+		},
+		{
+			"id": "1675760437-648",
+			"name": "CurrentChar",
+			"type": 0,
+			"value": ""
+		},
+		{
+			"id": "1679186988-648",
+			"name": "WeaponWomanCurrentWeaponTier",
+			"type": 0,
+			"value": "0"
 		}
 	]
 }

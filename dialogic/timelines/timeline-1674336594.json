@@ -460,7 +460,28 @@
 			"event_id": "dialogic_013"
 		},
 		{
+			"condition": "",
+			"definition": "1677707793-249",
+			"event_id": "dialogic_012",
+			"value": "false"
+		},
+		{
+			"character": "character-1677707686.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Hey! Im bussy. Come back when you helpt the fat man."
+		},
+		{
 			"event_id": "dialogic_013"
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_012",
+			"value": ""
 		},
 		{
 			"condition": "",
@@ -472,7 +493,10 @@
 			"character": "character-1677707686.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Hey! Im bussy. Come back when you helpt the fat man."
+			"text": "Thank you for all the help!"
+		},
+		{
+			"event_id": "dialogic_013"
 		},
 		{
 			"event_id": "dialogic_013"
@@ -723,7 +747,7 @@
 			"character": "character-1678901111.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Aight so you've seen them huge a*# bullets flying around with their ugly faces exploding and s#%t?\nI'd appreciate if you could were to kill a few of them, like [color = blue]5[/color] or so.\nI know Britt would appreciate it too, she'll definitely have something good for you if you go talk to her when you're done."
+			"text": "Aight so you've seen them huge a*# bullets flying around with their ugly faces exploding and s#%t?\nI'd appreciate if you could were to kill a few of them, like [color=#ff9933]5[/color] or so.\nI know Britt would appreciate it too, she'll definitely have something good for you if you go talk to her when you're done."
 		},
 		{
 			"call_node": {
@@ -797,6 +821,129 @@
 			"event_id": "dialogic_013"
 		},
 		{
+			"condition": "",
+			"definition": "1675760437-648",
+			"event_id": "dialogic_012",
+			"value": "WeaponWoman"
+		},
+		{
+			"character": "character-1679186806.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "If it is a weapon you want, you have reached the right person.\nYou can always trust me to get you the best I can offer.\nIf you are, for some reason, unhappy with the supply, help some people around here, they might help me get some more weapons."
+		},
+		{
+			"character": "character-1679186806.json",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "What weapon would you like?"
+		},
+		{
+			"choice": "Handgun",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1679186806.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "I would not have picked it, but sometimes you dont have a chooise"
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"res://Scenes/Weapons/Pistol.tscn",
+					"12"
+				],
+				"method_name": "set_weapon",
+				"target_node_path": "./PlayerGlobals"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"choice": "Submachine gun",
+			"condition": ">",
+			"definition": "1679186988-648",
+			"event_id": "dialogic_011",
+			"value": "0"
+		},
+		{
+			"character": "character-1679186806.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Intresting chooise. \nNot the damage of an assault rifle, but pretty nice fire rate."
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"res://Scenes/Weapons/SMG.tscn",
+					"30"
+				],
+				"method_name": "set_weapon",
+				"target_node_path": "./PlayerGlobals"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"choice": "Marksman rifle",
+			"condition": ">",
+			"definition": "1679186988-648",
+			"event_id": "dialogic_011",
+			"value": "1"
+		},
+		{
+			"character": "character-1679186806.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Good damage but not great fire rate."
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"res://Scenes/Weapons/SemiAutomaticRifle.tscn",
+					"7"
+				],
+				"method_name": "set_weapon",
+				"target_node_path": "./PlayerGlobals"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"choice": "Assault rifle",
+			"condition": ">",
+			"definition": "1679186988-648",
+			"event_id": "dialogic_011",
+			"value": "2"
+		},
+		{
+			"character": "character-1679186806.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "An assault rifle never goes wrong. Often the best chooise"
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"res://Scenes/Weapons/AssultRifle.tscn",
+					"25"
+				],
+				"method_name": "set_weapon",
+				"target_node_path": "./PlayerGlobals"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
 			"call_node": {
 				"arguments": [
 
@@ -814,6 +961,16 @@
 		},
 		{
 			"event_id": "dialogic_013"
+		},
+		{
+			"call_node": {
+				"arguments": [
+
+				],
+				"method_name": "",
+				"target_node_path": ""
+			},
+			"event_id": "dialogic_042"
 		}
 	],
 	"metadata": {
