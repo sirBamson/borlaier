@@ -32,6 +32,7 @@ animations = [ {
 
 [node name="AssultRifle" type="Node2D" groups=["Weapon"]]
 script = ExtResource( 2 )
+magazine_size = 25
 fire_rate = 0.09
 auto = true
 
