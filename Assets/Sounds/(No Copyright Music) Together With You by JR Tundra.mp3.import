@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/(No Copyright Music) Together With You by JR Tundra.mp3-7a8739c2303b710ea9700f4c69f5e353.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/(No Copyright Music) Together With You by JR Tundra.mp3"
+dest_files=[ "res://.import/(No Copyright Music) Together With You by JR Tundra.mp3-7a8739c2303b710ea9700f4c69f5e353.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
