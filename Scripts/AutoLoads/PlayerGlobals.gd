@@ -3,6 +3,7 @@ extends Node
 var health: int = 100
 var dead: bool = false
 var has_gun: bool = true
+var player_path: String = ""
 
 var talking: bool = false
 
@@ -17,9 +18,9 @@ var bullets_left_main: int = bullets_left
 var grenades_left: int = 2
 var holding_grenade: bool = false
 
-var current_weapon: String = "res://Scenes/Weapons/AssultRifle.tscn"
+var current_weapon: String = "res://Scenes/Weapons/Pistol.tscn"
 
-var elevator_floor_access: Array = [0, 1, 2, 3]
+var elevator_floor_access: Array = [0, 1]
 
 
 func _ready() -> void:
@@ -39,13 +40,28 @@ func set_talking_state() -> void:
 	SaveGame.save_data()
 
 
+# Takes bullets as an string. Needed for dialogic
+func set_weapon(weapon_path: String, bullets: String) -> void:
+	var player: KinematicBody2D = get_node(player_path)
+	has_gun = true
+	
+	var weapon = load(weapon_path)
+	current_weapon = weapon_path
+	weapon = weapon.instance()
+	weapon.position = player.get_node("PlayerCamera").position
+	weapon.bullets_in_mag = int(bullets)
+	
+	for node in player.get_children():
+		if node.is_in_group("Weapon"):
+			node.queue_free()
+	player.add_child(weapon)
+
+
 func dialogic_get_coins() -> void:
 	print(coins)
 	Dialogic.set_variable("PlayerCoins", str(coins))
 
 
-func give_next_keycard(floor_number: int) -> void:
+func give_keycard(floor_number: int) -> void:
 	if !(floor_number in elevator_floor_access):
 		elevator_floor_access.append(floor_number)
-		# For readability
-		print(elevator_floor_access.sort())
