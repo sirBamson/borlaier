@@ -208,19 +208,21 @@ speed = 800
 position = Vector2( -2, 0 )
 z_index = 2
 frames = SubResource( 23 )
-frame = 9
+frame = 13
 playing = true
 
 [node name="HealthBar" type="ProgressBar" parent="AnimatedSprite"]
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -308.0
-margin_top = 136.0
-margin_right = 52.0
-margin_bottom = 166.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -180.0
+margin_top = 8.0
+margin_right = 180.0
+margin_bottom = 38.0
 rect_scale = Vector2( 0.3, 0.3 )
 theme = SubResource( 56 )
-max_value = 200.0
+max_value = 250.0
 value = 200.0
 percent_visible = false
 
