@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Elevator Bell Sound Effect.mp3-daa443e9d510f1ef4b464
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
