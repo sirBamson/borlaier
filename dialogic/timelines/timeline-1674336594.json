@@ -944,20 +944,132 @@
 			"event_id": "dialogic_013"
 		},
 		{
+			"condition": "",
+			"definition": "1675760437-648",
+			"event_id": "dialogic_012",
+			"value": "Bartender1"
+		},
+		{
+			"character": "character-1679340112.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Hello hello something here"
+		},
+		{
+			"character": "character-1679340112.json",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "Give health for money an maybe give some ammo to!"
+		},
+		{
 			"call_node": {
 				"arguments": [
 
 				],
-				"method_name": "set_talking_state",
+				"method_name": "dialogic_get_coins",
 				"target_node_path": "./PlayerGlobals"
 			},
 			"event_id": "dialogic_042"
 		},
 		{
+			"choice": "Ammo please",
 			"condition": "",
 			"definition": "",
-			"event_id": "dialogic_012",
+			"event_id": "dialogic_011",
 			"value": ""
+		},
+		{
+			"condition": ">=",
+			"definition": "1675972282-648",
+			"event_id": "dialogic_012",
+			"value": "50"
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"50"
+				],
+				"method_name": "dialogic_set_ammunition",
+				"target_node_path": "./PlayerGlobals"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"character": "character-1679340112.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Here you go haha"
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"condition": "<",
+			"definition": "1675972282-648",
+			"event_id": "dialogic_012",
+			"value": "50"
+		},
+		{
+			"character": "character-1679340112.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "You dont have money"
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"choice": "Health maybe",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"condition": ">=",
+			"definition": "1675972282-648",
+			"event_id": "dialogic_012",
+			"value": "25"
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"25"
+				],
+				"method_name": "dialogic_set_health",
+				"target_node_path": "./PlayerGlobals"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"character": "character-1679340112.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Drink up bitch"
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"condition": "<",
+			"definition": "1675972282-648",
+			"event_id": "dialogic_012",
+			"value": "25"
+		},
+		{
+			"character": "character-1679340112.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "You dont have money"
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"event_id": "dialogic_013"
 		},
 		{
 			"event_id": "dialogic_013"
@@ -967,8 +1079,8 @@
 				"arguments": [
 
 				],
-				"method_name": "",
-				"target_node_path": ""
+				"method_name": "set_talking_state",
+				"target_node_path": "./PlayerGlobals"
 			},
 			"event_id": "dialogic_042"
 		}

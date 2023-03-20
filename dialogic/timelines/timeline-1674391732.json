@@ -11,6 +11,19 @@
 			"value": "1"
 		},
 		{
+			"audio": "play",
+			"audio_bus": "Master",
+			"event_id": "dialogic_030",
+			"event_name": "AudioEvent",
+			"file": "res://Assets/Sounds/ElevatorDing.wav",
+			"volume": 0
+		},
+		{
+			"event_id": "dialogic_023",
+			"hide_dialogbox": true,
+			"wait_seconds": 1
+		},
+		{
 			"condition": "",
 			"definition": "1674392044-648",
 			"event_id": "dialogic_012",
@@ -38,14 +51,6 @@
 			"definition": "1674392044-648",
 			"event_id": "dialogic_012",
 			"value": "0"
-		},
-		{
-			"audio": "play",
-			"audio_bus": "Master",
-			"event_id": "dialogic_030",
-			"event_name": "AudioEvent",
-			"file": "res://Assets/Sounds/Elevator Bell Sound Effect.mp3",
-			"volume": 0
 		},
 		{
 			"audio": "play",
