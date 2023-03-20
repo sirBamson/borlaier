@@ -57,8 +57,18 @@ func set_weapon(weapon_path: String, bullets: String) -> void:
 	player.add_child(weapon)
 
 
+func dialogic_set_health(cost: String) -> void:
+	health = 100
+	coins =- int(cost)
+
+
+func dialogic_set_ammunition(cost: String) -> void:
+	bullets_left = 300
+	grenades_left = 5
+	coins =- int(cost)
+
+
 func dialogic_get_coins() -> void:
-	print(coins)
 	Dialogic.set_variable("PlayerCoins", str(coins))
 
 
