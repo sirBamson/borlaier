@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=2]
+[gd_scene load_steps=48 format=2]
 
 [ext_resource path="res://Assets/White_square.png" type="Texture" id=1]
 [ext_resource path="res://Assets/casino_tilemap.png" type="Texture" id=2]
@@ -27,6 +27,9 @@
 [ext_resource path="res://Scenes/Assets/RouletteTable.tscn" type="PackedScene" id=25]
 [ext_resource path="res://Scenes/Entities/Npc/NpcPurpleDress.tscn" type="PackedScene" id=26]
 [ext_resource path="res://Assets/Sounds/(No Copyright Music) Together With You by JR Tundra.mp3" type="AudioStream" id=27]
+[ext_resource path="res://Assets/spiked_drink.png" type="Texture" id=28]
+[ext_resource path="res://Assets/ammo_pouch.png" type="Texture" id=29]
+[ext_resource path="res://Assets/grenade.png" type="Texture" id=30]
 
 [sub_resource type="TileSet" id=65]
 0/name = "casino_tilemap.png 0"
@@ -543,6 +546,20 @@ polygon = PoolVector2Array( 1280, 3520, 2304, 3520, 2304, 3264, 2224, 3264, 2224
 [node name="CashRegister" type="Sprite" parent="Navigation2D/YSort/BarCounter"]
 position = Vector2( 124, -102 )
 texture = ExtResource( 22 )
+
+[node name="SpikedDrink" type="Sprite" parent="Navigation2D/YSort/BarCounter"]
+position = Vector2( -200, -97 )
+scale = Vector2( 1.1, 1.1 )
+texture = ExtResource( 28 )
+
+[node name="AmmoPouch" type="Sprite" parent="Navigation2D/YSort/BarCounter"]
+position = Vector2( -263, -83 )
+scale = Vector2( 0.85, 0.85 )
+texture = ExtResource( 29 )
+
+[node name="Granade" type="Sprite" parent="Navigation2D/YSort/BarCounter"]
+position = Vector2( -315, -83 )
+texture = ExtResource( 30 )
 
 [node name="ArmChair" parent="Navigation2D/YSort" instance=ExtResource( 12 )]
 position = Vector2( 384, 3160 )
