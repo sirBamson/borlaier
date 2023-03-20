@@ -495,6 +495,7 @@ position = Vector2( 3968, 3624 )
 
 [node name="NpcBartender" parent="Navigation2D/YSort" instance=ExtResource( 24 )]
 position = Vector2( 1792, 3464 )
+npc_name = "Bartender1"
 
 [node name="BarCounter" type="StaticBody2D" parent="Navigation2D/YSort"]
 position = Vector2( 1792, 3464 )
