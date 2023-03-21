@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Elevator Bell Sound Effect.mp3-daa443e9d510f1ef4b46402ac7bcef4c.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/Elevator Bell Sound Effect.mp3"
+dest_files=[ "res://.import/Elevator Bell Sound Effect.mp3-daa443e9d510f1ef4b46402ac7bcef4c.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

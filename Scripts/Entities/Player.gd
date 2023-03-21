@@ -25,6 +25,8 @@ func _ready() -> void:
 	Shake.shake_nodes.clear()
 	Shake.shake_nodes[$PlayerCamera] = true
 	
+	PlayerGlobals.player_path = get_path()
+	
 	if PlayerGlobals.has_gun:
 		var weapon = load(PlayerGlobals.current_weapon)
 		weapon = weapon.instance()

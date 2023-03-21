@@ -191,7 +191,7 @@ func check_and_set_quest_objectives(string: String) -> void:
 			Dialogic.set_variable("Npc/FatMan/FatManQuestStarted", "false")
 			Dialogic.set_variable("Npc/FatMan/FatManCurrentQuest", "2")
 			quest.completed = 1
-			PlayerGlobals.give_next_keycard(2)
+			PlayerGlobals.give_keycard(2)
 	
 	# FatMan2 quest objective
 	# Quest init
@@ -239,7 +239,8 @@ func check_and_set_quest_objectives(string: String) -> void:
 			Dialogic.set_variable("Npc/Mohamed/MohamedCurrentQuest", "2")
 			quest.completed = 1
 			PlayerGlobals.coins += 250
-	
+
+
 	# FlatCap1 quest objective
 	# Quest init
 	if quest.id_name == "FlatCap1" and !quest.active:
@@ -249,11 +250,16 @@ func check_and_set_quest_objectives(string: String) -> void:
 	
 	# Quest done check
 	elif quest.id_name == "FlatCap1" and quest.active:
-		if Stats.bullet_man_killed - bullet_man_killed_start >= 5:
+		if Stats.bullet_man_killed - bullet_man_killed_start >= 1:
 			Dialogic.set_variable("Npc/FlatCap/FlatCapCurrentQuestDone", "true")
 			Dialogic.set_variable("Npc/FlatCap/FlatCapQuestStarted", "false")
 			Dialogic.set_variable("Npc/FlatCap/FlatCapCurrentQuest", "2")
+			
+			var tier: int = int(Dialogic.get_variable("Npc/WeaponWoman/WeaponWomanCurrentWeaponTier"))
+			tier += 1
+			Dialogic.set_variable("Npc/WeaponWoman/WeaponWomanCurrentWeaponTier", str(tier))
 			quest.completed = 1
+			
 
 
 

@@ -27,6 +27,7 @@ func _ready() -> void:
 	PlayerGlobals.talking = true
 	add_child(Dialogic.start("God"))
 	
+	
 	for node in get_parent().get_children():
 		if node.is_in_group("Player"):
 			player = node
@@ -34,6 +35,8 @@ func _ready() -> void:
 	target_x_position = player.global_position.x
 	global_position.y = player.global_position.y - get_viewport().size.y
 	global_position.x = target_x_position
+	
+	$ElevatorTimer.start()
 
 
 """
@@ -130,3 +133,11 @@ func _on_God_body_entered(body: Node) -> void:
 
 func _on_AttackTimer_timeout() -> void:
 	spawn_lightning()
+
+
+func _on_ElevatorTimer_timeout() -> void:
+	var elevator = get_node("/root/SceneController/Level3/ElevatorDoor")
+	var destroyed_elevator = get_node("/root/SceneController/Level3/DestroyedElevator")
+	
+	elevator.queue_free()
+	destroyed_elevator.visible = true
