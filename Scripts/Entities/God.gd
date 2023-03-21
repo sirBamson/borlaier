@@ -48,7 +48,7 @@ func _physics_process(delta: float) -> void:
 		var current_scene: Node = get_parent()
 		var current_scene_path: String = current_scene.filename
 		scene_controller.level0_variables["player_position"] = Vector2(216, 1312)
-		scene_controller.scene_controller.change_scene(true, current_scene, current_scene_path, "res://Scenes/Levels/Level0.tscn")
+		scene_controller.change_scene(true, current_scene, current_scene_path, "res://Scenes/Levels/Level0.tscn")
 	
 	velocity = 0
 	if global_position.x - target_x_position >= 0:

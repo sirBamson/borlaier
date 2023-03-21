@@ -167,8 +167,10 @@ Om questet är klarat så sätts några dialogic variablar som sedan används i 
 
 Denna funktion tar in en string vilket symboliserar namnet av det quest som ska kollas.
 """
+
 var bullet_man_killed_start: int = 0
 var chiplings_killed_start: int = 0
+
 func check_and_set_quest_objectives(string: String) -> void:
 	var quest: Quest
 	for quest_item in quests:
@@ -237,8 +239,7 @@ func check_and_set_quest_objectives(string: String) -> void:
 			Dialogic.set_variable("Npc/Mohamed/MohamedCurrentQuest", "2")
 			quest.completed = 1
 			PlayerGlobals.coins += 250
-
-
+	
 	# FlatCap1 quest objective
 	# Quest init
 	if quest.id_name == "FlatCap1" and !quest.active:
@@ -291,6 +292,8 @@ func get_quest_variables():
 	
 	FatMan1_dict = {
 		"Id_name": FatMan1.id_name,
+		"Active": FatMan1.active,
+		"Completed": FatMan1.completed,
 		"Description": FatMan1.description,
 		"Dependencies": FatMan1.dependencies,
 		"Dialogic_quest_series_name": FatMan1.dialogic_quest_series_name,
@@ -301,6 +304,8 @@ func get_quest_variables():
 	
 	FatMan2_dict = {
 		"Id_name": FatMan2.id_name,
+		"Active": FatMan2.active,
+		"Completed": FatMan2.completed,
 		"Description": FatMan2.description,
 		"Dependencies": FatMan2.dependencies,
 		"Dialogic_quest_series_name": FatMan2.dialogic_quest_series_name,
@@ -316,6 +321,8 @@ func set_quest_variables():
 	Dialogic.set_variable("Npc/FatMan/FatManCurrentQuest", FatMan_dialogic["FatManCurrentQuest"])
 	
 	FatMan1.id_name = FatMan1_dict["Id_name"]
+	FatMan1.active = FatMan1_dict["Active"]
+	FatMan1.completed = FatMan1_dict["Completed"]
 	FatMan1.description = FatMan1_dict["Description"]
 	FatMan1.dependencies = FatMan1_dict["Dependencies"]
 	FatMan1.dialogic_quest_series_name = FatMan1_dict["Dialogic_quest_series_name"]
@@ -324,6 +331,8 @@ func set_quest_variables():
 	FatMan1.quest_series_number = FatMan1_dict["Quest_series_number"]
 	
 	FatMan2.id_name = FatMan2_dict["Id_name"]
+	FatMan2.active = FatMan2_dict["Active"]
+	FatMan2.completed = FatMan2_dict["Completed"]
 	FatMan2.description = FatMan2_dict["Description"]
 	FatMan2.dependencies = FatMan2_dict["Dependencies"]
 	FatMan2.dialogic_quest_series_name = FatMan2_dict["Dialogic_quest_series_name"]
