@@ -31,7 +31,7 @@
 [ext_resource path="res://Scenes/Assets/ArcadeKillEmSide.tscn" type="PackedScene" id=29]
 [ext_resource path="res://Scenes/Entities/Npc/NpcMohamed.tscn" type="PackedScene" id=30]
 [ext_resource path="res://Scenes/Assets/RouletteTable.tscn" type="PackedScene" id=31]
-[ext_resource path="res://Scenes/Entities/Npc/FlatCap.tscn" type="PackedScene" id=32]
+[ext_resource path="res://Scenes/Entities/Npc/FlatCap2.tscn" type="PackedScene" id=32]
 [ext_resource path="res://Assets/Sounds/(No Copyright Music) Together With You by JR Tundra.mp3" type="AudioStream" id=33]
 
 [sub_resource type="TileSet" id=81]
@@ -820,6 +820,7 @@ points = PoolVector2Array( 0, 0, 256, 0, 256, 256, 0, 256 )
 19/z_index = 0
 
 [node name="Level2" type="Node2D" groups=["Level"]]
+position = Vector2( 24, 40 )
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 33 )
@@ -1407,8 +1408,8 @@ position = Vector2( 5008, 1616 )
 [node name="RouletteTable" parent="Navigation2D/YSort" instance=ExtResource( 31 )]
 position = Vector2( 8972, 2520 )
 
-[node name="NpcFlatCap" parent="Navigation2D/YSort" instance=ExtResource( 32 )]
-position = Vector2( 9088, 2592 )
+[node name="NpcFlatCap2" parent="Navigation2D/YSort" instance=ExtResource( 32 )]
+position = Vector2( 9080, 2605 )
 
 [node name="Walls" type="TileMap" parent="."]
 tile_set = SubResource( 83 )

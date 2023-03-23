@@ -962,7 +962,7 @@
 
 			],
 			"portrait": "",
-			"question": "Give health for money an maybe give some ammo to!"
+			"question": "If you give me money, I will offer you some ammo for your weapon and some grenades to throw, or, I will make you a drink with an extra touch (Increases health)."
 		},
 		{
 			"call_node": {
@@ -975,7 +975,7 @@
 			"event_id": "dialogic_042"
 		},
 		{
-			"choice": "Ammo please",
+			"choice": "How about some ammo and grenades.",
 			"condition": "",
 			"definition": "",
 			"event_id": "dialogic_011",
@@ -1001,7 +1001,7 @@
 			"character": "character-1679340112.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Here you go haha"
+			"text": "Here you go my friend."
 		},
 		{
 			"event_id": "dialogic_013"
@@ -1016,13 +1016,13 @@
 			"character": "character-1679340112.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "You dont have money"
+			"text": "You dont have any money."
 		},
 		{
 			"event_id": "dialogic_013"
 		},
 		{
-			"choice": "Health maybe",
+			"choice": "That drink sounds good.",
 			"condition": "",
 			"definition": "",
 			"event_id": "dialogic_011",
@@ -1048,7 +1048,7 @@
 			"character": "character-1679340112.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Drink up bitch"
+			"text": "Drink up b*#!h."
 		},
 		{
 			"event_id": "dialogic_013"
@@ -1063,7 +1063,7 @@
 			"character": "character-1679340112.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "You dont have money"
+			"text": "You dont have enough money."
 		},
 		{
 			"event_id": "dialogic_013"

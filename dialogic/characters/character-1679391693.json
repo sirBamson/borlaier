@@ -1,0 +1,21 @@
+{
+	"color": "#ffffffff",
+	"description": "Got ur bitch bro\nGot ur bitch",
+	"display_name": "Claus",
+	"display_name_bool": true,
+	"id": "character-1679391693.json",
+	"mirror_portraits": false,
+	"name": "FlatCap2",
+	"nickname": "",
+	"nickname_bool": false,
+	"offset_x": 0,
+	"offset_y": 0,
+	"portraits": [
+		{
+			"name": "Default",
+			"path": ""
+		}
+	],
+	"scale": 100,
+	"theme": ""
+}

@@ -15,7 +15,8 @@
 				"character-1678572531.json",
 				"character-1678901111.json",
 				"character-1679186806.json",
-				"character-1679340112.json"
+				"character-1679340112.json",
+				"character-1679391693.json"
 			],
 			"folders": {
 
@@ -74,6 +75,18 @@
 								"1678901392-787",
 								"1678901430-366",
 								"1678901451-146"
+							],
+							"folders": {
+
+							},
+							"metadata": {
+								"color": null,
+								"folded": false
+							}
+						},
+						"FlatCap2": {
+							"files": [
+								"1679391783-648"
 							],
 							"folders": {
 
