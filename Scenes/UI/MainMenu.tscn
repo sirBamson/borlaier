@@ -185,7 +185,7 @@ margin_top = 130.0
 margin_right = 423.0
 margin_bottom = 180.0
 theme = SubResource( 12 )
-text = "Setting"
+text = "Reset Save"
 
 [node name="QuitToDesktop" type="Button" parent="VBoxContainer/VBoxContainer"]
 margin_top = 195.0
