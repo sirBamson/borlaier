@@ -12,7 +12,6 @@ var last_velocity: Vector2 = Vector2.RIGHT
 var on_weapon: bool = false
 var weapon_on_ground: Node
 
-var health: int = 100
 var points: int = 0
 var points_counter: int = 0
 
@@ -157,11 +156,11 @@ func _on_PlayerHitbox_area_entered(area: Area2D) -> void:
 		on_weapon = true
 	
 	if area.get_parent().is_in_group("Grenade"):
-		health -= area.get_parent().damage_output
+		PlayerGlobals.health -= area.get_parent().damage_output
 	
 	# Lightning strike damage
 	if area.get_parent().is_in_group("LightningStrike"):
-		health -= 80
+		PlayerGlobals.health -= 80
 
 
 func _on_PlayerHitbox_area_exited(area: Area2D) -> void:

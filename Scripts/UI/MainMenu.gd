@@ -12,8 +12,9 @@ Sätter även olika text om det är första gången spelet körs
 func _ready() -> void:
 	SaveGame.load_data()
 	if !EnvVar.in_challenge_run:
-		PlayerGlobals.bullets_in_mag_main = PlayerGlobals.bullets_in_mag
-		PlayerGlobals.bullets_left_main = PlayerGlobals.bullets_left
+		PlayerGlobals.bullets_in_mag_temp = PlayerGlobals.bullets_in_mag
+		PlayerGlobals.bullets_left_temp = PlayerGlobals.bullets_left
+		PlayerGlobals.health_temp = PlayerGlobals.health
 	EnvVar.can_pause = false
 	if EnvVar.first_time_played:
 		$VBoxContainer/VBoxContainer/ContinueGame.text = "Start the gamble"
@@ -28,8 +29,9 @@ Om det är första gången så skickas spelaren till första vånigen
 """
 
 func _on_ContinueGame_pressed() -> void:
-	PlayerGlobals.bullets_left = PlayerGlobals.bullets_left_main
-	PlayerGlobals.bullets_in_mag = PlayerGlobals.bullets_in_mag_main
+	PlayerGlobals.bullets_left = PlayerGlobals.bullets_left_temp
+	PlayerGlobals.bullets_in_mag = PlayerGlobals.bullets_in_mag_temp
+	PlayerGlobals.health = PlayerGlobals.health_temp
 	
 	EnvVar.in_challenge_run = false
 	EnvVar.can_pause = true

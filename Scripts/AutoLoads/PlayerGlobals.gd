@@ -1,6 +1,7 @@
 extends Node
 
 var health: int = 100
+var health_temp: int = health 
 var dead: bool = false
 var has_gun: bool = true
 var player_path: String = ""
@@ -11,9 +12,9 @@ var coins: int = 0
 
 var magazine_size: int
 var bullets_in_mag: int 
-var bullets_in_mag_main: int 
+var bullets_in_mag_temp: int 
 var bullets_left: int = 200
-var bullets_left_main: int = bullets_left
+var bullets_left_temp: int = bullets_left
 
 var grenades_left: int = 5
 var holding_grenade: bool = false
