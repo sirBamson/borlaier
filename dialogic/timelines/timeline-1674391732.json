@@ -16,7 +16,7 @@
 			"event_id": "dialogic_030",
 			"event_name": "AudioEvent",
 			"file": "res://Assets/Sounds/ElevatorDing.wav",
-			"volume": 0
+			"volume": -20.04
 		},
 		{
 			"event_id": "dialogic_023",

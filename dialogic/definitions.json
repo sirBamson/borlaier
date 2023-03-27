@@ -58,12 +58,6 @@
 			"value": "1"
 		},
 		{
-			"id": "1678901350-648",
-			"name": "FlatCapCurrentQuest",
-			"type": 0,
-			"value": "1"
-		},
-		{
 			"id": "1678901392-787",
 			"name": "FlatCapCurrentQuestDone",
 			"type": 0,
@@ -130,10 +124,16 @@
 			"value": "0"
 		},
 		{
-			"id": "1679391783-648",
-			"name": "FlatCap2Currrent",
+			"id": "1678901350-648",
+			"name": "FlatCapCurrentQuest",
 			"type": 0,
-			"value": ""
+			"value": "1"
+		},
+		{
+			"id": "1679391783-648",
+			"name": "FlatCap2CurrrentQuest",
+			"type": 0,
+			"value": "1"
 		}
 	]
 }
