@@ -16,8 +16,9 @@ radius = 74.0068
 [sub_resource type="CircleShape2D" id=3]
 radius = 78.0256
 
-[sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 129, 37 )
+[sub_resource type="CapsuleShape2D" id=4]
+radius = 79.0
+height = 114.0
 
 [node name="DroppedWeapon" type="Area2D" groups=["DroppedWeapon"]]
 collision_layer = 64
@@ -39,12 +40,12 @@ shape = SubResource( 1 )
 disabled = true
 
 [node name="Pistol" type="Sprite" parent="PistolShape"]
-position = Vector2( -72, -9 )
 texture = ExtResource( 3 )
 
 [node name="SemiAutomaticRifleShape" type="CollisionShape2D" parent="."]
 visible = false
 shape = SubResource( 3 )
+disabled = true
 
 [node name="SemiAutomaticRifle" type="Sprite" parent="SemiAutomaticRifleShape"]
 texture = ExtResource( 4 )
@@ -59,8 +60,10 @@ texture = ExtResource( 5 )
 
 [node name="MinigunShape" type="CollisionShape2D" parent="."]
 visible = false
+rotation = 1.5708
 shape = SubResource( 4 )
 disabled = true
 
 [node name="Minigun" type="Sprite" parent="MinigunShape"]
+rotation = -1.5708
 texture = ExtResource( 6 )

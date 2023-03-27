@@ -35,6 +35,7 @@ detta för att låsa dörarna.
 """
 
 func _physics_process(_delta: float) -> void:
+	# Checks if player is close to the panel
 	if in_interaction_area:
 		
 		# Not currently using the panel
