@@ -475,7 +475,7 @@ position = Vector2( 2688, 1088 )
 enemy_path = "res://Scenes/Entities/Chipling.tscn"
 enemy_name = "Chipling"
 spawn_interval = 3
-max_enemy_amount = 10
+max_enemy_amount = 6
 active = true
 
 [node name="EnemySpawner2" parent="Navigation2D/YSort" instance=ExtResource( 23 )]
@@ -483,7 +483,7 @@ position = Vector2( 640, 576 )
 enemy_path = "res://Scenes/Entities/Chipling.tscn"
 enemy_name = "Chipling"
 spawn_interval = 3
-max_enemy_amount = 10
+max_enemy_amount = 6
 active = true
 
 [node name="EnemySpawner3" parent="Navigation2D/YSort" instance=ExtResource( 23 )]
@@ -491,7 +491,7 @@ position = Vector2( 4096, 1856 )
 enemy_path = "res://Scenes/Entities/BulletMan.tscn"
 enemy_name = "BulletMan"
 spawn_interval = 10
-max_enemy_amount = 2
+max_enemy_amount = 1
 active = true
 
 [node name="Player" parent="Navigation2D/YSort" instance=ExtResource( 4 )]
