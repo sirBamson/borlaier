@@ -852,7 +852,7 @@
 			"character": "character-1679186806.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "I would not have picked it, but sometimes you dont have a chooise"
+			"text": "I would not have picked it, but sometimes you dont have a choise."
 		},
 		{
 			"call_node": {
@@ -876,7 +876,7 @@
 			"character": "character-1679186806.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Intresting chooise. \nNot the damage of an assault rifle, but pretty nice fire rate."
+			"text": "Intresting choise. \nNot the damage of an assault rifle, but pretty nice fire rate."
 		},
 		{
 			"call_node": {
@@ -924,7 +924,7 @@
 			"character": "character-1679186806.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "An assault rifle never goes wrong. Often the best chooise"
+			"text": "An assault rifle never goes wrong. Often the best choise."
 		},
 		{
 			"call_node": {
@@ -953,7 +953,7 @@
 			"character": "character-1679340112.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Hello hello something here"
+			"text": "Hello comrade!"
 		},
 		{
 			"character": "character-1679340112.json",
@@ -962,7 +962,7 @@
 
 			],
 			"portrait": "",
-			"question": "If you give me money, I will offer you some ammo for your weapon and some grenades to throw, or, I will make you a drink with an extra touch (Increases health)."
+			"question": "If you give me money, I will offer you some ammo for your weapon and some grenades to throw, or, I will make you a drink with an extra touch.  (Increases health)."
 		},
 		{
 			"call_node": {
