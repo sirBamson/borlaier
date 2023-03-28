@@ -186,7 +186,7 @@ func check_and_set_quest_objectives(string: String) -> void:
 	
 	# Quest done check
 	elif quest.id_name == "FatMan1" and quest.active:
-		if Stats.chiplings_killed - chiplings_killed_start >= 2:
+		if Stats.chiplings_killed - chiplings_killed_start >= 10:
 			Dialogic.set_variable("Npc/FatMan/FatManCurrentQuestDone", "true")
 			Dialogic.set_variable("Npc/FatMan/FatManQuestStarted", "false")
 			Dialogic.set_variable("Npc/FatMan/FatManCurrentQuest", "2")
@@ -202,7 +202,7 @@ func check_and_set_quest_objectives(string: String) -> void:
 	
 	# Quest done check
 	elif quest.id_name == "FatMan2" and quest.active:
-		if Stats.chiplings_killed - chiplings_killed_start >= 40:
+		if Stats.chiplings_killed - chiplings_killed_start >= 20:
 			Dialogic.set_variable("Npc/FatMan/FatManCurrentQuestDone", "true")
 			Dialogic.set_variable("Npc/FatMan/FatManQuestStarted", "false")
 			Dialogic.set_variable("Npc/FatMan/FatManCurrentQuest", "3")

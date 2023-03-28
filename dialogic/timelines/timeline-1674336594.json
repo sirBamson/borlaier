@@ -85,7 +85,7 @@
 			"character": "character-1675760651.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "My name is George I have been in this casino for a long time and know a lot about it.\nLately, something odd has been going on and these pesky poker chips have come to life. \nI think it is just the air in here, but either way, someone needs to fix it.\nI can't feed my crippling gambling addiction while these savage little vermins are running around nibbling on my toes.\nIf you manage to put down 20 or more of them I will give you an elevator access card to the second floor.\nSince you are new here you can only access the lobby and first floor, but with this card, you could get to floor number two.\nSo what are you waiting for? My addiction is not going to feed itself."
+			"text": "My name is George I have been in this casino for a long time and know a lot about it.\nLately, something odd has been going on and these pesky poker chips have come to life. \nI think it is just the air in here, but either way, someone needs to fix it.\nI can't feed my crippling gambling addiction while these savage little vermins are running around nibbling on my toes.\nIf you manage to put down 10 or more of them I will give you an elevator access card to the second floor.\nSince you are new here you can only access the lobby and first floor, but with this card, you could get to floor number two.\nSo what are you waiting for? My addiction is not going to feed itself."
 		},
 		{
 			"call_node": {
@@ -234,7 +234,7 @@
 			"character": "character-1675760651.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Those pesky Chiplings have been eating my mac and chees.\nLet's say you kill at least 40 of them and ill give you money to buy some ammol. Sounds good?"
+			"text": "Those pesky Chiplings have been eating my mac and chees.\nLet's say you kill at least 20 of them and ill give you money to buy some ammol. Sounds good?"
 		},
 		{
 			"call_node": {
@@ -747,7 +747,7 @@
 			"character": "character-1678901111.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Aight so you've seen them huge a*# bullets flying around with their ugly faces exploding and s#%t?\nI'd appreciate if you could were to kill a few of them, like [color=#ff9933]5[/color] or so.\nI know Britt would appreciate it too, she'll definitely have something good for you if you go talk to her when you're done."
+			"text": "Aight so you've seen them huge a*# bullets flying around with their ugly faces exploding and s#%t?\nI'd appreciate if you could were to kill a few of them, like [color=#ff9933]1[/color] or so.\nI know Britt would appreciate it too, she'll definitely have something good for you if you go talk to her when you're done."
 		},
 		{
 			"call_node": {
