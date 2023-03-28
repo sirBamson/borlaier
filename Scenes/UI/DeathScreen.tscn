@@ -132,7 +132,7 @@ Button/styles/pressed = SubResource( 11 )
 
 [node name="DeathScreen" type="CanvasLayer"]
 pause_mode = 2
-layer = 100
+layer = 102
 script = ExtResource( 3 )
 
 [node name="TextureRect" type="TextureRect" parent="."]

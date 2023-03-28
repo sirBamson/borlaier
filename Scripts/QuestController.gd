@@ -319,6 +319,24 @@ func get_quest_variables():
 		"Dialogic_next_quest_avalible_name": FatMan2.dialogic_next_quest_avalible_name,
 		"Quest_series_number": FatMan2.quest_series_number
 		}
+	
+	Bartender2_dialogic = {
+		"Bartender2CurrentQuestDone": Dialogic.get_variable("Npc/Bartender2/Bartender2CurrentQuestDone"),
+		"Bartender2QuestStarted": Dialogic.get_variable("Npc/Bartender2/Bartender2QuestStarted"),
+		"Bartender2CurrentQuest": Dialogic.get_variable("Npc/Bartender2/Bartender2CurrentQuest")
+	}
+	
+	Bartender21_dict = {
+		"Id_name": Bartender21.id_name,
+		"Active": Bartender21.active,
+		"Completed": Bartender21.completed,
+		"Description": Bartender21.description,
+		"Dependencies": Bartender21.dependencies,
+		"Dialogic_quest_series_name": Bartender21.dialogic_quest_series_name,
+		"Dialogic_quest_started_name": Bartender21.dialogic_quest_started_name,
+		"Dialogic_next_quest_avalible_name": Bartender21.dialogic_next_quest_avalible_name,
+		"Quest_series_number": Bartender21.quest_series_number,
+		}
 
 
 func set_quest_variables():
@@ -345,3 +363,19 @@ func set_quest_variables():
 	FatMan2.dialogic_quest_started_name = FatMan2_dict["Dialogic_quest_started_name"]
 	FatMan2.dialogic_next_quest_avalible_name = FatMan2_dict["Dialogic_next_quest_avalible_name"]
 	FatMan2.quest_series_number = FatMan2_dict["Quest_series_number"]
+	
+	# ---
+	
+	Dialogic.set_variable("Npc/Bartender2/Bartender2CurrentQuestDone", Bartender2_dialogic["Bartender2CurrentQuestDone"])
+	Dialogic.set_variable("Npc/Bartender2/Bartender2QuestStarted", Bartender2_dialogic["Bartender2QuestStarted"])
+	Dialogic.set_variable("Npc/Bartender2/Bartender2CurrentQuest", Bartender2_dialogic["Bartender2CurrentQuest"])
+	
+	Bartender21.id_name = Bartender21_dict["Id_name"]
+	Bartender21.active = Bartender21_dict["Active"]
+	Bartender21.completed = Bartender21_dict["Completed"]
+	Bartender21.description = Bartender21_dict["Description"]
+	Bartender21.dependencies = Bartender21_dict["Dependencies"]
+	Bartender21.dialogic_quest_series_name = Bartender21_dict["Dialogic_quest_series_name"]
+	Bartender21.dialogic_quest_started_name = Bartender21_dict["Dialogic_quest_started_name"]
+	Bartender21.dialogic_next_quest_avalible_name = Bartender21_dict["Dialogic_next_quest_avalible_name"]
+	Bartender21.quest_series_number = Bartender21_dict["Quest_series_number"]
