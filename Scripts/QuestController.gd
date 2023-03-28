@@ -320,6 +320,8 @@ func get_quest_variables():
 		"Quest_series_number": FatMan2.quest_series_number
 		}
 	
+	# ---
+	
 	Bartender2_dialogic = {
 		"Bartender2CurrentQuestDone": Dialogic.get_variable("Npc/Bartender2/Bartender2CurrentQuestDone"),
 		"Bartender2QuestStarted": Dialogic.get_variable("Npc/Bartender2/Bartender2QuestStarted"),
@@ -336,6 +338,46 @@ func get_quest_variables():
 		"Dialogic_quest_started_name": Bartender21.dialogic_quest_started_name,
 		"Dialogic_next_quest_avalible_name": Bartender21.dialogic_next_quest_avalible_name,
 		"Quest_series_number": Bartender21.quest_series_number,
+		}
+	
+	# ---
+	
+	Mohamed_dialogic = {
+		"MohamedCurrentQuestDone": Dialogic.get_variable("Npc/Mohamed/MohamedCurrentQuestDone"),
+		"MohamedQuestStarted": Dialogic.get_variable("Npc/Mohamed/MohamedQuestStarted"),
+		"MohamedCurrentQuest": Dialogic.get_variable("Npc/Mohamed/MohamedCurrentQuest")
+	}
+	
+	Mohamed1_dict = {
+		"Id_name": Mohamed1.id_name,
+		"Active": Mohamed1.active,
+		"Completed": Mohamed1.completed,
+		"Description": Mohamed1.description,
+		"Dependencies": Mohamed1.dependencies,
+		"Dialogic_quest_series_name": Mohamed1.dialogic_quest_series_name,
+		"Dialogic_quest_started_name": Mohamed1.dialogic_quest_started_name,
+		"Dialogic_next_quest_avalible_name": Mohamed1.dialogic_next_quest_avalible_name,
+		"Quest_series_number": Mohamed1.quest_series_number,
+		}
+	
+	# ---
+
+	FlatCap_dialogic = {
+		"FlatCapCurrentQuestDone": Dialogic.get_variable("Npc/FlatCap/FlatCapCurrentQuestDone"),
+		"FlatCapQuestStarted": Dialogic.get_variable("Npc/FlatCap/FlatCapQuestStarted"),
+		"FlatCapCurrentQuest": Dialogic.get_variable("Npc/FlatCap/FlatCapCurrentQuest")
+	}
+	
+	FlatCap1_dict = {
+		"Id_name": FlatCap1.id_name,
+		"Active": FlatCap1.active,
+		"Completed": FlatCap1.completed,
+		"Description": FlatCap1.description,
+		"Dependencies": FlatCap1.dependencies,
+		"Dialogic_quest_series_name": FlatCap1.dialogic_quest_series_name,
+		"Dialogic_quest_started_name": FlatCap1.dialogic_quest_started_name,
+		"Dialogic_next_quest_avalible_name": FlatCap1.dialogic_next_quest_avalible_name,
+		"Quest_series_number": FlatCap1.quest_series_number,
 		}
 
 
@@ -379,3 +421,35 @@ func set_quest_variables():
 	Bartender21.dialogic_quest_started_name = Bartender21_dict["Dialogic_quest_started_name"]
 	Bartender21.dialogic_next_quest_avalible_name = Bartender21_dict["Dialogic_next_quest_avalible_name"]
 	Bartender21.quest_series_number = Bartender21_dict["Quest_series_number"]
+
+	# ---
+	
+	Dialogic.set_variable("Npc/Mohamed/MohamedCurrentQuestDone", Mohamed_dialogic["MohamedCurrentQuestDone"])
+	Dialogic.set_variable("Npc/Mohamed/MohamedQuestStarted", Mohamed_dialogic["MohamedQuestStarted"])
+	Dialogic.set_variable("Npc/Mohamed/MohamedCurrentQuest", Mohamed_dialogic["MohamedCurrentQuest"])
+	
+	Mohamed1.id_name = Mohamed1_dict["Id_name"]
+	Mohamed1.active = Mohamed1_dict["Active"]
+	Mohamed1.completed = Mohamed1_dict["Completed"]
+	Mohamed1.description = Mohamed1_dict["Description"]
+	Mohamed1.dependencies = Mohamed1_dict["Dependencies"]
+	Mohamed1.dialogic_quest_series_name = Mohamed1_dict["Dialogic_quest_series_name"]
+	Mohamed1.dialogic_quest_started_name = Mohamed1_dict["Dialogic_quest_started_name"]
+	Mohamed1.dialogic_next_quest_avalible_name = Mohamed1_dict["Dialogic_next_quest_avalible_name"]
+	Mohamed1.quest_series_number = Mohamed1_dict["Quest_series_number"]
+
+	# ---
+	
+	Dialogic.set_variable("Npc/FlatCap/FlatCapCurrentQuestDone", FlatCap_dialogic["FlatCapCurrentQuestDone"])
+	Dialogic.set_variable("Npc/FlatCap/FlatCapQuestStarted", FlatCap_dialogic["FlatCapQuestStarted"])
+	Dialogic.set_variable("Npc/FlatCap/FlatCapCurrentQuest", FlatCap_dialogic["FlatCapCurrentQuest"])
+	
+	FlatCap1.id_name = FlatCap1_dict["Id_name"]
+	FlatCap1.active = FlatCap1_dict["Active"]
+	FlatCap1.completed = FlatCap1_dict["Completed"]
+	FlatCap1.description = FlatCap1_dict["Description"]
+	FlatCap1.dependencies = FlatCap1_dict["Dependencies"]
+	FlatCap1.dialogic_quest_series_name = FlatCap1_dict["Dialogic_quest_series_name"]
+	FlatCap1.dialogic_quest_started_name = FlatCap1_dict["Dialogic_quest_started_name"]
+	FlatCap1.dialogic_next_quest_avalible_name = FlatCap1_dict["Dialogic_next_quest_avalible_name"]
+	FlatCap1.quest_series_number = FlatCap1_dict["Quest_series_number"]
