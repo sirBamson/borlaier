@@ -58,20 +58,8 @@
 			"value": "1"
 		},
 		{
-			"id": "1678901392-787",
-			"name": "FlatCapCurrentQuestDone",
-			"type": 0,
-			"value": "false"
-		},
-		{
 			"id": "1678901430-366",
 			"name": "FlatCapQuestStarted",
-			"type": 0,
-			"value": "false"
-		},
-		{
-			"id": "1678901451-146",
-			"name": "FlatCapNextQuestAvalible",
 			"type": 0,
 			"value": "false"
 		},
@@ -124,14 +112,26 @@
 			"value": "0"
 		},
 		{
-			"id": "1678901350-648",
-			"name": "FlatCapCurrentQuest",
+			"id": "1679391783-648",
+			"name": "FlatCap2CurrrentQuest",
 			"type": 0,
 			"value": "1"
 		},
 		{
-			"id": "1679391783-648",
-			"name": "FlatCap2CurrrentQuest",
+			"id": "1678901392-787",
+			"name": "FlatCapCurrentQuestDone",
+			"type": 0,
+			"value": "false"
+		},
+		{
+			"id": "1678901451-146",
+			"name": "FlatCapNextQuestAvalible",
+			"type": 0,
+			"value": "false"
+		},
+		{
+			"id": "1678901350-648",
+			"name": "FlatCapCurrentQuest",
 			"type": 0,
 			"value": "1"
 		}
