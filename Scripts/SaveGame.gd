@@ -125,6 +125,9 @@ func get_game_data() -> void:
 
 		"Quest_Mohamed_dialogic": QuestController.Mohamed_dialogic,
 		"Quest_Mohamed1_dict": QuestController.Mohamed1_dict,
+		
+		"Quest_FlatCap_dialogic": QuestController.FlatCap_dialogic,
+		"Quest_FlatCap1_dict": QuestController.FlatCap1_dict,
 		}
 
 
@@ -174,3 +177,6 @@ func set_game_data() -> void:
 
 	QuestController.Mohamed_dialogic = game_data["Quest_Mohamed_dialogic"]
 	QuestController.Mohamed1_dict = game_data["Quest_Mohamed1_dict"]
+	
+	QuestController.FlatCap_dialogic = game_data["Quest_FlatCap_dialogic"]
+	QuestController.FlatCap1_dict = game_data["Quest_FlatCap1_dict"]
