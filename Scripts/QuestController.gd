@@ -223,7 +223,7 @@ func check_and_set_quest_objectives(string: String) -> void:
 			Dialogic.set_variable("Npc/Bartender2/Bartender2QuestStarted", "false")
 			Dialogic.set_variable("Npc/Bartender2/Bartender2CurrentQuest", "2")
 			quest.completed = 1
-			PlayerGlobals.coins += 250
+			PlayerGlobals.coins += 200
 	
 	# Mohamed1 quest objective
 	# Quest init
@@ -238,7 +238,6 @@ func check_and_set_quest_objectives(string: String) -> void:
 			Dialogic.set_variable("Npc/Mohamed/MohamedQuestStarted", "false")
 			Dialogic.set_variable("Npc/Mohamed/MohamedCurrentQuest", "2")
 			quest.completed = 1
-			PlayerGlobals.coins += 250
 
 
 	# FlatCap1 quest objective
