@@ -821,7 +821,6 @@ points = PoolVector2Array( 0, 0, 256, 0, 256, 256, 0, 256 )
 19/z_index = 0
 
 [node name="Level2" type="Node2D" groups=["Level"]]
-position = Vector2( 24, 40 )
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 33 )
