@@ -407,7 +407,7 @@
 			"character": "character-1677707686.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "So when I first came here from the motherland, I brought something from home. Now I have lost that bottle of the finest liquor, right here, in this very casino. \nLet's say you find it for me and I could make it worth your time. How about 250c?\nOh and the last time I saw it was when I got drunk at the arcades here on floor two. So you might want to have a look around and talk to someone there. "
+			"text": "So when I first came here from the motherland, I brought something from home. Now I have lost that bottle of the finest liquor, right here, in this very casino. \nLet's say you find it for me and I could make it worth your time. How about 200c?\nOh and the last time I saw it was when I got drunk at the arcades here on floor two. So you might want to have a look around and talk to someone there. "
 		},
 		{
 			"call_node": {
@@ -956,15 +956,6 @@
 			"text": "Hello comrade!"
 		},
 		{
-			"character": "character-1679340112.json",
-			"event_id": "dialogic_010",
-			"options": [
-
-			],
-			"portrait": "",
-			"question": "If you give me money, I will offer you some ammo for your weapon and some grenades to throw, or, I will make you a drink with an extra touch.  (Increases health)."
-		},
-		{
 			"call_node": {
 				"arguments": [
 
@@ -973,6 +964,15 @@
 				"target_node_path": "./PlayerGlobals"
 			},
 			"event_id": "dialogic_042"
+		},
+		{
+			"character": "character-1679340112.json",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "If you give me money, I will offer you some ammo for your weapon and some grenades to throw, or, I will make you a drink with an extra touch.  (Increases health)."
 		},
 		{
 			"choice": "How about some ammo and grenades.",
