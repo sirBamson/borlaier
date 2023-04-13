@@ -89,6 +89,7 @@ func get_game_data() -> void:
 		"Player_holding_grenade": PlayerGlobals.holding_grenade,
 		"Player_current_weapon": PlayerGlobals.current_weapon,
 		"Player_elevator_floor_access": PlayerGlobals.elevator_floor_access,
+		"Player_weapon_tier": PlayerGlobals.weapon_tier,
 		
 
 		# Envviroment data
@@ -147,7 +148,7 @@ func set_game_data() -> void:
 	PlayerGlobals.holding_grenade = game_data["Player_holding_grenade"]
 	PlayerGlobals.current_weapon = game_data["Player_current_weapon"]
 	PlayerGlobals.elevator_floor_access = game_data["Player_elevator_floor_access"]
-	
+	PlayerGlobals.weapon_tier = game_data["Player_weapon_tier"]
 
 	EnvVar.first_time_played = game_data["EnvVar_first_time_played"]
 	EnvVar.latest_level_path = game_data["EnvVar_latest_level_path"]
