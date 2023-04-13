@@ -58,12 +58,6 @@
 			"value": "1"
 		},
 		{
-			"id": "1678901430-366",
-			"name": "FlatCapQuestStarted",
-			"type": 0,
-			"value": "false"
-		},
-		{
 			"id": "1677707781-958",
 			"name": "Bartender2QuestStarted",
 			"type": 0,
@@ -106,14 +100,26 @@
 			"value": ""
 		},
 		{
-			"id": "1679186988-648",
-			"name": "WeaponWomanCurrentWeaponTier",
+			"id": "1678901350-648",
+			"name": "FlatCapCurrentQuest",
 			"type": 0,
-			"value": "0"
+			"value": "1"
 		},
 		{
 			"id": "1678901392-787",
 			"name": "FlatCapCurrentQuestDone",
+			"type": 0,
+			"value": "false"
+		},
+		{
+			"id": "1680814428-648",
+			"name": "FlatCap2CurrentQuestDone",
+			"type": 0,
+			"value": "false"
+		},
+		{
+			"id": "1678901430-366",
+			"name": "FlatCapQuestStarted",
 			"type": 0,
 			"value": "false"
 		},
@@ -124,16 +130,28 @@
 			"value": "false"
 		},
 		{
-			"id": "1678901350-648",
-			"name": "FlatCapCurrentQuest",
+			"id": "1680814455-366",
+			"name": "FlatCap2NextQuestAvalible",
+			"type": 0,
+			"value": "false"
+		},
+		{
+			"id": "1680814449-787",
+			"name": "FlatCap2QuestStarted",
+			"type": 0,
+			"value": "false"
+		},
+		{
+			"id": "1679391783-648",
+			"name": "FlatCap2CurrentQuest",
 			"type": 0,
 			"value": "1"
 		},
 		{
-			"id": "1679391783-648",
-			"name": "FlatCap2CurrrentQuest",
+			"id": "1679186988-648",
+			"name": "WeaponWomanCurrentWeaponTier",
 			"type": 0,
-			"value": "1"
+			"value": "0"
 		}
 	]
 }
