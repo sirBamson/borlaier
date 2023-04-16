@@ -22,6 +22,7 @@ var holding_grenade: bool = false
 var current_weapon: String = "res://Scenes/Weapons/Pistol.tscn"
 
 var elevator_floor_access: Array = [0, 1]
+var weapon_tier: int = 0
 
 
 func _ready() -> void:
@@ -60,16 +61,17 @@ func set_weapon(weapon_path: String, bullets: String) -> void:
 
 func dialogic_set_health(cost: String) -> void:
 	health = 100
-	coins =- int(cost)
+	coins -= int(cost)
 
 
 func dialogic_set_ammunition(cost: String) -> void:
 	bullets_left = 300
 	grenades_left = 5
-	coins =- int(cost)
+	coins -= int(cost)
 
 
 func dialogic_get_coins() -> void:
+	print("here")
 	Dialogic.set_variable("PlayerCoins", str(coins))
 
 

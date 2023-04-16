@@ -77,6 +77,13 @@ var FlatCap1: Quest = Quest.new()
 var FlatCap_dialogic: Dictionary = {}
 var FlatCap1_dict: Dictionary = {}
 
+# FlatCap2
+var FlatCap21: Quest = Quest.new()
+var FlatCap22: Quest = Quest.new()
+
+var FlatCap2_dialogic: Dictionary = {}
+var FlatCap21_dict: Dictionary = {}
+var FlatCap22_dict: Dictionary = {}
 
 """
 Förbereder och sätter upp alla quests
@@ -138,6 +145,29 @@ func _ready() -> void:
 	FlatCap1.dialogic_next_quest_avalible_name = "Npc/FlatCap/FlatCapNextQuestAvalible"
 	FlatCap1.quest_series_number = 1
 	quests.append(FlatCap1)
+	
+	
+	FlatCap21.id_name = "FlatCap21"
+	FlatCap21.description = "Kill 20 chiplings"
+	FlatCap21.dependencies = {}
+	FlatCap21.dialogic_quest_series_name = "Npc/FlatCap2/FlatCap2CurrentQuest"
+	FlatCap21.dialogic_quest_started_name = "Npc/FlatCap2/FlatCap2QuestStarted"
+	FlatCap21.dialogic_next_quest_avalible_name = "Npc/FlatCap2/FlatCap2NextQuestAvalible"
+	FlatCap21.quest_series_number = 1
+	quests.append(FlatCap21)
+	
+	
+	FlatCap22.id_name = "FlatCap22"
+	FlatCap22.description = "Kill 20 chiplings"
+	FlatCap22.dependencies = {
+		"FatMan1": 1,
+		"Bartender21": 1
+	}
+	FlatCap22.dialogic_quest_series_name = "Npc/FlatCap2/FlatCap2CurrentQuest"
+	FlatCap22.dialogic_quest_started_name = "Npc/FlatCap2/FlatCap2QuestStarted"
+	FlatCap22.dialogic_next_quest_avalible_name = "Npc/FlatCap2/FlatCap2NextQuestAvalible"
+	FlatCap22.quest_series_number = 2
+	quests.append(FlatCap22)
 
 
 """
@@ -223,7 +253,7 @@ func check_and_set_quest_objectives(string: String) -> void:
 			Dialogic.set_variable("Npc/Bartender2/Bartender2QuestStarted", "false")
 			Dialogic.set_variable("Npc/Bartender2/Bartender2CurrentQuest", "2")
 			quest.completed = 1
-			PlayerGlobals.coins += 250
+			PlayerGlobals.coins += 200
 	
 	# Mohamed1 quest objective
 	# Quest init
@@ -238,7 +268,6 @@ func check_and_set_quest_objectives(string: String) -> void:
 			Dialogic.set_variable("Npc/Mohamed/MohamedQuestStarted", "false")
 			Dialogic.set_variable("Npc/Mohamed/MohamedCurrentQuest", "2")
 			quest.completed = 1
-			PlayerGlobals.coins += 250
 
 
 	# FlatCap1 quest objective
@@ -255,11 +284,45 @@ func check_and_set_quest_objectives(string: String) -> void:
 			Dialogic.set_variable("Npc/FlatCap/FlatCapQuestStarted", "false")
 			Dialogic.set_variable("Npc/FlatCap/FlatCapCurrentQuest", "2")
 			
-			var tier: int = int(Dialogic.get_variable("Npc/WeaponWoman/WeaponWomanCurrentWeaponTier"))
-			tier += 1
-			Dialogic.set_variable("Npc/WeaponWoman/WeaponWomanCurrentWeaponTier", str(tier))
+			PlayerGlobals.weapon_tier += 1
+			Dialogic.set_variable("Npc/WeaponWoman/WeaponWomanCurrentWeaponTier", str(PlayerGlobals.weapon_tier))
 			quest.completed = 1
+
+
+	# FlatCap21 quest objective
+	# Quest init
+	if quest.id_name == "FlatCap21" and !quest.active:
+		Dialogic.set_variable("Npc/FlatCap2/FlatCap2CurrentQuestDone", "false")
+		quest.completed = 2
+		
+	
+	# Quest done check
+	elif quest.id_name == "FlatCap21" and quest.active:
+		if Stats.bullet_man_killed - bullet_man_killed_start >= 1:
+			Dialogic.set_variable("Npc/FlatCap2/FlatCap2CurrentQuestDone", "true")
+			Dialogic.set_variable("Npc/FlatCap2/FlatCap2QuestStarted", "false")
+			Dialogic.set_variable("Npc/FlatCap2/FlatCap2CurrentQuest", "2")
 			
+			PlayerGlobals.weapon_tier += 1
+			Dialogic.set_variable("Npc/WeaponWoman/WeaponWomanCurrentWeaponTier", str(PlayerGlobals.weapon_tier))
+			quest.completed = 1
+
+	# FlatCap22 quest objective
+	# Quest init
+	if quest.id_name == "FlatCap22" and !quest.active:
+		Dialogic.set_variable("Npc/FlatCap2/FlatCap2CurrentQuestDone", "false")
+		quest.completed = 2
+	
+	# Quest done check
+	elif quest.id_name == "FlatCap22" and quest.active:
+		if PlayerGlobals.weapon_tier > 2:
+			Dialogic.set_variable("Npc/FlatCap2/FlatCap2CurrentQuestDone", "true")
+			Dialogic.set_variable("Npc/FlatCap2/FlatCap2QuestStarted", "false")
+			Dialogic.set_variable("Npc/FlatCap2/FlatCap2CurrentQuest", "3")
+			
+			PlayerGlobals.give_keycard(3)
+			
+			quest.completed = 1
 
 
 
@@ -379,6 +442,38 @@ func get_quest_variables():
 		"Dialogic_next_quest_avalible_name": FlatCap1.dialogic_next_quest_avalible_name,
 		"Quest_series_number": FlatCap1.quest_series_number,
 		}
+	# ---
+
+	FlatCap2_dialogic = {
+		"FlatCap2CurrentQuestDone": Dialogic.get_variable("Npc/FlatCap2/FlatCap2CurrentQuestDone"),
+		"FlatCap2QuestStarted": Dialogic.get_variable("Npc/FlatCap2/FlatCap2QuestStarted"),
+		"FlatCap2CurrentQuest": Dialogic.get_variable("Npc/FlatCap2/FlatCap2CurrentQuest")
+	}
+	
+	FlatCap21_dict = {
+		"Id_name": FlatCap21.id_name,
+		"Active": FlatCap21.active,
+		"Completed": FlatCap21.completed,
+		"Description": FlatCap21.description,
+		"Dependencies": FlatCap21.dependencies,
+		"Dialogic_quest_series_name": FlatCap21.dialogic_quest_series_name,
+		"Dialogic_quest_started_name": FlatCap21.dialogic_quest_started_name,
+		"Dialogic_next_quest_avalible_name": FlatCap21.dialogic_next_quest_avalible_name,
+		"Quest_series_number": FlatCap21.quest_series_number,
+		}
+	
+	FlatCap22_dict = {
+		"Id_name": FlatCap22.id_name,
+		"Active": FlatCap22.active,
+		"Completed": FlatCap22.completed,
+		"Description": FlatCap22.description,
+		"Dependencies": FlatCap22.dependencies,
+		"Dialogic_quest_series_name": FlatCap22.dialogic_quest_series_name,
+		"Dialogic_quest_started_name": FlatCap22.dialogic_quest_started_name,
+		"Dialogic_next_quest_avalible_name": FlatCap22.dialogic_next_quest_avalible_name,
+		"Quest_series_number": FlatCap22.quest_series_number,
+		}
+
 
 
 func set_quest_variables():
@@ -453,3 +548,29 @@ func set_quest_variables():
 	FlatCap1.dialogic_quest_started_name = FlatCap1_dict["Dialogic_quest_started_name"]
 	FlatCap1.dialogic_next_quest_avalible_name = FlatCap1_dict["Dialogic_next_quest_avalible_name"]
 	FlatCap1.quest_series_number = FlatCap1_dict["Quest_series_number"]
+
+	# ---
+	
+	Dialogic.set_variable("Npc/FlatCap2/FlatCap2CurrentQuestDone", FlatCap2_dialogic["FlatCap2CurrentQuestDone"])
+	Dialogic.set_variable("Npc/FlatCap2/FlatCap2QuestStarted", FlatCap2_dialogic["FlatCap2QuestStarted"])
+	Dialogic.set_variable("Npc/FlatCap2/FlatCap2CurrentQuest", FlatCap2_dialogic["FlatCap2CurrentQuest"])
+	
+	FlatCap21.id_name = FlatCap21_dict["Id_name"]
+	FlatCap21.active = FlatCap21_dict["Active"]
+	FlatCap21.completed = FlatCap21_dict["Completed"]
+	FlatCap21.description = FlatCap21_dict["Description"]
+	FlatCap21.dependencies = FlatCap21_dict["Dependencies"]
+	FlatCap21.dialogic_quest_series_name = FlatCap21_dict["Dialogic_quest_series_name"]
+	FlatCap21.dialogic_quest_started_name = FlatCap21_dict["Dialogic_quest_started_name"]
+	FlatCap21.dialogic_next_quest_avalible_name = FlatCap21_dict["Dialogic_next_quest_avalible_name"]
+	FlatCap21.quest_series_number = FlatCap21_dict["Quest_series_number"]
+	
+	FlatCap22.id_name = FlatCap22_dict["Id_name"]
+	FlatCap22.active = FlatCap22_dict["Active"]
+	FlatCap22.completed = FlatCap22_dict["Completed"]
+	FlatCap22.description = FlatCap22_dict["Description"]
+	FlatCap22.dependencies = FlatCap22_dict["Dependencies"]
+	FlatCap22.dialogic_quest_series_name = FlatCap22_dict["Dialogic_quest_series_name"]
+	FlatCap22.dialogic_quest_started_name = FlatCap22_dict["Dialogic_quest_started_name"]
+	FlatCap22.dialogic_next_quest_avalible_name = FlatCap22_dict["Dialogic_next_quest_avalible_name"]
+	FlatCap22.quest_series_number = FlatCap22_dict["Quest_series_number"]
