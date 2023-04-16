@@ -22,12 +22,13 @@ var holding_grenade: bool = false
 var current_weapon: String = "res://Scenes/Weapons/Pistol.tscn"
 
 var elevator_floor_access: Array = [0, 1]
-var weapon_tier: int = 0
+var weapon_tier: int = 1
 
 
 func _ready() -> void:
 	magazine_size = load(current_weapon).instance().magazine_size
 	bullets_in_mag = magazine_size
+	
 
 
 func _physics_process(delta: float) -> void:
@@ -57,6 +58,10 @@ func set_weapon(weapon_path: String, bullets: String) -> void:
 		if node.is_in_group("Weapon"):
 			node.queue_free()
 	player.add_child(weapon)
+
+
+func set_weapon_tier() -> void:
+	Dialogic.set_variable("Npc/WeaponWoman/WeaponWomanCurrentWeaponTier", str(PlayerGlobals.weapon_tier))
 
 
 func dialogic_set_health(cost: String) -> void:
