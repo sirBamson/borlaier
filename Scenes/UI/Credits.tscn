@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/White_square.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Fonts/Casino3DMarqueeRegular-d9A2V.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Assets/Fonts/ThaleahFat.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Scripts/UI/Credits.gd" type="Script" id=4]
 
 [sub_resource type="Theme" id=1]
 default_font = ExtResource( 2 )
@@ -39,6 +40,7 @@ font_data = ExtResource( 3 )
 [node name="Credits" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 4 )
 
 [node name="Background" type="TextureRect" parent="."]
 modulate = Color( 0.878431, 0.278431, 0.278431, 1 )
@@ -49,11 +51,13 @@ expand = true
 
 [node name="Title" type="Label" parent="."]
 anchor_left = 0.5
+anchor_top = 0.35
 anchor_right = 0.5
+anchor_bottom = 0.35
 margin_left = -216.5
-margin_top = 104.0
+margin_top = -120.0
 margin_right = 216.5
-margin_bottom = 224.0
+margin_bottom = -1.52588e-05
 theme = SubResource( 1 )
 text = "Credits"
 align = 1
@@ -88,17 +92,17 @@ text = "Github - SirVader"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer"]
 margin_left = 403.0
-margin_right = 819.0
+margin_right = 835.0
 margin_bottom = 78.0
 
 [node name="Name2" type="Label" parent="HBoxContainer/VBoxContainer2"]
-margin_right = 416.0
+margin_right = 432.0
 margin_bottom = 44.0
 text = "Hampus Sahlsten"
 
 [node name="SocialMedia" type="Label" parent="HBoxContainer/VBoxContainer2"]
 margin_top = 48.0
-margin_right = 416.0
+margin_right = 432.0
 margin_bottom = 78.0
 custom_fonts/font = SubResource( 4 )
-text = "Instagram - bohampus somthing"
+text = "Instagram - bohampus_aesthetic"
