@@ -203,7 +203,7 @@
 			"character": "character-1675760651.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Hey! How is the quest going?"
+			"text": "Hey! How is it going?"
 		},
 		{
 			"event_id": "dialogic_013"
@@ -221,7 +221,7 @@
 
 			],
 			"portrait": "",
-			"question": "Hey, could I maybe occupy you with another quest?"
+			"question": "Hey. Im going to need more of your help. "
 		},
 		{
 			"choice": "Yeah, why not!",
@@ -234,7 +234,7 @@
 			"character": "character-1675760651.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Those pesky Chiplings have been eating my mac and chees.\nLet's say you kill at least 20 of them and ill give you money to buy some ammol. Sounds good?"
+			"text": "Those annoying things have been bugging me more and more and it's getting hard to do my 24-hour gambling sessions whit them attacking me.\nCan you kill some more of them? Maybe like 20 of them.\nI cant pay you tho, I've gambled away all my money..."
 		},
 		{
 			"call_node": {
@@ -257,7 +257,7 @@
 			"character": "character-1675760651.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Alright, your loss."
+			"text": "Alright..."
 		},
 		{
 			"event_id": "dialogic_013"
@@ -278,7 +278,7 @@
 			"character": "character-1675760651.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Wow you killed them! Here you go."
+			"text": "Oh, thank you so much for all your help!"
 		},
 		{
 			"event_id": "dialogic_013"
@@ -824,6 +824,16 @@
 			"text": "If it is a weapon you want, you have reached the right person.\nYou can always trust me to get you the best I can offer.\nIf you are, for some reason, unhappy with the supply, help some people around here, they might help me get some more weapons."
 		},
 		{
+			"call_node": {
+				"arguments": [
+
+				],
+				"method_name": "set_weapon_tier",
+				"target_node_path": "./PlayerGlobals"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
 			"character": "character-1679186806.json",
 			"event_id": "dialogic_010",
 			"options": [
@@ -1119,7 +1129,7 @@
 			"character": "character-1679391693.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Hey, what are you waiting for? I can not eat cheese dip all day. I need the gamble!"
+			"text": "Hey dude. You know George is not going to get good on his own."
 		},
 		{
 			"event_id": "dialogic_013"
@@ -1137,10 +1147,10 @@
 
 			],
 			"portrait": "",
-			"question": "Oh... hello... I did not see you there. I have something I need help with. Would you be down to help me?"
+			"question": "Hello dude, might I interest you in a quest? I might be able to get you another weapon from Britt."
 		},
 		{
-			"choice": "Okey, what do you need help with?",
+			"choice": "Well, a new weapon would be pretty nice.",
 			"condition": "",
 			"definition": "",
 			"event_id": "dialogic_011",
@@ -1150,7 +1160,7 @@
 			"character": "character-1679391693.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "My name is George I have been in this casino for a long time and know a lot about it.\nLately, something odd has been going on and these pesky poker chips have come to life. \nI think it is just the air in here, but either way, someone needs to fix it.\nI can't feed my crippling gambling addiction while these savage little vermins are running around nibbling on my toes.\nIf you manage to put down 10 or more of them I will give you an elevator access card to the second floor.\nSince you are new here you can only access the lobby and first floor, but with this card, you could get to floor number two.\nSo what are you waiting for? My addiction is not going to feed itself."
+			"text": "So lately I have been thinking about having George ruining his life. It's pretty impressive how he can lose so much and yet seem so unfazed.\nHe has been gambling away everything, even his mobility scooter, so I was thinking that if you help him with everything he needs help with I will get you that next weapon from Britt.\nRemember you can find George in the lobby."
 		},
 		{
 			"call_node": {
@@ -1163,7 +1173,7 @@
 			"event_id": "dialogic_042"
 		},
 		{
-			"choice": "Nah, I'm just going to look around.",
+			"choice": "I think I will manage with what I have.",
 			"condition": "",
 			"definition": "",
 			"event_id": "dialogic_011",
@@ -1173,7 +1183,7 @@
 			"character": "character-1679391693.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "That is too bad. Could use the help.\nAnd besides, you cant just leave this place."
+			"text": "Oh, okay. Your loss, but come back if you change your mind."
 		},
 		{
 			"event_id": "dialogic_013"
@@ -1194,7 +1204,7 @@
 			"character": "character-1679391693.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Alright, you killed them all!\nGreat work. I can finally get to the poker table without having to worry too much about those critters.\nThe only problem is that the new elevator they just installed. It has a maximum weight limit of 400kg..."
+			"text": "Thanks, dude for helping George. I know he can't beat his addiction. So I guess that the old proverb \"If you can't beat them, join them\" applies here.\nAt least he can feed his addiction without having to fear all those pests."
 		},
 		{
 			"event_id": "dialogic_013"
@@ -1364,7 +1374,7 @@
 			"character": "character-1679391693.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Hey, thanks for all the help."
+			"text": "Thanks for all the help dude."
 		},
 		{
 			"event_id": "dialogic_013"
