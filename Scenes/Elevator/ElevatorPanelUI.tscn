@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Assets/e_button_1.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Elevator/ElevatorButtonPanelUI.gd" type="Script" id=2]
@@ -10,25 +10,56 @@
 [ext_resource path="res://Assets/e_button_alarm.png" type="Texture" id=8]
 [ext_resource path="res://Assets/e_button_2.png" type="Texture" id=9]
 [ext_resource path="res://Assets/e_button_5.png" type="Texture" id=10]
+[ext_resource path="res://Assets/White_square.png" type="Texture" id=11]
+
+[sub_resource type="Theme" id=1]
+Button/colors/font_color = Color( 0, 0, 0, 1 )
+Button/colors/font_color_disabled = Color( 0, 0, 0, 1 )
+Button/colors/font_color_focus = Color( 0, 0, 0, 1 )
+Button/colors/font_color_hover = Color( 0, 0, 0, 1 )
+Button/colors/font_color_pressed = Color( 0, 0, 0, 1 )
+Button/constants/hseparation = 0
+Button/fonts/font = null
+Button/styles/disabled = null
+Button/styles/focus = null
+Button/styles/hover = null
+Button/styles/normal = null
+Button/styles/pressed = null
 
 [node name="ElevatorPanelUI" type="CanvasLayer"]
 pause_mode = 2
 layer = 30
 script = ExtResource( 2 )
 
-[node name="UI" type="TextureRect" parent="."]
+[node name="BG" type="TextureRect" parent="."]
+modulate = Color( 0.121569, 0.105882, 0.196078, 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 296.0
-margin_right = -289.0
-texture = ExtResource( 3 )
+texture = ExtResource( 11 )
 expand = true
 
+[node name="UI" type="TextureRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -212.0
+margin_top = -320.0
+margin_right = 212.0
+margin_bottom = 320.0
+theme = SubResource( 1 )
+texture = ExtResource( 3 )
+stretch_mode = 6
+
 [node name="VBoxContainer" type="VBoxContainer" parent="UI"]
-margin_left = 97.0
-margin_top = 63.0
-margin_right = 145.0
-margin_bottom = 472.0
+anchor_left = 2.167
+anchor_top = 0.694
+anchor_right = 2.167
+anchor_bottom = 0.694
+margin_left = -826.808
+margin_top = -380.16
+margin_right = -778.808
+margin_bottom = -193.16
 rect_scale = Vector2( 2.25, 2.25 )
 custom_constants/separation = 1
 
@@ -60,10 +91,14 @@ icon = ExtResource( 5 )
 flat = true
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="UI"]
-margin_left = 234.0
-margin_top = 62.0
-margin_right = 282.0
-margin_bottom = 471.0
+anchor_left = 0.656
+anchor_top = 0.424
+anchor_right = 0.656
+anchor_bottom = 0.424
+margin_left = -53.984
+margin_top = -209.36
+margin_right = -5.98401
+margin_bottom = -22.36
 rect_scale = Vector2( 2.25, 2.25 )
 custom_constants/separation = 1
 

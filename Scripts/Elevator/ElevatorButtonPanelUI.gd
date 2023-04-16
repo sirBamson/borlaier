@@ -12,6 +12,7 @@ func _ready() -> void:
 
 
 func _on_0_pressed() -> void:
+	print("HERE")
 	EnvVar.elevator_button_number_pressed = 0
 
 
