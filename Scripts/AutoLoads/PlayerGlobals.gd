@@ -22,7 +22,7 @@ var holding_grenade: bool = false
 
 var current_weapon: String = "res://Scenes/Weapons/Pistol.tscn"
 
-var elevator_floor_access: Array = [0, 1, 3]
+var elevator_floor_access: Array = [0, 1]
 var weapon_tier: int = 1
 
 
