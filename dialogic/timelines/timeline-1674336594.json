@@ -1278,7 +1278,7 @@
 			"character": "character-1679391693.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Hey! How is the quest going?"
+			"text": "Hey! How is it going?"
 		},
 		{
 			"event_id": "dialogic_013"
@@ -1296,7 +1296,7 @@
 
 			],
 			"portrait": "",
-			"question": "Hey, could I maybe occupy you with another quest?"
+			"question": "Actually, could you help me with one more thing?"
 		},
 		{
 			"choice": "Yeah, why not!",
@@ -1309,7 +1309,7 @@
 			"character": "character-1679391693.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Those pesky Chiplings have been eating my mac and chees.\nLet's say you kill at least 20 of them and ill give you money to buy some ammol. Sounds good?"
+			"text": "So I have always been quite the nig weapon collector. That is part of why I could get Britt to give you another weapon. But I have not seen them all.\nThat is why I am wondering if you could help Britt get ahold of all weapons. It should be a total of 4.\nSo then the next time I see her I can get a look at all those beautiful weapons.\nAnd of course, if you help me I will get you something extra. Maybe even a key card."
 		},
 		{
 			"call_node": {
@@ -1332,7 +1332,7 @@
 			"character": "character-1679391693.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Alright, your loss."
+			"text": "Okay, that is too bad. I have an elevator key card for you."
 		},
 		{
 			"event_id": "dialogic_013"
@@ -1353,7 +1353,7 @@
 			"character": "character-1679391693.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Wow you killed them! Here you go."
+			"text": "Oh, you have unlocked all the weapons. That is great. I will have to visit Britt soon."
 		},
 		{
 			"event_id": "dialogic_013"
