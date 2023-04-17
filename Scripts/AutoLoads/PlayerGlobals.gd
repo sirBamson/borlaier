@@ -3,6 +3,7 @@ extends Node
 var health: int = 100
 var health_temp: int = health 
 var dead: bool = false
+var won: bool = false
 var has_gun: bool = true
 var player_path: String = ""
 
@@ -21,7 +22,7 @@ var holding_grenade: bool = false
 
 var current_weapon: String = "res://Scenes/Weapons/Pistol.tscn"
 
-var elevator_floor_access: Array = [0, 1]
+var elevator_floor_access: Array = [0, 1, 3]
 var weapon_tier: int = 1
 
 

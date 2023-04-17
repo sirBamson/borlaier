@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/Fonts/Casino3DMarqueeRegular-d9A2V.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Scripts/UI/VictoryScreen.gd" type="Script" id=3]
+[ext_resource path="res://Assets/White_square.png" type="Texture" id=4]
+
+[sub_resource type="Theme" id=5]
+default_font = ExtResource( 2 )
+Label/colors/font_color = Color( 1, 1, 1, 1 )
+Label/colors/font_color_shadow = Color( 0, 0, 0, 1 )
+Label/colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+Label/constants/line_spacing = 0
+Label/constants/shadow_as_outline = 0
+Label/constants/shadow_offset_x = 0
+Label/constants/shadow_offset_y = 0
+Label/fonts/font = ExtResource( 2 )
+Label/styles/normal = null
+
+[node name="VictoryScreen" type="CanvasLayer"]
+pause_mode = 2
+layer = 102
+script = ExtResource( 3 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color( 0.105882, 0.121569, 0.196078, 0.294118 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 4 )
+expand = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -290.0
+margin_top = -190.0
+margin_right = 290.0
+margin_bottom = 190.0
+grow_horizontal = 2
+grow_vertical = 2
+custom_constants/separation = 15
+alignment = 1
+
+[node name="Victory" type="Label" parent="VBoxContainer"]
+margin_top = 130.0
+margin_right = 580.0
+margin_bottom = 250.0
+theme = SubResource( 5 )
+text = "Victory"
+align = 1

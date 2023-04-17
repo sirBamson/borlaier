@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=2]
+[gd_scene load_steps=68 format=2]
 
 [ext_resource path="res://Scenes/Weapons/DroppedWeapon.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Sounds/epic-storm-thunder-rainwindwaves-no-loops-106800.mp3" type="AudioStream" id=2]
@@ -19,6 +19,7 @@
 [ext_resource path="res://Scenes/Entities/God.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Scenes/UI/Rain.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Scenes/Elevator/DestroyedElevator.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Scenes/UI/VictoryScreen.tscn" type="PackedScene" id=20]
 
 [sub_resource type="TileSet" id=81]
 0/name = "casino_tilemap.png 0"
@@ -1267,6 +1268,9 @@ points = PoolVector2Array( 0, 0, 256, 0, 256, 256, 0, 256 )
 29/z_index = 0
 
 [node name="Level3" type="Node2D" groups=["Level", "Roof"]]
+
+[node name="VictoryScreen" parent="." instance=ExtResource( 20 )]
+layer = 110
 
 [node name="VoidLayer" type="CanvasLayer" parent="."]
 layer = -101
