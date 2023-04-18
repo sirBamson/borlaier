@@ -68,3 +68,7 @@ Avslutar spelet
 """
 func _on_QuitToDesktop_pressed() -> void:
 	get_tree().quit()
+
+
+func _on_Credit_pressed() -> void:
+	scene_controller.change_scene(false, self, self.filename, "res://Scenes/UI/Credits.tscn")
