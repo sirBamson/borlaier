@@ -29,7 +29,7 @@
 [ext_resource path="res://Assets/spiked_drink.png" type="Texture" id=28]
 [ext_resource path="res://Assets/ammo_pouch.png" type="Texture" id=29]
 [ext_resource path="res://Assets/grenade.png" type="Texture" id=30]
-[ext_resource path="res://Scenes/Entities/Npc/FlatCap.tscn" type="PackedScene" id=31]
+[ext_resource path="res://Scenes/Entities/Npc/NpcFlatCap.tscn" type="PackedScene" id=31]
 
 [sub_resource type="TileSet" id=65]
 0/name = "casino_tilemap.png 0"

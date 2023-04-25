@@ -31,7 +31,7 @@
 [ext_resource path="res://Scenes/Assets/ArcadeKillEmSide.tscn" type="PackedScene" id=29]
 [ext_resource path="res://Scenes/Entities/Npc/NpcMohamed.tscn" type="PackedScene" id=30]
 [ext_resource path="res://Scenes/Assets/RouletteTable.tscn" type="PackedScene" id=31]
-[ext_resource path="res://Scenes/Entities/Npc/FlatCap2.tscn" type="PackedScene" id=32]
+[ext_resource path="res://Scenes/Entities/Npc/NpcFlatCap2.tscn" type="PackedScene" id=32]
 [ext_resource path="res://Assets/Sounds/(No Copyright Music) Together With You by JR Tundra.mp3" type="AudioStream" id=33]
 [ext_resource path="res://Scenes/Spawners/EnemySpawner.tscn" type="PackedScene" id=34]
 
